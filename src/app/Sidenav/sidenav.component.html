@@ -1,0 +1,412 @@
+
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav class="panel-sidenav" mode="side" opened>
+      <mat-nav-list>
+        <a mat-list-item class="botoncin" (click)="onClickMenuHome()"><i class="material-icons">
+          web
+          </i>
+        </a>
+        <a mat-list-item class="botoncin" (click)="onClickMenuTrello()"><i class="material-icons">
+          table_chart
+          </i></a>
+        <a mat-list-item class="botoncin" (click)="onClickMenuWiki()"><i class="material-icons">
+          import_contacts
+          </i></a>
+        <a mat-list-item class="botoncin" (click)="onClickMenuDeposito()"><i class="material-icons">
+          storage
+          </i></a>
+        <a mat-list-item class="botoncin" (click)="onClickMenuGraficas()"><i class="material-icons">
+          bar_chart
+          </i></a>
+      </mat-nav-list>
+
+    </mat-sidenav>
+    <mat-sidenav-content class= "Main-Content" >
+
+      <div *ngIf="home" >
+          <div class="full">
+          <mat-grid-list cols="3" rowHeight="2:1">
+              <mat-grid-tile *ngFor="let cardes of card">
+                  <mat-card class="cards" >
+                      <mat-card-header>
+                          <mat-card-title class="otro"> {{cardes.pretitle}}</mat-card-title>
+                        <mat-card-title class="grande"> {{cardes.title}}</mat-card-title>
+                        <mat-card-subtitle class="chico"> {{cardes.subtitle}}</mat-card-subtitle>
+                      </mat-card-header>
+                      <mat-card-content class="chico">
+                        {{cardes.content}}
+                      </mat-card-content>
+                    </mat-card>
+              </mat-grid-tile>
+          </mat-grid-list>
+        </div>
+      </div>
+
+      <div *ngIf="trello">
+
+          <mat-card class="Work-Order-Card">
+              <button mat-raised-button color="accent" (click)="drawer.toggle()">Crear Work Order</button>
+          </mat-card>
+
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" >
+
+          <!--- Note that these columns can be defined in any order.
+                The actual rendered columns are set as a property on the row definition" -->
+
+          <!-- Position Column -->
+          <ng-container matColumnDef="position">
+            <th mat-header-cell *matHeaderCellDef> No. </th>
+            <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+          </ng-container>
+
+          <!-- Name Column -->
+          <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef> Name </th>
+            <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+          </ng-container>
+
+          <!-- Weight Column -->
+          <ng-container matColumnDef="weight">
+            <th mat-header-cell *matHeaderCellDef> Weight </th>
+            <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
+          </ng-container>
+
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="symbol">
+            <th mat-header-cell *matHeaderCellDef> Symbol </th>
+            <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+      </div>
+
+      <div *ngIf="wiki">
+          <mat-grid-list cols="2">
+              <mat-grid-tile>
+                  <mat-card class="wiki">
+                      <mat-list role="list">
+                        <mat-list-item class="item-Wiki" role="listitem">Item 1</mat-list-item>
+                        <mat-list-item class="item-Wiki" role="listitem">Item 2</mat-list-item>
+                        <mat-list-item class="item-Wiki" role="listitem">Item 3</mat-list-item>
+                      </mat-list>
+                  </mat-card>
+              </mat-grid-tile>
+              <mat-grid-tile >
+                  <mat-card class="wiki-form">
+                    <form class="item-Form">
+                      <mat-form-field  >
+                          <input matInput placeholder="Input" style="color:black;">
+                        </mat-form-field>
+
+                        <mat-form-field>
+                          <textarea class="item-Form" matInput placeholder="Textarea"></textarea>
+                        </mat-form-field>
+
+                        <mat-form-field>
+                          <mat-select class="item-Form" placeholder="Select">
+                            <mat-option value="option">Option</mat-option>
+                          </mat-select>
+                        </mat-form-field>
+                      </form>
+                  </mat-card>
+              </mat-grid-tile>
+
+            </mat-grid-list>
+      </div>
+
+      <div *ngIf="deposito">
+
+          <mat-card class="Deposito">
+              <button mat-raised-button color="accent" (click)="agregarNuevaDeposito()">Agregar Nueva</button>
+              <button mat-raised-button color="accent">Editar</button>
+          </mat-card>
+
+          <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+              <!--- Note that these columns can be defined in any order.
+                    The actual rendered columns are set as a property on the row definition" -->
+
+              <!-- Position Column -->
+              <ng-container matColumnDef="position">
+                <th mat-header-cell *matHeaderCellDef> No. </th>
+                <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+              </ng-container>
+
+              <!-- Name Column -->
+              <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef> Name </th>
+                <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+              </ng-container>
+
+              <!-- Weight Column -->
+              <ng-container matColumnDef="weight">
+                <th mat-header-cell *matHeaderCellDef> Weight </th>
+                <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
+              </ng-container>
+
+              <!-- Symbol Column -->
+              <ng-container matColumnDef="symbol">
+                <th mat-header-cell *matHeaderCellDef> Symbol </th>
+                <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+              </ng-container>
+
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+
+      </div>
+
+      <div *ngIf="graficas" >
+        <div>
+          <mat-card class="cards" >
+              <mat-card-header>
+                <mat-card-title>Hola</mat-card-title>
+                <mat-card-subtitle> Te cuento algo?</mat-card-subtitle>
+              </mat-card-header>
+              <mat-card-content>
+                 Aqui va una grafica
+              </mat-card-content>
+          </mat-card>
+        </div>
+      </div>
+
+      <div *ngIf="depositoNueva">
+          <mat-grid-list cols="2">
+              <mat-grid-tile>
+                  <mat-card >
+                      <form class="item-Form-Nueva">
+                        <mat-form-field>
+                            <input matInput placeholder="Input">
+                          </mat-form-field>
+
+                          <mat-form-field>
+                            <textarea matInput placeholder="Textarea"></textarea>
+                          </mat-form-field>
+
+                          <mat-form-field>
+                            <mat-select placeholder="Select">
+                              <mat-option value="option">Option</mat-option>
+                            </mat-select>
+                          </mat-form-field>
+                        </form>
+                        </mat-card>
+              </mat-grid-tile>
+              <mat-grid-tile >
+
+                  <mat-card >
+                      <form class="item-Form-Nueva">
+                        <mat-form-field>
+                            <input matInput placeholder="Input">
+                          </mat-form-field>
+
+                          <mat-form-field>
+                            <textarea matInput placeholder="Textarea"></textarea>
+                          </mat-form-field>
+
+                          <mat-form-field>
+                            <mat-select placeholder="Select">
+                              <mat-option value="option">Option</mat-option>
+                            </mat-select>
+                          </mat-form-field>
+                        </form>
+                        </mat-card>
+
+              </mat-grid-tile>
+
+            </mat-grid-list>
+
+
+      </div>
+
+
+
+      <mat-drawer #drawer class="example-sidenav" mode="over" position="end">
+          <mat-card class="sidenav-pink">
+              <mat-card-title> Work Order  <button (click)="drawer.toggle()" mat-raised-button>
+                  Close
+              </button></mat-card-title>
+
+          </mat-card>
+          <mat-card class="cards-toggle-sidenav">
+                <mat-card-content>
+                  <button (click)="onClickMenuTrelloInfo()" mat-raised-button>
+                     Información
+                  </button>
+                  <div *ngIf="userIsTechnician">
+                    <button (click)="onClickMenuTrelloAsignar()" mat-raised-button>
+                        Asignar
+                    </button>
+                  </div>
+                  <button (click)="onClickMenuTrelloDeposito()" mat-raised-button>
+                      Comentarios
+                  </button>
+
+                  <mat-card class="cardContent" *ngIf="info">
+                      <mat-card-content>
+                      <div *ngIf="autoComplete_Device">
+                     <div *ngIf="filteredOptions | async; let list">
+                          <form class="example-form" (submit)="registrarWO_BD()" #woForm="ngForm">
+
+                              <mat-form-field class="example-full-width">
+                                <input
+                                  type="text"
+                                  placeholder="Busca por device"
+                                  aria-label="Number"
+                                  matInput
+                                  [formControl]="myControl"
+                                  [matAutocomplete]="autoDevice"
+                                  name="device"
+                                >
+                              </mat-form-field>
+                                <mat-autocomplete #autoDevice="matAutocomplete">
+                                  <mat-option *ngFor="let option of filteredOptions | async as a0" [value]="option">
+                                    {{option}}
+                                  </mat-option>
+                                </mat-autocomplete>
+
+
+                              <mat-form-field class="example-full-width">
+                                  <input
+                                    type="text"
+                                    placeholder="Busca place"
+                                    aria-label="Number"
+                                    matInput
+                                    [formControl]="myControl_places"
+                                    [matAutocomplete]="autoPlace"
+                                    name="place"
+                                  >
+                                </mat-form-field>
+                                  <mat-autocomplete #autoPlace="matAutocomplete">
+                                    <mat-option *ngFor="let option_p of filteredOptions_place | async as a1" [value]="option_p">
+                                      {{option_p}}
+                                    </mat-option>
+                                  </mat-autocomplete>
+
+
+                              <div *ngIf="userIsTechnician">
+                                <mat-form-field class="example-full-width">
+                                    <input
+                                      type="text"
+                                      placeholder="Busca cliente"
+                                      aria-label="Number"
+                                      matInput
+                                      [formControl]="myControl_clients"
+                                      [matAutocomplete]="autoClient"
+                                      name="client"
+                                    >
+                                  </mat-form-field>
+                                    <mat-autocomplete #autoClient="matAutocomplete">
+                                      <mat-option *ngFor="let option_c of filteredOptions_client | async" [value]="option_c">
+                                        {{option_c}}
+                                      </mat-option>
+                                    </mat-autocomplete>
+
+                                  </div>
+                                  <button mat-raised-button type="submit">REGISTRAR WO</button>
+
+                                  <p class="info-text mat-body-1" *ngIf="list.length <= 0">
+                                  <span> Device no encontrado, crear nuevo device para nueva Work Order? </span>
+                                <button mat-raised-button type="submit"  (click)="registrarDevice()">REGISTRAR Nuevo Device</button>
+                              </p>
+
+                      </form>
+                    </div>
+                   </div>
+
+                      <div *ngIf="nuevoDevice">
+                                <form (submit)="registrarDevice_BD(postForm)" #postForm="ngForm">
+                                    <mat-form-field>
+                                      <input matInput type="text" name="device_id" required placeholder="DEVICE ID">
+                                    </mat-form-field>
+
+                                    <mat-form-field>
+                                    <input matInput type="text" name="part_id" required placeholder="Part ID" >
+                                  </mat-form-field>
+
+                                    <mat-form-field>
+                                    <input matInput type="password" ngModel name="password" placeholder="Password usuario" #passwordInput="ngModel" required>
+                                  </mat-form-field>
+
+                                    <mat-form-field>
+                                        <input matInput required type="password" ngModel name="confirmPassword" placeholder="confirmar contraseña">
+                                    </mat-form-field>
+
+                                    <button mat-raised-button type="submit">REGISTRAR Nuevo Device</button>
+                              </form>
+                        </div>
+
+                      </mat-card-content>
+                    </mat-card>
+
+                    <mat-card class="cardContent" *ngIf="asignar">
+                        <mat-card-header>
+                          <mat-card-title>Asignación</mat-card-title>
+                          <mat-card-subtitle>Asignar</mat-card-subtitle>
+                        </mat-card-header>
+
+                        <mat-card-content>
+
+                          <form class="example-form" (submit)="assignWO_BD()" #woForm="ngForm">
+
+                            <mat-form-field class="example-full-width">
+                              <input
+                                type="text"
+                                placeholder="Busca WO ID"
+                                aria-label="Number"
+                                matInput
+                                [formControl]="myControl_WOID"
+                                [matAutocomplete]="autoWOID"
+                                name="device"
+                              >
+                            </mat-form-field>
+                              <mat-autocomplete #autoWOID="matAutocomplete">
+                                <mat-option *ngFor="let option of filteredOptions_WOID | async as a0" [value]="option">
+                                  {{option}}
+                                </mat-option>
+                              </mat-autocomplete>
+
+                              <mat-form-field class="example-full-width">
+                                <input
+                                  type="text"
+                                  placeholder="Busca worker"
+                                  aria-label="Number"
+                                  matInput
+                                  [formControl]="myControl_Worker"
+                                  [matAutocomplete]="autoWorker"
+                                  name="device"
+                                >
+                              </mat-form-field>
+                                <mat-autocomplete #autoWorker="matAutocomplete">
+                                  <mat-option *ngFor="let option of filteredOptions_Worker | async as a0" [value]="option">
+                                    {{option}}
+                                  </mat-option>
+                                </mat-autocomplete>
+
+                                <button mat-raised-button type="submit">Asignar WO</button>
+                    </form>
+
+                        </mat-card-content>
+                      </mat-card>
+
+                      <mat-card class="cardContent" *ngIf="comentarios">
+                          <mat-card-header>
+                            <mat-card-title>Comentarios</mat-card-title>
+                            <mat-card-subtitle>Comentar</mat-card-subtitle>
+                          </mat-card-header>
+
+                          <mat-card-content>
+                            <p>
+                            Comentarios Aquí
+                            </p>
+                          </mat-card-content>
+                        </mat-card>
+              </mat-card-content>
+          </mat-card>
+      </mat-drawer>
+    </mat-sidenav-content>
+</mat-sidenav-container>
+
+
+
