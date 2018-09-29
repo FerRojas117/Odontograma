@@ -7,6 +7,7 @@ import { AuthGuard } from './auth/auth.guard';
 import { HomeComponent } from './home/home.component';
 import { SidenavFixedComponent } from './Sidenav/sidenav.component';
 import { InicioComponent } from './inicio/inicio.component';
+import { IdentificacionComponent } from './identificacion/identificacion.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -15,7 +16,9 @@ const routes: Routes = [
   {
     path: 'sidenav',
      component: SidenavFixedComponent,
-     children: [ ]
+     children: [
+       { path: 'identificacion', component: IdentificacionComponent },
+      ]
   },
   { path: 'inicio', component: InicioComponent },
 ];

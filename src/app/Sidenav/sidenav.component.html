@@ -3,13 +3,27 @@
     <mat-sidenav [fixedInViewport]="false" class="panel-sidenav" mode="side" opened>
       <mat-nav-list>
 
-        <a mat-button routerLink="/" >BOTON</a>
-        <a mat-button routerLink="/" >BOTON</a>
-        <a mat-button routerLink="/" >BOTON</a>
+        <a mat-raised-button color="primary" [routerLink]="['identificacion']" >identificacion</a>
+        <a mat-raised-button color="primary"  [routerLink]="['']" >Antecedentes Estomatológicos</a>
+        <a mat-raised-button color="primary"  [routerLink]="['']" >Estudio Socioeconómico</a>
+        <a mat-raised-button color="primary"  [routerLink]="['']" >Antecedentes Generales</a>
+        <a mat-raised-button color="primary"  [routerLink]="['']" >Interrogratorio</a>
+        <a mat-raised-button color="primary"  [routerLink]="['']" >Estudios de lab. y gabinete</a>
+        <a mat-raised-button color="primary"  [routerLink]="['']" >Exploración física</a>
+        <a mat-raised-button color="primary"  [routerLink]="['']" >Rehabilitación</a>
+        <a mat-raised-button color="primary"  [routerLink]="['']" >Diagnóstico Pulpar</a>
+        <a mat-raised-button color="primary"  [routerLink]="['']" >Plan de tratamiento Gral.</a>
+        <a mat-raised-button color="primary"  [routerLink]="['']" >Hoja de tratamiento</a>
+        <a mat-raised-button color="primary"  [routerLink]="['']" >Consentimiento</a>
+
 
       </mat-nav-list>
 
     </mat-sidenav>
+
+    <mat-sidenav-content>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
 
 </mat-sidenav-container>
 

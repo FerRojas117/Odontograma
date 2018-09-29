@@ -10,7 +10,8 @@ import {
   MatToolbarModule,
   MatExpansionModule,
   MatProgressSpinnerModule,
-  MatPaginatorModule
+  MatPaginatorModule,
+  MatRadioModule
 } from '@angular/material';
 
 import { AppComponent } from './app.component';
@@ -26,6 +27,7 @@ import {
   MatSidenavModule
  } from '@angular/material';
 import { InicioComponent } from './inicio/inicio.component';
+import { IdentificacionComponent } from './identificacion/identificacion.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,8 @@ import { InicioComponent } from './inicio/inicio.component';
     SignupComponent,
     HomeComponent,
     SidenavFixedComponent,
-    InicioComponent
+    InicioComponent,
+    IdentificacionComponent
   ],
   imports: [
     BrowserModule,
@@ -52,7 +55,8 @@ import { InicioComponent } from './inicio/inicio.component';
     MatProgressSpinnerModule,
     MatPaginatorModule,
     MatSidenavModule,
-    HttpClientModule
+    HttpClientModule,
+    MatRadioModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }

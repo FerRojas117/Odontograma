@@ -2,6 +2,11 @@ mat-form-field {
   width: 100%;
 }
 
+.cardLogin {
+  position: fixed;
+  top: 100px;
+}
+
 mat-spinner {
   margin: auto;
 }
