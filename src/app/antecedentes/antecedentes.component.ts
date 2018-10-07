@@ -1,0 +1,76 @@
+import { Component, OnInit   } from '@angular/core';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { AnteceService } from './antecedentes.service';
+
+@Component({
+  selector: 'app-antecedentes',
+  templateUrl: './antecedentes.component.html',
+  styleUrls: ['./antecedentes.component.css']
+})
+export class AntecedentesComponent implements OnInit {
+  form: FormGroup;
+
+  constructor(public anteceService: AnteceService) {}
+
+  ngOnInit() {
+    this.form = new FormGroup({
+      motivoconsulta: new FormControl(null, {
+        validators: [Validators.required, Validators.minLength(3)]
+      }),
+      cuanvisito: new FormControl(null, { validators: [Validators.required] }),
+      motivo: new FormControl(null, { validators: [Validators.required] }),
+      cdcuantiempo: new FormControl(null, { validators: [Validators.required] }),
+      radiografias: new FormControl(null, { validators: [Validators.required] }),
+      cuantascuando: new FormControl(null, { validators: [Validators.required] }),
+      orgdentarios: new FormControl(null, { validators: [Validators.required] }),
+      remplazo: new FormControl(null, { validators: [Validators.required] }),
+      comocuando: new FormControl(null, { validators: [Validators.required] }),
+      cirugias: new FormControl(null, { validators: [Validators.required] }),
+      proanestesia: new FormControl(null, { validators: [Validators.required] }),
+      higieneoral: new FormControl(null, { validators: [Validators.required] }),
+      algvezhateni: new FormControl(null, { validators: [Validators.required] }),
+      cuidadomedico: new FormControl(null, { validators: [Validators.required] }),
+      vismedult: new FormControl(null, { validators: [Validators.required] }),
+      paraque: new FormControl(null, { validators: [Validators.required] }),
+      drogas: new FormControl(null, { validators: [Validators.required] }),
+      hemorragias: new FormControl(null, { validators: [Validators.required] }),
+      reacalergicas: new FormControl(null, { validators: [Validators.required] }),
+      consmedica: new FormControl(null, { validators: [Validators.required] }),
+      porque: new FormControl(null, { validators: [Validators.required] }),
+      exploracion: new FormControl(null, { validators: [Validators.required] }),
+      deschigieneoral: new FormControl(null, { validators: [Validators.required] }),
+      calculos: new FormControl(null, { validators: [Validators.required] }),
+      exploracionradiografica: new FormControl(null, { validators: [Validators.required] }),
+    });
+  }
+
+  addAntece() {
+    this.anteceService.addAntece(
+      this.form.value.motivoconsulta,
+      this.form.value.cuanvisito,
+      this.form.value.motivo,
+      this.form.value.cdcuantiempo,
+      this.form.value.radiografias,
+      this.form.value.cuantascuando,
+      this.form.value.orgdentarios,
+      this.form.value.remplazo,
+      this.form.value.comocuando,
+      this.form.value.cirugias,
+      this.form.value.proanestesia,
+      this.form.value.higieneoral,
+      this.form.value.algvezhateni,
+      this.form.value.cuidadomedico,
+      this.form.value.vismedult,
+      this.form.value.paraque,
+      this.form.value.drogas,
+      this.form.value.hemorragias,
+      this.form.value.reacalergicas,
+      this.form.value.consmedica,
+      this.form.value.porque,
+      this.form.value.exploracion,
+      this.form.value.deschigieneoral,
+      this.form.value.calculos,
+      this.form.value.exploracionradiografica,
+    );
+  }
+}
