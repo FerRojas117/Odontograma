@@ -1,0 +1,17 @@
+.svgRectangulo {
+  display: block;
+  width:40%; height:auto;
+  margin: 0 auto;
+}
+polygon {
+  fill:#ccc;
+  stroke:#fff; stroke-width:0.3;
+  transition: fill .15s;
+}
+
+a:hover .teal { fill:teal; }
+a:hover .pink { fill:pink; }
+a:focus .teal,
+a:focus .pink { fill:orange; }
+a:click .red { fill:red; }
+a:hover .blue { fill:blue; }

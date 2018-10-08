@@ -1,0 +1,30 @@
+.sidenav-container {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.mat-raised-button {
+  left: 0px;
+  margin-top: 10px;
+  text-align: center;
+  height: 50px;
+  width: 100%
+}
+
+.sidenav-container {
+
+  position: fixed;
+  top: 100px;
+  left: 0;
+  right: 0;
+ }
+
+.panel-sidenav{
+  display: flex;
+  justify-content: center;
+  background-color: #56687e;
+  width: 250px;
+  height: 100%;
+}
