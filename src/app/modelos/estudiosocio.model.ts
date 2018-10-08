@@ -7,6 +7,7 @@ export interface Estu {
     telefono: string;
     lugarDeNacimiento: string;
     nacionalidad: string;
+    sexo: string;
     estadocivil: string;
     ocupacion: string;
     lugar: string;

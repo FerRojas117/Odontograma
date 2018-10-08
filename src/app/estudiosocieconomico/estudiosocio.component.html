@@ -1,0 +1,102 @@
+<mat-card class="cardForm">
+    <form [formGroup]="form" (submit)="addEstu()">
+  
+      <mat-form-field>
+        <textarea matInput type="text" formControlName="nombre" placeholder="Nombre">  </textarea>
+        <mat-error *ngIf="form.get('nombre').invalid">Por favor, escribe el nombre</mat-error>
+      </mat-form-field>
+  
+      <mat-form-field>
+        <textarea matInput type="text" formControlName="edad" placeholder="Edad">  </textarea>
+        <mat-error *ngIf="form.get('nombre').invalid">Por favor, escribe la edad</mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <textarea matInput formControlName="direccion" placeholder="Direccion"></textarea>
+        <mat-error *ngIf="form.get('direccion').invalid">Por favor, escribe la direcciòn.</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+        <textarea matInput formControlName="tiemporadi" placeholder="Tiempo de radicar"></textarea>
+        <mat-error *ngIf="form.get('direccion').invalid">Por favor, escribe el tiempo que llevas viviendo ahi.</mat-error>
+    </mat-form-field>
+    
+    <mat-form-field>
+        <textarea matInput formControlName="fechnac" placeholder="Fecha de Nacimiento"></textarea>
+        <mat-error *ngIf="form.get('telefono').invalid">Por favor, escribe la fecha de nacimiento.</mat-error>
+    </mat-form-field>
+    
+    <mat-form-field>
+        <textarea matInput formControlName="telefono" placeholder="Telefono"></textarea>
+        <mat-error *ngIf="form.get('telefono').invalid">Por favor, escribe el teléfono.</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+        <textarea matInput formControlName="lugarDeNacimiento" placeholder="Lugar de Nacimiento"></textarea>
+        <mat-error *ngIf="form.get('lNacimiento').invalid">Por favor, escribe el lugar de nacimiento.</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+        <textarea matInput formControlName="nacionalidad" placeholder="Nacionalidad"></textarea>
+        <mat-error *ngIf="form.get('lNacimiento').invalid">Por favor, escribe la nacionalidad.</mat-error>
+    </mat-form-field>
+
+    <mat-radio-group class="radioGroup" formControlName="sexo">
+        <span>Sexo</span>
+        <mat-radio-button class="radioButton" value="M">M</mat-radio-button>
+        <mat-radio-button class="radioButton" value="F">F</mat-radio-button>
+    </mat-radio-group>
+  
+      <mat-form-field>
+          <textarea matInput  formControlName="estadoCivil" placeholder="Estado civil"></textarea>
+          <mat-error *ngIf="form.get('estadoCivil').invalid">Por favor, escribe el estado civil.</mat-error>
+      </mat-form-field>
+
+    <mat-form-field>
+        <textarea matInput  formControlName="ocupacion" placeholder="Ocupacion"></textarea>
+        <mat-error *ngIf="form.get('estadoCivil').invalid">Por favor, escribe la ocupacion.</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+        <textarea matInput  formControlName="lugar" placeholder="Lugar"></textarea>
+        <mat-error *ngIf="form.get('estadoCivil').invalid">Por favor, escribe el lugar.</mat-error>
+    </mat-form-field>
+  
+      <mat-form-field>
+          <textarea matInput formControlName="direcc" placeholder="Direccion"></textarea>
+          <mat-error *ngIf="form.get('direccion').invalid">Por favor, escribe la direcciòn.</mat-error>
+      </mat-form-field>
+  
+      <mat-form-field>
+          <textarea matInput formControlName="telefono" placeholder="Telefono"></textarea>
+          <mat-error *ngIf="form.get('telefono').invalid">Por favor, escribe el teléfono.</mat-error>
+      </mat-form-field>
+  
+      <mat-form-field>
+          <textarea matInput formControlName="ocupacion" placeholder="Ocupacion"></textarea>
+          <mat-error *ngIf="form.get('ocupacion').invalid">Por favor, escribe la ocupación.</mat-error>
+      </mat-form-field>
+  
+      <mat-form-field>
+          <textarea matInput formControlName="lNacimi" placeholder="Lugar de Nacimiento"></textarea>
+          <mat-error *ngIf="form.get('lNacimiento').invalid">Por favor, escribe el lugar de nacimiento.</mat-error>
+      </mat-form-field>
+  
+      <mat-form-field>
+          <textarea matInput  formControlName="procedencia" placeholder="Procedente de"></textarea>
+          <mat-error *ngIf="form.get('procedencia').invalid">Por favor escribe la procedencia.</mat-error>
+      </mat-form-field>
+  
+      <mat-radio-group class="radioGroup" formControlName="estadoSocioeconomico">
+        <span>Estado socioeconómico</span>
+        <mat-radio-button class="radioButton" value="A">A</mat-radio-button>
+        <mat-radio-button class="radioButton" value="B">B</mat-radio-button>
+        <mat-radio-button class="radioButton" value="C">C</mat-radio-button>
+        <mat-radio-button class="radioButton" value="D">D</mat-radio-button>
+      </mat-radio-group>
+  
+      <button mat-raised-button color="accent" type="submit">Guardar</button>
+    </form>
+  
+  </mat-card>
+  

@@ -5,6 +5,7 @@ import { map } from 'rxjs/operators';
 
 
 import { Estu } from '../modelos/estudiosocio.model';
+import { setContextDirty } from '@angular/core/src/render3/styling';
 
 @Injectable({ providedIn: 'root' })
 export class EstuService {
@@ -20,6 +21,7 @@ export class EstuService {
     telefono: string,
     lugarDeNacimiento: string,
     nacionalidad: string,
+    sexo: string,
     estadocivil: string,
     ocupacion: string,
     lugar: string,
@@ -41,6 +43,7 @@ export class EstuService {
       telefono: telefono,
       lugarDeNacimiento: lugarDeNacimiento,
       nacionalidad: nacionalidad,
+      sexo: sexo,
       estadocivil: estadocivil,
       ocupacion: ocupacion,
       lugar: lugar,
