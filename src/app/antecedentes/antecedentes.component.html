@@ -12,8 +12,8 @@
       </mat-form-field>
 
       <mat-form-field>
-        <textarea matInput type="text" formControlName="motivoconsulta" placeholder="Motivo de la Consulta">  </textarea>
-        <mat-error *ngIf="form.get('motivoconsulta').invalid">Por favor, escribe el motivo de la consulta</mat-error>
+        <textarea matInput type="text" formControlName="motivo" placeholder="Motivo de la ultima consulta">  </textarea>
+        <mat-error *ngIf="form.get('motivo').invalid">Por favor, escribe el motivo de la ultima consulta</mat-error>
       </mat-form-field>
 
       <mat-form-field>
@@ -41,7 +41,7 @@
         <mat-radio-button class="radioButton" value="Nn">No</mat-radio-button>
       </mat-radio-group>
 
-      <mat-radio-group class="radioGroup" formControlName="orgdentarios">
+      <mat-radio-group class="radioGroup" formControlName="cirugias">
         <span>Experiencia con cirugias dentoalvelares</span>
         <mat-radio-button class="radioButton" value="Sss">Si</mat-radio-button>
             <mat-radio-group class="radioGroup" formControlName="tipos">
@@ -53,49 +53,125 @@
         <mat-radio-button class="radioButton" value="Nnn">No</mat-radio-button>
       </mat-radio-group>
 
-      <mat-form-field>
-          <textarea matInput formControlName="edad" placeholder="Edad"></textarea>
-          <mat-error *ngIf="form.get('edad').invalid">Por favor, escribe la edad.</mat-error>
-      </mat-form-field>
-  
-      <mat-form-field>
-          <textarea matInput  formControlName="estadoCivil" placeholder="Estado civil"></textarea>
-          <mat-error *ngIf="form.get('estadoCivil').invalid">Por favor, escribe el estado civil.</mat-error>
-      </mat-form-field>
-  
-      <mat-form-field>
-          <textarea matInput formControlName="direccion" placeholder="Direccion"></textarea>
-          <mat-error *ngIf="form.get('direccion').invalid">Por favor, escribe la direcciòn.</mat-error>
-      </mat-form-field>
-  
-      <mat-form-field>
-          <textarea matInput formControlName="telefono" placeholder="Telefono"></textarea>
-          <mat-error *ngIf="form.get('telefono').invalid">Por favor, escribe el teléfono.</mat-error>
-      </mat-form-field>
-  
-      <mat-form-field>
-          <textarea matInput formControlName="ocupacion" placeholder="Ocupacion"></textarea>
-          <mat-error *ngIf="form.get('ocupacion').invalid">Por favor, escribe la ocupación.</mat-error>
-      </mat-form-field>
-  
-      <mat-form-field>
-          <textarea matInput formControlName="lNacimiento" placeholder="Lugar de Nacimiento"></textarea>
-          <mat-error *ngIf="form.get('lNacimiento').invalid">Por favor, escribe el lugar de nacimiento.</mat-error>
-      </mat-form-field>
-  
-      <mat-form-field>
-          <textarea matInput  formControlName="procedencia" placeholder="Procedente de"></textarea>
-          <mat-error *ngIf="form.get('procedencia').invalid">Por favor escribe la procedencia.</mat-error>
-      </mat-form-field>
-  
-      <mat-radio-group class="radioGroup" formControlName="estadoSocioeconomico">
-        <span>Estado socioeconómico</span>
-        <mat-radio-button class="radioButton" value="A">A</mat-radio-button>
-        <mat-radio-button class="radioButton" value="B">B</mat-radio-button>
-        <mat-radio-button class="radioButton" value="C">C</mat-radio-button>
-        <mat-radio-button class="radioButton" value="D">D</mat-radio-button>
+      <mat-radio-group class="radioGroup" formControlName="proanestecia">
+        <span>¿Ha tenido problemas con la anestesia local?</span>
+        <mat-radio-button class="radioButton" value="Ssss">Si</mat-radio-button>
+            <mat-form-field>
+                <textarea matInput type="text" formControlName="quetipo" placeholder="De que tipo">  </textarea>
+                <mat-error *ngIf="form.get('comocuando').invalid">Por favor, escribe de que tipo fueron los problemas</mat-error>
+             </mat-form-field>
+        <mat-radio-button class="radioButton" value="Nnnn">No</mat-radio-button>
       </mat-radio-group>
-  
+
+      <mat-form-field>
+        <textarea matInput  formControlName="higieneoral" placeholder="¿Qué medidas de higiene oral acostumbra?"></textarea>
+        <mat-error *ngIf="form.get('estadoCivil').invalid">Por favor, escribe con que frecuencia lo realizas.</mat-error>
+    </mat-form-field>
+
+      <mat-radio-group class="radioGroup" formControlName="algvezhateni">
+        <span>Alguna vez ha tenido en su boca:</span>
+        <mat-radio-button class="radioButton" value="h">Hemorragias</mat-radio-button>
+        <mat-radio-button class="radioButton" value="d">Dolores</mat-radio-button>
+        <mat-radio-button class="radioButton" value="sd">Sabor desagradable</mat-radio-button>
+        <mat-radio-button class="radioButton" value="f">Fracturas</mat-radio-button>
+        <mat-radio-button class="radioButton" value="t">Trismus</mat-radio-button>
+        <mat-radio-button class="radioButton" value="p">Parecia</mat-radio-button>
+        <mat-radio-button class="radioButton" value="psa">Parestesia</mat-radio-button>
+        <mat-radio-button class="radioButton" value="o">Otros</mat-radio-button>
+            <mat-form-field>
+                <textarea matInput type="text" formControlName="quetipo" placeholder="De que tipo">  </textarea>
+                <mat-error *ngIf="form.get('comocuando').invalid">Por favor, escribe de que tipo fueron los problemas</mat-error>
+             </mat-form-field>
+      </mat-radio-group>
+
+      <mat-radio-group class="radioGroup" formControlName="cuidadomedico">
+        <span>¿Está bajo cuidado medico?</span>
+        <mat-radio-button class="radioButton" value="SS">Si</mat-radio-button>
+            <mat-form-field>
+                <textarea matInput type="text" formControlName="hospital" placeholder="Con que hospital esta en el tratmiento">  </textarea>
+                <mat-error *ngIf="form.get('comocuando').invalid">Por favor, escribe con que hospital esta bajo tratamiento</mat-error>
+             </mat-form-field>
+        <mat-radio-button class="radioButton" value="NN">No</mat-radio-button>
+      </mat-radio-group>
+
+      <mat-radio-group class="radioGroup" formControlName="drogas">
+        <span>¿Está recibiendo drogas?</span>
+        <mat-radio-button class="radioButton" value="SiS">Si</mat-radio-button>
+            <mat-form-field>
+                <textarea matInput type="text" formControlName="cualesdr" placeholder="¿Qué drogas esta recibiendo">  </textarea>
+                <mat-error *ngIf="form.get('comocuando').invalid">Por favor, escribe que drogas esta recibiendo</mat-error>
+             </mat-form-field>
+        <mat-radio-button class="radioButton" value="NoN">No</mat-radio-button>
+      </mat-radio-group>
+
+      <mat-radio-group class="radioGroup" formControlName="hemorragias">
+        <span>¿Presenta hemorragias significativas?</span>
+        <mat-radio-button class="radioButton" value="Sii">Si</mat-radio-button>
+            <mat-radio-group class="radioGroup" formControlName="hsig">
+                <mat-radio-button class="radioButton" value="hep">Heridas pequeñas</mat-radio-button>
+                <mat-radio-button class="radioButton" value="tl">Truama leve</mat-radio-button>
+                <mat-radio-button class="radioButton" value="mens">Menstruacion</mat-radio-button>
+                <mat-radio-button class="radioButton" value="hema">Hematomas</mat-radio-button>
+                <mat-radio-button class="radioButton" value="pe">Petequias</mat-radio-button>
+                <mat-radio-button class="radioButton" value="es">Esquimosis</mat-radio-button>
+                <mat-radio-button class="radioButton" value="ex">Espitaxis</mat-radio-button>
+            </mat-radio-group>
+        <mat-radio-button class="radioButton" value="Noo">No</mat-radio-button>
+      </mat-radio-group>
+
+      <mat-radio-group class="radioGroup" formControlName="consmedica">
+        <span>¿Necesario hacer consulta médica?</span>
+        <mat-radio-button class="radioButton" value="SiSi">Si</mat-radio-button>
+            <mat-form-field>
+                <textarea matInput type="text" formControlName="porque" placeholder="¿Por qué?">  </textarea>
+                <mat-error *ngIf="form.get('comocuando').invalid">Por favor, escriba el porque</mat-error>
+             </mat-form-field>
+        <mat-radio-button class="radioButton" value="NoNo">No</mat-radio-button>
+            <mat-form-field>
+                <textarea matInput type="text" formControlName="obs" placeholder="Observaciones">  </textarea>
+                <mat-error *ngIf="form.get('comocuando').invalid">Por favor, escriba las observaciones</mat-error>
+            </mat-form-field>
+      </mat-radio-group>
+
+      <mat-radio-group class="radioGroup" formControlName="exploracion">
+        <span>Exploración de la cavidad oral</span>
+        <mat-radio-button class="radioButton" value="anor">No hay anormalidad</mat-radio-button>
+        <mat-radio-button class="radioButton" value="lab">Labios</mat-radio-button>
+        <mat-radio-button class="radioButton" value="car">Carrillo</mat-radio-button>
+        <mat-radio-button class="radioButton" value="len">Lengua</mat-radio-button>
+        <mat-radio-button class="radioButton" value="pig">Pigmentación</mat-radio-button>
+        <mat-radio-button class="radioButton" value="pis">Piso de boca</mat-radio-button>
+        <mat-radio-button class="radioButton" value="pal">Paladar</mat-radio-button>
+        <mat-radio-button class="radioButton" value="oro">Orofaringe</mat-radio-button>
+        <mat-radio-button class="radioButton" value="enc">Encia</mat-radio-button>
+        <mat-radio-button class="radioButton" value="glan">Glansulas salivales</mat-radio-button>
+      </mat-radio-group>
+
+      <mat-radio-group class="radioGroup" formControlName="deschigieneoral">
+        <span>Descripción higiene oral</span>
+        <mat-radio-button class="radioButton" value="bu">Buena</mat-radio-button>
+        <mat-radio-button class="radioButton" value="re">Regular</mat-radio-button>
+        <mat-radio-button class="radioButton" value="mal">Mala</mat-radio-button>
+        <mat-radio-button class="radioButton" value="hali">Halitosis</mat-radio-button>
+        <mat-radio-button class="radioButton" value="mat">Materia alba</mat-radio-button>
+        <mat-radio-button class="radioButton" value="pic">Picmentaciones</mat-radio-button>
+        <mat-radio-button class="radioButton" value="pla">Placa</mat-radio-button>
+      </mat-radio-group>
+
+      <mat-radio-group class="radioGroup" formControlName="calculos">
+        <span>Calculos</span>
+        <mat-radio-button class="radioButton" value="a">Ausentes</mat-radio-button>
+        <mat-radio-button class="radioButton" value="r">Regulares</mat-radio-button>
+        <mat-radio-button class="radioButton" value="ab">Abundantes</mat-radio-button>
+        <mat-radio-button class="radioButton" value="su">Supragingivales</mat-radio-button>
+        <mat-radio-button class="radioButton" value="sub">Subgingivales</mat-radio-button>
+      </mat-radio-group>
+
+      <mat-form-field>
+          <textarea matInput formControlName="exploracionradiografica" placeholder="Exploracion radiografica"></textarea>
+          <mat-error *ngIf="form.get('direccion').invalid">Por favor, ingresa la exploracion .</mat-error>
+      </mat-form-field>
+
       <button mat-raised-button color="accent" type="submit">Guardar</button>
     </form>
   
