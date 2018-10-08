@@ -31,6 +31,8 @@ export class IdentificacionComponent implements OnInit {
   }
 
   addIdent() {
+
+    
     this.identService.addIdent(
       this.form.value.nombre,
       this.form.value.sexo,

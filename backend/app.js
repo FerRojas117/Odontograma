@@ -13,6 +13,9 @@ mongoose
     "mongodb://localhost:27017/odontograma",
     {
       useNewUrlParser: true
+    },
+    {
+      autoIndex: false
     }
   )
   .then(() => {

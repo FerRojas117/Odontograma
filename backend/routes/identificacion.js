@@ -18,11 +18,11 @@ router.post("", (req, res, next) => {
       procedencia: req.body.procedencia,
       estadoSocioeconomico: req.body.estadoSocioeconomico
     });
-    console.log(ident);
     ident.save()
     .then(createdIdent => {
       res.status(201).json({
-        message: "Identificacion added successfully"
+        message: "Identificacion added successfully",
+        id: createdIdent._id
       });
     })
     .catch((err) => {

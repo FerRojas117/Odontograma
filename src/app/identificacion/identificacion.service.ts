@@ -9,6 +9,8 @@ import { Ident } from '../modelos/identificacion.model';
 @Injectable({ providedIn: 'root' })
 export class IdentService {
   private ident: Ident[] = [];
+  private id: string;
+
 
   constructor(private http: HttpClient) {}
 
@@ -36,9 +38,9 @@ export class IdentService {
       estadoSocioeconomico: estadoSocioeconomico
     };
     this.http
-      .post<{ message: string }>('http://localhost:3000/api/ident', registrarIdent)
+      .post<{ _id: string }>('http://localhost:3000/api/ident', registrarIdent)
       .subscribe(responseData => {
-        console.log(responseData);
+        this.id = responseData._id;
       });
   }
 

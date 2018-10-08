@@ -28,6 +28,7 @@ import {
  } from '@angular/material';
 import { InicioComponent } from './inicio/inicio.component';
 import { IdentificacionComponent } from './identificacion/identificacion.component';
+import { DienteComponent } from './diente/diente.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { IdentificacionComponent } from './identificacion/identificacion.compone
     HomeComponent,
     SidenavFixedComponent,
     InicioComponent,
-    IdentificacionComponent
+    IdentificacionComponent,
+    DienteComponent
   ],
   imports: [
     BrowserModule,
