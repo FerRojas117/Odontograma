@@ -8,6 +8,11 @@ import { HomeComponent } from './home/home.component';
 import { SidenavFixedComponent } from './Sidenav/sidenav.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { IdentificacionComponent } from './identificacion/identificacion.component';
+import { DiagnosticopulparComponent } from './diagnosticopulpar/diagnosticopulpar.component';
+import { ConsentimientoComponent } from './consentimiento/consentimiento.component';
+import { PlandetratamientoComponent } from './plandetratamiento/plandetratamiento.component';
+import { HojadetratamientoComponent } from './hojadetratamiento/hojadetratamiento.component';
+
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -18,6 +23,10 @@ const routes: Routes = [
      component: SidenavFixedComponent,
      children: [
        { path: 'identificacion', component: IdentificacionComponent },
+       { path: 'diagnosticopulpar', component: DiagnosticopulparComponent },
+       { path: 'consentimiento', component: ConsentimientoComponent },
+       { path: 'plandetratamiento', component: PlandetratamientoComponent },
+       { path: 'hojadetratamiento', component: HojadetratamientoComponent },
       ]
   },
   { path: 'inicio', component: InicioComponent },
