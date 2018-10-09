@@ -26,6 +26,15 @@ export class DiagnosticopulparComponent implements OnInit {
       reaccionpulpar: new FormControl(null, { validators: [Validators.required] }),
       testcavit: new FormControl(null, { validators: [Validators.required] }),
       observaciones: new FormControl(null, { validators: [Validators.required] }),
+      organob: new FormControl(null, { validators: [Validators.required] }),
+      caries: new FormControl(null, { validators: [Validators.required] }),
+      trauma: new FormControl(null, { validators: [Validators.required] }),
+      enfperiodonta: new FormControl(null, { validators: [Validators.required] }),
+      obtdefectuosa: new FormControl(null, { validators: [Validators.required] }),
+      fractura: new FormControl(null, { validators: [Validators.required] }),
+      corona: new FormControl(null, { validators: [Validators.required] }),
+      raiz: new FormControl(null, { validators: [Validators.required] }),
+      otro: new FormControl(null, { validators: [Validators.required] }),
     });
   }
 
