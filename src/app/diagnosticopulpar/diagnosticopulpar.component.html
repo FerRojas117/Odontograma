@@ -1,3 +1,103 @@
-<p>
-    diagnosticopulpar works!
-  </p>
+<mat-card class="cardForm">
+  <form [formGroup]="form" (submit)="addIdent()">
+
+    <p>A. Signos y Síntomas</p>
+
+    <mat-form-field>
+      <textarea matInput type="text" formControlName="organoa" placeholder="Órgano">  </textarea>
+      <mat-error *ngIf="form.get('organoa').invalid">Por favor, escribe el nombre del órgano.</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+        <textarea matInput formControlName="tipodedolor" placeholder="Tipo de Dolor"></textarea>
+        <mat-error *ngIf="form.get('tipodedolor').invalid">Por favor, escribe el tipo de dolor.</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <textarea matInput formControlName="episodios" placeholder="Episodios"></textarea>
+      <mat-error *ngIf="form.get('episodios').invalid">Por favor, escribe los episodios.</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <textarea matInput formControlName="percusion" placeholder="Percusión"></textarea>
+      <mat-error *ngIf="form.get('percusion').invalid">Por favor, escribe la percusión.</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <textarea matInput formControlName="movilidad" placeholder="Movilidad"></textarea>
+      <mat-error *ngIf="form.get('movilidad').invalid">Por favor, escribe la movilidad.</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <textarea matInput formControlName="cambiodecolor" placeholder="Cambio de Color"></textarea>
+      <mat-error *ngIf="form.get('cambiodecolor').invalid">Por favor, escribe el cambio de color.</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <textarea matInput formControlName="trumetaccion" placeholder="Trumetacción"></textarea>
+      <mat-error *ngIf="form.get('trumetaccion').invalid">Por favor, escribe la trumetacción</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <textarea matInput formControlName="intra" placeholder="Intra"></textarea>
+      <mat-error *ngIf="form.get('intra').invalid">Por favor, escribe el intra.</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <textarea matInput formControlName="extra" placeholder="Extra"></textarea>
+      <mat-error *ngIf="form.get('extra').invalid">Por favor, escribe el extra.</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <textarea matInput formControlName="fisura" placeholder="Fisura"></textarea>
+      <mat-error *ngIf="form.get('fisura').invalid">Por favor, escribe la fisura.</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <textarea matInput formControlName="reaccionpulpar" placeholder="Reacción Pulpar"></textarea>
+      <mat-error *ngIf="form.get('reaccionpulpar').invalid">Por favor, escribe la reacción pulpar.</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <textarea matInput formControlName="testcavit" placeholder="Test Cavit"></textarea>
+      <mat-error *ngIf="form.get('testcavit').invalid">Por favor, escribe el test cavit.</mat-error>
+    </mat-form-field>
+
+    <br>
+    <button mat-raised-button color="accent" type="submit">Enviar</button>
+    <br><br>
+
+    <p>B. Etiología</p>
+
+
+  
+    <br>
+    <button mat-raised-button color="accent" type="submit">Enviar</button>
+    <br><br>
+
+    <p>C. Análisis Radiográfico</p>
+
+
+  
+    <br>
+    <button mat-raised-button color="accent" type="submit">Enviar</button>
+    <br><br>
+
+    <p>D. Diagnóstico</p>
+
+
+  
+    <br>
+    <button mat-raised-button color="accent" type="submit">Enviar</button>
+    <br><br>
+
+    <mat-form-field>
+      <textarea matInput formControlName="observaciones" placeholder="Observaciones"></textarea>
+      <mat-error *ngIf="form.get('observaciones').invalid">Por favor, escribe tus observaciones.</mat-error>
+    </mat-form-field>
+  
+  
+  
+  </form>
+
+</mat-card>
