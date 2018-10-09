@@ -1,0 +1,35 @@
+<mat-card class="cardForm">
+    <form [formGroup]="form" (submit)="addIdent()">
+        <h2>Resultados Previos</h2>
+
+      <mat-radio-group class="radioGroup" formControlName="presionArterial">
+        <span>PresionArterial</span>
+        <mat-radio-button class="radioButton" value="fiebreReumatica">Fiebre Reúmatica</mat-radio-button>
+        <mat-radio-button class="radioButton" value="hemorragias">Hemorragias</mat-radio-button>
+        <mat-radio-button class="radioButton" value="anemia">Anemia</mat-radio-button>
+        <mat-radio-button class="radioButton" value="infarto">Infarto</mat-radio-button>
+        <mat-radio-button class="radioButton" value="otros">Otros</mat-radio-button>
+      </mat-radio-group>
+  
+      <mat-radio-group class="radioGroup" formControlName="aparatoRespiratorio">
+            <span>AparatoRespiratorio</span>
+            <mat-radio-button class="radioButton" value="tuberculosis">Tuberculósis</mat-radio-button>
+            <mat-radio-button class="radioButton" value="neumonia">Neúmonia</mat-radio-button>
+            <mat-radio-button class="radioButton" value="hasma">Hasma</mat-radio-button>
+            <mat-radio-button class="radioButton" value="faringeamigdalitis">Faringeamigdalitis</mat-radio-button>
+            <mat-radio-button class="radioButton" value="bronquitis">Bronquitis</mat-radio-button>
+        </mat-radio-group>
+
+      <mat-radio-group class="radioGroup" formControlName="aparatoDigestivo">
+            <span>aparatoDigestivo</span>
+            <mat-radio-button class="radioButton" value="gastritis">Gastitris</mat-radio-button>
+            <mat-radio-button class="radioButton" value="colitis">Colitis</mat-radio-button>
+            <mat-radio-button class="radioButton" value="gastroenteritis">Gastroenteritis</mat-radio-button>
+            <mat-radio-button class="radioButton" value="hepatitis">Hepatitis</mat-radio-button>
+            <mat-radio-button class="radioButton" value="diabetes">Diabetes</mat-radio-button>
+        </mat-radio-group>
+
+      <button mat-raised-button color="accent" type="submit">Guardar</button>
+    </form>
+  
+  </mat-card>
