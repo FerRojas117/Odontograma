@@ -22,7 +22,7 @@ router.post("", (req, res, next) => {
     .then(createdIdent => {
       res.status(201).json({
         message: "Identificacion added successfully",
-        id: createdIdent._id
+      //  id: createdIdent._id
       });
     })
     .catch((err) => {
