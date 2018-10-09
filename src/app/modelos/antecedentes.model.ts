@@ -6,6 +6,7 @@ export interface Antece {
     radiografias: string;
     cuantascuando: string;
     orgdentarios: string;
+    cuantosporque: string;
     remplazo: string;
     comocuando: string;
     cirugias: string;
@@ -24,6 +25,7 @@ export interface Antece {
     hemorragias: string;
     hsig: string;
     reacalergicas: string;
+    tipreac: string;
     cualesali: string;
     cualesd: string;
     cualesanes: string;
