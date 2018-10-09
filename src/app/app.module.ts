@@ -28,6 +28,10 @@ import {
  } from '@angular/material';
 import { InicioComponent } from './inicio/inicio.component';
 import { IdentificacionComponent } from './identificacion/identificacion.component';
+import { DiagnosticopulparComponent } from './diagnosticopulpar/diagnosticopulpar.component';
+import { PlandetratamientoComponent } from './plandetratamiento/plandetratamiento.component';
+import { HojadetratamientoComponent } from './hojadetratamiento/hojadetratamiento.component';
+import { ConsentimientoComponent } from './consentimiento/consentimiento.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +42,11 @@ import { IdentificacionComponent } from './identificacion/identificacion.compone
     HomeComponent,
     SidenavFixedComponent,
     InicioComponent,
-    IdentificacionComponent
+    IdentificacionComponent,
+    DiagnosticopulparComponent,
+    PlandetratamientoComponent,
+    HojadetratamientoComponent,
+    ConsentimientoComponent
   ],
   imports: [
     BrowserModule,
