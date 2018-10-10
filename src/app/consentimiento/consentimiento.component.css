@@ -1,10 +1,10 @@
 mat-form-field {
     text-align: center;
-    width: 80%;
+    width: 20%;
   }
   
   .cardForm {
-    text-align: center;
+    text-align: justify;
   }
   
   .radioGroup {
@@ -12,7 +12,6 @@ mat-form-field {
     display: inline-flex;
     flex-direction: column;
   }
-  
   .radioButton {
     margin: 5px;
   }
