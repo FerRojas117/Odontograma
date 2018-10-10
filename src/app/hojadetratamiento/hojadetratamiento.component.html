@@ -35,6 +35,21 @@
     <button mat-raised-button color="accent" type="submit">Enviar</button>
     <br><br>
 
+    <mat-form-field>
+      <textarea matInput formControlName="paciente" placeholder="Paciente"></textarea>
+      <mat-error *ngIf="form.get('paciente').invalid">Por favor, escribe el nombre del paciente.</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <textarea matInput formControlName="alumno" placeholder="Alumno"></textarea>
+      <mat-error *ngIf="form.get('alumno').invalid">Por favor, escribe el nombre del alumno.</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <textarea matInput formControlName="profesorresponsable" placeholder="Profesor Responsable"></textarea>
+      <mat-error *ngIf="form.get('profesorresponsable').invalid">Por favor, escribe el nombre del profesor responsable.</mat-error>
+    </mat-form-field>
+
   </form>
 
 </mat-card>

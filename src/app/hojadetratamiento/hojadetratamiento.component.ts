@@ -18,7 +18,9 @@ export class HojadetratamientoComponent implements OnInit {
       tratamiento: new FormControl(null, {validators: [Validators.required] }),
       costo: new FormControl(null, {validators: [Validators.required] }),
       nopoliza: new FormControl(null, {validators: [Validators.required] }),
-      
+      paciente: new FormControl(null, {validators: [Validators.required] }),
+      alumno: new FormControl(null, {validators: [Validators.required] }),
+      profesorresponsable: new FormControl(null, {validators: [Validators.required] }),
     });
   }
 
