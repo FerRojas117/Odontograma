@@ -6,6 +6,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
   templateUrl: './consentimiento.component.html',
   styleUrls: ['./consentimiento.component.css']
 })
+
 export class ConsentimientoComponent implements OnInit {
   form: FormGroup;
   constructor() { }
