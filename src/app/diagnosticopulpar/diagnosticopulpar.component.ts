@@ -37,7 +37,6 @@ export class DiagnosticopulparComponent implements OnInit {
       otro: new FormControl(null, { validators: [Validators.required] }),
       otro2: new FormControl(null, { validators: [Validators.required] }),
       otro3: new FormControl(null, { validators: [Validators.required] }),
-      otro4: new FormControl(null, { validators: [Validators.required] }),
       organoc: new FormControl(null, { validators: [Validators.required] }),
       calcificaciones: new FormControl(null, { validators: [Validators.required] }),
       corona2: new FormControl(null, { validators: [Validators.required] }),
@@ -49,6 +48,13 @@ export class DiagnosticopulparComponent implements OnInit {
       penapico: new FormControl(null, { validators: [Validators.required] }),
       radicular: new FormControl(null, { validators: [Validators.required] }),
       obturaciondefectuosa2: new FormControl(null, { validators: [Validators.required] }),
+      organodentario: new FormControl(null, { validators: [Validators.required] }),
+      vital: new FormControl(null, { validators: [Validators.required] }),
+      reversible: new FormControl(null, { validators: [Validators.required] }),
+      irreversible: new FormControl(null, { validators: [Validators.required] }),
+      novital: new FormControl(null, { validators: [Validators.required] }),
+      aguda: new FormControl(null, { validators: [Validators.required] }),
+      cronica: new FormControl(null, { validators: [Validators.required] }),
     });
   }
 
