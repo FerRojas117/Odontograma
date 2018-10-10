@@ -45,33 +45,31 @@
         <mat-error *ngIf="form.get('nombre1').invalid">Por favor, escribe el nombre del paciente o tutor.</mat-error>
     </mat-form-field>
 
-    <br><br>b.)NO AUTORIZO al personal tratante me realicen los procedimientos necesarios para mi atención estomatológica.<br><br>
+    <br>
+    <button mat-raised-button color="accent" type="submit">Autorizar</button>
+    <br><br>
+
+    b.)NO AUTORIZO al personal tratante me realicen los procedimientos necesarios para mi atención estomatológica.<br><br>
 
     <mat-form-field>
         <textarea matInput formControlName="nombre2" placeholder="Nombre del Paciente o Tutor"></textarea>
         <mat-error *ngIf="form.get('nombre2').invalid">Por favor, escribe el nombre del paciente o tutor.</mat-error>
     </mat-form-field>
 
-    </p>
-
-
-
-
-
-
-
-
-
-
-    <br>
-    <button mat-raised-button color="accent" type="submit">Autorizar</button>
-    <br><br>
-
-
-
     <br>
     <button mat-raised-button color="accent" type="submit">No Autorizar</button>
     <br><br>
+
+    
+
+    </p>
+
+
+    
+
+
+
+    
 
   </form>
 
