@@ -1,3 +1,33 @@
-<p>
-  consentimiento works!
-</p>
+<mat-card class="cardForm">
+  <form [formGroup]="form" (submit)="addIdent()">
+
+    <p>Yo 
+    <mat-form-field>
+      <textarea matInput formControlName="paciente" placeholder="Paciente"></textarea>
+      <mat-error *ngIf="form.get('paciente').invalid">Por favor, escribe el nombre del paciente.</mat-error>
+    </mat-form-field>
+    , manifiesto que el personal
+    </p>
+
+
+
+
+
+
+
+
+
+
+    <br>
+    <button mat-raised-button color="accent" type="submit">Autorizar</button>
+    <br><br>
+
+
+
+    <br>
+    <button mat-raised-button color="accent" type="submit">No Autorizar</button>
+    <br><br>
+
+  </form>
+
+</mat-card>
