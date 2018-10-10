@@ -4,6 +4,7 @@ const identificacion = mongoose.Schema({
   nombre: { type: String, required: true },
   sexo: { type: String, required: true },
   edad: { type: String, required: true },
+  fechaNac: { type: String, required: true },
   estadoCivil: { type: String, required: true },
   direccion: { type: String, required: true },
   telefono: { type: String, required: true },

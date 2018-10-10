@@ -10,6 +10,7 @@ router.post("", (req, res, next) => {
       nombre: req.body.nombre,
       sexo: req.body.sexo,
       edad: req.body.edad,
+      fechaNac:req.body.fechaNac,
       estadoCivil: req.body.estadoCivil,
       direccion: req.body.direccion,
       telefono: req.body.telefono,

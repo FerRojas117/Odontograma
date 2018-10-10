@@ -17,7 +17,7 @@ router.post("", (req, res, next) => {
     neumonia: req.body.neumonia,
     asma: req.body.asma,
     faringoamigdalitis: req.body.faringoamigdalitis,
-    bornquitis: req.body.bornquitis,
+    bronquitis: req.body.bronquitis,
     gastritis: req.body.gastritis,
     colitis: req.body.colitis,
     gastroenteritis: req.body.gastroenteritis,

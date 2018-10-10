@@ -3,6 +3,8 @@ const mongoose = require("mongoose");
 const odontograma = mongoose.Schema({
   fecha: { type: String, required: true },
   trabajo: { type: String, required: true },
+  profesor: { type: String, required: true },
+  
   permanentes: [
     { cariadas: Boolean, required: true },
     { perdidas: Boolean, required: true },

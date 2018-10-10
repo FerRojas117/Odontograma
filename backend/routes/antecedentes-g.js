@@ -16,16 +16,22 @@ router.post("", (req, res, next) => {
     sedentarismo: req.body.sedentarismo,
     calidadHabitacion: req.body.calidadHabitacion,
     personalesPatologicos: req.body.personalesPatologicos,
-    //ginecoObstetricos
-    memoria: req.body.memoria,
-    ritmo: req.body.ritmo,
-    edadInicio: req.body.edadInicio,
-    embarazo: req.body.embarazo,
-    cesareas: req.body.cesareas,
-    abortos: req.body.abortos,
-    hijosBPeso: req.body.hijosBPeso,
-    edadHijos: req.body.edadHijos,
-    tipoPlanificacion: req.body.tipoPlanificacion
+    ginecoObstetricos:{
+      menarca: req.body.menarca,
+      ritmo: req.body.ritmo,
+      edadInicio: req.body.edadInicio,
+      ultimaRegla:req.body.ultimaRegla ,
+      partos:req.body.partos,
+      ultimoParto:req.body.ultimoParto,
+      embarazo: req.body.embarazo,
+      cesareas: req.body.cesareas,
+      abortos: req.body.abortos,
+      hijosBPeso: req.body.hijosBPeso,
+      hijosMac:req.body.hijosMac,
+      edadHijos: req.body.edadHijos,
+      tipoPlanificacion: req.body.tipoPlanificacion,
+      tiempoMet:req.body.tiempoMet
+    }
     });
     antecedentesG.save()
     .then(createdIdent => {

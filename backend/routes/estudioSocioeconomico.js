@@ -7,18 +7,18 @@ const router = express.Router();
 router.post("", (req, res, next) => {
   console.log(req);
   const socioec = new Socioec({
-    nombre: req.body.nombre,
-    edad: req.body.edad,
-    direccion: req.body.direccion,
+    nombre: req.body.nombre, //r_ident
+    edad: req.body.edad, //r_ident
+    direccion: req.body.direccion,//r_ident
     tiempoRadicar: req.body.tiempoRadicar,
     fechaNacimiento: req.body.fechaNacimiento,
-    telefono: req.body.telefono,
-    lugarDeNacimiento: req.body.lugarDeNacimiento,
-    sexo: req.body.sexo,
-    estadoCivil: req.body.estadoCivil,
-    ocupacion: req.body.ocupacion,
+    telefono: req.body.telefono,//r_ident
+    lugarDeNacimiento: req.body.lugarDeNacimiento,//r_ident
+    sexo: req.body.sexo,//r_ident
+    estadoCivil: req.body.estadoCivil,//r_ident
+    ocupacion: req.body.ocupacion,//r_ident
     lugar: req.body.lugar,
-    direccion: req.body.direccion,
+    direccion: req.body.direccion,//r_ident
     rangoIngresos: req.body.rangoIngresos,
     gradoInstruccion: req.body.gradoInstruccion,
     noPersonasFamilia: req.body.noPersonasFamilia,

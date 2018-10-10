@@ -9,28 +9,34 @@ router.post("", (req, res, next) => {
   const odontograma = new Odontograma({
     fecha: req.body.fecha,
     trabajo: req.body.trabajo,
-    //permanentes
-    cariadas: req.body.cariadas,
-    perdidas: req.body.perdidas,
-    obturadas: req.body.obturadas,
-    extracciones: req.body.extracciones,
-    indicadas: req.body.indicadas,
-    //obturadas
-    cariadas: req.body.cariadas,
-    perdidas: req.body.perdidas,
-    obturadas: req.body.obturadas,
-    extracciones: req.body.extracciones,
-    indicadas: req.body.indicadas,
-    //operador
-    operador: req.body.operador,
-    cuat: req.body.cuat,
-    equipo: req.body.equipo,
-    sillon: req.body.sillon,
-    //auxiliar
-    auxiliar: req.body.auxiliar,
-    cuat: req.body.cuat,
-    equipo: req.body.equipo,
-    sillon: req.body.sillon,
+    profesor: req.body.profesor,
+    
+    permanentes:{
+      cariadas: req.body.cariadas,
+      perdidas: req.body.perdidas,
+      obturadas: req.body.obturadas,
+      extracciones: req.body.extracciones,
+      indicadas: req.body.indicadas
+    },
+    obturadas:{
+      cariadas: req.body.cariadas,
+      perdidas: req.body.perdidas,
+      obturadas: req.body.obturadas,
+      extracciones: req.body.extracciones,
+      indicadas: req.body.indicadas
+    },
+    operador:{
+      operador: req.body.operador,
+      cuat: req.body.cuat,
+      equipo: req.body.equipo,
+      sillon: req.body.sillon
+    },
+    auxiliar:{
+      auxiliar: req.body.auxiliar,
+      cuat: req.body.cuat,
+      equipo: req.body.equipo,
+      sillon: req.body.sillon
+    }
     });
     odontograma.save()
     .then(createdIdent => {

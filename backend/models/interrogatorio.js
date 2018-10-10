@@ -11,7 +11,7 @@ const interrogatorio = mongoose.Schema({
   neumonia: { type: Boolean, required: true },
   asma: { type: Boolean, required: true },
   faringoamigdalitis: { type: Boolean, required: true },
-  bornquitis: { type: Boolean, required: true },
+  bronquitis: { type: Boolean, required: true },
   gastritis: { type: Boolean, required: true },
   colitis: { type: Boolean, required: true },
   gastroenteritis: { type: Boolean, required: true },

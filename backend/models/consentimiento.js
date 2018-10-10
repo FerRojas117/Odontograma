@@ -5,7 +5,8 @@ const consentimiento = mongoose.Schema({
   alumno: { type: String, required: true },
   ododntologo: { type: String, required: true },
   autorizoNom: { type: String },
-  noAutorizoNom: { type: String }
+  noAutorizoNom: { type: String },
+  fechaNom: { type: String }
 });
 
 module.exports = mongoose.model("Consentimiento", consentimiento);

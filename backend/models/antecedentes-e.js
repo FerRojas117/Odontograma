@@ -73,6 +73,8 @@ const antecedentes_e = mongoose.Schema({
     { cualesD: String },
     { anestesicos: Boolean },
     { cualesAn: String },
+    { cosmeticos: Boolean },
+    { cualesC: String },
     { otros: Boolean },
     { cualesO: String }
   ],

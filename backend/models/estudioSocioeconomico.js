@@ -1,19 +1,19 @@
 const mongoose = require("mongoose");
 
 const socioEconomico = mongoose.Schema({
-  nombre: { type: String, required: true },
-  edad: { type: String, required: true },
-  direccion: { type: String, required: true },
+  nombre: { type: String, required: true },//r_ident
+  edad: { type: String, required: true },//r_ident
+  direccion: { type: String, required: true },//r_ident
   tiempoRadicar: { type: String, required: true },
   fechaNacimiento: { type: String, required: true },
-  telefono: { type: String, required: true },
-  lugarDeNacimiento: { type: String, required: true },
+  telefono: { type: String, required: true },//r_ident
+  lugarDeNacimiento: { type: String, required: true },//r_ident
   nacionalidad: { type: String, required: true },
-  sexo: { type: String, required: true },
-  estadoCivil: { type: String, required: true },
-  ocupacion: { type: String, required: true },
-  lugar: { type: String, required: true },
-  direccion: { type: String, required: true },
+  sexo: { type: String, required: true },//r_ident
+  estadoCivil: { type: String, required: true },//r_ident
+  ocupacion: { type: String, required: true },//r_ident
+  lugar: { type: String, required: true },//r_ident
+  direccion: { type: String, required: true },//r_ident
   rangoIngresos: { type: String, required: true },
   gradoInstruccion: { type: String, required: true },
   noPersonasFamilia: { type: String, required: true },

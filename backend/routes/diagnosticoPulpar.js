@@ -13,38 +13,50 @@ router.post("", (req, res, next) => {
     percusion: req.body.percusion,
     movilidad: req.body.movilidad,
     cambioColor: req.body.cambioColor,
-    trumetaccion: req.body.trumetaccion,
-    intra: req.body.intra,
-    extra: req.body.extra,
-    fisura: req.body.fisura,
-    reaccionPulpar: req.body.reaccionPulpar,
-    testCavit: req.body.testCavit,
+    trumetaccion:{
+      intra: req.body.intra,
+      extra: req.body.extra
+    },
+    fistula: req.body.fistula,
+    reaccionPulpar: {
+      testCavit: req.body.testCavit,
+      calor: req.body.calor,
+      frio: req.body.frio
+    },
     organoB: req.body.organoB,
     caries: req.body.caries,
     trauma: req.body.trauma,
     enfPeriodonta: req.body.enfPeriodonta,
     obtDefectuosa: req.body.obtDefectuosa,
-    fractura: req.body.fractura,
-    raiz: req.body.raiz,
+    fractura: 
+    {raiz: req.body.raiz,
+      corona: req.body.corona,
+    },
     otro: req.body.otro,
+
     organoC: req.body.organoC,
-    calificaciones: req.body.calificaciones,
-    corona: req.body.corona,
-    raiz: req.body.raiz,
-    resorcion: req.body.resorcion,
-    interno: req.body.interno,
-    externo: req.body.externo,
-    refacciones: req.body.refacciones,
-    penapico: req.body.penapico,
-    radicular: req.body.radicular,
+    calcificaciones: 
+    {corona: req.body.corona,
+    raiz: req.body.raiz}
+    ,
+    resorcion: 
+    {interno: req.body.interno,
+    externo: req.body.externo
+    },
+    rarefaccion: 
+    {periapical: req.body.periapical,
+    radicular: req.body.radicular
+    },
     obturacionDefectuosa: req.body.obturacionDefectuosa,
+    otro:req.body.otro,
+    
     organoDentario: req.body.organoDentario,
-    vital: req.body.vital,
-    reversible: req.body.reversible,
-    irreversible: req.body.irreversible,
-    noVital: req.body.noVital,
-    aguda: req.body.aguda,
-    cronica: req.body.cronica,
+    vital: 
+   { reversible: req.body.reversible,
+    irreversible: req.body.irreversible},
+    noVital: 
+    {aguda: req.body.aguda,
+    cronica: req.body.cronica},
     observaciones: req.body.observaciones
     });
     diagPulpar.save()

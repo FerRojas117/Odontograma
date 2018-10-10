@@ -9,9 +9,10 @@ router.post("", (req, res, next) => {
   const consentimiento = new Consentimiento({
     paciente: req.body.paciente,
     alumno: req.body.religion,
-    ododntologo: req.bpacienteody.ododntologo,
+    odontologo: req.body.odontologo,
     autorizoNom: req.body.autorizoNom,
-    noAutorizoNom: req.body.noAutorizoNom
+    noAutorizoNom: req.body.noAutorizoNom,
+    fechaNom: req.body.fechaNom
     });
     consentimiento.save()
     .then(createdIdent => {

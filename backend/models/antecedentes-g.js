@@ -11,16 +11,22 @@ const antecedentesG = mongoose.Schema({
   calidadHabitacion: { type: String, required: true },
   personalesPatologicos: { type: String, required: true },
   ginecoObstetricos: [
-    { memoria: Boolean },
+    { menarca: Boolean },
     { ritmo: Boolean },
     { edadInicio: Boolean },
+    { ultimaRegla: String }, //falto
     { embarazo: Boolean },
+    { partos: Boolean, required: true},//falto
+    { ultimoParto: String }, //falto
     { cesareas: Boolean },
     { abortos: Boolean },
     { hijosBPeso: Boolean },
-    { edadHijos: Boolean }
-  ],
-  tipoPlanificacion: { type: String, required: true },
+    { hijosMac: Boolean },//falto
+    { edadHijos: Boolean },
+    {tipoPlanificacion: String},
+    {tiempoMet: String},//falto
+  ]
+  
 });
 
 module.exports = mongoose.model("AntecedentesG", antecedentesG);
