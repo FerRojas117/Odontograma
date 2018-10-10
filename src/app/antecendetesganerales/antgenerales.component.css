@@ -1,0 +1,19 @@
+mat-form-field {
+    text-align: center;
+    width: 80%;
+  }
+  
+  .cardForm {
+    text-align: center;
+  }
+  
+  .radioGroup {
+    width: 100%;
+    display: inline-flex;
+    flex-direction: column;
+  }
+  
+  .radioButton {
+    margin: 5px;
+  }
+  

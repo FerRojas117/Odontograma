@@ -1,0 +1,75 @@
+<mat-card class="cardForm">
+    <form [formGroup]="form" (submit)="addAntG()">
+  
+      <mat-form-field>
+        <textarea matInput type="text" formControlName="anthereditarios" placeholder="Antecedentes Hereditarios">  </textarea>
+        <mat-error *ngIf="form.get('anthereditarios').invalid">Por favor, escribe los antecedentes hereditarios</mat-error>
+      </mat-form-field>
+  
+      <mat-form-field>
+          <span>Personales no patológicos</span>
+          <textarea matInput formControlName="religion" placeholder="Religion"></textarea>
+          <mat-error *ngIf="form.get('religion').invalid">Por favor, escribe la religion.</mat-error>
+      </mat-form-field>
+  
+      <mat-form-field>
+          <textarea matInput  formControlName="tiprelsex" placeholder="Tipo de relaciones sexuales"></textarea>
+          <mat-error *ngIf="form.get('tiprelsex').invalid">Por favor, escribe el tipo de relaciones sexuales.</mat-error>
+      </mat-form-field>
+  
+      <mat-form-field>
+          <textarea matInput formControlName="parejas" placeholder="Número de parejas"></textarea>
+          <mat-error *ngIf="form.get('parejas').invalid">Por favor, escribe el número de parejas.</mat-error>
+      </mat-form-field>
+  
+      <mat-form-field>
+          <textarea matInput formControlName="calalim" placeholder="Calidad de alimentación"></textarea>
+          <mat-error *ngIf="form.get('calalim').invalid">Por favor, escribe la calidad de alimentación.</mat-error>
+      </mat-form-field>
+  
+      <mat-form-field>
+          <textarea matInput formControlName="higpers" placeholder="Higiene personal"></textarea>
+          <mat-error *ngIf="form.get('higpers').invalid">Por favor, escribe como es la higiene personal.</mat-error>
+      </mat-form-field>
+  
+      <mat-form-field>
+          <textarea matInput formControlName="sedentarismo" placeholder="Sedentarismo"></textarea>
+          <mat-error *ngIf="form.get('sedentarismo').invalid">Por favor, escribe si hay sedentarismo.</mat-error>
+      </mat-form-field>
+  
+      <mat-form-field>
+          <textarea matInput  formControlName="calhabit" placeholder="Calidad de habitación"></textarea>
+          <mat-error *ngIf="form.get('calhabit').invalid">Por favor escribe la calidad de habitación.</mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+            <textarea matInput  formControlName="perspat" placeholder="Personales patológicos"></textarea>
+            <mat-error *ngIf="form.get('perspat').invalid">Por favor escribe los antecedentes patologicos personales.</mat-error>
+      </mat-form-field>
+  
+      <mat-radio-group class="radioGroup" formControlName="ginecoobst">
+        <span>Gineco-obstétricos</span>
+        <mat-radio-button class="radioButton" value="men">Menorrea</mat-radio-button>
+        <mat-radio-button class="radioButton" value="rit">Ritmo</mat-radio-button>
+        <mat-radio-button class="radioButton" value="edini">Edad inicio</dmat-radio-button>
+        <mat-radio-button class="radioButton" value="em">Embarazo</mat-radio-button>
+        <mat-radio-button class="radioButton" value="ces">Cesáreas</mat-radio-button>
+        <mat-radio-button class="radioButton" value="ab">Abortos</mat-radio-button>
+        <mat-radio-button class="radioButton" value="hbp">Hijos con bajo peso al nacer</dmat-radio-button>
+        <mat-radio-button class="radioButton" value="edhvi">Edad de hijos vivos </mat-radio-button>
+        <mat-form-field>
+                <textarea matInput  formControlName="edades" placeholder="Ingrese las edades"></textarea>
+                <mat-error *ngIf="form.get('edades').invalid">Por favor escribe las edades.</mat-error>
+          </mat-form-field>
+      </mat-radio-group>
+  
+      <mat-form-field>
+            <textarea matInput  formControlName="planifami" placeholder="Tipo de palnificación familiar"></textarea>
+            <mat-error *ngIf="form.get('planifami').invalid">Por favor escribe el tipo de planificacion familiar.</mat-error>
+      </mat-form-field>
+
+      <button mat-raised-button color="accent" type="submit">Guardar</button>
+    </form>
+  
+  </mat-card>
+  
