@@ -14,9 +14,7 @@ export class IdentificacionComponent implements OnInit {
 
   ngOnInit() {
     this.form = new FormGroup({
-      nombre: new FormControl(null, {
-        validators: [Validators.required, Validators.minLength(3)]
-      }),
+      nombre: new FormControl(null, {validators: [Validators.required, Validators.minLength(3)]}),
       content: new FormControl(null, { validators: [Validators.required] }),
       sexo: new FormControl(null, { validators: [Validators.required] }),
       edad: new FormControl(null, { validators: [Validators.required] }),
