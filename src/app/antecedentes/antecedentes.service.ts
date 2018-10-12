@@ -4,15 +4,15 @@ import { Subject } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 
-import { AntEst} from '../modelos/antecedentes_e.model';
+import { Antece } from '../modelos/antecedentes.model';
 
 @Injectable({ providedIn: 'root' })
 export class AnteceService {
-  private ident: AntEst[] = [];
+  private ident: Antece[] = [];
 
   constructor(private http: HttpClient) {}
 
-  addAntEst( motivoconsulta: string,
+  addAntece( motivoconsulta: string,
     cuanvisito: string,
     motivo: string,
     cdcuantiempo: string,
@@ -51,7 +51,7 @@ export class AnteceService {
     calculos: string,
     exploracionradiografica: string
     ) {
-    const registrarAntEst: any = {
+    const registrarAntece: any = {
       motivoconsulta: motivoconsulta,
       cuanvisito: cuanvisito,
       motivo: motivo,
