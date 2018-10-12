@@ -11,7 +11,9 @@ import {
   MatExpansionModule,
   MatProgressSpinnerModule,
   MatPaginatorModule,
-  MatRadioModule
+  MatRadioModule,
+  MatNativeDateModule,
+  MatTabBody
 } from '@angular/material';
 
 import { AppComponent } from './app.component';
@@ -32,6 +34,7 @@ import { DiagnosticopulparComponent } from './diagnosticopulpar/diagnosticopulpa
 import { PlandetratamientoComponent } from './plandetratamiento/plandetratamiento.component';
 import { HojadetratamientoComponent } from './hojadetratamiento/hojadetratamiento.component';
 import { ConsentimientoComponent } from './consentimiento/consentimiento.component';
+import {MatDatepickerModule} from '@angular/material/datepicker';
 
 @NgModule({
   declarations: [
@@ -64,8 +67,10 @@ import { ConsentimientoComponent } from './consentimiento/consentimiento.compone
     MatPaginatorModule,
     MatSidenavModule,
     HttpClientModule,
-    MatRadioModule
-  ],
+    MatRadioModule,
+    MatDatepickerModule,
+    MatNativeDateModule
+    ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
   ],
