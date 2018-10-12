@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { PlandetratService } from './plandetratamiento.service';
 
 @Component({
   selector: 'app-plandetratamiento',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class PlandetratamientoComponent implements OnInit {
-  constructor() { }
+  form: FormGroup;
+
+  constructor(public plandeTratamientoService: PlandetratService) { }
 
   ngOnInit() {
+    this.form = new FormGroup({
+    });
   }
-
+  addPlandeTrat() {
+    this.plandeTratamientoService.addPlandeTrat(
+    );
+  }
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { DiagnosticoService } from './diagnosticopulpar.service';
 
 @Component({
   selector: 'app-diagnosticopulpar',
@@ -8,7 +9,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 })
 export class DiagnosticopulparComponent implements OnInit {
   form: FormGroup;
-  constructor() { }
+  constructor(public diagnosticoService: DiagnosticoService) { }
 
   ngOnInit() {
     this.form = new FormGroup({
@@ -57,5 +58,51 @@ export class DiagnosticopulparComponent implements OnInit {
       cronica: new FormControl(null, { validators: [Validators.required] }),
     });
   }
-
+  addDiagnostico() {
+    this.diagnosticoService.addDiagnostico(
+      this.form.value.organoa,
+      this.form.value.content,
+      this.form.value.tipodedolor		,
+      this.form.value.episodios		,
+      this.form.value.percusion		,
+      this.form.value.movilidad		,
+      this.form.value.cambiodecolor		,
+      this.form.value.trumetaccion		,
+      this.form.value.intra		,
+      this.form.value.extra		,
+      this.form.value.fisura		,
+      this.form.value.    reaccionpulpar		,
+      this.form.value.	    testcavit		,
+      this.form.value.	    observaciones		,
+      this.form.value.	    organob		,
+      this.form.value.	    caries		,
+      this.form.value.	    trauma		,
+      this.form.value.	    enfperiodonta		,
+      this.form.value.	    obtdefectuosa		,
+      this.form.value.	    fractura		,
+      this.form.value.	    corona		,
+      this.form.value.	    raiz		,
+      this.form.value.	    otro		,
+      this.form.value.	    otro2		,
+      this.form.value.	    otro3		,
+      this.form.value.	    organoc		,
+      this.form.value.	    calcificaciones		,
+      this.form.value.	    corona2		,
+      this.form.value.	    raiz2		,
+      this.form.value.	    resorcion		,
+      this.form.value.	    interno		,
+      this.form.value.	    externo		,
+      this.form.value.	    refacciones		,
+      this.form.value.	    penapico		,
+      this.form.value.	    radicular		,
+      this.form.value.	    obturaciondefectuosa2		,
+      this.form.value.	    organodentario		,
+      this.form.value.	    vital		,
+      this.form.value.	    reversible		,
+      this.form.value.	    irreversible		,
+      this.form.value.	    novital		,
+      this.form.value.	    aguda		,
+      this.form.value.	    cronica,
+    );
+  }
 }
