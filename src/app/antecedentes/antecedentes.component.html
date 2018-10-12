@@ -78,21 +78,16 @@
         <mat-error *ngIf="form.get('higieneoral').invalid">Por favor, escribe con que frecuencia lo realizas.</mat-error>
     </mat-form-field>
 
-      <mat-radio-group class="radioGroup" formControlName="algvezhateni">
-        <span>Alguna vez ha tenido en su boca:</span>
-        <mat-radio-button class="radioButton" value="h">Hemorragias</mat-radio-button>
-        <mat-radio-button class="radioButton" value="d">Dolores</mat-radio-button>
-        <mat-radio-button class="radioButton" value="sd">Sabor desagradable</mat-radio-button>
-        <mat-radio-button class="radioButton" value="f">Fracturas</mat-radio-button>
-        <mat-radio-button class="radioButton" value="t">Trismus</mat-radio-button>
-        <mat-radio-button class="radioButton" value="p">Parecia</mat-radio-button>
-        <mat-radio-button class="radioButton" value="psa">Parestesia</mat-radio-button>
-        <mat-radio-button class="radioButton" value="o">Otros</mat-radio-button>
-            <mat-form-field>
+        <mat-form-field>
+          <mat-select placeholder="Alguna vez ha tenido en su boca:" [formControl]="malestar" multiple>
+            <mat-option *ngFor="let malestar of malestarList" [value]="Malestar">{{malestar}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field>
                 <textarea matInput type="text" formControlName="explique" placeholder="Explique">  </textarea>
                 <mat-error *ngIf="form.get('explique').invalid">Por favor, escribe de que tipo fueron los problemas</mat-error>
-             </mat-form-field>
-      </mat-radio-group>
+        </mat-form-field>
 
       <mat-radio-group class="radioGroup" formControlName="cuidadomedico">
         <span>¿Está bajo cuidado medico?</span>
@@ -181,39 +176,23 @@
             </mat-form-field>
       </mat-radio-group>
 
-      <mat-radio-group class="radioGroup" formControlName="exploracion">
-        <span>Exploración de la cavidad oral</span>
-        <mat-radio-button class="radioButton" value="anor">No hay anormalidad</mat-radio-button>
-        <mat-radio-button class="radioButton" value="lab">Labios</mat-radio-button>
-        <mat-radio-button class="radioButton" value="car">Carrillo</mat-radio-button>
-        <mat-radio-button class="radioButton" value="len">Lengua</mat-radio-button>
-        <mat-radio-button class="radioButton" value="pig">Pigmentación</mat-radio-button>
-        <mat-radio-button class="radioButton" value="pis">Piso de boca</mat-radio-button>
-        <mat-radio-button class="radioButton" value="pal">Paladar</mat-radio-button>
-        <mat-radio-button class="radioButton" value="oro">Orofaringe</mat-radio-button>
-        <mat-radio-button class="radioButton" value="enc">Encia</mat-radio-button>
-        <mat-radio-button class="radioButton" value="glan">Glansulas salivales</mat-radio-button>
-      </mat-radio-group>
+      <mat-form-field>
+        <mat-select placeholder="Exploración de la cavidad oral:" [formControl]="cavidad" multiple>
+          <mat-option *ngFor="let cavidad of cavidadList" [value]="Tiene">{{cavidad}}</mat-option>
+        </mat-select>
+      </mat-form-field>
 
-      <mat-radio-group class="radioGroup" formControlName="deschigieneoral">
-        <span>Descripción higiene oral</span>
-        <mat-radio-button class="radioButton" value="bu">Buena</mat-radio-button>
-        <mat-radio-button class="radioButton" value="re">Regular</mat-radio-button>
-        <mat-radio-button class="radioButton" value="mal">Mala</mat-radio-button>
-        <mat-radio-button class="radioButton" value="hali">Halitosis</mat-radio-button>
-        <mat-radio-button class="radioButton" value="mat">Materia alba</mat-radio-button>
-        <mat-radio-button class="radioButton" value="pic">Picmentaciones</mat-radio-button>
-        <mat-radio-button class="radioButton" value="pla">Placa</mat-radio-button>
-      </mat-radio-group>
+      <mat-form-field>
+        <mat-select placeholder="Higiene oral:" [formControl]="higieneo" multiple>
+          <mat-option *ngFor="let higieneo of higieneoList" [value]="Tiene">{{higieneo}}</mat-option>
+        </mat-select>
+      </mat-form-field>
 
-      <mat-radio-group class="radioGroup" formControlName="calculos">
-        <span>Calculos</span>
-        <mat-radio-button class="radioButton" value="a">Ausentes</mat-radio-button>
-        <mat-radio-button class="radioButton" value="r">Regulares</mat-radio-button>
-        <mat-radio-button class="radioButton" value="ab">Abundantes</mat-radio-button>
-        <mat-radio-button class="radioButton" value="su">Supragingivales</mat-radio-button>
-        <mat-radio-button class="radioButton" value="sub">Subgingivales</mat-radio-button>
-      </mat-radio-group>
+      <mat-form-field>
+        <mat-select placeholder="Calculos:" [formControl]="cal" multiple>
+          <mat-option *ngFor="let cal of calList" [value]="Tiene">{{cal}}</mat-option>
+        </mat-select>
+      </mat-form-field>
 
       <mat-form-field>
           <textarea matInput formControlName="exploracionradiografica" placeholder="Exploracion radiografica"></textarea>

@@ -7,6 +7,20 @@ import { AnteceService } from './antecedentes.service';
   templateUrl: './antecedentes.component.html',
   styleUrls: ['./antecedentes.component.css']
 })
+
+export class SelectMultipleExample1 {
+  malestar = new FormControl();
+  malestarList: string[] = ['Hemorragias', 'Dolores', 'Sabor desagradable', 'Fracturas', 'Trismus', 'Paresia', 'Parestesia', 'Otros'];
+  cavidad = new FormControl();
+  cavidadList: string[] = ['No hay anomalidad', 'Pigmentación', 'Labios', 'Carrillo y surco vestibular', 'Lengua', 'Glánsulas salivares(Tamaño,Calidad y flujo de saliva,etc)', 'Piso de boca', 'Paladar', 'Orofaringe', 'Encia'];
+  higieneo = new FormControl();
+  higieneoList: string[] = ['Buena', 'Regualar', 'Mala', 'Halitosis', 'Placa', 'Materia Alba', 'Pigmentaciones'];
+  cal = new FormControl();
+  calList: string[] = ['Ausentes', 'Reggulares', 'Abundantes', 'Supragingivales', 'Subgingivales'];
+
+}
+
+
 export class AntecedentesComponent implements OnInit {
   form: FormGroup;
 
