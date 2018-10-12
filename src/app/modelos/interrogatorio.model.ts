@@ -1,4 +1,4 @@
-export interface Ident {
+export interface Inter {
     presionArterial: string;
     aparatoRespitatorio: string;
     aparatoDigestivo: string;

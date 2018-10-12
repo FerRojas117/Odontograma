@@ -1,4 +1,4 @@
-export interface Ident {
+export interface LabGab {
     resultadosPrevios : string;
 
 }

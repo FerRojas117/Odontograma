@@ -4,15 +4,15 @@ import { HttpClient } from '@angular/common/http';
 //import { map } from 'rxjs/operators';
 
 
-import { Ident } from '../modelos/interrogatorio.model';
+import { Inter } from '../modelos/interrogatorio.model';
 
 @Injectable({ providedIn: 'root' })
-export class IdentService {
-  private ident: Ident[] = [];
+export class InterService {
+  private ident: Inter[] = [];
 
   constructor(private http: HttpClient) {}
 
-  addIdent(
+  addInter(
       presionArterial: string,
       aparatoRespiratorio: string,
       aparatoDigestivo: string,

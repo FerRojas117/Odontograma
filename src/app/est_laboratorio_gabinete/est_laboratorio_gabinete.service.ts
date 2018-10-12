@@ -2,15 +2,15 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 //import { Subject } from 'rxjs';
 //import { map } from 'rxjs/operators';
-import { Ident } from '../modelos/est_laboratorio_gabinete.model';
+import { LabGab } from '../modelos/est_laboratorio_gabinete.model';
 
 @Injectable({ providedIn: 'root' })
-export class IdentService {
-  private ident: Ident[] = [];
+export class LabGabService {
+  private labGab: LabGab[] = [];
 
   constructor(private http: HttpClient) {}
 
-  addIdent(
+  addLabGab(
       resultadosPrevios: string
       //Resultados de estudio Auxiliar del diagnostico practicado previamente
     ) {

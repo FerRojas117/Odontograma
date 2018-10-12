@@ -1,6 +1,6 @@
 import { Component, OnInit   } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { IdentService } from './interrogatorio.service';
+import { InterService } from './interrogatorio.service';
 
 @Component({
   selector: 'app-interrogatorio',
@@ -10,7 +10,7 @@ import { IdentService } from './interrogatorio.service';
 export class InterrogatorioComponent implements OnInit {
     form: FormGroup;
   
-    constructor(public identService: IdentService) {}
+    constructor(public interService: InterService) {}
   
     ngOnInit() {
       this.form = new FormGroup({
@@ -35,7 +35,7 @@ export class InterrogatorioComponent implements OnInit {
       });
     }
     addInter() {
-      this.identService.addInter(
+      this.interService.addInter(
         this.form.value.presionArterial,
         this.form.value.aparatoRespiratorio,
         this.form.value.aparatoRespiratorio,
