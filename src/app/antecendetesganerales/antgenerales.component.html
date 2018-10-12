@@ -5,9 +5,10 @@
         <textarea matInput type="text" formControlName="anthereditarios" placeholder="Antecedentes Hereditarios">  </textarea>
         <mat-error *ngIf="form.get('anthereditarios').invalid">Por favor, escribe los antecedentes hereditarios</mat-error>
       </mat-form-field>
-  
+    <br>
+            <span>Personales no patológicos</span>
+            <br>
       <mat-form-field>
-          <span>Personales no patológicos</span>
           <textarea matInput formControlName="religion" placeholder="Religion"></textarea>
           <mat-error *ngIf="form.get('religion').invalid">Por favor, escribe la religion.</mat-error>
       </mat-form-field>
@@ -41,23 +42,24 @@
           <textarea matInput  formControlName="calhabit" placeholder="Calidad de habitación"></textarea>
           <mat-error *ngIf="form.get('calhabit').invalid">Por favor escribe la calidad de habitación.</mat-error>
       </mat-form-field>
-
+      <br>
       <mat-form-field>
             <textarea matInput  formControlName="perspat" placeholder="Personales patológicos"></textarea>
             <mat-error *ngIf="form.get('perspat').invalid">Por favor escribe los antecedentes patologicos personales.</mat-error>
       </mat-form-field>
-  
+      <br>
       <mat-form-field>
         <mat-select placeholder="Gineco-Obstétricos" [formControl]="ginobs" multiple>
           <mat-option *ngFor="let ginobs of ginobsList" [value]="topping">{{ginobs}}</mat-option>
         </mat-select>
       </mat-form-field>
-      
+      <br>
       <mat-form-field>
             <textarea matInput  formControlName="planifami" placeholder="Tipo de palnificación familiar"></textarea>
             <mat-error *ngIf="form.get('planifami').invalid">Por favor escribe el tipo de planificacion familiar.</mat-error>
       </mat-form-field>
-
+    <br>
+    <br>
       <button mat-raised-button color="accent" type="submit">Guardar</button>
     </form>
   
