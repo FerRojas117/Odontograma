@@ -38,7 +38,7 @@ export class HojadeTratService {
 
     };
     this.http
-      .post<{ message: string }>('http://localhost:3000/api/ident', registrarDiagnostico)
+      .post<{ message: string }>('http://localhost:3000/api/ident', registrarHojadeTrat)
       .subscribe(responseData => {
         console.log(responseData);
       });

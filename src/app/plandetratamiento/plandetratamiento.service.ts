@@ -14,11 +14,11 @@ export class PlandetratService {
   addPlandeTrat( 
     
     ) {
-    const registrarDiagnostico: any = {
+    const registrarPlandeTratamiento: any = {
       
     };
     this.http
-      .post<{ message: string }>('http://localhost:3000/api/ident', registrarDiagnostico)
+      .post<{ message: string }>('http://localhost:3000/api/ident', registrarPlandeTratamiento)
       .subscribe(responseData => {
         console.log(responseData);
       });

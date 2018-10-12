@@ -19,7 +19,7 @@ export class ConsenService {
           nombre1	:	string,
           nombre2	:	string    
     ) {
-    const registrarDiagnostico: any = {
+    const registrarConsen: any = {
         paciente	:	paciente	,
         alumno	:	alumno	,
          odontologo	:	 odontologo	,
@@ -29,7 +29,7 @@ export class ConsenService {
 
     };
     this.http
-      .post<{ message: string }>('http://localhost:3000/api/ident', registrarDiagnostico)
+      .post<{ message: string }>('http://localhost:3000/api/ident', registrarConsen)
       .subscribe(responseData => {
         console.log(responseData);
       });
