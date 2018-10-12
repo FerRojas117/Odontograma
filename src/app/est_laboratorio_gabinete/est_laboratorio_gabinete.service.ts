@@ -14,12 +14,12 @@ export class LabGabService {
       resultadosPrevios: string
       //Resultados de estudio Auxiliar del diagnostico practicado previamente
     ) {
-    const registrarIdent: any = {
+    const registrarLabGab: any = {
         resultadosPrevios : resultadosPrevios
         //---------------------------------------------------
     };
     this.http
-      .post<{ message: string }>('http://localhost:3000/api/ident', registrarIdent)
+      .post<{ message: string }>('http://localhost:3000/api/ident', registrarLabGab)
       .subscribe(responseData => {
         console.log(responseData);
       });

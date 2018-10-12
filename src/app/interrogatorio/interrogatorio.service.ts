@@ -17,13 +17,13 @@ export class InterService {
       aparatoRespiratorio: string,
       aparatoDigestivo: string,
     ) {
-    const registrarIdent: any = {
+    const registrarInter: any = {
         presionArterial: presionArterial,
         aparatoRespiratorio: aparatoRespiratorio,
         aparatoDigestivo: aparatoDigestivo
     };
     this.http
-      .post<{ message: string }>('http://localhost:3000/api/ident', registrarIdent)
+      .post<{ message: string }>('http://localhost:3000/api/ident', registrarInter)
       .subscribe(responseData => {
         console.log(responseData);
       });
