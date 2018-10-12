@@ -11,7 +11,8 @@ import {
   MatExpansionModule,
   MatProgressSpinnerModule,
   MatPaginatorModule,
-  MatRadioModule
+  MatRadioModule,
+  MatSelectModule
 } from '@angular/material';
 
 import { AppComponent } from './app.component';
@@ -28,6 +29,7 @@ import {
  } from '@angular/material';
 import { InicioComponent } from './inicio/inicio.component';
 import { IdentificacionComponent } from './identificacion/identificacion.component';
+import { AntgeneralesComponent } from './antecendetesganerales/antgenerales.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,8 @@ import { IdentificacionComponent } from './identificacion/identificacion.compone
     HomeComponent,
     SidenavFixedComponent,
     InicioComponent,
-    IdentificacionComponent
+    IdentificacionComponent,
+    AntgeneralesComponent
   ],
   imports: [
     BrowserModule,
@@ -56,7 +59,8 @@ import { IdentificacionComponent } from './identificacion/identificacion.compone
     MatPaginatorModule,
     MatSidenavModule,
     HttpClientModule,
-    MatRadioModule
+    MatRadioModule,
+    MatSelectModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
