@@ -3,7 +3,6 @@ import { HttpClient } from '@angular/common/http';
 import { Subject } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-
 import { Diagnostico } from '../modelos/diagnostico.model';
 
 @Injectable({ providedIn: 'root' })
