@@ -12,7 +12,8 @@ import {
   MatProgressSpinnerModule,
   MatPaginatorModule,
   MatRadioModule,
-  MatIconModule
+  MatIconModule,
+  MatSelectModule
 } from '@angular/material';
 
 import { AppComponent } from './app.component';
@@ -62,7 +63,9 @@ import { HistorialesArch } from './historialesArch/historialesArch.component';
     MatSidenavModule,
     HttpClientModule,
     MatRadioModule,
-    MatIconModule
+    MatIconModule,
+    MatSelectModule,
+    
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }

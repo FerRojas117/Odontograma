@@ -1,4 +1,15 @@
 <mat-card>
     Historiales.xls 
             <mat-icon >save</mat-icon>
+            <br>
+            <br>
+            <br>
+            
+        <mat-form-field>
+          <mat-select placeholder="Toppings" [formControl]="toppings" multiple>
+             <mat-option *ngFor="let topping of toppingList" [value]="topping" ng-click>{{topping}}
+             </mat-option>
+          </mat-select>
+         </mat-form-field>
+
     </mat-card>
