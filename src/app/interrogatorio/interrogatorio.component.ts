@@ -34,8 +34,8 @@ export class InterrogatorioComponent implements OnInit {
         
       });
     }
-    addIdent() {
-      this.identService.addIdent(
+    addInter() {
+      this.identService.addInter(
         this.form.value.presionArterial,
         this.form.value.aparatoRespiratorio,
         this.form.value.aparatoRespiratorio,
