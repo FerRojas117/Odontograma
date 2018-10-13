@@ -111,19 +111,31 @@
                 <span>Hepatitis</span>
                 <br>
                 <mat-radio-group>
-                    <mat-radio-button value="Si">Si</mat-radio-button>
-                    <mat-radio-button value="no">No</mat-radio-button>
+                    <mat-radio-button value="Si" (click)="apareceHepatitis()">Si</mat-radio-button>
+                    <mat-radio-button value="no"(click)="desapareceHepatitis()">No</mat-radio-button>
                 </mat-radio-group>
+                <br>
+               <mat-form-field>
+                <textarea matInput placeholder="Desde cuándo" [disabled]="hepatitis_dis"></textarea>
+               </mat-form-field>
                 <br>
                 <span>Diabetes</span>
                 <br>
                 <mat-radio-group>
-                    <mat-radio-button value="Si" >Si</mat-radio-button>
-                    <mat-radio-button value="no">No</mat-radio-button>
+                    <mat-radio-button value="Si" (click)="apareceDiabetes()">Si</mat-radio-button>
+                    <mat-radio-button value="no"(click)="desapareceDiabetes()">No</mat-radio-button>
                 </mat-radio-group>
-               
-                        <br>
-                      </mat-radio-group>
+                <br>
+               <mat-form-field>
+                <textarea matInput placeholder="Desde cuándo" [disabled]="diabetes_dis"></textarea>
+               </mat-form-field>
+                <br>
+               <mat-form-field>
+                <textarea matInput placeholder="Valor de glucosa" [disabled]="diabetes_dis"></textarea>
+               </mat-form-field>
+              <br>
+            </mat-radio-group>
+       
 
       <button mat-raised-button color="accent" type="submit">Guardar</button>
     </form>

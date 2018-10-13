@@ -10,7 +10,37 @@ import { InterService } from './interrogatorio.service';
 export class InterrogatorioComponent implements OnInit {
     form: FormGroup;
     cardio_dis : boolean;
-    constructor(public interService: InterService) {}
+    otros_dis: boolean;
+  diabetes_dis: boolean;
+  hepatitis_dis: boolean;
+ constructor(public interService: InterService) {}
+  desapareceOtros(){
+    this.otros_dis = true;
+  }
+  apareceOtros(){
+    if ( this.otros_dis== true){
+      this.otros_dis=false;
+    }
+    
+  }
+  desapareceDiabetes(){
+    this.diabetes_dis = true;
+  }
+  apareceDiabetes(){
+    if ( this.diabetes_dis== true){
+      this.diabetes_dis=false;
+    }
+    
+  }
+  desapareceHepatitis(){
+    this.hepatitis_dis = true;
+  }
+  apareceHepatitis(){
+    if ( this.hepatitis_dis== true){
+      this.hepatitis_dis=false;
+    }
+    
+  }
     desapareceCardio(){
       this.cardio_dis = true;
     }
