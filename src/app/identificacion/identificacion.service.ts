@@ -37,11 +37,15 @@ export class IdentService {
       procedencia: procedencia,
       estadoSocioeconomico: estadoSocioeconomico
     };
+    // imprimir objeto con los datos del front end
+    console.log(registrarIdent);
+    /*
     this.http
       .post<{ _id: string }>('http://localhost:3000/api/ident', registrarIdent)
       .subscribe(responseData => {
         this.id = responseData._id;
       });
+      */
   }
 
 }
