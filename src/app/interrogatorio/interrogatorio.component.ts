@@ -9,10 +9,20 @@ import { InterService } from './interrogatorio.service';
 })
 export class InterrogatorioComponent implements OnInit {
     form: FormGroup;
-  
+    cardio_dis : boolean;
     constructor(public interService: InterService) {}
-  
+    desapareceCardio(){
+      this.cardio_dis = true;
+    }
+    apareceCardio(){
+      if ( this.cardio_dis== true){
+        this.cardio_dis=false;
+      }
+      
+    }
+ 
     ngOnInit() {
+      this.cardio_dis = false;
       this.form = new FormGroup({
         nombre: new FormControl(null, {
           validators: [Validators.required, Validators.minLength(3)]
