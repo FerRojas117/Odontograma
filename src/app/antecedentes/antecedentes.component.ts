@@ -18,6 +18,7 @@ export class AntecedentesComponent implements OnInit {
   higieneoList: string[] = ['Buena', 'Regualar', 'Mala', 'Halitosis', 'Placa', 'Materia Alba', 'Pigmentaciones'];
   cal = new FormControl();
   calList: string[] = ['Ausentes', 'Reggulares', 'Abundantes', 'Supragingivales', 'Subgingivales'];
+  
   constructor(public anteceService: AnteceService) {}
 
   ngOnInit() {

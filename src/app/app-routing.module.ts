@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-
 import { LoginComponent } from './auth/login/login.component';
 import { SignupComponent } from './auth/signup/signup.component';
 import { AuthGuard } from './auth/auth.guard';
@@ -10,6 +9,7 @@ import { InicioComponent } from './inicio/inicio.component';
 import { IdentificacionComponent } from './identificacion/identificacion.component';
 import { AntgeneralesComponent } from './antecendetesganerales/antgenerales.component';
 import { EstudiosocioComponent } from './estudiosocieconomico/estudiosocio.component';
+import { AntecedentesComponent } from './antecedentes/antecedentes.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -21,7 +21,8 @@ const routes: Routes = [
      children: [
        { path: 'identificacion', component: IdentificacionComponent },
        { path: 'antGenerales', component: AntgeneralesComponent },
-       //{ path: 'estudioSE', component: EstudiosocioComponent },
+       { path: 'antEstoma', component: AntecedentesComponent },
+      // { path: 'estudioSE', component: EstudiosocioComponent },
 
       ]
   },
