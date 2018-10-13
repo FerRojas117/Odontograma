@@ -9,10 +9,12 @@ import { Consen } from '../modelos/consentimiento.model';
 @Injectable({ providedIn: 'root' })
 export class ConsenService {
   private consen: Consen[] = [];
+  private id: string;
 
   constructor(private http: HttpClient) {}
 
   addConsen( 
+    fechaConsen: Date,
     paciente	:	string,
     alumno	:	string,
      odontologo	:	string,
@@ -20,19 +22,24 @@ export class ConsenService {
           nombre2	:	string    
     ) {
     const registrarConsen: any = {
-        paciente	:	paciente	,
-        alumno	:	alumno	,
-         odontologo	:	 odontologo	,
-        nombre1	:	      nombre1	,
-              nombre2	:	      nombre2	,
+        fechaConsen: fechaConsen,
+        paciente:	paciente,
+        alumno:	alumno,
+        odontologo:	odontologo,
+        nombre1	:nombre1,
+        nombre2	:	nombre2	,
         
 
     };
-    this.http
-      .post<{ message: string }>('http://localhost:3000/api/ident', registrarConsen)
-      .subscribe(responseData => {
-        console.log(responseData);
-      });
-  }
+   // imprimir objeto con los datos del front end
+   console.log(registrarConsen);
+   /*
+   this.http
+     .post<{ _id: string }>('http://localhost:3000/api/ident', registrarIdent)
+     .subscribe(responseData => {
+       this.id = responseData._id;
+     });
+     */
+ }
 
 }

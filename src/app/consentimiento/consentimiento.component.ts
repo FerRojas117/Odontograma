@@ -14,6 +14,7 @@ export class ConsentimientoComponent implements OnInit {
 
   ngOnInit() {
     this.form = new FormGroup({
+      fechaConsen: new FormControl(null),
       paciente: new FormControl(null, {validators: [Validators.required, Validators.minLength(3)]}),
       alumno: new FormControl(null, {validators: [Validators.required, Validators.minLength(3)]}),
       odontologo: new FormControl(null, {validators: [Validators.required, Validators.minLength(3)]}),
@@ -23,6 +24,7 @@ export class ConsentimientoComponent implements OnInit {
   }
   addConsen() {
     this.consenService.addConsen(
+      this.form.value.fechaConsen,
       this.form.value.paciente,
       this.form.value.alumno,
       this.form.value.odontologo,
