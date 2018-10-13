@@ -24,7 +24,7 @@ export class EstudiosocioComponent implements OnInit {
       telefono: new FormControl(null, { validators: [Validators.required] }),
       lugarDeNacimiento: new FormControl(null, { validators: [Validators.required] }),
       nacionalidad: new FormControl(null, { validators: [Validators.required] }),
-      sexo: new FormControl(null, { validators: [Validators.required] }),
+      sexoN: new FormControl(null, { validators: [Validators.required] }),
       estadocivil: new FormControl(null, { validators: [Validators.required] }),
       ocupacion: new FormControl(null, { validators: [Validators.required] }),
       lugar: new FormControl(null, { validators: [Validators.required] }),

@@ -30,6 +30,8 @@ import {
 import { InicioComponent } from './inicio/inicio.component';
 import { IdentificacionComponent } from './identificacion/identificacion.component';
 import { AntgeneralesComponent } from './antecendetesganerales/antgenerales.component';
+import { AntecedentesComponent } from './antecedentes/antecedentes.component';
+import { EstudiosocioComponent } from './estudiosocieconomico/estudiosocio.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +43,9 @@ import { AntgeneralesComponent } from './antecendetesganerales/antgenerales.comp
     SidenavFixedComponent,
     InicioComponent,
     IdentificacionComponent,
-    AntgeneralesComponent
+    AntgeneralesComponent,
+    AntecedentesComponent,
+    EstudiosocioComponent
   ],
   imports: [
     BrowserModule,

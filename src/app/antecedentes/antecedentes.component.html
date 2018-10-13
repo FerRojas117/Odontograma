@@ -1,6 +1,6 @@
 <mat-card class="cardForm">
     <form [formGroup]="form" (submit)="addAntece()">
-  
+
       <mat-form-field>
         <textarea matInput type="text" formControlName="motivoconsulta" placeholder="Motivo de la Consulta">  </textarea>
         <mat-error *ngIf="form.get('motivoconsulta').invalid">Por favor, escribe el motivo de la consulta</mat-error>
@@ -20,7 +20,7 @@
         <textarea matInput type="text" formControlName="cdcuantiempo" placeholder="Cada cuanto tiempo visita al estomatologo">  </textarea>
         <mat-error *ngIf="form.get('cdcuantiempo').invalid">Por favor, escribe cada que tiempo realiza la visita</mat-error>
       </mat-form-field>
-  
+
       <mat-radio-group class="radioGroup" formControlName="radiografia">
         <span>¿Le han tomado radiografias?</span>
         <mat-radio-button class="radioButton" value="S">Si</mat-radio-button>
@@ -40,7 +40,7 @@
              </mat-form-field>
         <mat-radio-button class="radioButton" value="N1">No</mat-radio-button>
       </mat-radio-group>
-  
+
       <mat-radio-group class="radioGroup" formControlName="remplazo">
         <span>¿Los han remplazado?</span>
         <mat-radio-button class="radioButton" value="S2">Si</mat-radio-button>
@@ -63,7 +63,7 @@
         <mat-radio-button class="radioButton" value="N3">No</mat-radio-button>
       </mat-radio-group>
 
-      <mat-radio-group class="radioGroup" formControlName="proanestecia">
+      <mat-radio-group class="radioGroup" formControlName="proanestesia">
         <span>¿Ha tenido problemas con la anestesia local?</span>
         <mat-radio-button class="radioButton" value="S4">Si</mat-radio-button>
             <mat-form-field>
@@ -80,7 +80,7 @@
 
         <mat-form-field>
           <mat-select placeholder="Alguna vez ha tenido en su boca:" [formControl]="malestar" multiple>
-            <mat-option *ngFor="let malestar of malestarList" [value]="Malestar">{{malestar}}</mat-option>
+            <mat-option *ngFor="let malestar of malestarList" [value]="malestar">{{malestar}}</mat-option>
           </mat-select>
         </mat-form-field>
 
@@ -196,11 +196,10 @@
 
       <mat-form-field>
           <textarea matInput formControlName="exploracionradiografica" placeholder="Exploracion radiografica"></textarea>
-          <mat-error *ngIf="form.get('direccion').invalid">Por favor, ingresa la exploracion .</mat-error>
+          <mat-error *ngIf="form.get('exploracionradiografica').invalid">Por favor, ingresa la exploracion .</mat-error>
       </mat-form-field>
 
       <button mat-raised-button color="accent" type="submit">Guardar</button>
     </form>
-  
+
   </mat-card>
-  
