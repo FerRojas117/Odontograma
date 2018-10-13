@@ -1,5 +1,3 @@
-/*
-
 const mongoose = require("mongoose");
 const uniqueValidator = require("mongoose-unique-validator");
 
@@ -13,4 +11,3 @@ userSchema.plugin(uniqueValidator);
 module.exports = mongoose.model("User", userSchema);
 
 
-*/
