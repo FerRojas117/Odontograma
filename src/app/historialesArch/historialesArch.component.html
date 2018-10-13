@@ -5,11 +5,12 @@
             <br>
             <br>
             
-        <mat-form-field>
-          <mat-select placeholder="Toppings" [formControl]="toppings" multiple>
-             <mat-option *ngFor="let topping of toppingList" [value]="topping" ng-click>{{topping}}
-             </mat-option>
-          </mat-select>
-         </mat-form-field>
-
+     <mat-form-field>
+        <textarea matInput placeholder="Textarea" [disabled]="isDisabled"></textarea>
+      </mat-form-field>
+      <br>
+      <mat-radio-group>
+            <mat-radio-button value="Si" (click)="abletextArea()">Si</mat-radio-button>
+            <mat-radio-button value="no"(click)="disabletextArea()">No</mat-radio-button>
+          </mat-radio-group>
     </mat-card>

@@ -10,5 +10,20 @@ import {FormControl} from '@angular/forms';
 export class HistorialesArch {
   toppings = new FormControl();
   cuales = new Input();
-  toppingList: string[] = ['Alimentos', 'Drogas', 'Anestésicos', 'Otros','Animales', 'Comida'];
+
+  isDisabled: boolean;
+ 
+  disabletextArea(){
+    this.isDisabled = true;
+  }
+  abletextArea(){
+    if ( this.isDisabled== true){
+      this.isDisabled=false;
+    }
+    
+  }
+
+  ngOnInit() {
+    this.isDisabled = false;
+  }
 }
