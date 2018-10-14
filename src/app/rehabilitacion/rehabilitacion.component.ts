@@ -18,6 +18,11 @@ export class RehabilitacionComponent implements OnInit {
           validators: [Validators.required, Validators.minLength(3)]
         }),
         motivoConsulta: new FormControl(null, { validators: [Validators.required] }),
+        traumaDo: new FormControl(null, { validators: [Validators.required] }),
+        estOdp: new FormControl(null, { validators: [Validators.required] }),
+        estRdla: new FormControl(null, { validators: [Validators.required] }),
+        irreEepo: new FormControl(null, { validators: [Validators.required] }),
+        cieOpvc: new FormControl(null, { validators: [Validators.required] }),
       });
     }
     addReha() {
