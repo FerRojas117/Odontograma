@@ -12,12 +12,16 @@ export class RehaService {
 
   addReha(
       referidoPor: string,
-      motivoConsulta: string
+      motivoConsulta: string,
+      moEst: string,
+      descripcion: string
 
     ) {
     const registrarReha: any = {
         referidoPor : referidoPor,
-        motivoConsulta : motivoConsulta
+        motivoConsulta : motivoConsulta,
+        moEst : moEst,
+        descripcion : descripcion, 
     };
     this.http
       .post<{ message: string }>('http://localhost:3000/api/ident', registrarReha)
