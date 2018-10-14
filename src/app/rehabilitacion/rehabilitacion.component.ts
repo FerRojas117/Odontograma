@@ -9,6 +9,28 @@ import { RehaService } from './rehabilitacion.service';
 })
 export class RehabilitacionComponent implements OnInit {
     form: FormGroup;
+    examenPara = new FormControl();
+    examenParaList: string[] = ['Trauma o desarmonia oclusal',
+                                'Estado de organos dentarios pilares',
+                                'Estado y relacion de arcos',
+                                'Irregularidades en el plano oclusal',
+                                'Cierre oclusal por varias causas',
+                                'Sobre mordida vertical u horizontal',
+                                'Mordida cruzada',
+                                'Desviacion de la linea media',
+                                'Relacion del tamaño y forma entre los arcos',
+                                'Espacio para remplazar dientes faltantes',
+                                'Posicion dentaria en el arco',
+                                'Relaciones marginales',
+                                'Desgaste cuspideo y fosetas',
+                                'Abrasion en cervical',
+                                'Diastemas',
+                                'Supernumerarios e inclusiones',
+                                'Relacion corona raiz',
+                                'Estado de las restaurizaciones presentes',
+                                'logitud del arco',
+                                'Desviaciones de la oclusion',
+                                ];
   
     constructor(public rehaservice: RehaService) {}
   
@@ -19,10 +41,11 @@ export class RehabilitacionComponent implements OnInit {
         }),
         motivoConsulta: new FormControl(null, { validators: [Validators.required] }),
         traumaDo: new FormControl(null, { validators: [Validators.required] }),
-        estOdp: new FormControl(null, { validators: [Validators.required] }),
-        estRdla: new FormControl(null, { validators: [Validators.required] }),
-        irreEepo: new FormControl(null, { validators: [Validators.required] }),
-        cieOpvc: new FormControl(null, { validators: [Validators.required] }),
+        //estOdp: new FormControl(null, { validators: [Validators.required] }),
+        //estRdla: new FormControl(null, { validators: [Validators.required] }),
+        //irreEepo: new FormControl(null, { validators: [Validators.required] }),
+        //cieOpvc: new FormControl(null, { validators: [Validators.required] }),
+        //cieOpvc: new FormControl(null, { validators: [Validators.required] }),
       });
     }
     addReha() {
