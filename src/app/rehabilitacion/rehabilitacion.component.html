@@ -9,7 +9,7 @@
                     <mat-error *ngIf="form.get('motivoConsulta').invalid">Por favor, escribe el motivo de la consulta</mat-error>
             </mat-form-field>
             <mat-form-field>
-                <mat-select placeholder="examenpara:" [formControl]="examenPara" multiple>
+                <mat-select placeholder="examen Para:" [formControl]="examenPara" multiple>
                   <mat-option *ngFor="let examenPara of examenParaList" [value]="examenPara">{{examenPara}}</mat-option>
                 </mat-select>
             </mat-form-field>
