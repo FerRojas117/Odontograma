@@ -9,11 +9,11 @@
                     <mat-error *ngIf="form.get('talla').invalid">Por favor, escribe tu talla</mat-error>
             </mat-form-field>
             <mat-form-field>
-                    <textarea matInput type="text" formControlName="frecuenciaCardiaca" placeholder="FrecuenciaCardiaca">  </textarea>
+                    <textarea matInput type="text" formControlName="frecuenciaCardiaca" placeholder="Frecuencia Cardiaca">  </textarea>
                     <mat-error *ngIf="form.get('frecuenciaCardiaca').invalid">Cual es tu frecuencia Cardiaca</mat-error>
             </mat-form-field>
             <mat-form-field>
-                    <textarea matInput type="text" formControlName="presionArterial" placeholder="PresionArterial">  </textarea>
+                    <textarea matInput type="text" formControlName="presionArterial" placeholder="Presionn Arterial">  </textarea>
                     <mat-error *ngIf="form.get('presionArterial').invalid">Por favor, escribe tu presion Arterial</mat-error>
             </mat-form-field>
             <mat-form-field>
@@ -24,10 +24,9 @@
                     <textarea matInput type="text" formControlName="frecuenciaRespiratoria" placeholder="Frecuencia Respiratoria">  </textarea>
                     <mat-error *ngIf="form.get('frecuenciaRespiratoria').invalid">Frecuencia Respiratoria</mat-error>
             </mat-form-field>
-            <mat-form-field>
-                    <textarea matInput type="text" formControlName="frecuenciaRespiratoria" placeholder="Frecuencia Respiratoria">  </textarea>
-                    <mat-error *ngIf="form.get('frecuenciaRespiratoria').invalid">Frecuencia Respiratoria</mat-error>
-            </mat-form-field>
+            <br><br><br>
+            <span>Exploración Física</span>
+            <br>
             <mat-form-field>
                 <textarea matInput type="text" formControlName="inspeccionGeneral" placeholder="Inspeccion General">  </textarea>
                 <mat-error *ngIf="form.get('inspeccionGeneral').invalid">F</mat-error>
@@ -42,7 +41,7 @@
         </mat-form-field>
         <mat-form-field>
                 <textarea matInput type="text" formControlName="diagnostico" placeholder="Diagnostico">  </textarea>
-                <mat-error *ngIf="form.get('Diagnostico').invalid">Frecuencia Respiratoria</mat-error>
+                <mat-error *ngIf="form.get('diagnostico').invalid">Frecuencia Respiratoria</mat-error>
         </mat-form-field>
         <mat-form-field>
                 <textarea matInput type="text" formControlName="observaciones" placeholder="Observaciones">  </textarea>
@@ -50,7 +49,7 @@
         </mat-form-field>
         <mat-form-field>
                 <textarea matInput type="text" formControlName="nombredelMedico" placeholder="Nombre del Medico">  </textarea>
-                <mat-error *ngIf="form.get('frecuenciaRespiratoria').invalid">Por favor, escribil el nombre del Medico</mat-error>
+                <mat-error *ngIf="form.get('nombredelMedico').invalid">Por favor, escribir el nombre del Medico</mat-error>
         </mat-form-field>
         <br>
         <button mat-raised-button color="accent" type="submit"> Guardar </button>
