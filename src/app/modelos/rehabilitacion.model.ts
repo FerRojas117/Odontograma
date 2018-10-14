@@ -3,5 +3,8 @@ export interface Reha {
     motivoConsulta : string;
     moEstu : string;
     descripcion: string;
+    diagO : string;
+    exTem : string;
+    otrasEx :string;
 
 }

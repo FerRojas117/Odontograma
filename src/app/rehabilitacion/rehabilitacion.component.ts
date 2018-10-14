@@ -9,7 +9,7 @@ import { RehaService } from './rehabilitacion.service';
 })
 export class RehabilitacionComponent implements OnInit {
     form: FormGroup;
-    examenPara = new FormControl();
+    examenpara = new FormControl();
     examenParaList: string[] = ['Trauma o desarmonia oclusal',
                                 'Estado de organos dentarios pilares',
                                 'Estado y relacion de arcos',
@@ -29,7 +29,7 @@ export class RehabilitacionComponent implements OnInit {
                                 'Relacion corona raiz',
                                 'Estado de las restaurizaciones presentes',
                                 'logitud del arco',
-                                'Desviaciones de la oclusion',
+                                'Desviaciones de la oclusion'
                                 ];
   
     constructor(public rehaservice: RehaService) {}
@@ -42,9 +42,9 @@ export class RehabilitacionComponent implements OnInit {
         motivoConsulta: new FormControl(null, { validators: [Validators.required] }),
         moEstu: new FormControl(null, { validators: [Validators.required] }),
         descripcion: new FormControl(null, { validators: [Validators.required] }),
-        //estRdla: new FormControl(null, { validators: [Validators.required] }),
-        //irreEepo: new FormControl(null, { validators: [Validators.required] }),
-        //cieOpvc: new FormControl(null, { validators: [Validators.required] }),
+        diagO: new FormControl(null, { validators: [Validators.required] }),
+        exTem: new FormControl(null, { validators: [Validators.required] }),
+        otrasEx: new FormControl(null, { validators: [Validators.required] }),
         //cieOpvc: new FormControl(null, { validators: [Validators.required] }),
       });
     }
@@ -54,6 +54,16 @@ export class RehabilitacionComponent implements OnInit {
         this.form.value.motivoConsulta,
         this.form.value.moEstu,
         this.form.value.descripcion,
+        this.form.value.diagO,
+        this.form.value.exTem,
+        this.form.value.otrasEx
       );
     }
   }
+  /*
+  <mat-form-field>
+                    <mat-select placeholder="Examen para:" [formControl]="examenPara" multiple>
+                      <mat-option *ngFor="let examenPara of examenParaList" [value]="examenPara">{{examenPara}}</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+  */

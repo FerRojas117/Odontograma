@@ -11,7 +11,7 @@ import { IdentificacionComponent } from './identificacion/identificacion.compone
 import { InterrogatorioComponent } from './interrogatorio/interrogatorio.component';
 import { LaboratorioGabineteComponent } from './laboratoriogabinete/laboratoriogabinete.component';
 import { ExploracionFisicaComponent } from './exploracionfisica/exploracionfisica.component';
-//import { RehabilitacionComponent } from './rehabilitacion/rehabilitacion.component';
+import { RehabilitacionComponent } from './rehabilitacion/rehabilitacion.component';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'login', component: LoginComponent },
@@ -24,7 +24,7 @@ const routes: Routes = [
        { path: 'interrogatorio', component: InterrogatorioComponent },
        { path: 'laboratoriogabinete', component: LaboratorioGabineteComponent},
        { path: 'exploracionfisica', component: ExploracionFisicaComponent},
-      //{ path: 'rehabilitacion', component: RehabilitacionComponent},
+       { path: 'rehabilitacion', component: RehabilitacionComponent},
       ]
   },
   { path: 'inicio', component: InicioComponent },

@@ -32,7 +32,7 @@ import { IdentificacionComponent } from './identificacion/identificacion.compone
 import { InterrogatorioComponent } from './interrogatorio/interrogatorio.component';
 import { LaboratorioGabineteComponent } from './laboratoriogabinete/laboratoriogabinete.component';
 import { ExploracionFisicaComponent } from './exploracionfisica/exploracionfisica.component';
-//import { RehabilitacionComponent } from './rehabilitacion/rehabilitacion.component';
+import { RehabilitacionComponent } from './rehabilitacion/rehabilitacion.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +47,7 @@ import { ExploracionFisicaComponent } from './exploracionfisica/exploracionfisic
     InterrogatorioComponent,
     LaboratorioGabineteComponent,
     ExploracionFisicaComponent,
-    //RehabilitacionComponent,
+    RehabilitacionComponent,
   ],
   imports: [
     BrowserModule,
