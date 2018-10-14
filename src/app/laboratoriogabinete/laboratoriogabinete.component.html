@@ -1,0 +1,19 @@
+<mat-card class="cardForm">
+    <form [formGroup]="form" (submit)="addLab()">
+    <p>
+        <mat-form-field  appearance = "outline" > 
+            <mat-label > Resultados Previos </mat-label > 
+            <input  matInput  placeholder = "Resultados de Estudios Auxiliar de Diagnostico Practicado" > 
+        </mat-form-field > 
+    </p>
+
+    <p>
+            <mat-form-field  appearance = "outline" > 
+                <mat-label > Resultados Obtenidos </mat-label > 
+                <input  matInput  placeholder = "Resultados Terapeuticos Previos" > 
+            </mat-form-field > 
+        </p>   
+    <button mat-raised-button color="accent" type="submit">Guardar</button>
+    </form>
+  </mat-card>
+          

@@ -1,0 +1,59 @@
+<mat-card class="cardForm">
+    <form [formGroup]="form" (submit)="addExplo()">
+            <mat-form-field>
+                    <textarea matInput type="text" formControlName="peso" placeholder="Peso">  </textarea>
+                    <mat-error *ngIf="form.get('peso').invalid">Por favor, escribe tu peso</mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                    <textarea matInput type="text" formControlName="talla" placeholder="Talla">  </textarea>
+                    <mat-error *ngIf="form.get('talla').invalid">Por favor, escribe tu talla</mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                    <textarea matInput type="text" formControlName="frecuenciaCardiaca" placeholder="FrecuenciaCardiaca">  </textarea>
+                    <mat-error *ngIf="form.get('frecuenciaCardiaca').invalid">Cual es tu frecuencia Cardiaca</mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                    <textarea matInput type="text" formControlName="presionArterial" placeholder="PresionArterial">  </textarea>
+                    <mat-error *ngIf="form.get('presionArterial').invalid">Por favor, escribe tu presion Arterial</mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                    <textarea matInput type="text" formControlName="temperatura" placeholder="Temperatura">  </textarea>
+                    <mat-error *ngIf="form.get('temperatura').invalid">Por favor, escribe tu temperatura</mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                    <textarea matInput type="text" formControlName="frecuenciaRespiratoria" placeholder="Frecuencia Respiratoria">  </textarea>
+                    <mat-error *ngIf="form.get('frecuenciaRespiratoria').invalid">Frecuencia Respiratoria</mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                    <textarea matInput type="text" formControlName="frecuenciaRespiratoria" placeholder="Frecuencia Respiratoria">  </textarea>
+                    <mat-error *ngIf="form.get('frecuenciaRespiratoria').invalid">Frecuencia Respiratoria</mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <textarea matInput type="text" formControlName="inspeccionGeneral" placeholder="Inspeccion General">  </textarea>
+                <mat-error *ngIf="form.get('inspeccionGeneral').invalid">F</mat-error>
+                </mat-form-field>
+            <mat-form-field>
+                <textarea matInput type="text" formControlName="cabeza" placeholder="Frecuencia Respiratoria">  </textarea>
+                <mat-error *ngIf="form.get('frecuenciaRespiratoria').invalid">Frecuencia Respiratoria</mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <textarea matInput type="text" formControlName="extremidades" placeholder="Extremidades">  </textarea>
+                <mat-error *ngIf="form.get('extremidades').invalid">Frecuencia Respiratoria</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+                <textarea matInput type="text" formControlName="diagnostico" placeholder="Diagnostico">  </textarea>
+                <mat-error *ngIf="form.get('Diagnostico').invalid">Frecuencia Respiratoria</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+                <textarea matInput type="text" formControlName="observaciones" placeholder="Observaciones">  </textarea>
+                <mat-error *ngIf="form.get('observaciones').invalid">Por favor, escribe las observaciones</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+                <textarea matInput type="text" formControlName="nombredelMedico" placeholder="Nombre del Medico">  </textarea>
+                <mat-error *ngIf="form.get('frecuenciaRespiratoria').invalid">Por favor, escribil el nombre del Medico</mat-error>
+        </mat-form-field>
+
+        <button mat-raised-button color="accent" type="submit"> Guardar </button>
+    </form>
+
+</mat-card>

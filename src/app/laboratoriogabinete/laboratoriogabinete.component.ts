@@ -1,29 +1,30 @@
 import { Component, OnInit   } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { IdentService } from './est_laboratorio_gabinete.service';
+import { LaboService } from './laboratoriogabinete.service';
 
 @Component({
-  selector: 'app-est_laboratorio_gabinete',
-  templateUrl: './est_laboratorio_gabinete.html',
-  styleUrls: ['./est_laboratorio_gabinete.css']
+  selector: 'app-laboratoriogabinete',
+  templateUrl: './laboratoriogabinete.component.html',
+  styleUrls: ['./laboratoriogabinete.component.css']
 })
-export class Est_laboratorio_gabineteComponent implements OnInit {
+export class LaboratorioGabineteComponent implements OnInit {
     form: FormGroup;
   
-    constructor(public identService: IdentService) {}
+    constructor(public laboservice: LaboService) {}
   
     ngOnInit() {
       this.form = new FormGroup({
         nombre: new FormControl(null, {
           validators: [Validators.required, Validators.minLength(3)]
         }),
-        content: new FormControl(null, { validators: [Validators.required] }),
         resultadosPrevios: new FormControl(null, { validators: [Validators.required] }),
+        resultPrevios2: new FormControl(null, { validators: [Validators.required] }),
       });
     }
-    addIdent() {
-      this.identService.addIdent(
+    addLabo() {
+      this.laboservice.addLabo(
         this.form.value.resultadosPrevios,
+        this.form.value.resultPrevios2,
       );
     }
   }

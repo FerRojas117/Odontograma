@@ -1,0 +1,14 @@
+<mat-card class="cardForm">
+    <form [formGroup]="form" (submit)="addReha()">
+            <mat-form-field>
+                    <textarea matInput type="text" formControlName="referidoPor" placeholder="Referido Por:">  </textarea>
+                    <mat-error *ngIf="form.get('referidoPor').invalid">campo necesario</mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                    <textarea matInput type="text" formControlName="motivoConsulta" placeholder="Motivo de la cosúlta">  </textarea>
+                    <mat-error *ngIf="form.get('motivoConsulta').invalid">Por favor, escribe el motivo de la consulta</mat-error>
+            </mat-form-field> 
+    <br>        
+    <button mat-raised-button color="accent" type="submit">Guardar</button>
+    </form>
+  </mat-card>

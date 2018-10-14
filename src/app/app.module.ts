@@ -22,6 +22,7 @@ import { SignupComponent } from './auth/signup/signup.component';
 import { AuthInterceptor } from './auth/auth-interceptor';
 import { HomeComponent } from './home/home.component';
 import { SidenavFixedComponent } from './Sidenav/sidenav.component';
+//import { InterrogatorioComponent } from './interrogatorio/interrogatorio.component';
 import {
   MatListModule,
   MatSidenavModule
@@ -29,7 +30,10 @@ import {
 import { InicioComponent } from './inicio/inicio.component';
 import { IdentificacionComponent } from './identificacion/identificacion.component';
 import { InterrogatorioComponent } from './interrogatorio/interrogatorio.component';
-import { Est_laboratorio_gabineteComponent } from './est_laboratorio_gabinete/est_laboratorio_gabinete.component';
+import { LaboratorioGabineteComponent } from './laboratoriogabinete/laboratoriogabinete.component';
+import { ExploracionFisicaComponent } from './exploracionfisica/exploracionfisica.component';
+import { RehabilitacionComponent } from './rehabilitacion/rehabilitacion.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,7 +45,9 @@ import { Est_laboratorio_gabineteComponent } from './est_laboratorio_gabinete/es
     InicioComponent,
     IdentificacionComponent,
     InterrogatorioComponent,
-    Est_laboratorio_gabineteComponent,
+    LaboratorioGabineteComponent,
+    ExploracionFisicaComponent,
+    RehabilitacionComponent,
   ],
   imports: [
     BrowserModule,
