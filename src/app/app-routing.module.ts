@@ -9,7 +9,8 @@ import { SidenavFixedComponent } from './Sidenav/sidenav.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { IdentificacionComponent } from './identificacion/identificacion.component';
 import { AntgeneralesComponent } from './antecendetesganerales/antgenerales.component';
-
+import { AntecedentesComponent } from './antecedentes/antecedentes.component';
+import { EstudiosocioComponent } from './estudiosocieconomico/estudiosocio.component';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'login', component: LoginComponent },
@@ -19,8 +20,9 @@ const routes: Routes = [
      component: SidenavFixedComponent,
      children: [
        { path: 'identificacion', component: IdentificacionComponent },
-       { path: 'antGenerales', component: AntgeneralesComponent }
-
+       { path: 'antGenerales', component: AntgeneralesComponent },
+       { path: 'antcedentes', component: AntecedentesComponent },
+       { path: 'estudiosocio', component: EstudiosocioComponent }
       ]
   },
   { path: 'inicio', component: InicioComponent },
