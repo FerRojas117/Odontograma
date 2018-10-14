@@ -2,16 +2,17 @@
     <form [formGroup]="form" (submit)="addLab()">
     
         <mat-form-field  appearance = "outline" >
-            <span>Resultados Previos</span> 
-            <input  matInput  placeholder = "Resultados de Estudios Auxiliar de Diagnostico Practicado" >
+            <span>Resultados de Estudios auxíliares de Diagnostico Practicados Previamente</span> 
+            <input  matInput  placeholder = "Estudio de Gabinete y Lab." >
             <textarea matInput type="text" formControlName="resultadosPrevios">  </textarea>
                         <mat-error *ngIf="form.get('resultadosPrevios').invalid">Por favor, escriba los resultados</mat-error>  
         </mat-form-field > 
         <br>
+        <br>
 
         <mat-form-field  appearance = "outline" >
-            <span>Resultados Previos</span> 
-            <input  matInput  placeholder = "Resultados de Estudios Auxiliar de Diagnostico Practicado" >
+            <span>Resultados Obtenídos</span> 
+            <input  matInput  placeholder = "Terapéutica Previa" >
             <textarea matInput type="text" formControlName="resulPrevios2">  </textarea>
                         <mat-error *ngIf="form.get('resultPrevios2').invalid">Por favor, escriba los resultados</mat-error>  
         </mat-form-field >  
