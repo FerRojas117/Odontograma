@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-export interface Inte {
-=======
 export interface Inter {
->>>>>>> bd0b5992ac1fc04a5ee06023a8d0322d56b30c97
     presionArterial: string;
     fiebreReumatica: string;
     hemorragias: string;
