@@ -1,14 +1,16 @@
 <mat-card class="cardForm">
     <form [formGroup]="form" (submit)="addLab()">
     
-        <mat-form-field  appearance = "outline" > 
+        <mat-form-field  appearance = "outline" >
+            <span>Resultados Previos</span> 
             <input  matInput  placeholder = "Resultados de Estudios Auxiliar de Diagnostico Practicado" >
             <textarea matInput type="text" formControlName="resultadosPrevios">  </textarea>
                         <mat-error *ngIf="form.get('resultadosPrevios').invalid">Por favor, escriba los resultados</mat-error>  
         </mat-form-field > 
         <br>
 
-        <mat-form-field  appearance = "outline" > 
+        <mat-form-field  appearance = "outline" >
+            <span>Resultados Previos</span> 
             <input  matInput  placeholder = "Resultados de Estudios Auxiliar de Diagnostico Practicado" >
             <textarea matInput type="text" formControlName="resulPrevios2">  </textarea>
                         <mat-error *ngIf="form.get('resultPrevios2').invalid">Por favor, escriba los resultados</mat-error>  
