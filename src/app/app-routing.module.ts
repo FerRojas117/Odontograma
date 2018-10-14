@@ -9,7 +9,7 @@ import { SidenavFixedComponent } from './Sidenav/sidenav.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { IdentificacionComponent } from './identificacion/identificacion.component';
 import { InterrogatorioComponent } from './interrogatorio/interrogatorio.component';
-import { Est_laboratorio_gabineteComponent } from './est_laboratorio_gabinete/est_laboratorio_gabinete.component';
+import { LaboratorioGabineteComponent } from './laboratoriogabinete/laboratoriogabinete.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -21,7 +21,7 @@ const routes: Routes = [
      children: [
        { path: 'identificacion', component: IdentificacionComponent },
        { path: 'interrogatorio', component: InterrogatorioComponent },
-       { path: 'est_laboratorio_gabinete', component: Est_laboratorio_gabineteComponent},
+       { path: 'laboratoriogabinete', component: LaboratorioGabineteComponent},
       ]
   },
   { path: 'inicio', component: InicioComponent },
