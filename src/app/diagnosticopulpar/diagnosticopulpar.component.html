@@ -4,8 +4,8 @@
     <p>A. Signos y Síntomas</p>
 
     <mat-form-field>
-      <textarea matInput type="text" formControlName="organoa" placeholder="Órgano">  </textarea>
-      <mat-error *ngIf="form.get('organoa').invalid">Por favor, escribe el nombre del órgano.</mat-error>
+      <textarea matInput type="text" formControlName="organoa" placeholder="Órgano Dental">  </textarea>
+      <mat-error *ngIf="form.get('organoa').invalid">Por favor, escribe el nombre del órgano dental.</mat-error>
     </mat-form-field>
 
     <mat-form-field>
@@ -34,18 +34,13 @@
     </mat-form-field>
 
     <mat-form-field>
-      <textarea matInput formControlName="trumetaccion" placeholder="Trumetacción"></textarea>
-      <mat-error *ngIf="form.get('trumetaccion').invalid">Por favor, escribe la trumetacción</mat-error>
+      <textarea matInput formControlName="trumefaccionintra" placeholder="Trumefacción Intra"></textarea>
+      <mat-error *ngIf="form.get('trumefaccionintra').invalid">Por favor, escribe la trumefacción intra</mat-error>
     </mat-form-field>
 
     <mat-form-field>
-      <textarea matInput formControlName="intra" placeholder="Intra"></textarea>
-      <mat-error *ngIf="form.get('intra').invalid">Por favor, escribe el intra.</mat-error>
-    </mat-form-field>
-
-    <mat-form-field>
-      <textarea matInput formControlName="extra" placeholder="Extra"></textarea>
-      <mat-error *ngIf="form.get('extra').invalid">Por favor, escribe el extra.</mat-error>
+      <textarea matInput formControlName="trumefaccionextra" placeholder="Trumefacción Extra"></textarea>
+      <mat-error *ngIf="form.get('trumefaccionextra').invalid">Por favor, escribe la trumefacción extra.</mat-error>
     </mat-form-field>
 
     <mat-form-field>

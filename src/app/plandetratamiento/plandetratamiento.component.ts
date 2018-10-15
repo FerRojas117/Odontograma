@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+
+import { PlandeTratamiento } from '../modelos/plandetratamiento.model';
 import { PlandetratService } from './plandetratamiento.service';
 
 @Component({
@@ -10,21 +12,16 @@ import { PlandetratService } from './plandetratamiento.service';
 
 export class PlandetratamientoComponent implements OnInit {
   form: FormGroup;
-  constructor() { }
+  constructor(public plandeTratService: PlandetratService) { }
 
   ngOnInit() {
     this.form = new FormGroup({
       noempleado: new FormControl(null, {validators: [Validators.required] }),
     });
-
-  constructor(public plandeTratamientoService: PlandetratService) { }
-
-  ngOnInit() {
-    this.form = new FormGroup({
-    });
-  }
-  addPlandeTrat() {
-    this.plandeTratamientoService.addPlandeTrat(
+  } 
+  addPlandeTratamiento(){
+    this.plandeTratService.addPlandeTratamiento(
+      this.form.value.noempleado,
     );
   }
 }

@@ -69,7 +69,7 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
     HttpClientModule,
     MatRadioModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
     ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
