@@ -1,3 +1,14 @@
 <p>
   plandetratamiento works!
 </p>
+<mat-card class="cardForm">
+  <form [formGroup]="form" (submit)="addIdent()">
+
+    <mat-form-field>
+      <textarea matInput formControlName="noempleado" placeholder="No. Empleado"></textarea>
+      <mat-error *ngIf="form.get('noempleado').invalid">Por favor, escribe el no. empleado.</mat-error>
+    </mat-form-field>
+
+  </form>
+
+</mat-card>
