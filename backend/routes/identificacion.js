@@ -1,11 +1,11 @@
 const express = require("express");
 const Ident = require("../models/identificacion");
-// const checkAuth = require("../middleware/check-auth");
+const checkAuth = require("../middleware/check-auth");
 
 const router = express.Router();
 
-router.post("", (req, res, next) => {
-  console.log(req);
+router.post("", checkAuth, (req, res, next) => {
+
   const ident = new Ident({
       nombre: req.body.nombre,
       sexo: req.body.sexo,
@@ -17,16 +17,19 @@ router.post("", (req, res, next) => {
       ocupacion: req.body.ocupacion,
       lugarDeNacimiento: req.body.lugarDeNacimiento,
       procedencia: req.body.procedencia,
-      estadoSocioeconomico: req.body.estadoSocioeconomico
+      estadoSocioeconomico: req.body.estadoSocioeconomico,
+      creator: req.userData.userId
     });
+    console.log(ident);
     ident.save()
     .then(createdIdent => {
       res.status(201).json({
-        message: "Identificacion added successfully",
-      //  id: createdIdent._id
+        message: "Identificacion añadida correctamente",
+        id: createdIdent._id
       });
     })
     .catch((err) => {
+      console.log(err);
       res.status(500).json({
         error: err
       });

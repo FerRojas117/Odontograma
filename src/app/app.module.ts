@@ -12,7 +12,9 @@ import {
   MatProgressSpinnerModule,
   MatPaginatorModule,
   MatRadioModule,
-  MatDialogModule
+  MatDialogModule,
+  MatDatepickerModule,
+  MatNativeDateModule
 } from '@angular/material';
 
 import { AppComponent } from './app.component';
@@ -28,8 +30,10 @@ import {
   MatSidenavModule
  } from '@angular/material';
 import { InicioComponent } from './inicio/inicio.component';
-import { IdentificacionComponent } from './identificacion/identificacion.component';
+import { IdentificacionComponent, DialogAssignSelfComponent } from './identificacion/identificacion.component';
 import { DienteComponent } from './diente/diente.component';
+import { ErrorInterceptor } from './error-interceptor';
+import { ErrorComponent } from './error/error.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +45,9 @@ import { DienteComponent } from './diente/diente.component';
     SidenavFixedComponent,
     InicioComponent,
     IdentificacionComponent,
-    DienteComponent
+    DienteComponent,
+    ErrorComponent,
+    DialogAssignSelfComponent
   ],
   imports: [
     BrowserModule,
@@ -60,11 +66,18 @@ import { DienteComponent } from './diente/diente.component';
     MatSidenavModule,
     HttpClientModule,
     MatRadioModule,
-    MatDialogModule
+    MatDialogModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   providers: [
-    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [
+    ErrorComponent,
+    DialogAssignSelfComponent
+  ]
 })
 export class AppModule {}

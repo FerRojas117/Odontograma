@@ -7,7 +7,7 @@ const identRoutes = require("./routes/identificacion");
 const userRoutes = require("./routes/user");
 
 const app = express();
-
+mongoose.set('useCreateIndex', true);
 mongoose
   .connect(
     "mongodb://localhost:27017/odontograma",
