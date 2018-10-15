@@ -1,5 +1,26 @@
 <mat-card class="cardForm">
-  <form [formGroup]="form" (submit)="addIdent()">
+  <form [formGroup]="form" (submit)="addHojadeTrat()">
+
+      <br><br>
+
+    <mat-form-field>
+      <textarea matInput formControlName="paciente" placeholder="Paciente"></textarea>
+      <mat-error *ngIf="form.get('paciente').invalid">Por favor, escribe el nombre del paciente.</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <textarea matInput formControlName="alumno" placeholder="Alumno"></textarea>
+      <mat-error *ngIf="form.get('alumno').invalid">Por favor, escribe el nombre del alumno.</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <textarea matInput formControlName="profesorresponsable" placeholder="Profesor Responsable"></textarea>
+      <mat-error *ngIf="form.get('profesorresponsable').invalid">Por favor, escribe el nombre del profesor responsable.</mat-error>
+    </mat-form-field>
+    <br><br>
+    <!--
+      Apartir de aquí se debe de borrar 
+    -->
 
     <mat-form-field>
       <textarea matInput formControlName="noempleado" placeholder="No. Empleado"></textarea>
@@ -32,24 +53,8 @@
     </mat-form-field>
 
     <br>
-    <button mat-raised-button color="accent" type="submit">Enviar</button>
-    <br><br>
-
-    <mat-form-field>
-      <textarea matInput formControlName="paciente" placeholder="Paciente"></textarea>
-      <mat-error *ngIf="form.get('paciente').invalid">Por favor, escribe el nombre del paciente.</mat-error>
-    </mat-form-field>
-
-    <mat-form-field>
-      <textarea matInput formControlName="alumno" placeholder="Alumno"></textarea>
-      <mat-error *ngIf="form.get('alumno').invalid">Por favor, escribe el nombre del alumno.</mat-error>
-    </mat-form-field>
-
-    <mat-form-field>
-      <textarea matInput formControlName="profesorresponsable" placeholder="Profesor Responsable"></textarea>
-      <mat-error *ngIf="form.get('profesorresponsable').invalid">Por favor, escribe el nombre del profesor responsable.</mat-error>
-    </mat-form-field>
-
+    <button mat-raised-button color="primary" type="submit">Enviar</button>
+  
   </form>
 
 </mat-card>

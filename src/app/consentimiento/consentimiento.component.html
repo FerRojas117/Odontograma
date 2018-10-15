@@ -1,7 +1,17 @@
 <mat-card class="cardForm">
-  <form [formGroup]="form" (submit)="addIdent()">
+  <form [formGroup]="form" (submit)="addConsen()">
 
-    <p>Yo 
+    <p>
+            Fecha de Consentimiento: 
+            <br><br>
+            
+            <mat-form-field>
+                <input matInput [matDatepicker]="picker" placeholder="Elige una fecha">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+            <br><br>
+        Yo 
 
     <mat-form-field>
       <textarea matInput formControlName="paciente" placeholder="Paciente"></textarea>
@@ -37,13 +47,13 @@
     5.- De que se me han informado sobre los distintos costos que el o los tratamientos propuestos, tienen en esta Institución Educativa. <br><br>
 
     Una vez leída este formato:<br><br>
-
+    <mat-form-field>
+            <textarea matInput formControlName="nombre1" placeholder="Nombre del Paciente o Tutor"></textarea>
+            <mat-error *ngIf="form.get('nombre1').invalid">Por favor, escribe el nombre del paciente o tutor.</mat-error>
+        </mat-form-field>
+        <br><br>
     a.)AUTORIZO al personal tratante me realicen los procedimientos necesarios para mi atención estomatológica.<br><br>
 
-    <mat-form-field>
-        <textarea matInput formControlName="nombre1" placeholder="Nombre del Paciente o Tutor"></textarea>
-        <mat-error *ngIf="form.get('nombre1').invalid">Por favor, escribe el nombre del paciente o tutor.</mat-error>
-    </mat-form-field>
 
     <br>
     <button mat-raised-button color="accent" type="submit">Autorizar</button>
@@ -51,24 +61,9 @@
 
     b.)NO AUTORIZO al personal tratante me realicen los procedimientos necesarios para mi atención estomatológica.<br><br>
 
-    <mat-form-field>
-        <textarea matInput formControlName="nombre2" placeholder="Nombre del Paciente o Tutor"></textarea>
-        <mat-error *ngIf="form.get('nombre2').invalid">Por favor, escribe el nombre del paciente o tutor.</mat-error>
-    </mat-form-field>
-
     <br>
     <button mat-raised-button color="accent" type="submit">No Autorizar</button>
     <br><br><br><br>
-
-    Fecha de Consentimiento: 
-    <br><br>
-    
-    <mat-form-field>
-        <input matInput [matDatepicker]="picker" placeholder="Elige una fecha">
-        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-datepicker #picker></mat-datepicker>
-    </mat-form-field>
-          
 
     </p>
 

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { HojadeTratService } from './hojadetratamiento.service';
 
 @Component({
   selector: 'app-hojadetratamiento',
@@ -8,7 +9,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 })
 export class HojadetratamientoComponent implements OnInit {
   form: FormGroup;
-  constructor() { }
+  constructor(public hojadeTratService: HojadeTratService) { }
 
   ngOnInit() {
     this.form = new FormGroup({
@@ -23,5 +24,17 @@ export class HojadetratamientoComponent implements OnInit {
       profesorresponsable: new FormControl(null, {validators: [Validators.required, Validators.minLength(3)]}),
     });
   }
-
+  addHojadeTrat() {
+    this.hojadeTratService.addHojadeTrat(
+      this.form.value.noempleado,
+      this.form.value.organodental,
+      this.form.value.diagnostico,
+      this.form.value.tratamiento,
+      this.form.value.costo,
+      this.form.value.nopoliza,
+      this.form.value.paciente,
+      this.form.value.alumno,
+      this.form.value.profesorresponsable,
+    );
+  }
 }
