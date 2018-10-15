@@ -8,20 +8,20 @@
                     <textarea matInput type="text" formControlName="motivoConsulta" placeholder="¿Cual es el motivo de la consulta?">  </textarea>
                     <mat-error *ngIf="form.get('motivoConsulta').invalid">Por favor, escribe el motivo de la consulta</mat-error>
             </mat-form-field>
+            <br><br><br><br>
             <mat-form-field>
+                    <span>Examen para:</span>
                     <mat-select placeholder="Examen para:" [formControl]="examenPara" multiple>
                       <mat-option *ngFor="let examenPara of examenParaList" [value]="examenPara">{{examenPara}}</mat-option>
                     </mat-select>
             </mat-form-field>
+            <br><br><br><br>
             
             
             <mat-radio-group class="radioGroup" formControlName="moEstu">
                 <span>¿Se tomaron modelos del estudio?</span>
                 <mat-radio-button class="radioButton" value="S">Si</mat-radio-button>
-                    <mat-form-field>
-                        <textarea matInput type="text" formControlName="descripcion" placeholder="Descripcion:">  </textarea>
-                        <mat-error *ngIf="form.get(descripcion).invalid">Por favor, escribe la descripcion</mat-error>
-                    </mat-form-field>
+                    
                 <mat-radio-button class="radioButton" value="N">No</mat-radio-button>
             </mat-radio-group>
             <br><br>
@@ -44,8 +44,17 @@
                     <mat-error *ngIf="form.get('otrasEx').invalid">Por favor, escriba las otras exploraciones</mat-error> 
             </mat-form-field>
 
-
-
+            <mat-grid-list cols="9" rowHeight="2:1">
+                <mat-grid-tile>1</mat-grid-tile>
+                <mat-grid-tile>2</mat-grid-tile>
+                <mat-grid-tile>3</mat-grid-tile>
+                <mat-grid-tile>4</mat-grid-tile>
+                <mat-grid-tile>5</mat-grid-tile>
+                <mat-grid-tile>6</mat-grid-tile>
+                <mat-grid-tile>7</mat-grid-tile>
+                <mat-grid-tile>8</mat-grid-tile>
+                <mat-grid-tile>9</mat-grid-tile>
+              </mat-grid-list>
         
     <br><br>        
     <button mat-raised-button color="accent" type="submit">Guardar</button>

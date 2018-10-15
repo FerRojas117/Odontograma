@@ -13,7 +13,8 @@ import {
   MatProgressSpinnerModule,
   MatPaginatorModule,
   MatRadioModule,
-  MatSelectModule
+  MatSelectModule,
+  MatGridListModule
 } from '@angular/material';
 
 import { AppComponent } from './app.component';
@@ -67,7 +68,8 @@ import { RehabilitacionComponent } from './rehabilitacion/rehabilitacion.compone
     MatSidenavModule,
     HttpClientModule,
     MatRadioModule,
-    MatSelectModule
+    MatSelectModule,
+    MatGridListModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
