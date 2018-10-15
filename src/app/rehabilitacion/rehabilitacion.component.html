@@ -11,7 +11,7 @@
             <br><br><br><br>
             <mat-form-field>
                     <span>Examen para:</span>
-                    <mat-select placeholder="Examen para:" [formControl]="examenPara" multiple>
+                    <mat-select placeholder="" [formControl]="examenPara" multiple>
                       <mat-option *ngFor="let examenPara of examenParaList" [value]="examenPara">{{examenPara}}</mat-option>
                     </mat-select>
             </mat-form-field>
@@ -43,19 +43,470 @@
                     <textarea matInput type="text" formControlName="otrasEx" placeholder="----------------------">  </textarea>
                     <mat-error *ngIf="form.get('otrasEx').invalid">Por favor, escriba las otras exploraciones</mat-error> 
             </mat-form-field>
-
-            <mat-grid-list cols="9" rowHeight="2:1">
-                <mat-grid-tile>1</mat-grid-tile>
-                <mat-grid-tile>2</mat-grid-tile>
-                <mat-grid-tile>3</mat-grid-tile>
-                <mat-grid-tile>4</mat-grid-tile>
-                <mat-grid-tile>5</mat-grid-tile>
-                <mat-grid-tile>6</mat-grid-tile>
-                <mat-grid-tile>7</mat-grid-tile>
-                <mat-grid-tile>8</mat-grid-tile>
-                <mat-grid-tile>9</mat-grid-tile>
+            <br><br>
+            <mat-grid-list cols="8" rowHeight="2:2">
+                    <h3>FIJO</h3>
+                <mat-grid-tile>
+                        <mat-form-field appearance="outline">
+                                <mat-label> 18 </mat-label>
+                                <input matInput placeholder="">
+                                <mat-hint>Fijo</mat-hint>
+                        </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                        <mat-form-field appearance="outline">
+                                <mat-label> 17 </mat-label>
+                                <input matInput placeholder="">
+                                <mat-hint>Fijo</mat-hint>
+                        </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                        <mat-form-field appearance="outline">
+                                <mat-label> 16 </mat-label>
+                                <input matInput placeholder="">
+                                <mat-hint>Fijo</mat-hint>
+                        </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                        <mat-form-field appearance="outline">
+                                <mat-label> 15 </mat-label>
+                                <input matInput placeholder="">
+                                <mat-hint>Fijo</mat-hint>
+                        </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                        <mat-form-field appearance="outline">
+                                <mat-label> 14 </mat-label>
+                                <input matInput placeholder="">
+                                <mat-hint>Fijo</mat-hint>
+                        </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                        <mat-form-field appearance="outline">
+                                <mat-label> 13 </mat-label>
+                                <input matInput placeholder="">
+                                <mat-hint>Fijo</mat-hint>
+                        </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                        <mat-form-field appearance="outline">
+                                <mat-label> 12 </mat-label>
+                                <input matInput placeholder="">
+                                <mat-hint>Fijo</mat-hint>
+                        </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                        <mat-form-field appearance="outline">
+                                <mat-label> 11 </mat-label>
+                                <input matInput placeholder="1">
+                                <mat-hint>Fijo</mat-hint>
+                        </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                                <mat-form-field appearance="outline">
+                                        <mat-label> 18 </mat-label>
+                                        <input matInput placeholder="">
+                                        <mat-hint>Remov.</mat-hint>
+                                </mat-form-field>
+                        </mat-grid-tile>
+                        <mat-grid-tile>
+                                <mat-form-field appearance="outline">
+                                        <mat-label> 17 </mat-label>
+                                        <input matInput placeholder="">
+                                        <mat-hint>Remov.</mat-hint>
+                                </mat-form-field>
+                        </mat-grid-tile>
+                        <mat-grid-tile>
+                                <mat-form-field appearance="outline">
+                                        <mat-label> 16 </mat-label>
+                                        <input matInput placeholder="">
+                                        <mat-hint>Remov.</mat-hint>
+                                </mat-form-field>
+                        </mat-grid-tile>
+                        <mat-grid-tile>
+                                <mat-form-field appearance="outline">
+                                        <mat-label> 15 </mat-label>
+                                        <input matInput placeholder="">
+                                        <mat-hint>Remov.</mat-hint>
+                                </mat-form-field>
+                        </mat-grid-tile>
+                        <mat-grid-tile>
+                                <mat-form-field appearance="outline">
+                                        <mat-label> 14 </mat-label>
+                                        <input matInput placeholder="">
+                                        <mat-hint>Remov.</mat-hint>
+                                </mat-form-field>
+                        </mat-grid-tile>
+                        <mat-grid-tile>
+                                <mat-form-field appearance="outline">
+                                        <mat-label> 13 </mat-label>
+                                        <input matInput placeholder="">
+                                        <mat-hint>Remov.</mat-hint>
+                                </mat-form-field>
+                        </mat-grid-tile>
+                        <mat-grid-tile>
+                                <mat-form-field appearance="outline">
+                                        <mat-label> 12 </mat-label>
+                                        <input matInput placeholder="">
+                                        <mat-hint>Remov.</mat-hint>
+                                </mat-form-field>
+                        </mat-grid-tile>
+                        <mat-grid-tile>
+                                <mat-form-field appearance="outline">
+                                        <mat-label> 11 </mat-label>
+                                        <input matInput placeholder="1">
+                                        <mat-hint>Remov.</mat-hint>
+                                </mat-form-field>
+                        </mat-grid-tile>
               </mat-grid-list>
-        
+              <br>
+        <mat-grid-list cols="8" rowHeight="2:2">
+                    <h5>FIJO</h5>
+                <mat-grid-tile>
+                        <mat-form-field appearance="outline">
+                                <mat-label> 21 </mat-label>
+                                <input matInput placeholder="">
+                                <mat-hint>Fijo</mat-hint>
+                        </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                        <mat-form-field appearance="outline">
+                                <mat-label> 22 </mat-label>
+                                <input matInput placeholder="">
+                                <mat-hint>Fijo</mat-hint>
+                        </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                        <mat-form-field appearance="outline">
+                                <mat-label> 23 </mat-label>
+                                <input matInput placeholder="">
+                                <mat-hint>Fijo</mat-hint>
+                        </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                        <mat-form-field appearance="outline">
+                                <mat-label> 24 </mat-label>
+                                <input matInput placeholder="">
+                                <mat-hint>Fijo</mat-hint>
+                        </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                        <mat-form-field appearance="outline">
+                                <mat-label> 25 </mat-label>
+                                <input matInput placeholder="">
+                                <mat-hint>Fijo</mat-hint>
+                        </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                        <mat-form-field appearance="outline">
+                                <mat-label> 26 </mat-label>
+                                <input matInput placeholder="">
+                                <mat-hint>Fijo</mat-hint>
+                        </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                        <mat-form-field appearance="outline">
+                                <mat-label> 27 </mat-label>
+                                <input matInput placeholder="">
+                                <mat-hint>Fijo</mat-hint>
+                        </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                        <mat-form-field appearance="outline">
+                                <mat-label> 28 </mat-label>
+                                <input matInput placeholder="1">
+                                <mat-hint>Fijo</mat-hint>
+                        </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                                <mat-form-field appearance="outline">
+                                        <mat-label> 21 </mat-label>
+                                        <input matInput placeholder="">
+                                        <mat-hint>Remov.</mat-hint>
+                                </mat-form-field>
+                        </mat-grid-tile>
+                        <mat-grid-tile>
+                                <mat-form-field appearance="outline">
+                                        <mat-label> 22 </mat-label>
+                                        <input matInput placeholder="">
+                                        <mat-hint>Remov.</mat-hint>
+                                </mat-form-field>
+                        </mat-grid-tile>
+                        <mat-grid-tile>
+                                <mat-form-field appearance="outline">
+                                        <mat-label> 23 </mat-label>
+                                        <input matInput placeholder="">
+                                        <mat-hint>Remov.</mat-hint>
+                                </mat-form-field>
+                        </mat-grid-tile>
+                        <mat-grid-tile>
+                                <mat-form-field appearance="outline">
+                                        <mat-label> 24 </mat-label>
+                                        <input matInput placeholder="">
+                                        <mat-hint>Remov.</mat-hint>
+                                </mat-form-field>
+                        </mat-grid-tile>
+                        <mat-grid-tile>
+                                <mat-form-field appearance="outline">
+                                        <mat-label> 25 </mat-label>
+                                        <input matInput placeholder="">
+                                        <mat-hint>Remov.</mat-hint>
+                                </mat-form-field>
+                        </mat-grid-tile>
+                        <mat-grid-tile>
+                                <mat-form-field appearance="outline">
+                                        <mat-label> 26 </mat-label>
+                                        <input matInput placeholder="">
+                                        <mat-hint>Remov.</mat-hint>
+                                </mat-form-field>
+                        </mat-grid-tile>
+                        <mat-grid-tile>
+                                <mat-form-field appearance="outline">
+                                        <mat-label> 27 </mat-label>
+                                        <input matInput placeholder="">
+                                        <mat-hint>Remov.</mat-hint>
+                                </mat-form-field>
+                        </mat-grid-tile>
+                        <mat-grid-tile>
+                                <mat-form-field appearance="outline">
+                                        <mat-label> 28 </mat-label>
+                                        <input matInput placeholder="1">
+                                        <mat-hint>Remov.</mat-hint>
+                                </mat-form-field>
+                        </mat-grid-tile>
+              </mat-grid-list>
+              <br>
+        <mat-grid-list cols="8" rowHeight="2:2">
+                    <h5>FIJO</h5>
+                <mat-grid-tile>
+                        <mat-form-field appearance="outline">
+                                <mat-label> 48 </mat-label>
+                                <input matInput placeholder="">
+                                <mat-hint>Fijo</mat-hint>
+                        </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                        <mat-form-field appearance="outline">
+                                <mat-label> 47 </mat-label>
+                                <input matInput placeholder="">
+                                <mat-hint>Fijo</mat-hint>
+                        </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                        <mat-form-field appearance="outline">
+                                <mat-label> 46 </mat-label>
+                                <input matInput placeholder="">
+                                <mat-hint>Fijo</mat-hint>
+                        </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                        <mat-form-field appearance="outline">
+                                <mat-label> 45 </mat-label>
+                                <input matInput placeholder="">
+                                <mat-hint>Fijo</mat-hint>
+                        </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                        <mat-form-field appearance="outline">
+                                <mat-label> 44 </mat-label>
+                                <input matInput placeholder="">
+                                <mat-hint>Fijo</mat-hint>
+                        </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                        <mat-form-field appearance="outline">
+                                <mat-label> 43 </mat-label>
+                                <input matInput placeholder="">
+                                <mat-hint>Fijo</mat-hint>
+                        </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                        <mat-form-field appearance="outline">
+                                <mat-label> 42 </mat-label>
+                                <input matInput placeholder="">
+                                <mat-hint>Fijo</mat-hint>
+                        </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                        <mat-form-field appearance="outline">
+                                <mat-label> 41 </mat-label>
+                                <input matInput placeholder="1">
+                                <mat-hint>Fijo</mat-hint>
+                        </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                                <mat-form-field appearance="outline">
+                                        <mat-label> 48 </mat-label>
+                                        <input matInput placeholder="">
+                                        <mat-hint>Remov.</mat-hint>
+                                </mat-form-field>
+                        </mat-grid-tile>
+                        <mat-grid-tile>
+                                <mat-form-field appearance="outline">
+                                        <mat-label> 47 </mat-label>
+                                        <input matInput placeholder="">
+                                        <mat-hint>Remov.</mat-hint>
+                                </mat-form-field>
+                        </mat-grid-tile>
+                        <mat-grid-tile>
+                                <mat-form-field appearance="outline">
+                                        <mat-label> 46 </mat-label>
+                                        <input matInput placeholder="">
+                                        <mat-hint>Remov.</mat-hint>
+                                </mat-form-field>
+                        </mat-grid-tile>
+                        <mat-grid-tile>
+                                <mat-form-field appearance="outline">
+                                        <mat-label> 45 </mat-label>
+                                        <input matInput placeholder="">
+                                        <mat-hint>Remov.</mat-hint>
+                                </mat-form-field>
+                        </mat-grid-tile>
+                        <mat-grid-tile>
+                                <mat-form-field appearance="outline">
+                                        <mat-label> 44 </mat-label>
+                                        <input matInput placeholder="">
+                                        <mat-hint>Remov.</mat-hint>
+                                </mat-form-field>
+                        </mat-grid-tile>
+                        <mat-grid-tile>
+                                <mat-form-field appearance="outline">
+                                        <mat-label> 43 </mat-label>
+                                        <input matInput placeholder="">
+                                        <mat-hint>Remov.</mat-hint>
+                                </mat-form-field>
+                        </mat-grid-tile>
+                        <mat-grid-tile>
+                                <mat-form-field appearance="outline">
+                                        <mat-label> 42 </mat-label>
+                                        <input matInput placeholder="">
+                                        <mat-hint>Remov.</mat-hint>
+                                </mat-form-field>
+                        </mat-grid-tile>
+                        <mat-grid-tile>
+                                <mat-form-field appearance="outline">
+                                        <mat-label> 41 </mat-label>
+                                        <input matInput placeholder="1">
+                                        <mat-hint>Remov.</mat-hint>
+                                </mat-form-field>
+                        </mat-grid-tile>
+              </mat-grid-list>
+              <br>
+        <mat-grid-list cols="8" rowHeight="2:2">
+                    <h5>FIJO</h5>
+                <mat-grid-tile>
+                        <mat-form-field appearance="outline">
+                                <mat-label> 31 </mat-label>
+                                <input matInput placeholder="">
+                                <mat-hint>Fijo</mat-hint>
+                        </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                        <mat-form-field appearance="outline">
+                                <mat-label> 32 </mat-label>
+                                <input matInput placeholder="">
+                                <mat-hint>Fijo</mat-hint>
+                        </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                        <mat-form-field appearance="outline">
+                                <mat-label> 33 </mat-label>
+                                <input matInput placeholder="">
+                                <mat-hint>Fijo</mat-hint>
+                        </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                        <mat-form-field appearance="outline">
+                                <mat-label> 34 </mat-label>
+                                <input matInput placeholder="">
+                                <mat-hint>Fijo</mat-hint>
+                        </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                        <mat-form-field appearance="outline">
+                                <mat-label> 35 </mat-label>
+                                <input matInput placeholder="">
+                                <mat-hint>Fijo</mat-hint>
+                        </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                        <mat-form-field appearance="outline">
+                                <mat-label> 36 </mat-label>
+                                <input matInput placeholder="">
+                                <mat-hint>Fijo</mat-hint>
+                        </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                        <mat-form-field appearance="outline">
+                                <mat-label> 37 </mat-label>
+                                <input matInput placeholder="">
+                                <mat-hint>Fijo</mat-hint>
+                        </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                        <mat-form-field appearance="outline">
+                                <mat-label> 38 </mat-label>
+                                <input matInput placeholder="1">
+                                <mat-hint>Fijo</mat-hint>
+                        </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                                <mat-form-field appearance="outline">
+                                        <mat-label> 31 </mat-label>
+                                        <input matInput placeholder="">
+                                        <mat-hint>Remov.</mat-hint>
+                                </mat-form-field>
+                        </mat-grid-tile>
+                        <mat-grid-tile>
+                                <mat-form-field appearance="outline">
+                                        <mat-label> 32 </mat-label>
+                                        <input matInput placeholder="">
+                                        <mat-hint>Remov.</mat-hint>
+                                </mat-form-field>
+                        </mat-grid-tile>
+                        <mat-grid-tile>
+                                <mat-form-field appearance="outline">
+                                        <mat-label> 33 </mat-label>
+                                        <input matInput placeholder="">
+                                        <mat-hint>Remov.</mat-hint>
+                                </mat-form-field>
+                        </mat-grid-tile>
+                        <mat-grid-tile>
+                                <mat-form-field appearance="outline">
+                                        <mat-label> 34 </mat-label>
+                                        <input matInput placeholder="">
+                                        <mat-hint>Remov.</mat-hint>
+                                </mat-form-field>
+                        </mat-grid-tile>
+                        <mat-grid-tile>
+                                <mat-form-field appearance="outline">
+                                        <mat-label> 35 </mat-label>
+                                        <input matInput placeholder="">
+                                        <mat-hint>Remov.</mat-hint>
+                                </mat-form-field>
+                        </mat-grid-tile>
+                        <mat-grid-tile>
+                                <mat-form-field appearance="outline">
+                                        <mat-label> 36 </mat-label>
+                                        <input matInput placeholder="">
+                                        <mat-hint>Remov.</mat-hint>
+                                </mat-form-field>
+                        </mat-grid-tile>
+                        <mat-grid-tile>
+                                <mat-form-field appearance="outline">
+                                        <mat-label> 37 </mat-label>
+                                        <input matInput placeholder="">
+                                        <mat-hint>Remov.</mat-hint>
+                                </mat-form-field>
+                        </mat-grid-tile>
+                        <mat-grid-tile>
+                                <mat-form-field appearance="outline">
+                                        <mat-label> 38 </mat-label>
+                                        <input matInput placeholder="1">
+                                        <mat-hint>Remov.</mat-hint>
+                                </mat-form-field>
+                        </mat-grid-tile>
+              </mat-grid-list>
     <br><br>        
     <button mat-raised-button color="accent" type="submit">Guardar</button>
     </form>
