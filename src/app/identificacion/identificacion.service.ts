@@ -1,7 +1,6 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Subject } from 'rxjs';
-import { map } from 'rxjs/operators';
 
 
 import { Ident } from '../modelos/identificacion.model';
@@ -11,12 +10,16 @@ export class IdentService {
   private ident: Ident[] = [];
   private id: string;
 
+  private messageUpdated = new Subject<string>();
 
-  constructor(private http: HttpClient) {}
+  constructor(
+    private http: HttpClient
+  ) {}
 
   addIdent( nombre: string,
       sexo: string,
       edad: string,
+      fechaNac: string,
       estadoCivil: string,
       direccion: string,
       telefono: string,
@@ -29,6 +32,7 @@ export class IdentService {
       nombre: nombre,
       sexo: sexo,
       edad: edad,
+      fechaNac: fechaNac,
       estadoCivil: estadoCivil,
       direccion: direccion,
       telefono: telefono,
@@ -37,15 +41,18 @@ export class IdentService {
       procedencia: procedencia,
       estadoSocioeconomico: estadoSocioeconomico
     };
-    // imprimir objeto con los datos del front end
-    console.log(registrarIdent);
-    /*
     this.http
-      .post<{ _id: string }>('http://localhost:3000/api/ident', registrarIdent)
+      .post<{ _id: string, message: string }>('http://localhost:3000/api/ident', registrarIdent)
       .subscribe(responseData => {
         this.id = responseData._id;
+        this.messageUpdated.next(responseData.message);
       });
-      */
   }
 
+  getMessageUpdateListener() {
+    return this.messageUpdated.asObservable();
+ }
+
 }
+
+

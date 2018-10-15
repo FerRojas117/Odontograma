@@ -4,10 +4,10 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 
 const identRoutes = require("./routes/identificacion");
-//const userRoutes = require("./routes/user");
+const userRoutes = require("./routes/user");
 
 const app = express();
-
+mongoose.set('useCreateIndex', true);
 mongoose
   .connect(
     "mongodb://localhost:27017/odontograma",
@@ -42,6 +42,6 @@ app.use((req, res, next) => {
 });
 
 app.use("/api/ident", identRoutes);
-//app.use("/api/user", userRoutes);
+app.use("/api/user", userRoutes);
 
 module.exports = app;

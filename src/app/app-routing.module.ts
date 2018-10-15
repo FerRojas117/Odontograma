@@ -18,9 +18,10 @@ const routes: Routes = [
      component: SidenavFixedComponent,
      children: [
        { path: 'identificacion', component: IdentificacionComponent },
-      ]
+      ],
+      canActivate: [AuthGuard]
   },
-  { path: 'inicio', component: InicioComponent },
+  { path: 'inicio', component: InicioComponent, canActivate: [AuthGuard] },
 ];
 
 @NgModule({

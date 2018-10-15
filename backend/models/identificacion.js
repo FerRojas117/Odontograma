@@ -12,6 +12,7 @@ const identificacion = mongoose.Schema({
   lugarDeNacimiento: { type: String, required: true },
   procedencia: { type: String, required: true },
   estadoSocioeconomico: { type: String, required: true },
+  creator: { type: mongoose.Schema.Types.ObjectId, ref: "User", required: true }
 });
 
 module.exports = mongoose.model("Ident", identificacion);

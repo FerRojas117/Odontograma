@@ -1,4 +1,4 @@
-/*
+
 const express = require("express");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
@@ -65,4 +65,4 @@ router.post("/login", (req, res, next) => {
 });
 
 module.exports = router;
-*/
+
