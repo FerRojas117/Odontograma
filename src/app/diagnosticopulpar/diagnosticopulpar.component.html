@@ -44,18 +44,23 @@
     </mat-form-field>
 
     <mat-form-field>
-      <textarea matInput formControlName="fisura" placeholder="Fisura"></textarea>
-      <mat-error *ngIf="form.get('fisura').invalid">Por favor, escribe la fisura.</mat-error>
+      <textarea matInput formControlName="fistula" placeholder="Fístula"></textarea>
+      <mat-error *ngIf="form.get('fistula').invalid">Por favor, escribe la fístula.</mat-error>
     </mat-form-field>
 
     <mat-form-field>
-      <textarea matInput formControlName="reaccionpulpar" placeholder="Reacción Pulpar"></textarea>
-      <mat-error *ngIf="form.get('reaccionpulpar').invalid">Por favor, escribe la reacción pulpar.</mat-error>
+      <textarea matInput formControlName="reaccionpulparcalor" placeholder="Reacción Pulpar a Calor"></textarea>
+      <mat-error *ngIf="form.get('reaccionpulparcalor').invalid">Por favor, escribe la reacción pulpar a calor.</mat-error>
     </mat-form-field>
 
     <mat-form-field>
-      <textarea matInput formControlName="testcavit" placeholder="Test Cavit"></textarea>
-      <mat-error *ngIf="form.get('testcavit').invalid">Por favor, escribe el test cavit.</mat-error>
+      <textarea matInput formControlName="reaccionpulparfrio" placeholder="Reacción Pulpar a Frío"></textarea>
+      <mat-error *ngIf="form.get('reaccionpulparfrio').invalid">Por favor, escribe la reacción pulpar a frío.</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <textarea matInput formControlName="reaccionpulpartestcavit" placeholder="Reacción Pulpar a Test. Cavit."></textarea>
+      <mat-error *ngIf="form.get('reaccionpulpartestcavit').invalid">Por favor, escribe la reacción pulpar a test. cavit.</mat-error>
     </mat-form-field>
 
     <br>
