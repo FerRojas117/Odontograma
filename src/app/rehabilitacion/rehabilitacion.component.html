@@ -1,13 +1,19 @@
 <mat-card class="cardForm">
     <form [formGroup]="form" (submit)="addReha()">
             <mat-form-field>
-                    <textarea matInput type="text" formControlName="referidoPor" placeholder="Referido Por:">  </textarea>
+                    <textarea matInput type="text" formControlName="referidoPor" placeholder="Referido por:">  </textarea>
                     <mat-error *ngIf="form.get('referidoPor').invalid">campo necesario</mat-error>
             </mat-form-field>
             <mat-form-field>
-                    <textarea matInput type="text" formControlName="motivoConsulta" placeholder="Motivo de la cosúlta">  </textarea>
+                    <textarea matInput type="text" formControlName="motivoConsulta" placeholder="¿Cual es el motivo de la consulta?">  </textarea>
                     <mat-error *ngIf="form.get('motivoConsulta').invalid">Por favor, escribe el motivo de la consulta</mat-error>
             </mat-form-field>
+            <mat-form-field>
+                    <mat-select placeholder="Examen para:" [formControl]="examenPara" multiple>
+                      <mat-option *ngFor="let examenPara of examenParaList" [value]="examenPara">{{examenPara}}</mat-option>
+                    </mat-select>
+            </mat-form-field>
+            
             
             <mat-radio-group class="radioGroup" formControlName="moEstu">
                 <span>¿Se tomaron modelos del estudio?</span>
@@ -18,24 +24,25 @@
                     </mat-form-field>
                 <mat-radio-button class="radioButton" value="N">No</mat-radio-button>
             </mat-radio-group>
-            <br>
+            <br><br>
+
             <mat-form-field> 
                 <span>Diagnostico y clasificación de la oclusion</span>
                     <textarea matInput type="text" formControlName="diagO" placeholder="Diagnostico y clasificación de la oclusion">  </textarea>
                     <mat-error *ngIf="form.get('diagO').invalid">Por favor, escriba el diagnostico.....</mat-error> 
             </mat-form-field>
+
             <mat-form-field> 
                     <span>Exploracion de la articulacion temporomandibular </span>
                         <textarea matInput type="text" formControlName="exTem" placeholder="Exploracion de la articulacion temporomandibular">  </textarea>
                         <mat-error *ngIf="form.get('exTem').invalid">Por favor, escriba las otras exploraciones</mat-error> 
-                </mat-form-field>
+            </mat-form-field>
 
             <mat-form-field> 
                 <span>Otras Exploraciones, Resuma aquí loss hallazgos de Exámenes escpeciales que haya requerido el paciente</span>
                     <textarea matInput type="text" formControlName="otrasEx" placeholder="----------------------">  </textarea>
                     <mat-error *ngIf="form.get('otrasEx').invalid">Por favor, escriba las otras exploraciones</mat-error> 
             </mat-form-field>
-            
 
 
 

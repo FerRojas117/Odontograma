@@ -3,6 +3,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+
 import {
   MatInputModule,
   MatCardModule,
@@ -11,7 +12,8 @@ import {
   MatExpansionModule,
   MatProgressSpinnerModule,
   MatPaginatorModule,
-  MatRadioModule
+  MatRadioModule,
+  MatSelectModule
 } from '@angular/material';
 
 import { AppComponent } from './app.component';
@@ -22,7 +24,6 @@ import { SignupComponent } from './auth/signup/signup.component';
 import { AuthInterceptor } from './auth/auth-interceptor';
 import { HomeComponent } from './home/home.component';
 import { SidenavFixedComponent } from './Sidenav/sidenav.component';
-//import { InterrogatorioComponent } from './interrogatorio/interrogatorio.component';
 import {
   MatListModule,
   MatSidenavModule
@@ -65,7 +66,8 @@ import { RehabilitacionComponent } from './rehabilitacion/rehabilitacion.compone
     MatPaginatorModule,
     MatSidenavModule,
     HttpClientModule,
-    MatRadioModule
+    MatRadioModule,
+    MatSelectModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
