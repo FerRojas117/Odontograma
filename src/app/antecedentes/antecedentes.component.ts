@@ -1,28 +1,27 @@
 import { Component, OnInit   } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { AnteceService } from './antecedentes.service';
-   
+
 @Component({
   selector: 'app-antecedentes',
   templateUrl: './antecedentes.component.html',
   styleUrls: ['./antecedentes.component.css']
 })
 
-export class SelectMultipleExample1 {
+export class AntecedentesComponent implements OnInit {
+  form: FormGroup;
   malestar = new FormControl();
   malestarList: string[] = ['Hemorragias', 'Dolores', 'Sabor desagradable', 'Fracturas', 'Trismus', 'Paresia', 'Parestesia', 'Otros'];
   cavidad = new FormControl();
-  cavidadList: string[] = ['No hay anomalidad', 'Pigmentación', 'Labios', 'Carrillo y surco vestibular', 'Lengua', 'Glánsulas salivares(Tamaño,Calidad y flujo de saliva,etc)', 'Piso de boca', 'Paladar', 'Orofaringe', 'Encia'];
+  cavidadList: string[] = ['No hay anomalidad',
+   'Pigmentación',
+    'Labios', 'Carrillo y surco vestibular',
+    'Lengua', 'Glánsulas salivares(Tamaño,Calidad y flujo de saliva,etc)',
+    'Piso de boca', 'Paladar', 'Orofaringe', 'Encia'];
   higieneo = new FormControl();
   higieneoList: string[] = ['Buena', 'Regualar', 'Mala', 'Halitosis', 'Placa', 'Materia Alba', 'Pigmentaciones'];
   cal = new FormControl();
   calList: string[] = ['Ausentes', 'Reggulares', 'Abundantes', 'Supragingivales', 'Subgingivales'];
-
-}
-
-
-export class AntecedentesComponent implements OnInit {
-  form: FormGroup;
 
   constructor(public anteceService: AnteceService) {}
 
@@ -32,9 +31,11 @@ export class AntecedentesComponent implements OnInit {
         validators: [Validators.required, Validators.minLength(3)]
       }),
       cuanvisito: new FormControl(null, { validators: [Validators.required] }),
+      vistmedult: new FormControl(null, { validators: [Validators.required] }),
       motivo: new FormControl(null, { validators: [Validators.required] }),
       cdcuantiempo: new FormControl(null, { validators: [Validators.required] }),
       radiografias: new FormControl(null, { validators: [Validators.required] }),
+      radiografia: new FormControl(null, { validators: [Validators.required] }),
       cuantascuando: new FormControl(null, { validators: [Validators.required] }),
       orgdentarios: new FormControl(null, { validators: [Validators.required] }),
       cuantosporque: new FormControl(null, { validators: [Validators.required] }),

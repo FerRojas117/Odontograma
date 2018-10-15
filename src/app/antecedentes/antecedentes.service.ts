@@ -9,6 +9,7 @@ import { Antece } from '../modelos/antecedentes.model';
 @Injectable({ providedIn: 'root' })
 export class AnteceService {
   private ident: Antece[] = [];
+  private id: string;
 
   constructor(private http: HttpClient) {}
 
@@ -90,11 +91,15 @@ export class AnteceService {
       calculos: calculos,
       exploracionradiografica: exploracionradiografica,
     };
+    // imprimir objeto con los datos del front end
+    console.log(registrarAntece);
+    /*
     this.http
-      .post<{ message: string }>('http://localhost:3000/api/antece', registrarAntece)
+      .post<{ _id: string }>('http://localhost:3000/api/ident', registrarIdent)
       .subscribe(responseData => {
-        console.log(responseData);
+        this.id = responseData._id;
       });
+      */
   }
 
 }

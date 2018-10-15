@@ -10,7 +10,14 @@ import { AntGService } from './antgenerales.service';
 
 export class AntgeneralesComponent implements OnInit {
   form: FormGroup;
-
+  ginobs = new FormControl();
+  ginobsList: string[] = [
+    'Menarca', 'Ritmo menstrual', 'Edad de inicio de vida sexual', 
+    'Fecha de ultima regla', 'Embarazos', 'Partos', 'Fecha del ultimo parto', 
+    'Cesáreas', 'Abortos', 'Hijos con bajo peso al nacer', 'Hijos macrósomicos', 
+    'Edad de los hijos vivos', 'Hijos con bajo peso al nacer', 'Tipos de método de planificación familiar', 
+    'Tiempo de uso del metodo'];
+    
   constructor(public antgeService: AntGService) {}
 
   ngOnInit() {
@@ -48,10 +55,4 @@ export class AntgeneralesComponent implements OnInit {
       this.form.value.planifami,
     );
   }
-}
-
-
-export class SelectMultipleExample {
-  ginobs = new FormControl();
-  ginobsList: string[] = ['Menarca', 'Ritmo menstrual', 'Edad de inicio de vida sexual', 'Fecha de ultima regla', 'Embarazos', 'Partos', 'Fecha del ultimo parto', 'Cesáreas', 'Abortos', 'Hijos con bajo peso al nacer', 'Hijos macrósomicos', 'Edad de los hijos vivos', 'Hijos con bajo peso al nacer', 'Tipos de método de planificación familiar', 'Tiempo de uso del metodo'];
 }

@@ -1,11 +1,11 @@
 <mat-card class="cardForm">
     <form [formGroup]="form" (submit)="addEstu()">
-  
+
       <mat-form-field>
         <textarea matInput type="text" formControlName="nombre" placeholder="Nombre">  </textarea>
         <mat-error *ngIf="form.get('nombre').invalid">Por favor, escribe el nombre</mat-error>
       </mat-form-field>
-  
+
       <mat-form-field>
         <textarea matInput type="text" formControlName="edad" placeholder="Edad">  </textarea>
         <mat-error *ngIf="form.get('edad').invalid">Por favor, escribe la edad</mat-error>
@@ -20,12 +20,12 @@
         <textarea matInput formControlName="tiemporadi" placeholder="Tiempo de radicar"></textarea>
         <mat-error *ngIf="form.get('tiemporadi').invalid">Por favor, escribe el tiempo que llevas viviendo ahi.</mat-error>
     </mat-form-field>
-    
+
     <mat-form-field>
         <textarea matInput formControlName="fechnac" placeholder="Fecha de Nacimiento"></textarea>
         <mat-error *ngIf="form.get('fechnac').invalid">Por favor, escribe la fecha de nacimiento.</mat-error>
     </mat-form-field>
-    
+
     <mat-form-field>
         <textarea matInput formControlName="telefono" placeholder="Telefono"></textarea>
         <mat-error *ngIf="form.get('telefono').invalid">Por favor, escribe el teléfono.</mat-error>
@@ -41,12 +41,12 @@
         <mat-error *ngIf="form.get('nacionalidad').invalid">Por favor, escribe la nacionalidad.</mat-error>
     </mat-form-field>
 
-    <mat-radio-group class="radioGroup" formControlName="sexo">
+    <mat-radio-group class="radioGroup" formControlName="sexoN">
         <span>Sexo</span>
         <mat-radio-button class="radioButton" value="M">M</mat-radio-button>
         <mat-radio-button class="radioButton" value="F">F</mat-radio-button>
     </mat-radio-group>
-  
+
       <mat-form-field>
           <textarea matInput  formControlName="estadocivil" placeholder="Estado civil"></textarea>
           <mat-error *ngIf="form.get('estadocivil').invalid">Por favor, escribe el estado civil.</mat-error>
@@ -61,33 +61,33 @@
         <textarea matInput  formControlName="lugar" placeholder="Lugar"></textarea>
         <mat-error *ngIf="form.get('lugar').invalid">Por favor, escribe el lugar.</mat-error>
     </mat-form-field>
-  
+
       <mat-form-field>
           <textarea matInput formControlName="direcc" placeholder="Direccion"></textarea>
           <mat-error *ngIf="form.get('direcc').invalid">Por favor, escribe la direcciòn.</mat-error>
       </mat-form-field>
-  
+
       <mat-form-field>
           <textarea matInput formControlName="ingresos" placeholder="Rango de ingresos"></textarea>
           <mat-error *ngIf="form.get('ingresos').invalid">Por favor, escribe el rango de ingresos.</mat-error>
       </mat-form-field>
-  
+
       <mat-form-field>
           <textarea matInput formControlName="gradoinst" placeholder="Grado de Institusción"></textarea>
           <mat-error *ngIf="form.get('gradoinst').invalid">Por favor, escribe el grado de institución.</mat-error>
       </mat-form-field>
-  
+
       <mat-form-field>
           <textarea matInput formControlName="numfam" placeholder="Número de personas en familia"></textarea>
           <mat-error *ngIf="form.get('numfam').invalid">Por favor, escribe la cantidad de personas en familia.</mat-error>
       </mat-form-field>
-  
+
       <mat-form-field>
           <textarea matInput  formControlName="digsoci" placeholder="Diagnostico Social"></textarea>
           <mat-error *ngIf="form.get('digsoci').invalid">Por favor escribe el diagnostico social.</mat-error>
       </mat-form-field>
-  
-      <mat-radio-group class="radioGroup" formControlName="sexo">
+
+      <mat-radio-group class="radioGroup" formControlName="asigancion">
         <span>Tiene asignado</span>
         <span>Alumno</span>
         <mat-radio-button class="radioButton" value="S">Si</mat-radio-button>
@@ -106,6 +106,5 @@
 
       <button mat-raised-button color="accent" type="submit">Guardar</button>
     </form>
-  
+
   </mat-card>
-  
