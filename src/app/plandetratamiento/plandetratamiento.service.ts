@@ -12,11 +12,31 @@ export class PlandetratService {
   constructor(private http: HttpClient) {}
 
   addPlandeTratamiento( 
-    noempleado: string,
+    trabajo: string,
+    profesor: string,
+    cariadas: string,
+    perdidas: string,
+    obturadas: string,
+    extracciones: string,
+    indicadas: string,
+    nombre: string,
+    cuat: string,
+    equipo: string,
+    sillon: string,
 
     ) {
     const registrarPlandeTratamiento: any = {
-      noempleado:noempleado,
+      trabajo:trabajo,
+      profesor:profesor,
+      cariadas:cariadas,
+      perdidas:perdidas,
+      obturadas:obturadas,
+      extracciones:extracciones,
+      indicadas:indicadas,
+      nombre:nombre,
+      cuat:cuat,
+      equipo:equipo,
+      sillon:sillon,
     };
     // imprimir objeto con los datos del front end
    console.log(registrarPlandeTratamiento);
