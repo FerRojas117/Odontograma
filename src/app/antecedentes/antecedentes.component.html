@@ -21,62 +21,86 @@
         <mat-error *ngIf="form.get('cdcuantiempo').invalid">Por favor, escribe cada que tiempo realiza la visita</mat-error>
       </mat-form-field>
 
-      <mat-radio-group class="radioGroup" formControlName="radiografia">
-        <span>¿Le han tomado radiografias?</span>
-        <mat-radio-button class="radioButton" value="S">Si</mat-radio-button>
-            <mat-form-field>
-                <textarea matInput type="text" formControlName="cuantascuando" placeholder="Cuantas y cuando se las tomaron">  </textarea>
-                <mat-error *ngIf="form.get('cuantascuando').invalid">Por favor, escribe cuando y cuantas le tomaron</mat-error>
-             </mat-form-field>
-        <mat-radio-button class="radioButton" value="N">No</mat-radio-button>
-      </mat-radio-group>
+      <span>¿Le han tomado radiografias?</span>
+      <mat-radio-group>
+        <mat-radio-button value="S" (click)="apareceRadiografias()">Si</mat-radio-button>
+        <mat-radio-button value="N"(click)="desapareceRadiografias()">No</mat-radio-button>
+    </mat-radio-group>
+    <br>
+       <mat-form-field>
+        <textarea matInput placeholder="Cuándo" [disabled]="radiogrfias_dis"></textarea>
+       </mat-form-field>
+    <br>
 
-      <mat-radio-group class="radioGroup" formControlName="orgdentarios">
-        <span>¿Ha perdido organos dentarios?</span>
-        <mat-radio-button class="radioButton" value="S1">Si</mat-radio-button>
-            <mat-form-field>
-                <textarea matInput type="text" formControlName="cuantosporque" placeholder="Cuantos y porque los perdio">  </textarea>
-                <mat-error *ngIf="form.get('cuantosporque').invalid">Por favor, escribe como y cuantas los remplazaronn</mat-error>
-             </mat-form-field>
-        <mat-radio-button class="radioButton" value="N1">No</mat-radio-button>
-      </mat-radio-group>
-
-      <mat-radio-group class="radioGroup" formControlName="remplazo">
-        <span>¿Los han remplazado?</span>
-        <mat-radio-button class="radioButton" value="S2">Si</mat-radio-button>
-            <mat-form-field>
-                <textarea matInput type="text" formControlName="comocuando" placeholder="Como y cuando se los remplazaron">  </textarea>
-                <mat-error *ngIf="form.get('comocuando').invalid">Por favor, escribe como y cuantas los remplazaronn</mat-error>
-             </mat-form-field>
-        <mat-radio-button class="radioButton" value="N2">No</mat-radio-button>
-      </mat-radio-group>
-
-      <mat-radio-group class="radioGroup" formControlName="cirugias">
-        <span>Experiencia con cirugias dentoalvelares</span>
-        <mat-radio-button class="radioButton" value="S3">Si</mat-radio-button>
-            <mat-radio-group class="radioGroup" formControlName="tipos">
-                <mat-radio-button class="radioButton" value="hemo">Hemorragias</mat-radio-button>
-                <mat-radio-button class="radioButton" value="dolor">Dolor prolongado</mat-radio-button>
-                <mat-radio-button class="radioButton" value="cica">Cicatrización retardada</mat-radio-button>
-                <mat-radio-button class="radioButton" value="alve">Alveolitis</mat-radio-button>
-            </mat-radio-group>
-        <mat-radio-button class="radioButton" value="N3">No</mat-radio-button>
-      </mat-radio-group>
-
-      <mat-radio-group class="radioGroup" formControlName="proanestesia">
-        <span>¿Ha tenido problemas con la anestesia local?</span>
-        <mat-radio-button class="radioButton" value="S4">Si</mat-radio-button>
-            <mat-form-field>
-                <textarea matInput type="text" formControlName="quetipo" placeholder="De que tipo">  </textarea>
-                <mat-error *ngIf="form.get('quetipo').invalid">Por favor, escribe de que tipo fueron los problemas</mat-error>
-             </mat-form-field>
-        <mat-radio-button class="radioButton" value="N4">No</mat-radio-button>
-      </mat-radio-group>
-
+    <br>
       <mat-form-field>
-        <textarea matInput  formControlName="higieneoral" placeholder="¿Qué medidas de higiene oral acostumbra?"></textarea>
-        <mat-error *ngIf="form.get('higieneoral').invalid">Por favor, escribe con que frecuencia lo realizas.</mat-error>
+        <textarea matInput placeholder="Cuántas" [disabled]="radiogrfias_dis"></textarea>
+      </mat-form-field>
+    <br>
+     
+      <span>¿Ha perdido organos dentarios?</span>
+      <mat-radio-group>
+        <mat-radio-button value="S" (click)="apareceOrgDent()">Si</mat-radio-button>
+        <mat-radio-button value="N"(click)="desapareceOrgDent()">No</mat-radio-button>
+    </mat-radio-group>
+
+    <br>
+       <mat-form-field>
+        <textarea matInput placeholder="Cuantos" [disabled]="orgdent_dis"></textarea>
+       </mat-form-field>
+    <br>
+
+    <br>
+      <mat-form-field>
+        <textarea matInput placeholder="Porque" [disabled]="orgdent_dis"></textarea>
+      </mat-form-field>
+    <br>
+     
+    <span>¿Los han remplazado?</span>
+    <mat-radio-group>
+      <mat-radio-button value="S" (click)="apareceRemplazo()">Si</mat-radio-button>
+      <mat-radio-button value="N"(click)="desapareceRemplazo()">No</mat-radio-button>
+    </mat-radio-group>
+
+  <br>
+     <mat-form-field>
+      <textarea matInput placeholder="Cómo" [disabled]="remplazo_dis"></textarea>
+     </mat-form-field>
+  <br>
+
+  <br>
+    <mat-form-field>
+      <textarea matInput placeholder="Cuándo" [disabled]="remplazo_dis"></textarea>
     </mat-form-field>
+  <br>
+
+  <span>Experiencia con cirugias dentoalvelares</span>
+  <mat-radio-group>
+    <mat-radio-button value="S" (click)="apareceCirugiaDen()">Si</mat-radio-button>
+    <mat-select placeholder="Algunas de las cirugias son:" [formControl]="ciru" multiple>
+      <mat-option *ngFor="let ciru of ciruList" [value]="ciru">{{ciru}}</mat-option>
+    </mat-select>
+    <mat-radio-button value="N"(click)="desapareceCirugiaDen()">No</mat-radio-button>
+  </mat-form-field>
+
+  <br>
+  <span>¿Ha tenido problemas con la anestesia local?</span>
+  <br>
+  <mat-radio-group>
+    <mat-radio-button value="S" (click)="apareceProAnes()">Si</mat-radio-button>
+    <mat-radio-button value="N"(click)="desapareceProAnes()">No</mat-radio-button>
+  </mat-radio-group>
+
+  <br>
+  <mat-form-field>
+    <textarea matInput placeholder="Qué tipo" [disabled]="proanes_dis"></textarea>
+  </mat-form-field>
+  <br>
+
+  <mat-form-field>
+      <textarea matInput  formControlName="higieneoral" placeholder="¿Qué medidas de higiene oral acostumbra?"></textarea>
+      <mat-error *ngIf="form.get('higieneoral').invalid">Por favor, escribe con que frecuencia lo realizas.</mat-error>
+  </mat-form-field>
 
         <mat-form-field>
           <mat-select placeholder="Alguna vez ha tenido en su boca:" [formControl]="malestar" multiple>
@@ -89,15 +113,29 @@
                 <mat-error *ngIf="form.get('explique').invalid">Por favor, escribe de que tipo fueron los problemas</mat-error>
         </mat-form-field>
 
-      <mat-radio-group class="radioGroup" formControlName="cuidadomedico">
         <span>¿Está bajo cuidado medico?</span>
-        <mat-radio-button class="radioButton" value="S5">Si</mat-radio-button>
-            <mat-form-field>
-                <textarea matInput type="text" formControlName="hospital" placeholder="Con que hospital esta en el tratmiento">  </textarea>
-                <mat-error *ngIf="form.get('hospital').invalid">Por favor, escribe con que hospital esta bajo tratamiento</mat-error>
-             </mat-form-field>
-        <mat-radio-button class="radioButton" value="N5">No</mat-radio-button>
-      </mat-radio-group>
+      <mat-radio-group>
+          <mat-radio-button value="S" (click)="apareceCuidadoM()">Si</mat-radio-button>
+          <mat-radio-button value="N"(click)="desapareceCuidadoM()">No</mat-radio-button>
+        </mat-radio-group>
+    
+      <br>
+         <mat-form-field>
+          <textarea matInput placeholder="Hospital" [disabled]="cuidadom_dis"></textarea>
+         </mat-form-field>
+      <br>
+    
+      <br>
+        <mat-form-field>
+          <textarea matInput placeholder="Médico" [disabled]="cuidadom_dis"></textarea>
+        </mat-form-field>
+      <br>
+
+      <br>
+        <mat-form-field>
+          <textarea matInput placeholder="#Historial" [disabled]="cuidadom_dis"></textarea>
+        </mat-form-field>
+      <br> 
 
       <mat-form-field>
         <textarea matInput formControlName="vistmedult" placeholder="¿Cuándo visito al médico por ultima vez?"></textarea>
@@ -109,72 +147,52 @@
       <mat-error *ngIf="form.get('paraque').invalid">Por favor, excribe el porque .</mat-error>
   </mat-form-field>
 
-      <mat-radio-group class="radioGroup" formControlName="drogas">
-        <span>¿Está recibiendo drogas?</span>
-        <mat-radio-button class="radioButton" value="S6">Si</mat-radio-button>
-            <mat-form-field>
-                <textarea matInput type="text" formControlName="cualesdr" placeholder="¿Qué drogas esta recibiendo">  </textarea>
-                <mat-error *ngIf="form.get('cualesdr').invalid">Por favor, escribe que drogas esta recibiendo</mat-error>
-             </mat-form-field>
-        <mat-radio-button class="radioButton" value="N6">No</mat-radio-button>
+      <span>¿Está recibiendo drogas?</span>
+      <mat-radio-group>
+        <mat-radio-button value="S" (click)="apareceDrogas()">Si</mat-radio-button>
+        <mat-radio-button value="N"(click)="desapareceDrogas()">No</mat-radio-button>
       </mat-radio-group>
+  
+      <br>
+        <mat-form-field>
+          <textarea matInput placeholder="Cuáles" [disabled]="drogas_dis"></textarea>
+        </mat-form-field>
+      <br>
 
       <mat-radio-group class="radioGroup" formControlName="hemorragias">
         <span>¿Presenta hemorragias significativas?</span>
         <mat-radio-button class="radioButton" value="S7">Si</mat-radio-button>
-            <mat-radio-group class="radioGroup" formControlName="hsig">
-                <mat-radio-button class="radioButton" value="hep">Heridas pequeñas</mat-radio-button>
-                <mat-radio-button class="radioButton" value="tl">Truama leve</mat-radio-button>
-                <mat-radio-button class="radioButton" value="mens">Menstruacion</mat-radio-button>
-                <mat-radio-button class="radioButton" value="hema">Hematomas</mat-radio-button>
-                <mat-radio-button class="radioButton" value="pe">Petequias</mat-radio-button>
-                <mat-radio-button class="radioButton" value="es">Esquimosis</mat-radio-button>
-                <mat-radio-button class="radioButton" value="ex">Espitaxis</mat-radio-button>
-            </mat-radio-group>
+          <mat-select placeholder="Tipos de hemorragias:" [formControl]="hemorragiass" multiple>
+            <mat-option *ngFor="let hemorragiass of hemorragiassList" [value]="hemorragiass">{{hemorragiass}}</mat-option>
+          </mat-select>
         <mat-radio-button class="radioButton" value="N7">No</mat-radio-button>
       </mat-radio-group>
 
-      <mat-radio-group class="radioGroup" formControlName="reacalergicas">
-        <span>¿Ha presentado reacciones alergicas?</span>
-        <mat-radio-button class="radioButton" value="S8">Si</mat-radio-button>
-            <mat-radio-group class="radioGroup" formControlName="tipreac">
-                <mat-radio-button class="radioButton" value="ali">Alimentos</mat-radio-button>
-                  <mat-form-field>
-                    <textarea matInput formControlName="cualesali" placeholder="Cuales"></textarea>
-                    <mat-error *ngIf="form.get('cualesali').invalid">Por favor, escribe con que alimentos.</mat-error>
-                  </mat-form-field>
-                <mat-radio-button class="radioButton" value="dro">Drogas</mat-radio-button>
-                  <mat-form-field>
-                    <textarea matInput formControlName="cualesd" placeholder="Cuales"></textarea>
-                    <mat-error *ngIf="form.get('cualesd').invalid">Por favor, escribe con que drogas.</mat-error>
-                  </mat-form-field>
-                <mat-radio-button class="radioButton" value="anes">Anestesicos</mat-radio-button>
-                  <mat-form-field>
-                    <textarea matInput formControlName="cualesanes" placeholder="Cuales"></textarea>
-                    <mat-error *ngIf="form.get('cualesanes').invalid">Por favor, escribe con que anestesicos.</mat-error>
-                  </mat-form-field>
-                <mat-radio-button class="radioButton" value="hema">Otros</mat-radio-button>
-                  <mat-form-field>
-                    <textarea matInput formControlName="cualesotr" placeholder="Cuales"></textarea>
-                    <mat-error *ngIf="form.get('cualesotr').invalid">Por favor, escribe con que otras cosas tuvo alergias.</mat-error>
-                  </mat-form-field>
-            </mat-radio-group>
-        <mat-radio-button class="radioButton" value="N8">No</mat-radio-button>
-      </mat-radio-group>
+      <span>¿Ha presentado reacciones alergicas?</span>
+      <mat-radio-button value="S" (click)="apareceAlergias()">Si</mat-radio-button>
+      <mat-select placeholder="Tipos de reacciones alergicas:" [formControl]="alergicas" multiple>
+        <mat-option *ngFor="let alergicas of alergicasList" [value]="alergicas">{{alergicas}}</mat-option>
+      </mat-select>
+      <mat-radio-button value="N" (click)="desapareceAlergias()">No</mat-radio-button>
+     </mat-radio-group>  
 
-      <mat-radio-group class="radioGroup" formControlName="consmedica">
-        <span>¿Necesario hacer consulta médica?</span>
-        <mat-radio-button class="radioButton" value="S9">Si</mat-radio-button>
-            <mat-form-field>
-                <textarea matInput type="text" formControlName="porque" placeholder="¿Por qué?">  </textarea>
-                <mat-error *ngIf="form.get('porque').invalid">Por favor, escriba el porque</mat-error>
-             </mat-form-field>
-        <mat-radio-button class="radioButton" value="N9">No</mat-radio-button>
-            <mat-form-field>
-                <textarea matInput type="text" formControlName="obs" placeholder="Observaciones">  </textarea>
-                <mat-error *ngIf="form.get('obs').invalid">Por favor, escriba las observaciones</mat-error>
-            </mat-form-field>
-      </mat-radio-group>
+     <br>
+     <mat-form-field>
+       <textarea matInput placeholder="Cuáles" [disabled]="alergias_dis"></textarea>
+     </mat-form-field>
+     <br>
+
+    <span>¿Necesario hacer consulta médica?</span>
+    <mat-radio-group>
+      <mat-radio-button value="S" (click)="apareceConsulta()">Si</mat-radio-button>
+      <mat-radio-button value="N"(click)="desapareceConsulta()">No</mat-radio-button>
+    </mat-radio-group>
+    <br>
+     <mat-form-field>
+      <textarea matInput placeholder="¿Por qué?" [disabled]="consulta_dis"></textarea>
+     </mat-form-field>
+     <br>
+
 
       <mat-form-field>
         <mat-select placeholder="Exploración de la cavidad oral:" [formControl]="cavidad" multiple>

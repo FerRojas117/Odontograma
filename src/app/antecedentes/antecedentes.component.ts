@@ -10,6 +10,15 @@ import { AnteceService } from './antecedentes.service';
 
 export class AntecedentesComponent implements OnInit {
   form: FormGroup;
+  radiografias_dis : boolean;
+  orgdent_dis: boolean;
+  remplazo_dis: boolean;
+  proanes_dis: boolean;
+  cuidadom_dis: boolean;
+  drogas_dis: boolean;
+  alergias_dis: boolean;
+  consulta_dis: boolean;
+
   malestar = new FormControl();
   malestarList: string[] = ['Hemorragias', 'Dolores', 'Sabor desagradable', 'Fracturas', 'Trismus', 'Paresia', 'Parestesia', 'Otros'];
   cavidad = new FormControl();
@@ -24,6 +33,81 @@ export class AntecedentesComponent implements OnInit {
   calList: string[] = ['Ausentes', 'Reggulares', 'Abundantes', 'Supragingivales', 'Subgingivales'];
 
   constructor(public anteceService: AnteceService) {}
+  desapareceConsulta(){
+    this.consulta_dis = true;
+  }
+  apareceConsulta(){
+    if ( this.consulta_dis== true){
+      this.consulta_dis=false;
+    }
+    
+  }
+  desapareceAlergias(){
+    this.alergias_dis = true;
+  }
+  apareceAlergias(){
+    if ( this.alergias_dis== true){
+      this.alergias_dis=false;
+    }
+    
+  }
+  desapareceDrogas(){
+    this.drogas_dis = true;
+  }
+  apareceDrogas(){
+    if ( this.drogas_dis== true){
+      this.drogas_dis=false;
+    }
+    
+  }
+    desapareceRadiografias(){
+      this.radiografias_dis = true;
+    }
+    apareceRadiografias(){
+      if ( this.radiografias_dis== true){
+        this.radiografias_dis=false;
+      }
+      
+    }
+
+    desapareceOrgdent(){
+      this.orgdent_dis = true;
+    }
+    apareceOrgdent(){
+      if ( this.orgdent_dis== true){
+        this.orgdent_dis=false;
+      }
+      
+    }
+    desapareceRemplazo(){
+      this.remplazo_dis = true;
+    }
+    apareceRemplazo(){
+      if ( this.remplazo_dis== true){
+        this.remplazo_dis=false;
+      }
+      
+    }
+    desapareceProanes(){
+      this.proanes_dis = true;
+    }
+    apareceProanes(){
+      if ( this.proanes_dis== true){
+        this.proanes_dis=false;
+      }
+      
+    }
+      desapareceCuidadom(){
+        this.cuidadom_dis = true;
+      }
+      apareceCuidadom(){
+        if ( this.cuidadom_dis== true){
+          this.cuidadom_dis=false;
+        }
+        
+      }
+
+
 
   ngOnInit() {
     this.form = new FormGroup({
