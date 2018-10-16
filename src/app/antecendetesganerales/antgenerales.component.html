@@ -48,17 +48,189 @@
             <mat-error *ngIf="form.get('perspat').invalid">Por favor escribe los antecedentes patologicos personales.</mat-error>
       </mat-form-field>
       <br>
-      <mat-form-field>
-        <mat-select placeholder="Gineco-Obstétricos" [formControl]="ginobs" multiple>
-          <mat-option *ngFor="let ginobs of ginobsList" [value]="topping">{{ginobs}}</mat-option>
-        </mat-select>
-      </mat-form-field>
+
+      <span>Gineco-obstétricos</span>
+      <br>
+      <span>Menarca</span>
+      <br>
+      <mat-radio-group>
+        <mat-radio-button value="S" (click)="apareceMenarca()">Si</mat-radio-button>
+        <mat-radio-button value="N"(click)="desapareceMenarca()">No</mat-radio-button>
+      </mat-radio-group>
+      <br>
+
+      <br>
+        <mat-form-field>
+            <textarea matInput placeholder="¿Tiene sus periodo en estos momentos?" [disabled]="menarca_dis"></textarea>
+        </mat-form-field>
+      <br>
+    
+      <span>Embarazo</span>
+      <br>
+      <mat-radio-group>
+        <mat-radio-button value="S" (click)="apareceEmbarazo()">Si</mat-radio-button>
+        <mat-radio-button value="N"(click)="desapareceEmbarazo()">No</mat-radio-button>
+      </mat-radio-group>
+      <br>
+
+      <br>
+        <mat-form-field>
+            <textarea matInput placeholder="¿Ha tenido embarazos?" [disabled]="embarazo_dis"></textarea>
+        </mat-form-field>
+      <br>
+
+      <span>Hijos con bajo peso al nacer</span>
+      <br>
+      <mat-radio-group>
+        <mat-radio-button value="S" (click)="apareceBajopeso()">Si</mat-radio-button>
+        <mat-radio-button value="N"(click)="desapareceBajopeso()">No</mat-radio-button>
+      </mat-radio-group>
+      <br>
+
+      <br>
+        <mat-form-field>
+            <textarea matInput placeholder="¿Cuantos hijos tuvieron bajo peso al nacer?" [disabled]="bajopeso_dis"></textarea>
+        </mat-form-field>
+      <br>
+
+      <span>Edad de hijos vivos</span>
+      <br>
+      <mat-radio-group>
+        <mat-radio-button value="S" (click)="apareceHijosvivos()">Si</mat-radio-button>
+        <mat-radio-button value="N"(click)="desapareceHijosvivos()">No</mat-radio-button>
+      </mat-radio-group>
+      <br>
+
+      <br>
+        <mat-form-field>
+            <textarea matInput placeholder="¿Qué edad tienen sus hijos?" [disabled]="hijosvivos_dis"></textarea>
+        </mat-form-field>
+      <br>
+
+      <span>Hijos Macrosómicos</span>
+      <br>
+      <mat-radio-group>
+        <mat-radio-button value="S" (click)="apareceHijosM()">Si</mat-radio-button>
+        <mat-radio-button value="N"(click)="desapareceHijosM()">No</mat-radio-button>
+      </mat-radio-group>
+      <br>
+
+      <br>
+        <mat-form-field>
+            <textarea matInput placeholder="¿Cuantos hijos macrosómicos tiene?" [disabled]="hijosm_dis"></textarea>
+        </mat-form-field>
+      <br>
+
+      <span>Ritmo menstrual</span>
+      <br>
+      <mat-radio-group>
+        <mat-radio-button value="S" (click)="apareceRitmo()">Si</mat-radio-button>
+        <mat-radio-button value="N"(click)="desapareceRitmo()">No</mat-radio-button>
+      </mat-radio-group>
+      <br>
+
+      <br>
+        <mat-form-field>
+            <textarea matInput placeholder="¿Cada cuanto tiempo tiene su periodo?" [disabled]="ritmo_dis"></textarea>
+        </mat-form-field>
+      <br>
+
+      <span>Fecha de la ultima regla</span>
+      <br>
+      <mat-radio-group>
+        <mat-radio-button value="S" (click)="apareceRegla()">Si</mat-radio-button>
+        <mat-radio-button value="N"(click)="desapareceRegla()">No</mat-radio-button>
+      </mat-radio-group>
+      <br>
+
+      <br>
+        <mat-form-field>
+            <textarea matInput placeholder="¿Cuando fue su ultima regla?" [disabled]="regla_dis"></textarea>
+        </mat-form-field>
+      <br>
+
+      <span>Césareas</span>
+      <br>
+      <mat-radio-group>
+        <mat-radio-button value="S" (click)="apareceCesareas()">Si</mat-radio-button>
+        <mat-radio-button value="N"(click)="desapareceCesareas()">No</mat-radio-button>
+      </mat-radio-group>
+      <br>
+      <br>
+        <mat-form-field>
+            <textarea matInput placeholder="¿Cuantás cesareas lleva?" [disabled]="cesareas_dis"></textarea>
+        </mat-form-field>
+      <br>
+
+      <span>Edad de inicio de vida sexual</span>
+      <br>
+      <mat-radio-group>
+        <mat-radio-button value="S" (click)="apareceEdad()">Si</mat-radio-button>
+        <mat-radio-button value="N"(click)="desapareceEdad()">No</mat-radio-button>
+      </mat-radio-group>
+      <br>
+      <br>
+        <mat-form-field>
+            <textarea matInput placeholder="¿A qué edad inicio su vida sexual?" [disabled]="edad_dis"></textarea>
+        </mat-form-field>
+      <br>
+
+      <span>Partos</span>
+      <br>
+      <mat-radio-group>
+        <mat-radio-button value="S" (click)="aparecePartos()">Si</mat-radio-button>
+        <mat-radio-button value="N"(click)="desaparecePartos()">No</mat-radio-button>
+      </mat-radio-group>
+      <br>
+
+      <br>
+        <mat-form-field>
+            <textarea matInput placeholder="¿Cuántos partos lleva?" [disabled]="partos_dis"></textarea>
+        </mat-form-field>
+      <br>
+
+      <span>Fecha del último parto</span>
+      <br>
+      <mat-radio-group>
+        <mat-radio-button value="S" (click)="apareceFechaP()">Si</mat-radio-button>
+        <mat-radio-button value="N"(click)="desapareceFechaP()">No</mat-radio-button>
+      </mat-radio-group>
+      <br>
+
+      <br>
+        <mat-form-field>
+            <textarea matInput placeholder="¿Cuando fue tu último parto?" [disabled]="fechap_dis"></textarea>
+        </mat-form-field>
+      <br>
+
+      <span>Abortos</span>
+      <br>
+      <mat-radio-group>
+        <mat-radio-button value="S" (click)="apareceAbortos()">Si</mat-radio-button>
+        <mat-radio-button value="N"(click)="desapareceAbortos()">No</mat-radio-button>
+      </mat-radio-group>
+      <br>
+
+      <br>
+        <mat-form-field>
+            <textarea matInput placeholder="¿Cuantos abortos lleva?" [disabled]="abortos_dis"></textarea>
+        </mat-form-field>
+      <br>
+
       <br>
       <mat-form-field>
-            <textarea matInput  formControlName="planifami" placeholder="Tipo de palnificación familiar"></textarea>
+            <textarea matInput  formControlName="planifami" placeholder="Tipo de metodo de palnificación familiar"></textarea>
             <mat-error *ngIf="form.get('planifami').invalid">Por favor escribe el tipo de planificacion familiar.</mat-error>
       </mat-form-field>
     <br>
+
+    <br>
+    <mat-form-field>
+          <textarea matInput  formControlName="planifamitiem" placeholder="Tiempo de uso del metodo"></textarea>
+          <mat-error *ngIf="form.get('planifamitiem').invalid">Por favor escribe el tipo de planificacion familiar.</mat-error>
+    </mat-form-field>
+  <br>
+
     <br>
       <button mat-raised-button color="accent" type="submit">Guardar</button>
     </form>

@@ -10,6 +10,19 @@ import { AntGService } from './antgenerales.service';
 
 export class AntgeneralesComponent implements OnInit {
   form: FormGroup;
+  menarca_dis : boolean;
+  embarazo_dis : boolean;
+  bajopeso_dis : boolean;
+  hijosvivos_dis : boolean;
+  hijosm_dis : boolean;
+  ritmo_dis : boolean;
+  regla_dis : boolean;
+  cesareas_dis : boolean;
+  edad_dis : boolean;
+  partos_dis : boolean;
+  fechap_dis : boolean;
+  abortos_dis : boolean;
+
   ginobs = new FormControl();
   ginobsList: string[] = [
     'Menarca', 'Ritmo menstrual', 'Edad de inicio de vida sexual', 
@@ -19,6 +32,113 @@ export class AntgeneralesComponent implements OnInit {
     'Tiempo de uso del metodo'];
     
   constructor(public antgeService: AntGService) {}
+  desapareceMenarca(){
+    this.menarca_dis = true;
+  }
+  apareceMenarca(){
+    if ( this.menarca_dis== true){
+      this.menarca_dis=false;
+    }
+  }
+
+  desapareceEmbarazo(){
+    this.embarazo_dis = true;
+  }
+  apareceEmbarazo(){
+    if ( this.embarazo_dis== true){
+      this.embarazo_dis=false;
+    }
+  }
+ 
+  desapareceBajopeso(){
+    this.bajopeso_dis = true;
+  }
+  apareceBajopeso(){
+    if ( this.bajopeso_dis== true){
+      this.bajopeso_dis=false;
+    }
+  }
+
+  desapareceHijosvivos(){
+    this.hijosvivos_dis = true;
+  }
+  apareceHijosvivos(){
+    if ( this.hijosvivos_dis== true){
+      this.hijosvivos_dis=false;
+    }
+  }
+
+  desapareceHijosM(){
+    this.hijosm_dis = true;
+  }
+  apareceHijosM(){
+    if ( this.hijosm_dis== true){
+      this.hijosm_dis=false;
+    }
+  }
+
+  desapareceRitmo(){
+    this.ritmo_dis = true;
+  }
+  apareceRitmo(){
+    if ( this.ritmo_dis== true){
+      this.ritmo_dis=false;
+    }
+  }
+
+  desapareceRegla(){
+    this.regla_dis = true;
+  }
+  apareceRegla(){
+    if ( this.regla_dis== true){
+      this.regla_dis=false;
+    }
+  }
+
+  desapareceCesareas(){
+    this.cesareas_dis = true;
+  }
+  apareceCesareas(){
+    if ( this.cesareas_dis== true){
+      this.cesareas_dis=false;
+    }
+  }
+
+  desapareceEdad(){
+    this.edad_dis = true;
+  }
+  apareceEdad(){
+    if ( this.edad_dis== true){
+      this.edad_dis=false;
+    }
+  }
+
+  desaparecePartos(){
+    this.partos_dis = true;
+  }
+  aparecePartos(){
+    if ( this.partos_dis== true){
+      this.partos_dis=false;
+    }
+  }
+
+  desapareceFechaP(){
+    this.fechap_dis = true;
+  }
+  apareceFechaP(){
+    if ( this.fechap_dis== true){
+      this.fechap_dis=false;
+    }
+  }
+
+  desapareceAbortos(){
+    this.abortos_dis = true;
+  }
+  apareceAbortos(){
+    if ( this.abortos_dis== true){
+      this.abortos_dis=false;
+    }
+  }
 
   ngOnInit() {
     this.form = new FormGroup({

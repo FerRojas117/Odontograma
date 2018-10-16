@@ -19,8 +19,14 @@ export class AntecedentesComponent implements OnInit {
   alergias_dis: boolean;
   consulta_dis: boolean;
 
+  ciru = new FormControl();
+  ciruList: string[] = ['Hemorragias', 'Dolor prolongado', 'Cicatrización retardada', 'Alveolitis'];
   malestar = new FormControl();
   malestarList: string[] = ['Hemorragias', 'Dolores', 'Sabor desagradable', 'Fracturas', 'Trismus', 'Paresia', 'Parestesia', 'Otros'];
+  hemorragiass = new FormControl();
+  hemorragiassList: string[] = ['Heridas pequeñas', 'Trauma leve ', 'Menstruación', 'Hematomas', 'Petequias', 'Esquimosis', 'Espitaxis'];
+  alergicas = new FormControl();
+  alergicasList: string[] = ['Alimentos', 'Drogas', 'Anestésicos', 'Otros'];
   cavidad = new FormControl();
   cavidadList: string[] = ['No hay anomalidad',
    'Pigmentación',
