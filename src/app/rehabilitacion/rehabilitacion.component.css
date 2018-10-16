@@ -17,3 +17,7 @@ mat-form-field {
     margin: 5px;
   }
   
+  .list {
+    columns: 2;
+    text-align: center;
+  }
