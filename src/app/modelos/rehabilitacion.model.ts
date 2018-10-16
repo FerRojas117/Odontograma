@@ -6,5 +6,7 @@ export interface Reha {
     diagO : string;
     exTem : string;
     otrasEx :string;
+    analisisRadio : string;
+    trataProte : string; 
 
 }

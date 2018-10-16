@@ -17,10 +17,10 @@ export class RehabilitacionComponent implements OnInit {
                                 'Cierre oclusal por varias causas',
                                 'Sobre mordida vertical u horizontal',
                                 'Mordida cruzada',
-                                'Desviacion de la linea media',
-                                'Relacion del tamaño y forma entre los arcos',
+                                'Desviación de la linea media',
+                                'Relación del tamaño y forma entre los arcos',
                                 'Espacio para remplazar dientes faltantes',
-                                'Posicion dentaria en el arco',
+                                'Posición dentaria en el arco',
                                 'Relaciones marginales',
                                 'Desgaste cuspideo y fosetas',
                                 'Abrasion en cervical',
@@ -28,7 +28,7 @@ export class RehabilitacionComponent implements OnInit {
                                 'Supernumerarios e inclusiones',
                                 'Relacion corona raiz',
                                 'Estado de las restaurizaciones presentes',
-                                'logitud del arco',
+                                'Logitud del arco',
                                 'Desviaciones de la oclusion'
                                 ];
   
@@ -45,7 +45,8 @@ export class RehabilitacionComponent implements OnInit {
         diagO: new FormControl(null, { validators: [Validators.required] }),
         exTem: new FormControl(null, { validators: [Validators.required] }),
         otrasEx: new FormControl(null, { validators: [Validators.required] }),
-        //cieOpvc: new FormControl(null, { validators: [Validators.required] }),
+        analisisRadio: new FormControl(null, { validators: [Validators.required] }),
+        trataProte: new FormControl(null, { validators: [Validators.required] }),
       });
     }
     addReha() {
@@ -56,14 +57,9 @@ export class RehabilitacionComponent implements OnInit {
         this.form.value.descripcion,
         this.form.value.diagO,
         this.form.value.exTem,
-        this.form.value.otrasEx
+        this.form.value.otrasEx,
+        this.form.value.analisisRadio,
+        this.form.value.trataProte
       );
     }
   }
-  /*
-  <mat-form-field>
-                    <mat-select placeholder="Examen para:" [formControl]="examenPara" multiple>
-                      <mat-option *ngFor="let examenPara of examenParaList" [value]="examenPara">{{examenPara}}</mat-option>
-                    </mat-select>
-                  </mat-form-field>
-  */

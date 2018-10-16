@@ -17,7 +17,9 @@ export class RehaService {
       descripcion: string,
       diagO: string,
       exTem: string, 
-      otrasEx: string
+      otrasEx: string,
+      analisisRadio: string, 
+      trataProte: string
 
     ) {
     const registrarReha: any = {
@@ -27,7 +29,9 @@ export class RehaService {
         descripcion : descripcion,
         diagO: diagO,
         exTem: exTem,
-        otrasEx: otrasEx
+        otrasEx: otrasEx,
+        analisisRadio: analisisRadio, 
+        trataProte: trataProte
 
     };
     this.http

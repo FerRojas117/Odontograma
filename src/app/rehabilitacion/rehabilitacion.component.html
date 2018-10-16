@@ -1,11 +1,13 @@
 <mat-card class="cardForm">
     <form [formGroup]="form" (submit)="addReha()">
             <mat-form-field>
-                    <textarea matInput type="text" formControlName="referidoPor" placeholder="Referido por:">  </textarea>
+                    <span>Referido por:</span>
+                    <textarea matInput type="text" formControlName="referidoPor" placeholder="">  </textarea>
                     <mat-error *ngIf="form.get('referidoPor').invalid">campo necesario</mat-error>
             </mat-form-field>
             <mat-form-field>
-                    <textarea matInput type="text" formControlName="motivoConsulta" placeholder="¿Cual es el motivo de la consulta?">  </textarea>
+                    <span>¿Cual es el motivo de la consulta?</span>
+                    <textarea matInput type="text" formControlName="motivoConsulta" placeholder="">  </textarea>
                     <mat-error *ngIf="form.get('motivoConsulta').invalid">Por favor, escribe el motivo de la consulta</mat-error>
             </mat-form-field>
             <br><br><br><br>
@@ -28,24 +30,27 @@
 
             <mat-form-field> 
                 <span>Diagnostico y clasificación de la oclusion</span>
-                    <textarea matInput type="text" formControlName="diagO" placeholder="Diagnostico y clasificación de la oclusion">  </textarea>
+                    <textarea matInput type="text" formControlName="diagO" placeholder="">  </textarea>
                     <mat-error *ngIf="form.get('diagO').invalid">Por favor, escriba el diagnostico.....</mat-error> 
             </mat-form-field>
 
             <mat-form-field> 
                     <span>Exploracion de la articulacion temporomandibular </span>
-                        <textarea matInput type="text" formControlName="exTem" placeholder="Exploracion de la articulacion temporomandibular">  </textarea>
+                        <textarea matInput type="text" formControlName="exTem" placeholder="">  </textarea>
                         <mat-error *ngIf="form.get('exTem').invalid">Por favor, escriba las otras exploraciones</mat-error> 
             </mat-form-field>
-
+            <br><br>
             <mat-form-field> 
                 <span>Otras Exploraciones, Resuma aquí loss hallazgos de Exámenes escpeciales que haya requerido el paciente</span>
-                    <textarea matInput type="text" formControlName="otrasEx" placeholder="----------------------">  </textarea>
+                    <textarea matInput type="text" formControlName="otrasEx" placeholder="">  </textarea>
                     <mat-error *ngIf="form.get('otrasEx').invalid">Por favor, escriba las otras exploraciones</mat-error> 
             </mat-form-field>
             <br><br>
             <mat-grid-list cols="8" rowHeight="2:2">
-                    <h3>FIJO</h3>
+                    <h3>Plan de tratamiento para protesis parcial</h3>
+                    <br><br>
+                    <span>En el cuadro adjunto anote el tipo de restauración protésica que se considere adecuada. </span>
+
                 <mat-grid-tile>
                         <mat-form-field appearance="outline">
                                 <mat-label> 18 </mat-label>
@@ -161,7 +166,7 @@
               </mat-grid-list>
               <br>
         <mat-grid-list cols="8" rowHeight="2:2">
-                    <h5>FIJO</h5>
+                    <h5>----------------------------------------</h5>
                 <mat-grid-tile>
                         <mat-form-field appearance="outline">
                                 <mat-label> 21 </mat-label>
@@ -277,7 +282,7 @@
               </mat-grid-list>
               <br>
         <mat-grid-list cols="8" rowHeight="2:2">
-                    <h5>FIJO</h5>
+                    <h5>----------------------------------------</h5>
                 <mat-grid-tile>
                         <mat-form-field appearance="outline">
                                 <mat-label> 48 </mat-label>
@@ -393,7 +398,7 @@
               </mat-grid-list>
               <br>
         <mat-grid-list cols="8" rowHeight="2:2">
-                    <h5>FIJO</h5>
+                    <h5>----------------------------------------</h5>
                 <mat-grid-tile>
                         <mat-form-field appearance="outline">
                                 <mat-label> 31 </mat-label>
@@ -507,6 +512,16 @@
                                 </mat-form-field>
                         </mat-grid-tile>
               </mat-grid-list>
+              <mat-form-field> 
+                <span>Análisis radiógrafico</span>
+                    <textarea matInput type="text" formControlName="analisisRadio" placeholder="">  </textarea>
+                    <mat-error *ngIf="form.get('analisisRadio').invalid">Por favor, escriba el análisis radiógrafico</mat-error> 
+            </mat-form-field>
+            <mat-form-field> 
+                <span>Anotaciones especiales relacionadas con el tratamiento de prótesis parcial </span>
+                    <textarea matInput type="text" formControlName="trataProte" placeholder="">  </textarea>
+                    <mat-error *ngIf="form.get('diagO').invalid">Por favor, escriba las anotaciones</mat-error> 
+            </mat-form-field>
     <br><br>        
     <button mat-raised-button color="accent" type="submit">Guardar</button>
     </form>
