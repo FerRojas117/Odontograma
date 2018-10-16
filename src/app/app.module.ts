@@ -69,7 +69,7 @@ import { RehabilitacionComponent } from './rehabilitacion/rehabilitacion.compone
     HttpClientModule,
     MatRadioModule,
     MatSelectModule,
-    MatGridListModule
+    MatGridListModule,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
