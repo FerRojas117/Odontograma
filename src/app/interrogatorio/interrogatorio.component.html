@@ -7,7 +7,7 @@
             <mat-radio-group class="radioGroup" formControlName="presionArterial">
                     <span>Presión Arterial</span>
                     <br>
-                    <mat-radio-group>
+                    <mat-radio-group  class="radioGroup" formControlName="presionArterial">
                         <mat-radio-button value="Si" >Si </mat-radio-button> 
                         <mat-radio-button value="No">No </mat-radio-button>
                         <mat-radio-button value="Normal">Normal  </mat-radio-button>
@@ -15,38 +15,38 @@
                     <br>
                 <span>Fiebre Reúmatica</span>
                 <br>
-                <mat-radio-group>
+                <mat-radio-group class="radioGroup" formControlName="fiebreReumatica">
                     <mat-radio-button value="Si" >Si</mat-radio-button>
                     <mat-radio-button value="no">No</mat-radio-button>
                 </mat-radio-group>
                 <br>
                 <span>Hemorragias</span>
                 <br>
-                <mat-radio-group>
+                <mat-radio-group class="radioGroup" formControlName="hemorragias">
                     <mat-radio-button value="Si" >Si</mat-radio-button>
                     <mat-radio-button value="no">No</mat-radio-button>
                 </mat-radio-group> <br>
                 <span>Infarto</span>
                 <br>
-                <mat-radio-group>
+                <mat-radio-group  class="radioGroup" formControlName="infarto">
                     <mat-radio-button value="Si" >Si</mat-radio-button>
                     <mat-radio-button value="no">No</mat-radio-button>
                 </mat-radio-group>
                 <br>
                 <span>Anemia</span>
                 <br>
-                <mat-radio-group>
+                <mat-radio-group  class="radioGroup" formControlName="anemia">
                     <mat-radio-button value="Si" >Si</mat-radio-button>
                     <mat-radio-button value="no">No</mat-radio-button>
                 </mat-radio-group> <br>
                 <span>Otros</span>
                 <br>
-                  <mat-radio-group>
-                        <mat-radio-button value="Si" (click)="apareceCardio()">Si</mat-radio-button>
-                        <mat-radio-button value="no"(click)="desapareceCardio()">No</mat-radio-button>
+                  <mat-radio-group class="radioGroup" >
+                        <mat-radio-button value="Si" (click)="desapareceOtros()">Si</mat-radio-button>
+                        <mat-radio-button value="no"(click)="desapareceOtros()">No</mat-radio-button>
                   </mat-radio-group>
                    <mat-form-field>
-                          <textarea matInput placeholder="Textarea" [disabled]="cardio_dis"></textarea>
+                          <textarea matInput placeholder="Otros" formControlName="cualesOtros" [disabled]="otros_dis"></textarea>
                    </mat-form-field>
                         <br>
 
@@ -59,34 +59,34 @@
             <br> <br>
                   <span>Tuberculósis</span>
                   <br>
-                  <mat-radio-group>
+                  <mat-radio-group  class="radioGroup" formControlName="tuberculosis">
                       <mat-radio-button value="Si" >Si</mat-radio-button>
                       <mat-radio-button value="no">No</mat-radio-button>
                   </mat-radio-group>
                   <br>
                   <span>Neúmonia</span>
                   <br>
-                  <mat-radio-group>
+                  <mat-radio-group  class="radioGroup" formControlName="neumonia">
                       <mat-radio-button value="Si" >Si</mat-radio-button>
                       <mat-radio-button value="no">No</mat-radio-button>
                   </mat-radio-group>
                   <br>
                   <span>Hasma</span>
                   <br>
-                  <mat-radio-group>
+                  <mat-radio-group  class="radioGroup" formControlName="hasma">
                       <mat-radio-button value="Si" >Si</mat-radio-button>
                       <mat-radio-button value="no">No</mat-radio-button>
                   </mat-radio-group>
                   <span>Faringeamigdalitis</span>
                   <br>
-                  <mat-radio-group>
+                  <mat-radio-group  class="radioGroup" formControlName="faringeamigdalitis">
                       <mat-radio-button value="Si">Si</mat-radio-button>
                       <mat-radio-button value="no">No</mat-radio-button>
                   </mat-radio-group>
                   <br>
                   <span>Bronquitis</span>
                   <br>
-                  <mat-radio-group>
+                  <mat-radio-group class="radioGroup" formControlName="bronquitis"> 
                       <mat-radio-button value="Si" >Si</mat-radio-button>
                       <mat-radio-button value="no">No</mat-radio-button>
                   </mat-radio-group>
@@ -99,49 +99,49 @@
             <br> <br>
                 <span>Gastitris</span>
                 <br>
-                <mat-radio-group>
+                <mat-radio-group class="radioGroup" formControlName="gastritis">
                     <mat-radio-button value="Si" >Si</mat-radio-button>
                     <mat-radio-button value="no">No</mat-radio-button>
                 </mat-radio-group>
                 <br>
                 <span>Colitis</span>
                 <br>
-                <mat-radio-group>
+                <mat-radio-group  class="radioGroup" formControlName="colitis">
                     <mat-radio-button value="Si" >Si</mat-radio-button>
                     <mat-radio-button value="no">No</mat-radio-button>
                 </mat-radio-group>
                 <br>
                 <span>Gastroenteritis</span>
                 <br>
-                <mat-radio-group>
+                <mat-radio-group  class="radioGroup" formControlName="gastroenteritis">
                     <mat-radio-button value="Si" >Si</mat-radio-button>
                     <mat-radio-button value="no">No</mat-radio-button>
                 </mat-radio-group>
                 <br>
                 <span>Hepatitis</span>
                 <br>
-                <mat-radio-group>
+                <mat-radio-group  class="radioGroup" formControlName="hepatitis">
                     <mat-radio-button value="Si" (click)="apareceHepatitis()">Si</mat-radio-button>
                     <mat-radio-button value="no"(click)="desapareceHepatitis()">No</mat-radio-button>
                 </mat-radio-group>
                 <br>
                <mat-form-field>
-                <textarea matInput placeholder="Desde cuándo" [disabled]="hepatitis_dis"></textarea>
+                <textarea matInput placeholder="Desde cuándo" formControlName="cuandoHepatitis" [disabled]="hepatitis_dis"></textarea>
                </mat-form-field>
                 <br>
                 <span>Diabetes</span>
                 <br>
-                <mat-radio-group>
+                <mat-radio-group  class="radioGroup" formControlName="diabetes">
                     <mat-radio-button value="Si" (click)="apareceDiabetes()">Si</mat-radio-button>
                     <mat-radio-button value="no"(click)="desapareceDiabetes()">No</mat-radio-button>
                 </mat-radio-group>
                 <br>
                <mat-form-field>
-                <textarea matInput placeholder="Desde cuándo" [disabled]="diabetes_dis"></textarea>
+                <textarea matInput placeholder="Desde cuándo" formControlName="cuandoDiabetes"[disabled]="diabetes_dis"></textarea>
                </mat-form-field>
                 <br>
                <mat-form-field>
-                <textarea matInput placeholder="Valor de glucosa" [disabled]="diabetes_dis"></textarea>
+                <textarea matInput placeholder="Valor de glucosa"formControlName="glucosa" [disabled]="diabetes_dis"></textarea>
                </mat-form-field>
               <br>
             </mat-radio-group>

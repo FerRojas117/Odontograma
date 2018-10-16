@@ -13,12 +13,13 @@ export class InterService {
   constructor(private http: HttpClient) {}
 
   addInter(
-    presionArterial	:	string	,
-    fiebreReumatica	:	string	,
-    hemorragias	:	string	,
+    presionArterial	:	string,
+    fiebreReumatica	:	string,
+    hemorragias	:	string,
     anemia	:	string	,
     infarto	:	string	,
     otros	:	string	,
+    cualesOtros: string,
     tuberculosis	:	string	,
     neumonia	:	string	,
     hasma	:	string	,
@@ -28,7 +29,10 @@ export class InterService {
     colitis	:	string	,
     gastroenteritis	:	string	,
     hepatitis	:	string	,
-    diabetes	:	string	
+    cuandoHepatitis	:	string	,
+    diabetes	:	string,
+    cuandoDiabetes	:	string	,
+    glucosa	:	string	,
     
     ) {
     const registrarInter: any = {
@@ -38,6 +42,7 @@ export class InterService {
       anemia	:	anemia	,
       infarto	:	infarto	,
       otros	:	otros	,
+      cualesOtros: cualesOtros,
       tuberculosis	:	tuberculosis	,
       neumonia	:	neumonia	,
       hasma	:	hasma	,
@@ -47,7 +52,10 @@ export class InterService {
       colitis	:	colitis	,
       gastroenteritis	:	gastroenteritis	,
       hepatitis	:	hepatitis	,
-      diabetes	:	diabetes	
+      cuandoHepatitis : cuandoHepatitis,
+      diabetes	:	diabetes,
+      cuandoDiabetes :  cuandoDiabetes,
+      glucosa :  glucosa,
       
     };
      // imprimir objeto con los datos del front end

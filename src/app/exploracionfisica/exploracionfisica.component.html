@@ -40,6 +40,22 @@
                 <textarea matInput type="text" formControlName="cabeza" placeholder="Frecuencia Respiratoria">  </textarea>
                 <mat-error *ngIf="form.get('frecuenciaRespiratoria').invalid">Por favor, escribe la frecuencia respitaroria</mat-error>
             </mat-form-field>
+        <mat-form-field>
+                <textarea matInput type="text" formControlName="cuello" placeholder="Cuello">  </textarea>
+                <mat-error *ngIf="form.get('frecuenciaRespiratoria').invalid">Por favor, escribe cuello</mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <textarea matInput type="text" formControlName="torax" placeholder="Tórax">  </textarea>
+                <mat-error *ngIf="form.get('frecuenciaRespiratoria').invalid">Por favor, escribe tórax</mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <textarea matInput type="text" formControlName="abdomen" placeholder="Abdómen">  </textarea>
+                <mat-error *ngIf="form.get('frecuenciaRespiratoria').invalid">Por favor, escribe abdómen</mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <textarea matInput type="text" formControlName="columnaVertebral" placeholder="Columna Vertebral">  </textarea>
+                <mat-error *ngIf="form.get('frecuenciaRespiratoria').invalid">Por favor, escribe columna vertebral</mat-error>
+            </mat-form-field>
             <mat-form-field>
                 <textarea matInput type="text" formControlName="extremidades" placeholder="Extremidades">  </textarea>
                 <mat-error *ngIf="form.get('extremidades').invalid">Por favor, escribe las extremidades</mat-error>
@@ -52,6 +68,10 @@
                 <textarea matInput type="text" formControlName="observaciones" placeholder="Observaciones">  </textarea>
                 <mat-error *ngIf="form.get('observaciones').invalid">Por favor, escribe las observaciones</mat-error>
         </mat-form-field>
+        <mat-form-field>
+                <textarea matInput type="text" formControlName="recomendaciones" placeholder="Recomendaciones">  </textarea>
+                <mat-error *ngIf="form.get('frecuenciaRespiratoria').invalid">Por favor, escribe recomendaciones</mat-error>
+            </mat-form-field>
         <mat-form-field>
                 <textarea matInput type="text" formControlName="nombredelMedico" placeholder="Nombre del Medico">  </textarea>
                 <mat-error *ngIf="form.get('nombredelMedico').invalid">Por favor, escribir el nombre del Medico</mat-error>

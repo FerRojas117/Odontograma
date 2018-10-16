@@ -19,11 +19,16 @@ export class LaboService {
         resultadosPrevios : resultadosPrevios,
         resultPrevios2 : resultPrevios2
     };
+    // imprimir objeto con los datos del front end
+    console.log(registrarLabo);
+    /*
     this.http
-      .post<{ message: string }>('http://localhost:3000/api/ident', registrarLabo)
+      .post<{ _id: string }>('http://localhost:3000/api/ident', registrarIdent)
       .subscribe(responseData => {
-        console.log(responseData);
+        this.id = responseData._id;
       });
+      */
   }
-
-}
+ 
+ }
+ 

@@ -48,11 +48,17 @@ export class ExploService {
       recomendaciones: recomendaciones,
       nombredelMedico: nombredelMedico,
     };
-    this.http
-      .post<{ message: string }>('http://localhost:3000/api/ident', registrarExplo)
-      .subscribe(responseData => {
-        console.log(responseData);
-      });
+      // imprimir objeto con los datos del front end
+      console.log(registrarExplo);
+      /*
+      this.http
+        .post<{ _id: string }>('http://localhost:3000/api/ident', registrarIdent)
+        .subscribe(responseData => {
+          this.id = responseData._id;
+        });
+        */
+    }
+  
   }
-
-}
+  
+ 

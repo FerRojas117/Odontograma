@@ -14,10 +14,6 @@ export class ExploracionFisicaComponent implements OnInit {
   
     ngOnInit() {
       this.form = new FormGroup({
-        nombre: new FormControl(null, {
-          validators: [Validators.required, Validators.minLength(3)]
-        }),
-        content: new FormControl(null, { validators: [Validators.required] }),
         peso: new FormControl(null, { validators: [Validators.required] }),
         talla: new FormControl(null, { validators: [Validators.required] }),
         frecuenciaCardiaca: new FormControl(null, { validators: [Validators.required] }),
