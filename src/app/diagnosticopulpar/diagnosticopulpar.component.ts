@@ -46,12 +46,10 @@ export class DiagnosticopulparComponent implements OnInit {
       rarefaccionradicular: new FormControl(null, { validators: [Validators.required] }),
       obturaciondefectuosa2: new FormControl(null, { validators: [Validators.required] }),
       organodentario: new FormControl(null, { validators: [Validators.required] }),
-      vital: new FormControl(null, { validators: [Validators.required] }),
-      reversible: new FormControl(null, { validators: [Validators.required] }),
-      irreversible: new FormControl(null, { validators: [Validators.required] }),
-      novital: new FormControl(null, { validators: [Validators.required] }),
-      aguda: new FormControl(null, { validators: [Validators.required] }),
-      cronica: new FormControl(null, { validators: [Validators.required] }),
+      vitalreversible: new FormControl(null, { validators: [Validators.required] }),
+      vitalirreversible: new FormControl(null, { validators: [Validators.required] }),
+      novitalaguda: new FormControl(null, { validators: [Validators.required] }),
+      novitalcronica: new FormControl(null, { validators: [Validators.required] }),
     });
   }
   addDiagnostico() {
@@ -89,12 +87,10 @@ export class DiagnosticopulparComponent implements OnInit {
       this.form.value.	    rarefaccionradicular		,
       this.form.value.	    obturaciondefectuosa2		,
       this.form.value.	    organodentario		,
-      this.form.value.	    vital		,
-      this.form.value.	    reversible		,
-      this.form.value.	    irreversible		,
-      this.form.value.	    novital		,
-      this.form.value.	    aguda		,
-      this.form.value.	    cronica,
+      this.form.value.	    vitalreversible		,
+      this.form.value.	    vitalirreversible		,
+      this.form.value.	    novitalaguda		,
+      this.form.value.	    novitalcronica,
     );
   }
 }

@@ -44,12 +44,10 @@ export class DiagnosticoService {
     rarefaccionradicular: 	string,
     obturaciondefectuosa2: 	string,
     organodentario: 	string,
-    vital: 	string,
-    reversible: 	string,
-    irreversible: 	string,
-    novital: 	string,
-    aguda: 	string,
-    cronica: 	string,
+    vitalreversible: 	string,
+    vitalirreversible: 	string,
+    novitalaguda: 	string,
+    novitalcronica: 	string,
 
     ) {
     const registrarDiagnostico: any = {
@@ -86,12 +84,10 @@ export class DiagnosticoService {
       rarefaccionradicular: 	      rarefaccionradicular  	,
       obturaciondefectuosa2: 	      obturaciondefectuosa2  	,
       organodentario: 	      organodentario  	,
-      vital: 	      vital  	,
-      reversible: 	      reversible  	,
-      irreversible: 	      irreversible  	,
-      novital: 	      novital  	,
-      aguda: 	      aguda  	,
-      cronica: 	      cronica  	,
+      vitalreversible: 	      vitalreversible  	,
+      vitalirreversible: 	      vitalirreversible  	,
+      novitalaguda: 	      novitalaguda  	,
+      novitalcronica: 	      novitalcronica  	,
 
     };
      // imprimir objeto con los datos del front end

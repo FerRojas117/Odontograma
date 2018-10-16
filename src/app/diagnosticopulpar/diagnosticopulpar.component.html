@@ -172,33 +172,23 @@
     </mat-form-field>
 
     <mat-form-field>
-      <textarea matInput formControlName="vital" placeholder="Vital"></textarea>
-      <mat-error *ngIf="form.get('vital').invalid">Por favor, escribe vital.</mat-error>
+      <textarea matInput formControlName="vitalreversible" placeholder="Vital Reversible"></textarea>
+      <mat-error *ngIf="form.get('vitalreversible').invalid">Por favor, escribe vital reversible.</mat-error>
     </mat-form-field>
 
     <mat-form-field>
-      <textarea matInput formControlName="reversible" placeholder="Reversible"></textarea>
-      <mat-error *ngIf="form.get('reversible').invalid">Por favor, escribe reversible.</mat-error>
+      <textarea matInput formControlName="vitalirreversible" placeholder="Vital Irreversible"></textarea>
+      <mat-error *ngIf="form.get('vitalirreversible').invalid">Por favor, escribe vital irreversible.</mat-error>
     </mat-form-field>
 
     <mat-form-field>
-      <textarea matInput formControlName="irreversible" placeholder="Irreversible"></textarea>
-      <mat-error *ngIf="form.get('irreversible').invalid">Por favor, escribe irreversible.</mat-error>
+      <textarea matInput formControlName="novitalaguda" placeholder="No Vital Aguda"></textarea>
+      <mat-error *ngIf="form.get('novitalaguda').invalid">Por favor, escribe vital aguda.</mat-error>
     </mat-form-field>
 
     <mat-form-field>
-      <textarea matInput formControlName="novital" placeholder="No Vital"></textarea>
-      <mat-error *ngIf="form.get('novital').invalid">Por favor, escribe no vital.</mat-error>
-    </mat-form-field>
-
-    <mat-form-field>
-      <textarea matInput formControlName="aguda" placeholder="Aguda"></textarea>
-      <mat-error *ngIf="form.get('aguda').invalid">Por favor, escribe aguda.</mat-error>
-    </mat-form-field>
-
-    <mat-form-field>
-      <textarea matInput formControlName="cronica" placeholder="Crónica"></textarea>
-      <mat-error *ngIf="form.get('cronica').invalid">Por favor, escribe crónica.</mat-error>
+      <textarea matInput formControlName="novitalcronica" placeholder="No Vital Crónica"></textarea>
+      <mat-error *ngIf="form.get('novitalcronica').invalid">Por favor, escribe no vital crónica.</mat-error>
     </mat-form-field>
   
     <br>
