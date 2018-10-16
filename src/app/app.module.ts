@@ -14,7 +14,9 @@ import {
   MatPaginatorModule,
   MatRadioModule,
   MatSelectModule,
-  MatGridListModule
+  MatGridListModule,
+  MatDivider,
+  MatDividerModule
 } from '@angular/material';
 
 import { AppComponent } from './app.component';
@@ -70,6 +72,7 @@ import { RehabilitacionComponent } from './rehabilitacion/rehabilitacion.compone
     MatRadioModule,
     MatSelectModule,
     MatGridListModule,
+    MatDividerModule,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }

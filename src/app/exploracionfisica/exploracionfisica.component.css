@@ -17,4 +17,11 @@ mat-form-field {
   .radioButton {
     margin: 5px;
   }
-  
+  .mat-divider{
+    margin: 15px;
+    border-style: solid blue;
+    background: blue;
+  }
+  span{
+    font-size: 140%
+  }

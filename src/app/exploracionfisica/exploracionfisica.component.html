@@ -29,8 +29,9 @@
                     <mat-error *ngIf="form.get('frecuenciaRespiratoria').invalid">Por favor, escribe tu Frecuencia Respiratoria</mat-error>
             </mat-form-field>
             <br><br><br>
+            <mat-divider></mat-divider><br><br>
             <span>Exploración Física</span>
-            <br><br>
+            <br><br><br>
             <mat-form-field>
                 <textarea matInput type="text" formControlName="inspeccionGeneral" placeholder="Inspeccion General">  </textarea>
                 <mat-error *ngIf="form.get('inspeccionGeneral').invalid">Por favor, escribe la inspección general  </mat-error>
@@ -58,5 +59,4 @@
         <br>
         <button mat-raised-button color="accent" type="submit"> Guardar </button>
     </form>
-
-</mat-card>
+</mat-card> 

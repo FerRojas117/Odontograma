@@ -1,19 +1,16 @@
 <mat-card class="cardForm">
     <form [formGroup]="form" (submit)="addLab()">
-    
+            <span>Resultados de Estudios auxíliares de Diagnostico Practicados Previamente</span> <br><br>
+            
         <mat-form-field  appearance = "outline" >
-            <span>Resultados de Estudios auxíliares de Diagnostico Practicados Previamente</span> 
-            <input  matInput  placeholder = "Estudio de Gabinete y Lab." >
-            <textarea matInput type="text" formControlName="resultadosPrevios">  </textarea>
+            <textarea matInput type="text" formControlName="resultadosPrevios" placeholder="Estudio de Gabinete y Laboratorio">  </textarea>
                         <mat-error *ngIf="form.get('resultadosPrevios').invalid">Por favor, escriba los resultados</mat-error>  
         </mat-form-field > 
         <br>
         <br>
-
+        <span>Resultados Obtenídos</span> <br><br>
         <mat-form-field  appearance = "outline" >
-            <span>Resultados Obtenídos</span> 
-            <input  matInput  placeholder = "Terapéutica Previa" >
-            <textarea matInput type="text" formControlName="resulPrevios2">  </textarea>
+            <textarea matInput type="text" formControlName="resultPrevios2" placeholder="Terapéutica Previa">  </textarea>
                         <mat-error *ngIf="form.get('resultPrevios2').invalid">Por favor, escriba los resultados</mat-error>  
         </mat-form-field >  
         <br>   

@@ -14,9 +14,6 @@ export class LaboratorioGabineteComponent implements OnInit {
   
     ngOnInit() {
       this.form = new FormGroup({
-        nombre: new FormControl(null, {
-          validators: [Validators.required, Validators.minLength(3)]
-        }),
         resultadosPrevios: new FormControl(null, { validators: [Validators.required] }),
         resultPrevios2: new FormControl(null, { validators: [Validators.required] }),
       });

@@ -1,12 +1,18 @@
 <mat-card class="cardForm">
     <form [formGroup]="form" (submit)="addInter()">
-        <h2>Resultados Previos   </h2>    
-        <span>Aparato cardiovascular</span>
-        <br> <br>
-          <mat-form-field>
-              <textarea matInput placeholder="PresionArterial"></textarea>
-            </mat-form-field>
-            <mat-radio-group class="radioGroup" formControlName="PresionArterial">
+ 
+    
+        <span  id="subtit" >Aparato cardiovascular</span>
+        <br> <br> 
+            <mat-radio-group class="radioGroup" formControlName="presionArterial">
+                    <span>Presión Arterial</span>
+                    <br>
+                    <mat-radio-group>
+                        <mat-radio-button value="Si" >Si </mat-radio-button> 
+                        <mat-radio-button value="No">No </mat-radio-button>
+                        <mat-radio-button value="Normal">Normal  </mat-radio-button>
+                    </mat-radio-group>
+                    <br>
                 <span>Fiebre Reúmatica</span>
                 <br>
                 <mat-radio-group>
@@ -19,7 +25,7 @@
                 <mat-radio-group>
                     <mat-radio-button value="Si" >Si</mat-radio-button>
                     <mat-radio-button value="no">No</mat-radio-button>
-                </mat-radio-group>
+                </mat-radio-group> <br>
                 <span>Infarto</span>
                 <br>
                 <mat-radio-group>
@@ -32,7 +38,7 @@
                 <mat-radio-group>
                     <mat-radio-button value="Si" >Si</mat-radio-button>
                     <mat-radio-button value="no">No</mat-radio-button>
-                </mat-radio-group>
+                </mat-radio-group> <br>
                 <span>Otros</span>
                 <br>
                   <mat-radio-group>
@@ -47,7 +53,9 @@
       </mat-radio-group>
   
       <mat-radio-group class="radioGroup" formControlName="aparatoRespiratorio">
-            <span>AparatoRespiratorio</span>
+            <br><br>
+            <mat-divider></mat-divider><br><br>
+            <span id="subtit">Aparato Respiratorio</span>
             <br> <br>
                   <span>Tuberculósis</span>
                   <br>
@@ -86,7 +94,8 @@
                           <br>
                         </mat-radio-group>
       <mat-radio-group class="radioGroup" formControlName="aparatoDigestivo">
-            <span>aparatoDigestivo</span>
+            <mat-divider></mat-divider><br><br>
+            <span id="subtit">Aparato Digestivo</span>
             <br> <br>
                 <span>Gastitris</span>
                 <br>
@@ -108,6 +117,7 @@
                     <mat-radio-button value="Si" >Si</mat-radio-button>
                     <mat-radio-button value="no">No</mat-radio-button>
                 </mat-radio-group>
+                <br>
                 <span>Hepatitis</span>
                 <br>
                 <mat-radio-group>

@@ -7,12 +7,14 @@ import { InterService } from './interrogatorio.service';
   templateUrl: './interrogatorio.component.html',
   styleUrls: ['./interrogatorio.component.css']
 })
+
 export class InterrogatorioComponent implements OnInit {
     form: FormGroup;
     cardio_dis : boolean;
     otros_dis: boolean;
   diabetes_dis: boolean;
   hepatitis_dis: boolean;
+ 
  constructor(public interService: InterService) {}
   desapareceOtros(){
     this.otros_dis = true;
@@ -54,10 +56,9 @@ export class InterrogatorioComponent implements OnInit {
     ngOnInit() {
       this.cardio_dis = false;
       this.form = new FormGroup({
-        presionArterial: new FormControl(null, {
-         validators: [Validators.required, Validators.minLength(3)]
-        }),
-        //presionArterial	: new FormControl(null, { validators: [Validators.required] }),
+          presionArterial	: new FormControl(null, { validators: [Validators.required] }),
+          aparatoRespiratorio	: new FormControl(null, { validators: [Validators.required] }),
+          aparatoDigestivo	: new FormControl(null, { validators: [Validators.required] }),
           fiebreReumatica	: new FormControl(null, { validators: [Validators.required] }),
           hemorragias	: new FormControl(null, { validators: [Validators.required] }),
           anemia	: new FormControl(null, { validators: [Validators.required] }),
