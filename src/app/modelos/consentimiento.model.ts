@@ -3,7 +3,6 @@ export interface Consen {
 alumno	:	string;
  odontologo	:	string;
       nombre1	:	string;
-      nombre2	:	string;
 
   }
   

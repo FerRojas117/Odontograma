@@ -18,8 +18,7 @@ export class ConsenService {
     paciente	:	string,
     alumno	:	string,
      odontologo	:	string,
-          nombre1	:	string,
-          nombre2	:	string    
+          nombre1	:	string,  
     ) {
     const registrarConsen: any = {
         fechaConsen: fechaConsen,
@@ -27,7 +26,6 @@ export class ConsenService {
         alumno:	alumno,
         odontologo:	odontologo,
         nombre1	:nombre1,
-        nombre2	:	nombre2	,
         
 
     };

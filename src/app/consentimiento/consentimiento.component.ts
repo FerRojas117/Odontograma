@@ -14,12 +14,11 @@ export class ConsentimientoComponent implements OnInit {
 
   ngOnInit() {
     this.form = new FormGroup({
-      fechaConsen: new FormControl(null),
+      fechaConsen: new FormControl((new Date()).toISOString(), { validators: [Validators.required] }),
       paciente: new FormControl(null, {validators: [Validators.required, Validators.minLength(3)]}),
       alumno: new FormControl(null, {validators: [Validators.required, Validators.minLength(3)]}),
       odontologo: new FormControl(null, {validators: [Validators.required, Validators.minLength(3)]}),
       nombre1: new FormControl(null, {validators: [Validators.required, Validators.minLength(3)]}),
-      nombre2: new FormControl(null, {validators: [Validators.required, Validators.minLength(3)]}),
     });
   }
   addConsen() {
@@ -29,7 +28,6 @@ export class ConsentimientoComponent implements OnInit {
       this.form.value.alumno,
       this.form.value.odontologo,
       this.form.value.nombre1,
-      this.form.value.nombre2,
     );
   }
 }

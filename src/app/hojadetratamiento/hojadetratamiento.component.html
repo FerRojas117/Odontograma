@@ -18,15 +18,15 @@
       <mat-error *ngIf="form.get('profesorresponsable').invalid">Por favor, escribe el nombre del profesor responsable.</mat-error>
     </mat-form-field>
     <br><br>
-    <!--
-      Apartir de aquí se debe de borrar 
-    -->
-
-    <mat-form-field>
+     <mat-form-field>
       <textarea matInput formControlName="noempleado" placeholder="No. Empleado"></textarea>
       <mat-error *ngIf="form.get('noempleado').invalid">Por favor, escribe el no. empleado.</mat-error>
     </mat-form-field>
+   <!--
+      Apartir de aquí se debe de borrar 
+    -->
 
+    <mat-divider></mat-divider><br><br>
     <mat-form-field>
       <textarea matInput formControlName="organodental" placeholder="Órgano Dental"></textarea>
       <mat-error *ngIf="form.get('organodental').invalid">Por favor, escribe el órgano dental.</mat-error>

@@ -2,7 +2,7 @@
   <form [formGroup]="form" (submit)="addIdent()">
 
     <mat-form-field>
-      <input matInput [matDatepicker]="picker" placeholder="Elige una fecha">
+      <input matInput [matDatepicker]="picker"  formControlName="fechaTrab"  placeholder="Elige una fecha">
       <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
       <mat-datepicker #picker></mat-datepicker>
   </mat-form-field>
@@ -17,8 +17,6 @@
       <mat-error *ngIf="form.get('profesor').invalid">Por favor, escribe el nombre del profesor.</mat-error>
     </mat-form-field>
 
-    <br>
-    <button mat-raised-button color="accent" type="submit">Enviar</button>
     <br><br><br>
 
     <p>PERMANENTES</p><br>
@@ -51,30 +49,30 @@
     <p>TEMPORALES</p><br>
 
     <mat-form-field>
-      <textarea matInput formControlName="cariadas" placeholder="Cariadas"></textarea>
-      <mat-error *ngIf="form.get('cariadas').invalid">Por favor, escribe cariadas.</mat-error>
+      <textarea matInput formControlName="cariadastem" placeholder="Cariadas"></textarea>
+      <mat-error *ngIf="form.get('cariadastem').invalid">Por favor, escribe cariadas.</mat-error>
     </mat-form-field>
 
     <mat-form-field>
-      <textarea matInput formControlName="perdidas" placeholder="Pérdidas"></textarea>
-      <mat-error *ngIf="form.get('perdidas').invalid">Por favor, escribe pérdidas.</mat-error>
+      <textarea matInput formControlName="perdidastem" placeholder="Pérdidas"></textarea>
+      <mat-error *ngIf="form.get('perdidastem').invalid">Por favor, escribe pérdidas.</mat-error>
     </mat-form-field>
 
     <mat-form-field>
-      <textarea matInput formControlName="obturadas" placeholder="Obturadas"></textarea>
-      <mat-error *ngIf="form.get('obturadas').invalid">Por favor, escribe obturadas.</mat-error>
+      <textarea matInput formControlName="obturadastem" placeholder="Obturadas"></textarea>
+      <mat-error *ngIf="form.get('obturadastem').invalid">Por favor, escribe obturadas.</mat-error>
     </mat-form-field>
 
     <mat-form-field>
-      <textarea matInput formControlName="extracciones" placeholder="Extracciones"></textarea>
-      <mat-error *ngIf="form.get('extracciones').invalid">Por favor, escribe extracciones.</mat-error>
+      <textarea matInput formControlName="extraccionestem" placeholder="Extracciones"></textarea>
+      <mat-error *ngIf="form.get('extraccionestem').invalid">Por favor, escribe extracciones.</mat-error>
     </mat-form-field>
 
     <mat-form-field>
-      <textarea matInput formControlName="indicadas" placeholder="Indicadas"></textarea>
-      <mat-error *ngIf="form.get('indicadas').invalid">Por favor, escribe indicadas.</mat-error>
+      <textarea matInput formControlName="indicadastem" placeholder="Indicadas"></textarea>
+      <mat-error *ngIf="form.get('indicadastem').invalid">Por favor, escribe indicadas.</mat-error>
     </mat-form-field><br><br>
-    
+    <mat-divider></mat-divider>
     <p>OPERADOR</p><br>
 
     <mat-form-field>
@@ -100,25 +98,24 @@
     <p>AUXILIAR</p><br>
 
     <mat-form-field>
-      <textarea matInput formControlName="nombre" placeholder="Nombre del Auxiliar"></textarea>
-      <mat-error *ngIf="form.get('nombre').invalid">Por favor, escribe el nombre del Auxiliar.</mat-error>
+      <textarea matInput formControlName="nombreaux" placeholder="Nombre del Auxiliar"></textarea>
+      <mat-error *ngIf="form.get('nombreaux').invalid">Por favor, escribe el nombre del Auxiliar.</mat-error>
     </mat-form-field>
 
     <mat-form-field>
-      <textarea matInput formControlName="cuat" placeholder="Cuat."></textarea>
-      <mat-error *ngIf="form.get('cuat').invalid">Por favor, escribe cuat.</mat-error>
+      <textarea matInput formControlName="cuataux" placeholder="Cuat."></textarea>
+      <mat-error *ngIf="form.get('cuataux').invalid">Por favor, escribe cuat.</mat-error>
     </mat-form-field>
 
     <mat-form-field>
-      <textarea matInput formControlName="equipo" placeholder="Equipo"></textarea>
-      <mat-error *ngIf="form.get('equipo').invalid">Por favor, escribe equipo.</mat-error>
+      <textarea matInput formControlName="equipoaux" placeholder="Equipo"></textarea>
+      <mat-error *ngIf="form.get('equipoaux').invalid">Por favor, escribe equipo.</mat-error>
     </mat-form-field>
 
     <mat-form-field>
-      <textarea matInput formControlName="sillon" placeholder="Sillón"></textarea>
-      <mat-error *ngIf="form.get('sillon').invalid">Por favor, escribe sillón.</mat-error>
+      <textarea matInput formControlName="sillonaux" placeholder="Sillón"></textarea>
+      <mat-error *ngIf="form.get('sillonaux').invalid">Por favor, escribe sillón.</mat-error>
     </mat-form-field><br><br>
-
+    <button mat-raised-button color="accent" type="submit">Enviar</button>
   </form>
-
 </mat-card>
