@@ -159,7 +159,7 @@ export class AntgeneralesComponent implements OnInit {
     });
   }
 
-  addIdent() {
+  addAntG() {
     this.antgeService.addAntG(
       this.form.value.anthereditarios,
       this.form.value.religion,

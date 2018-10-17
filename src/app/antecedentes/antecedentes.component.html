@@ -81,7 +81,7 @@
       <mat-option *ngFor="let ciru of ciruList" [value]="ciru">{{ciru}}</mat-option>
     </mat-select>
     <mat-radio-button value="N"(click)="desapareceCirugiaDen()">No</mat-radio-button>
-  </mat-form-field>
+  </mat-radio-group>
 
   <br>
   <span>¿Ha tenido problemas con la anestesia local?</span>
@@ -169,7 +169,7 @@
       </mat-radio-group>
 
       <span>¿Ha presentado reacciones alergicas?</span>
-      <mat-radio-button value="S" (click)="apareceAlergias()">Si</mat-radio-button>
+      <mat-radio-button value="Si" (click)="apareceAlergias()">Si</mat-radio-button>
       <mat-select placeholder="Tipos de reacciones alergicas:" [formControl]="alergicas" multiple>
         <mat-option *ngFor="let alergicas of alergicasList" [value]="alergicas">{{alergicas}}</mat-option>
       </mat-select>

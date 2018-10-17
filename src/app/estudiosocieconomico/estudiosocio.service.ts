@@ -9,7 +9,7 @@ import { setContextDirty } from '@angular/core/src/render3/styling';
 
 @Injectable({ providedIn: 'root' })
 export class EstuService {
-  private ident: Estu[] = [];
+  private estu: Estu[] = [];
 
   constructor(private http: HttpClient) {}
 
@@ -57,7 +57,7 @@ export class EstuService {
       obs: obs,
     };
        // imprimir objeto con los datos del front end
-       console.log(registrarIdent);
+       console.log(registrarEstu);
        /*
        this.http
          .post<{ _id: string }>('http://localhost:3000/api/ident', registrarIdent)
