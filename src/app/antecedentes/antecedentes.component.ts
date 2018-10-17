@@ -18,7 +18,6 @@ export class AntecedentesComponent implements OnInit {
   drogas_dis: boolean;
   alergias_dis: boolean;
   consulta_dis: boolean;
-
   ciru = new FormControl();
   ciruList: string[] = ['Hemorragias', 'Dolor prolongado', 'Cicatrización retardada', 'Alveolitis'];
   malestar = new FormControl();

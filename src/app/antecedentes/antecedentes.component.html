@@ -28,7 +28,7 @@
     </mat-radio-group>
     <br>
        <mat-form-field>
-        <textarea matInput placeholder="Cuándo" [disabled]="radiogrfias_dis"></textarea>
+        <textarea matInput placeholder="Cuándo" [disabled]="radiografias_dis"></textarea>
        </mat-form-field>
     <br>
 
@@ -161,11 +161,11 @@
 
       <mat-radio-group class="radioGroup" formControlName="hemorragias">
         <span>¿Presenta hemorragias significativas?</span>
-        <mat-radio-button class="radioButton" value="S7">Si</mat-radio-button>
+        <mat-radio-button class="radioButton" value="si">Si</mat-radio-button>
           <mat-select placeholder="Tipos de hemorragias:" [formControl]="hemorragiass" multiple>
             <mat-option *ngFor="let hemorragiass of hemorragiassList" [value]="hemorragiass">{{hemorragiass}}</mat-option>
           </mat-select>
-        <mat-radio-button class="radioButton" value="N7">No</mat-radio-button>
+        <mat-radio-button class="radioButton" value="no">No</mat-radio-button>
       </mat-radio-group>
 
       <span>¿Ha presentado reacciones alergicas?</span>
