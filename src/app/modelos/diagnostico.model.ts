@@ -1,6 +1,5 @@
 export interface Diagnostico {
   organoa: 	string;
-      content: 	string;
       tipodedolor: 	string;
       episodios: 	string;
       percusion: 	string;
@@ -25,9 +24,8 @@ export interface Diagnostico {
       otro2: 	string;
       otro3: 	string;
       organoc: 	string;
-      calcificaciones: 	string;
-      corona2: 	string;
-      raiz2: 	string;
+      calcificacionescorona2: 	string;
+      calcificacionesraiz2: 	string;
       resorcion: 	string;
       interno: 	string;
       externo: 	string;

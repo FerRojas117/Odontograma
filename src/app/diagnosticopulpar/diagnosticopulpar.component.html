@@ -1,7 +1,7 @@
 <mat-card class="cardForm">
   <form [formGroup]="form" (submit)="addDiagnostico()">
 
-    <p>A. Signos y Síntomas</p>
+    <h2>A. Signos y Síntomas</h2>
 
     <mat-form-field>
       <textarea matInput type="text" formControlName="organoa" placeholder="Órgano Dentario">  </textarea>
@@ -64,10 +64,10 @@
     </mat-form-field>
 
     <br>
-    <button mat-raised-button color="accent" type="submit">Enviar</button>
+   
     <br><br>
-
-    <p>B. Etiología</p>
+    <mat-divider></mat-divider>
+    <h2>B. Etiología</h2>
 
     <mat-form-field>
       <textarea matInput formControlName="organob" placeholder="Órgano Dentario"></textarea>
@@ -110,10 +110,10 @@
     </mat-form-field>
   
     <br>
-    <button mat-raised-button color="accent" type="submit">Enviar</button>
+   
     <br><br>
-
-    <p>C. Análisis Radiográfico</p>
+<mat-divider></mat-divider>
+    <h2>C. Análisis Radiográfico</h2>
 
     <mat-form-field>
       <textarea matInput formControlName="organoc" placeholder="Órgano"></textarea>
@@ -160,11 +160,10 @@
       <mat-error *ngIf="form.get('otro3').invalid">Por favor, escribe otro.</mat-error>
     </mat-form-field>
   
-    <br>
-    <button mat-raised-button color="accent" type="submit">Enviar</button>
+   
     <br><br>
-
-    <p>D. Diagnóstico</p>
+     <mat-divider></mat-divider>
+    <h2>D. Diagnóstico</h2>
 
     <mat-form-field>
       <textarea matInput formControlName="organodentario" placeholder="Órgano Dentario"></textarea>
@@ -191,16 +190,16 @@
       <mat-error *ngIf="form.get('novitalcronica').invalid">Por favor, escribe no vital crónica.</mat-error>
     </mat-form-field>
   
-    <br>
-    <button mat-raised-button color="accent" type="submit">Enviar</button>
-    <br><br>
+    
 
     <mat-form-field>
       <textarea matInput formControlName="observaciones" placeholder="Observaciones"></textarea>
       <mat-error *ngIf="form.get('observaciones').invalid">Por favor, escribe tus observaciones.</mat-error>
     </mat-form-field>
   
-  
+    <br>
+    <button mat-raised-button color="accent" type="submit">Enviar</button>
+    <br><br>
   
   </form>
 

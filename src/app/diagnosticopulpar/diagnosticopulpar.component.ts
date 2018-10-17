@@ -14,7 +14,6 @@ export class DiagnosticopulparComponent implements OnInit {
   ngOnInit() {
     this.form = new FormGroup({
       organoa: new FormControl(null, {validators: [Validators.required] }),
-      content: new FormControl(null, { validators: [Validators.required] }),
       tipodedolor: new FormControl(null, { validators: [Validators.required] }),
       episodios: new FormControl(null, { validators: [Validators.required] }),
       percusion: new FormControl(null, { validators: [Validators.required] }),
@@ -55,7 +54,6 @@ export class DiagnosticopulparComponent implements OnInit {
   addDiagnostico() {
     this.diagnosticoService.addDiagnostico(
       this.form.value.organoa,
-      this.form.value.content,
       this.form.value.tipodedolor		,
       this.form.value.episodios		,
       this.form.value.percusion		,
@@ -79,8 +77,8 @@ export class DiagnosticopulparComponent implements OnInit {
       this.form.value.	    otro2		,
       this.form.value.	    otro3		,
       this.form.value.	    organoc		,
-      this.form.value.	    calificacionescorona2		,
-      this.form.value.	    calificacionesraiz2		,
+      this.form.value.calcificacionescorona2		,
+      this.form.value.calcificacionesraiz2		,
       this.form.value.	    resorcioninterno		,
       this.form.value.	    resorcionexterno		,
       this.form.value.	    rarefaccionpenapico		,

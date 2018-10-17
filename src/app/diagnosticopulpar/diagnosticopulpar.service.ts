@@ -12,7 +12,6 @@ export class DiagnosticoService {
   constructor(private http: HttpClient) {}
 
   addDiagnostico( organoa: 	string,
-    content: 	string,
     tipodedolor: 	string,
     episodios: 	string,
     percusion: 	string,
@@ -52,7 +51,6 @@ export class DiagnosticoService {
     ) {
     const registrarDiagnostico: any = {
       organoa: 	organoa  	,
-      content: 	     content  	,
       tipodedolor: 	      tipodedolor  	,
       episodios: 	      episodios  	,
       percusion: 	      percusion  	,
