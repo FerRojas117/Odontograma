@@ -1,14 +1,14 @@
 <mat-card class="cardForm">
     <form [formGroup]="form" (submit)="addInter()">
- 
-    
+
+
         <span  id="subtit" >Aparato cardiovascular</span>
-        <br> <br> 
+        <br> <br>
             <mat-radio-group class="radioGroup" formControlName="presionArterial">
                     <span>Presión Arterial</span>
                     <br>
                     <mat-radio-group  class="radioGroup" formControlName="presionArterial">
-                        <mat-radio-button value="Si" >Si </mat-radio-button> 
+                        <mat-radio-button value="Si" >Si </mat-radio-button>
                         <mat-radio-button value="No">No </mat-radio-button>
                         <mat-radio-button value="Normal">Normal  </mat-radio-button>
                     </mat-radio-group>
@@ -42,16 +42,16 @@
                 <span>Otros</span>
                 <br>
                   <mat-radio-group class="radioGroup" >
-                        <mat-radio-button value="Si" (click)="desapareceOtros()">Si</mat-radio-button>
-                        <mat-radio-button value="no"(click)="desapareceOtros()">No</mat-radio-button>
+                        <mat-radio-button value="Si" (click)="enable('cualesOtros')">Si</mat-radio-button>
+                        <mat-radio-button value="no"(click)="disable('cualesOtros')">No</mat-radio-button>
                   </mat-radio-group>
                    <mat-form-field>
-                          <textarea matInput placeholder="Otros" formControlName="cualesOtros" [disabled]="otros_dis"></textarea>
+                          <textarea matInput placeholder="Otros" formControlName="cualesOtros" ></textarea>
                    </mat-form-field>
                         <br>
 
       </mat-radio-group>
-  
+
       <mat-radio-group class="radioGroup" formControlName="aparatoRespiratorio">
             <br><br>
             <mat-divider></mat-divider><br><br>
@@ -86,11 +86,11 @@
                   <br>
                   <span>Bronquitis</span>
                   <br>
-                  <mat-radio-group class="radioGroup" formControlName="bronquitis"> 
+                  <mat-radio-group class="radioGroup" formControlName="bronquitis">
                       <mat-radio-button value="Si" >Si</mat-radio-button>
                       <mat-radio-button value="no">No</mat-radio-button>
                   </mat-radio-group>
-                 
+
                           <br>
                         </mat-radio-group>
       <mat-radio-group class="radioGroup" formControlName="aparatoDigestivo">
@@ -121,33 +121,33 @@
                 <span>Hepatitis</span>
                 <br>
                 <mat-radio-group  class="radioGroup" formControlName="hepatitis">
-                    <mat-radio-button value="Si" (click)="apareceHepatitis()">Si</mat-radio-button>
-                    <mat-radio-button value="no"(click)="desapareceHepatitis()">No</mat-radio-button>
+                    <mat-radio-button value="Si" (click)="enable('cuandoHepatitis')">Si</mat-radio-button>
+                    <mat-radio-button value="no"(click)="disable('cuandoHepatitis')">No</mat-radio-button>
                 </mat-radio-group>
                 <br>
                <mat-form-field>
-                <textarea matInput placeholder="Desde cuándo" formControlName="cuandoHepatitis" [disabled]="hepatitis_dis"></textarea>
+                <textarea matInput placeholder="Desde cuándo" formControlName="cuandoHepatitis" ></textarea>
                </mat-form-field>
                 <br>
                 <span>Diabetes</span>
                 <br>
                 <mat-radio-group  class="radioGroup" formControlName="diabetes">
-                    <mat-radio-button value="Si" (click)="apareceDiabetes()">Si</mat-radio-button>
-                    <mat-radio-button value="no"(click)="desapareceDiabetes()">No</mat-radio-button>
+                    <mat-radio-button value="Si" (click)="enable('cuandoDiabetes')">Si</mat-radio-button>
+                    <mat-radio-button value="no"(click)="disable('cuandoDiabetes')">No</mat-radio-button>
                 </mat-radio-group>
                 <br>
                <mat-form-field>
-                <textarea matInput placeholder="Desde cuándo" formControlName="cuandoDiabetes"[disabled]="diabetes_dis"></textarea>
+                <textarea matInput placeholder="Desde cuándo" formControlName="cuandoDiabetes"></textarea>
                </mat-form-field>
                 <br>
                <mat-form-field>
-                <textarea matInput placeholder="Valor de glucosa"formControlName="glucosa" [disabled]="diabetes_dis"></textarea>
+                <textarea matInput placeholder="Valor de glucosa"formControlName="glucosa"></textarea>
                </mat-form-field>
               <br>
             </mat-radio-group>
-    
+
       <button mat-raised-button color="accent" type="submit">Guardar</button>
       <br>
     </form>
-  
+
   </mat-card>
