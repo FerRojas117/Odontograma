@@ -13,44 +13,44 @@
             <br><br><br><br>
             <mat-form-field>
                     <span>Examen para:</span>
-                    <mat-select placeholder="" [formControl]="examenPara" multiple>
+                    <mat-select placeholder="" formControlName="examenPara" multiple>
                       <mat-option *ngFor="let examenPara of examenParaList" [value]="examenPara">{{examenPara}}</mat-option>
                     </mat-select>
             </mat-form-field>
             <br><br><br><br>
-            
-            
+
+
             <mat-radio-group class="radioGroup" formControlName="moEstu">
                 <span>¿Se tomaron modelos del estudio?</span>
                 <mat-radio-button class="radioButton" value="S">Si</mat-radio-button>
-                    
+
                 <mat-radio-button class="radioButton" value="N">No</mat-radio-button>
             </mat-radio-group>
             <br><br>
 
-            <mat-form-field> 
+            <mat-form-field>
                 <span>Diagnostico y clasificación de la oclusion</span>
                     <textarea matInput type="text" formControlName="diagO" placeholder="">  </textarea>
-                    <mat-error *ngIf="form.get('diagO').invalid">Por favor, escriba el diagnostico.....</mat-error> 
+                    <mat-error *ngIf="form.get('diagO').invalid">Por favor, escriba el diagnostico.....</mat-error>
             </mat-form-field>
 
-            <mat-form-field> 
+            <mat-form-field>
                     <span>Exploracion de la articulacion temporomandibular </span>
                         <textarea matInput type="text" formControlName="exTem" placeholder="">  </textarea>
-                        <mat-error *ngIf="form.get('exTem').invalid">Por favor, escriba las otras exploraciones</mat-error> 
+                        <mat-error *ngIf="form.get('exTem').invalid">Por favor, escriba las otras exploraciones</mat-error>
             </mat-form-field>
             <br><br>
-            <mat-form-field> 
+            <mat-form-field>
                 <span>Otras Exploraciones, Resuma aquí loss hallazgos de Exámenes escpeciales que haya requerido el paciente</span>
                     <textarea matInput type="text" formControlName="otrasEx" placeholder="">  </textarea>
-                    <mat-error *ngIf="form.get('otrasEx').invalid">Por favor, escriba las otras exploraciones</mat-error> 
+                    <mat-error *ngIf="form.get('otrasEx').invalid">Por favor, escriba las otras exploraciones</mat-error>
             </mat-form-field>
             <h3>Código</h3>
             <br>
           <mat-list role="list" class="list">
                     <mat-list-item role="listitem">P = Póntico</mat-list-item>
                     <mat-list-item role="listitem">CC = Corona completa</mat-list-item>
-                    <mat-list-item role="listitem">CCP = Corona completa a perno oespiga</mat-list-item>                       
+                    <mat-list-item role="listitem">CCP = Corona completa a perno oespiga</mat-list-item>
                     <mat-list-item role="listitem">CV = Corona Veneer</mat-list-item>
                     <mat-list-item role="listitem">CT = Corona tinker</mat-list-item>
                     <mat-list-item role="listitem">CL = Corona logan</mat-list-item>
@@ -532,17 +532,17 @@
                                 </mat-form-field>
                         </mat-grid-tile>
               </mat-grid-list>
-              <mat-form-field> 
+              <mat-form-field>
                 <span>Análisis radiógrafico</span>
                     <textarea matInput type="text" formControlName="analisisRadio" placeholder="">  </textarea>
-                    <mat-error *ngIf="form.get('analisisRadio').invalid">Por favor, escriba el análisis radiógrafico</mat-error> 
+                    <mat-error *ngIf="form.get('analisisRadio').invalid">Por favor, escriba el análisis radiógrafico</mat-error>
             </mat-form-field>
-            <mat-form-field> 
+            <mat-form-field>
                 <span>Anotaciones especiales relacionadas con el tratamiento de prótesis parcial </span>
                     <textarea matInput type="text" formControlName="trataProte" placeholder="">  </textarea>
-                    <mat-error *ngIf="form.get('diagO').invalid">Por favor, escriba las anotaciones</mat-error> 
+                    <mat-error *ngIf="form.get('diagO').invalid">Por favor, escriba las anotaciones</mat-error>
             </mat-form-field>
-    <br><br>        
+    <br><br>
     <button mat-raised-button color="accent" type="submit">Guardar</button>
     </form>
   </mat-card>

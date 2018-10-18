@@ -31,9 +31,9 @@ export class RehabilitacionComponent implements OnInit {
                                 'Logitud del arco',
                                 'Desviaciones de la oclusion'
                                 ];
-  
+
     constructor(public rehaservice: RehaService) {}
-  
+
     ngOnInit() {
       this.form = new FormGroup({
         referidoPor: new FormControl(null, {validators: [Validators.required, Validators.minLength(3)]}),
@@ -114,6 +114,8 @@ export class RehabilitacionComponent implements OnInit {
       });
     }
     addReha() {
+
+      console.log( this.form.value.examenPara);
       this.rehaservice.addReha(
         this.form.value.referidoPor,
         this.form.value.motivoConsulta,
