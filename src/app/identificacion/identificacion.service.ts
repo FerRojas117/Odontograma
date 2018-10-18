@@ -11,6 +11,7 @@ export class IdentService {
   private id: string;
 
   private messageUpdated = new Subject<string>();
+  private idUpdated = new Subject<string>();
 
   constructor(
     private http: HttpClient
@@ -45,13 +46,17 @@ export class IdentService {
       .post<{ _id: string, message: string }>('http://localhost:3000/api/ident', registrarIdent)
       .subscribe(responseData => {
         this.id = responseData._id;
+        this.idUpdated.next(this.id);
         this.messageUpdated.next(responseData.message);
       });
   }
 
   getMessageUpdateListener() {
     return this.messageUpdated.asObservable();
- }
+  }
+  getIdUpdateListener() {
+    return this.idUpdated.asObservable();
+  }
 
 }
 
