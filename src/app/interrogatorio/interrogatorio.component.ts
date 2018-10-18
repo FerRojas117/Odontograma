@@ -40,7 +40,7 @@ export class InterrogatorioComponent implements OnInit {
           anemia	: new FormControl(null, { validators: [Validators.required] }),
           infarto	: new FormControl(null, { validators: [Validators.required] }),
           otros	: new FormControl(null, { validators: [Validators.required] }),
-          cualesOtros	: new FormControl(null),
+          cualesOtros	: new FormControl(null, { validators: [Validators.required] }),
           tuberculosis	: new FormControl(null, { validators: [Validators.required] }),
           neumonia	: new FormControl(null, { validators: [Validators.required] }),
           hasma	: new FormControl(null, { validators: [Validators.required] }),
