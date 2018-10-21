@@ -37,4 +37,32 @@ router.post("", checkAuth, (req, res, next) => {
   }
 );
 
+
+router.get("", (req, res, next) => {
+  const pageSize = +req.query.pagesize;
+  const currentPage = +req.query.page;
+  const postQuery = Ident.find().select('nombre telefono');
+  let fetchedIds;
+  if (pageSize && currentPage) {
+    postQuery.skip(pageSize * (currentPage - 1)).limit(pageSize);
+  }
+  postQuery
+    .then(documents => {
+      fetchedIds = documents;
+      return Ident.count();
+    })
+    .then(count => {
+      res.status(200).json({
+        message: "Idents fetched successfully!",
+        ids: fetchedIds,
+        maxPosts: count
+      });
+    })
+    .catch(error => {
+      res.status(500).json({
+        message: "Fetching posts failed!"
+      });
+    });
+});
+
 module.exports = router;

@@ -4,7 +4,8 @@ import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
 
 import { AuthData } from './auth-data.model';
-
+import { MatDialog } from '@angular/material/dialog';
+import { CompletoComponent } from '../completo/completo.component';
 @Injectable({ providedIn: 'root' })
 export class AuthService {
   private isAuthenticated = false;
@@ -13,7 +14,9 @@ export class AuthService {
   private userId: string;
   private authStatusListener = new Subject<boolean>();
 
-  constructor(private http: HttpClient, private router: Router) {}
+  constructor(private http: HttpClient,
+     private router: Router,
+     private dialog: MatDialog ) {}
 
   getToken() {
     return this.token;
@@ -34,8 +37,9 @@ export class AuthService {
   createUser(email: string, password: string) {
     const authData: AuthData = { email: email, password: password };
     this.http
-      .post('http://localhost:3000/api/user/signup', authData)
-      .subscribe(() => {
+      .post<{ message: string }>('http://localhost:3000/api/user/signup', authData)
+      .subscribe((responseData) => {
+        this.dialog.open(CompletoComponent, {data: {message:  responseData.message}});
         this.router.navigate(['/']);
       }, error => {
         this.authStatusListener.next(false);

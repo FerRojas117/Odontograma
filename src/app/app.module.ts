@@ -14,7 +14,8 @@ import {
   MatRadioModule,
   MatDialogModule,
   MatDatepickerModule,
-  MatNativeDateModule
+  MatNativeDateModule,
+  MatIconModule,
 } from '@angular/material';
 
 import { AppComponent } from './app.component';
@@ -34,6 +35,9 @@ import { IdentificacionComponent, DialogAssignSelfComponent } from './identifica
 import { DienteComponent } from './diente/diente.component';
 import { ErrorInterceptor } from './error-interceptor';
 import { ErrorComponent } from './error/error.component';
+import { CompletoComponent } from './completo/completo.component';
+import { RevisarComponent } from './revisarHistorial/revisar.component';
+
 
 @NgModule({
   declarations: [
@@ -47,7 +51,9 @@ import { ErrorComponent } from './error/error.component';
     IdentificacionComponent,
     DienteComponent,
     ErrorComponent,
-    DialogAssignSelfComponent
+    DialogAssignSelfComponent,
+    CompletoComponent,
+    RevisarComponent
   ],
   imports: [
     BrowserModule,
@@ -68,7 +74,8 @@ import { ErrorComponent } from './error/error.component';
     MatRadioModule,
     MatDialogModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatIconModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
@@ -77,7 +84,8 @@ import { ErrorComponent } from './error/error.component';
   bootstrap: [AppComponent],
   entryComponents: [
     ErrorComponent,
-    DialogAssignSelfComponent
+    DialogAssignSelfComponent,
+    CompletoComponent
   ]
 })
 export class AppModule {}

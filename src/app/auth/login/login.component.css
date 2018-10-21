@@ -4,9 +4,20 @@ mat-form-field {
 
 .cardLogin {
   position: fixed;
-  top: 100px;
+  top: 120px;
+  width: 70%;
 }
 
 mat-spinner {
   margin: auto;
+}
+
+.bononcilliplox {
+
+  color: white;
+  border-radius: 5%;
+}
+
+.spacer {
+  flex: 1 1 auto;
 }

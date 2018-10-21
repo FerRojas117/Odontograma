@@ -5,3 +5,16 @@ mat-form-field {
 mat-spinner {
   margin: auto;
 }
+
+.cardSign {
+  position: fixed;
+  top: 120px;
+  width: 70%;
+}
+
+.bononcilliplox {
+
+  color: white;
+  border-radius: 5%;
+}
+

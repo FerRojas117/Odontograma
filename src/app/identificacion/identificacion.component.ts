@@ -80,10 +80,8 @@ export class DialogAssignSelfComponent implements OnInit {
   onNoClick(): void {
     this.dialogRef.close();
   }
-  acceptAssignSelf() {
-    this.dialogRef.close('true');
-  }
-  declineAssignSelf(): void {
+
+  cerrar(): void {
     this.dialogRef.close();
   }
 }

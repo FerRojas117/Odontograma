@@ -1,4 +1,4 @@
-<mat-card>
+<mat-card class="cardSign">
   <mat-spinner *ngIf="isLoading"></mat-spinner>
   <form (submit)="onSignup(signupForm)" #signupForm="ngForm" *ngIf="!isLoading">
     <mat-form-field>
@@ -9,8 +9,9 @@
       <input type="password" name="password" ngModel matInput placeholder="Password" #passwordInput="ngModel" required>
       <mat-error *ngIf="passwordInput.invalid">Please introduce la contraseña correcta</mat-error>
     </mat-form-field>
-   <button mat-raised-button color="accent" type="submit" *ngIf="!isLoading">Signup</button>
+
+    <button mat-raised-button  color="primary" class="bononcilliplox" type="submit" *ngIf="!isLoading">Registrarse</button>
 
   </form>
-  <button routerLink="/inicio">MENU</button>
+  <button mat-raised-button  color="primary" class="bononcilliplox" routerLink="/" *ngIf="!isLoading">Regresar</button>
 </mat-card>
