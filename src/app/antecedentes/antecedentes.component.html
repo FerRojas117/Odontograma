@@ -22,6 +22,13 @@
       </mat-form-field>
 
       <span>¿Le han tomado radiografias?</span>
+      <br>
+        <mat-radio-group class="radiografia" formControlName="otros">
+              <mat-radio-button value="Si" (click)="enable('cualesOtros')">Si</mat-radio-button>
+              <mat-radio-button value="no"(click)="disable('cualesOtros')">No</mat-radio-button>
+        </mat-radio-group>
+         <mat-form-field>
+
       <mat-radio-group>
         <mat-radio-button value="S" (click)="apareceRadiografias()">Si</mat-radio-button>
         <mat-radio-button value="N"(click)="desapareceRadiografias()">No</mat-radio-button>
@@ -168,6 +175,7 @@
         <mat-radio-button class="radioButton" value="no">No</mat-radio-button>
       </mat-radio-group>
 
+      <mat-radio-group class="radioGroup" formControlName="Alergias"></mat-radio-group>
       <span>¿Ha presentado reacciones alergicas?</span>
       <mat-radio-button value="Si" (click)="apareceAlergias()">Si</mat-radio-button>
       <mat-select placeholder="Tipos de reacciones alergicas:" [formControl]="alergicas" multiple>

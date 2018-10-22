@@ -10,14 +10,14 @@ import { AnteceService } from './antecedentes.service';
 
 export class AntecedentesComponent implements OnInit {
   form: FormGroup;
-  radiografias_dis : boolean;
-  orgdent_dis: boolean;
-  remplazo_dis: boolean;
-  proanes_dis: boolean;
-  cuidadom_dis: boolean;
-  drogas_dis: boolean;
-  alergias_dis: boolean;
-  consulta_dis: boolean;
+  radiografias_dis = false;
+  orgdent_dis= false;
+  remplazo_dis= false;
+  proanes_dis= false;
+  cuidadom_dis= false;
+  drogas_dis= false;
+  alergias_dis= false;
+  consulta_dis= false;
   ciru = new FormControl();
   ciruList: string[] = ['Hemorragias', 'Dolor prolongado', 'Cicatrización retardada', 'Alveolitis'];
   malestar = new FormControl();
@@ -38,83 +38,27 @@ export class AntecedentesComponent implements OnInit {
   calList: string[] = ['Ausentes', 'Reggulares', 'Abundantes', 'Supragingivales', 'Subgingivales'];
 
   constructor(public anteceService: AnteceService) {}
-  desapareceConsulta(){
-    this.consulta_dis = true;
+  enable(componente: string) {
+    this.form.controls[componente].enable();
+    if (componente === 'cuandoDiabetes') { this.form.controls['glucosa'].enable(); }
   }
-  apareceConsulta(){
-    if ( this.consulta_dis== true){
-      this.consulta_dis=false;
-    }
-    
+  disable(componente: string) {
+    this.form.controls[componente].disable();
+    if (componente === 'cuandoDiabetes') { this.form.controls['glucosa'].disable(); }
   }
-  desapareceAlergias(){
-    this.alergias_dis = true;
-  }
-  apareceAlergias(){
-    if ( this.alergias_dis== true){
-      this.alergias_dis=false;
-    }
-    
-  }
-  desapareceDrogas(){
-    this.drogas_dis = true;
-  }
-  apareceDrogas(){
-    if ( this.drogas_dis== true){
-      this.drogas_dis=false;
-    }
-    
-  }
-    desapareceRadiografias(){
-      this.radiografias_dis = true;
-    }
-    apareceRadiografias(){
-      if ( this.radiografias_dis== true){
-        this.radiografias_dis=false;
-      }
-      
-    }
 
-    desapareceOrgdent(){
-      this.orgdent_dis = true;
-    }
-    apareceOrgdent(){
-      if ( this.orgdent_dis== true){
-        this.orgdent_dis=false;
-      }
-      
-    }
-    desapareceRemplazo(){
-      this.remplazo_dis = true;
-    }
-    apareceRemplazo(){
-      if ( this.remplazo_dis== true){
-        this.remplazo_dis=false;
-      }
-      
-    }
-    desapareceProanes(){
-      this.proanes_dis = true;
-    }
-    apareceProanes(){
-      if ( this.proanes_dis== true){
-        this.proanes_dis=false;
-      }
-      
-    }
-      desapareceCuidadom(){
-        this.cuidadom_dis = true;
-      }
-      apareceCuidadom(){
-        if ( this.cuidadom_dis== true){
-          this.cuidadom_dis=false;
-        }
-        
-      }
 
 
 
   ngOnInit() {
+   this.radiografias_dis = false;
+  this.orgdent_dis= false;
+  this.remplazo_dis= false;
+  this.proanes_dis= false;
+  this.cuidadom_dis= false;
+  this.drogas_dis= false;
+  this.alergias_dis= false;
+  this.consulta_dis= false;
     this.form = new FormGroup({
       motivoconsulta: new FormControl(null, {
         validators: [Validators.required, Validators.minLength(3)]
@@ -159,6 +103,24 @@ export class AntecedentesComponent implements OnInit {
       calculos: new FormControl(null, { validators: [Validators.required] }),
       exploracionradiografica: new FormControl(null, { validators: [Validators.required] }),
     });
+    this.form.controls['cuantasRadio'].disable();
+      this.form.controls['cuandoRadio'].disable();
+      this.form.controls['cuantosOrganos'].disable();
+      this.form.controls['porqueOrganos'].disable();
+      this.form.controls['comoReemplazoOrganos'].disable();
+      this.form.controls['cuandoReemplazoOrganos'].disable();
+      this.form.controls['cualesCirugias'].disable();
+      this.form.controls['problemasAnestesia'].disable();
+      this.form.controls['cuidadoHospital'].disable();
+      this.form.controls['cuidadoMedico'].disable();
+      this.form.controls['cuidadoHistorial'].disable();
+      this.form.controls['cuidadoParaque'].disable();
+      this.form.controls['cualesDrogas'].disable();
+      this.form.controls['cualesHemorragias'].disable();
+      this.form.controls['cualesAlergias'].disable();
+      this.form.controls['cualesHemorragias'].disable();
+      this.form.controls['cualesHemorragias'].disable();
+      this.form.controls['consultaPorque'].disable();
   }
 
   addAntece() {
