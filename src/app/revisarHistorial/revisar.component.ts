@@ -3,7 +3,7 @@ import { PageEvent } from '@angular/material';
 import { Subscription } from 'rxjs';
 import { AuthService } from '../auth/auth.service';
 import { RevisarService } from './revisar.service';
-
+import { Idents } from '../current-user.model';
 @Component({
   selector: 'app-revisar',
   templateUrl: './revisar.component.html',
@@ -12,7 +12,7 @@ import { RevisarService } from './revisar.service';
 
 export class RevisarComponent implements OnInit, OnDestroy {
 
-  ids: string[] = [];
+  ids: Idents[] = [];
   isLoading = false;
   totalIds = 0;
   postsPerPage = 2;
@@ -34,9 +34,9 @@ export class RevisarComponent implements OnInit, OnDestroy {
     this.userId = this.authService.getUserId();
     this.revisarSub = this.revisarService
       .getIdsUpdateListener()
-      .subscribe((idsData: { ids: string[]; postCount: number }) => {
+      .subscribe((idsData: { ids: Idents[]; idsCount: number }) => {
         this.isLoading = false;
-        this.totalIds = idsData.postCount;
+        this.totalIds = idsData.idsCount;
         this.ids = idsData.ids;
       });
     this.userIsAuthenticated = this.authService.getIsAuth();
@@ -52,11 +52,11 @@ export class RevisarComponent implements OnInit, OnDestroy {
     this.isLoading = true;
     this.currentPage = pageData.pageIndex + 1;
     this.postsPerPage = pageData.pageSize;
-    this.postsService.getPosts(this.postsPerPage, this.currentPage);
+    this.revisarService.getIds(this.postsPerPage, this.currentPage);
   }
 
   ngOnDestroy() {
-    this.postsSub.unsubscribe();
+    this.revisarSub.unsubscribe();
     this.authStatusSub.unsubscribe();
   }
 }

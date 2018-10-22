@@ -55,8 +55,9 @@ router.get("", (req, res, next) => {
       res.status(200).json({
         message: "Idents fetched successfully!",
         ids: fetchedIds,
-        maxPosts: count
+        maxIds: count
       });
+
     })
     .catch(error => {
       res.status(500).json({
@@ -64,5 +65,55 @@ router.get("", (req, res, next) => {
       });
     });
 });
+
+
+router.get("/:id", (req, res, next) => {
+  Ident.findById(req.params.id)
+    .then(ids => {
+      if (ids) {
+        res.status(200).json(ids);
+      } else {
+        res.status(404).json({ message: "Ident no encontrado!" });
+      }
+    })
+    .catch(error => {
+      res.status(500).json({
+        message: "No se pudo recuperar Ident!"
+      });
+    });
+});
+
+router.put("/:id", checkAuth,
+  (req, res, next) => {
+    const ids = new Ident({
+      _id: req.body.id,
+      nombre: req.body.nombre,
+      sexo: req.body.sexo,
+      edad: req.body.edad,
+      fechaNac: req.body.fechaNac,
+      estadoCivil: req.body.estadoCivil,
+      direccion: req.body.direccion,
+      telefono: req.body.telefono,
+      ocupacion: req.body.ocupacion,
+      lugarDeNacimiento: req.body.lugarDeNacimiento,
+      procedencia: req.body.procedencia,
+      estadoSocioeconomico: req.body.estadoSocioeconomico,
+      creator: req.userData.userId
+    });
+    Ident.updateOne({ _id: req.params.id, creator: req.userData.userId }, ids)
+      .then(result => {
+        if (result.nModified > 0) {
+          res.status(200).json({ message: "Actualizacion correcta!" });
+        } else {
+          res.status(401).json({ message: "No autorizado!" });
+        }
+      })
+      .catch(error => {
+        res.status(500).json({
+          message: "No se pudo actualizar!"
+        });
+      });
+  }
+);
 
 module.exports = router;

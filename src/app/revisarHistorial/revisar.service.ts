@@ -3,12 +3,12 @@ import { HttpClient } from '@angular/common/http';
 import { Subject } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Router } from '@angular/router';
-
+import { Idents } from '../current-user.model';
 
 @Injectable({ providedIn: 'root' })
 export class RevisarService {
-  private ids: string[] = [];
-  private postsUpdated = new Subject<{ ids: string[]; idsCount: number }>();
+  private ids: Idents[] = [];
+  private identsUpdated = new Subject<{ ids: Idents[]; idsCount: number }>();
 
   constructor(private http: HttpClient, private router: Router) {}
 
@@ -16,44 +16,32 @@ export class RevisarService {
     const queryParams = `?pagesize=${idsPerPage}&page=${currentPage}`;
     this.http
       .get<{ message: string; ids: any; maxIds: number }>(
-        'http://localhost:3000/api/posts' + queryParams
+        'http://localhost:3000/api/ident' + queryParams
       )
       .pipe(
         map(postData => {
           return {
-            ids: postData.posts.map(post => {
+            ids: postData.ids.map(id => {
               return {
-                title: post.title,
-                content: post.content,
-                id: post._id,
-                imagePath: post.imagePath,
-                creator: post.creator
+                id: id._id,
+                nombre: id.nombre,
+                telefono: id.telefono
               };
             }),
-            maxPosts: postData.maxPosts
+            maxIds: postData.maxIds
           };
         })
       )
-      .subscribe(transformedPostData => {
-        this.posts = transformedPostData.posts;
-        this.postsUpdated.next({
-          posts: [...this.posts],
-          postCount: transformedPostData.maxPosts
+      .subscribe(transformedIdData => {
+        this.ids = transformedIdData.ids;
+        this.identsUpdated.next({
+          ids: [...this.ids],
+          idsCount: transformedIdData.maxIds
         });
       });
   }
 
   getIdsUpdateListener() {
-    return this.postsUpdated.asObservable();
-  }
-
-  getPost(id: string) {
-    return this.http.get<{
-      _id: string;
-      title: string;
-      content: string;
-      imagePath: string;
-      creator: string;
-    }>('http://localhost:3000/api/posts/' + id);
+    return this.identsUpdated.asObservable();
   }
 }
