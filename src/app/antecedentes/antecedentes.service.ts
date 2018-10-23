@@ -67,6 +67,8 @@ export class AnteceService {
     cualesAlergias	:string,
     consultaPorque	:string,
     organos:string,
+    cuantosOrganos:string,
+    vistmedult:string,
 
 
     ) {
@@ -124,6 +126,8 @@ export class AnteceService {
       cualesAlergias	:	cualesAlergias	,
       consultaPorque	:	consultaPorque	,
       organos:organos,
+      cuantosOrganos:cuantosOrganos,
+      vistmedult:vistmedult,
     };
     // imprimir objeto con los datos del front end
     console.log(registrarAntece);

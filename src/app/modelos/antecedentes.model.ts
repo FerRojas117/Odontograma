@@ -53,6 +53,7 @@ export interface Antece {
     cualesAlergias	:string;
     consultaPorque	:string;
     organos:string;
-
+    cuantosOrganos:string;
+    vistmedult:string;
   }
   

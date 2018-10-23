@@ -38,7 +38,7 @@ export class AntecedentesComponent implements OnInit {
   enable(componente: string) {
     this.form.controls[componente].enable();
     if (componente === 'cuantasRadio') { this.form.controls['cuandoRadio'].enable(); }
-    if (componente === 'porqueOrganos') { this.form.controls['cuantosOrganos'].enable(); this.form.controls['siReemplazoOrganos'].enable();
+    if (componente === 'siReemplazoOrganos') { this.form.controls['porqueOrganos'].enable(); this.form.controls['cuantosOrganos'].enable(); 
     this.form.controls['comoReemplazoOrganos'].enable(); this.form.controls['cuandoReemplazoOrganos'].enable(); }
     if (componente === 'cuidadoHospital') { this.form.controls['cuidadoMedico'].enable();this.form.controls['cuidadoHistorial'].enable(); }
   }
@@ -186,6 +186,7 @@ export class AntecedentesComponent implements OnInit {
       this.form.value.calculos,
       this.form.value.exploracionradiografica,
       this.form.value.porqueOrganos	,
+      this.form.value.cuantosOrganos,
       this.form.value.siReemplazoOrganos	,
       this.form.value.comoReemplazoOrganos	,
       this.form.value.cuandoReemplazoOrganos	,
@@ -201,6 +202,7 @@ export class AntecedentesComponent implements OnInit {
       this.form.value.cualesAlergias	,
       this.form.value.consultaPorque	,
       this.form.value.organos,
+      this.form.value.vistmedult,
 
     );
   }
