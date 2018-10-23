@@ -27,10 +27,7 @@ export class AntecedentesComponent implements OnInit {
   alergicas = new FormControl();
   alergicasList: string[] = ['Alimentos', 'Drogas', 'Anestésicos', 'Otros'];
   cavidad = new FormControl();
-  cavidadList: string[] = ['No hay anomalidad',
-   'Pigmentación',
-    'Labios', 'Carrillo y surco vestibular',
-    'Lengua', 'Glánsulas salivares(Tamaño,Calidad y flujo de saliva,etc)',
+  cavidadList: string[] = ['No hay anomalidad',   'Pigmentación',    'Labios', 'Carrillo y surco vestibular',    'Lengua', 'Glánsulas salivares(Tamaño,Calidad y flujo de saliva,etc)',
     'Piso de boca', 'Paladar', 'Orofaringe', 'Encia'];
   higieneo = new FormControl();
   higieneoList: string[] = ['Buena', 'Regualar', 'Mala', 'Halitosis', 'Placa', 'Materia Alba', 'Pigmentaciones'];
@@ -64,20 +61,22 @@ export class AntecedentesComponent implements OnInit {
         validators: [Validators.required, Validators.minLength(3)]
       }),
       cuanvisito: new FormControl(null, { validators: [Validators.required] }),
-      vistmedult: new FormControl(null, { validators: [Validators.required] }),
+     // vistmedult: new FormControl(null, { validators: [Validators.required] }),
       motivo: new FormControl(null, { validators: [Validators.required] }),
       cdcuantiempo: new FormControl(null, { validators: [Validators.required] }),
-      radiografias: new FormControl(null, { validators: [Validators.required] }),
+     // radiografias: new FormControl(null, { validators: [Validators.required] }),
       radiografia: new FormControl(null, { validators: [Validators.required] }),
       cuantascuando: new FormControl(null, { validators: [Validators.required] }),
       orgdentarios: new FormControl(null, { validators: [Validators.required] }),
       cuantosporque: new FormControl(null, { validators: [Validators.required] }),
       remplazo: new FormControl(null, { validators: [Validators.required] }),
-      comocuando: new FormControl(null, { validators: [Validators.required] }),
+      organos
+      //comocuando: new FormControl(null, { validators: [Validators.required] }),
       cirugias: new FormControl(null, { validators: [Validators.required] }),
+      malestar
       tipos: new FormControl(null, { validators: [Validators.required] }),
       proanestesia: new FormControl(null, { validators: [Validators.required] }),
-      quetipo: new FormControl(null, { validators: [Validators.required] }),
+      //quetipo: new FormControl(null, { validators: [Validators.required] }),
       higieneoral: new FormControl(null, { validators: [Validators.required] }),
       algvezhateni: new FormControl(null, { validators: [Validators.required] }),
       explique: new FormControl(null, { validators: [Validators.required] }),
@@ -107,10 +106,12 @@ export class AntecedentesComponent implements OnInit {
       this.form.controls['cuandoRadio'].disable();
       this.form.controls['cuantosOrganos'].disable();
       this.form.controls['porqueOrganos'].disable();
+      this.form.controls['siReemplazoOrganos'].disable();
       this.form.controls['comoReemplazoOrganos'].disable();
       this.form.controls['cuandoReemplazoOrganos'].disable();
       this.form.controls['cualesCirugias'].disable();
       this.form.controls['problemasAnestesia'].disable();
+      this.form.controls['cualesProblemas'].disable();
       this.form.controls['cuidadoHospital'].disable();
       this.form.controls['cuidadoMedico'].disable();
       this.form.controls['cuidadoHistorial'].disable();
