@@ -50,7 +50,25 @@ export class AnteceService {
     exploracion: string,
     deschigieneoral: string,
     calculos: string,
-    exploracionradiografica: string
+    exploracionradiografica: string,
+    porqueOrganos	:string,
+    siReemplazoOrganos	:string,
+    comoReemplazoOrganos	:string,
+    cuandoReemplazoOrganos	:string,
+    cualesCirugias	:string,
+    problemasAnestesia	:string,
+    cualesProblemas	:string,
+    cuidadoHospital	:string,
+    cuidadoMedico	:string,
+    cuidadoHistorial	:string,
+    cuidadoParaque	:string,
+    cualesDrogas	:string,
+    cualesHemorragias	:string,
+    cualesAlergias	:string,
+    consultaPorque	:string,
+    organos:string,
+
+
     ) {
     const registrarAntece: any = {
       motivoconsulta: motivoconsulta,
@@ -90,6 +108,22 @@ export class AnteceService {
       deschigieneoral: deschigieneoral,
       calculos: calculos,
       exploracionradiografica: exploracionradiografica,
+      porqueOrganos	:	porqueOrganos	,
+      siReemplazoOrganos	:	siReemplazoOrganos	,
+      comoReemplazoOrganos	:	comoReemplazoOrganos	,
+      cuandoReemplazoOrganos	:	cuandoReemplazoOrganos	,
+      cualesCirugias	:	cualesCirugias	,
+      problemasAnestesia	:	problemasAnestesia	,
+      cualesProblemas	:	cualesProblemas	,
+      cuidadoHospital	:	cuidadoHospital	,
+      cuidadoMedico	:	cuidadoMedico	,
+      cuidadoHistorial	:	cuidadoHistorial	,
+      cuidadoParaque	:	cuidadoParaque	,
+      cualesDrogas	:	cualesDrogas	,
+      cualesHemorragias	:	cualesHemorragias	,
+      cualesAlergias	:	cualesAlergias	,
+      consultaPorque	:	consultaPorque	,
+      organos:organos,
     };
     // imprimir objeto con los datos del front end
     console.log(registrarAntece);

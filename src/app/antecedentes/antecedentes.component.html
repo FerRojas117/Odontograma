@@ -33,14 +33,20 @@
       <textarea matInput placeholder="Cuántas radiografias" formControlName="cuantasRadio" ></textarea>
     </mat-form-field>
     <br>
+    <mat-form-field>
+      <textarea matInput placeholder="¿Cuándo las tomaron?" formControlName="cuandoRadio" ></textarea>
+    </mat-form-field>
+    <br>
 
- <!--Varios-->
       <span>¿Ha perdido organos dentarios?</span>
       <br>
       <mat-radio-group class="radioGroup" formControlName="organos">
-            <mat-radio-button value="Si" (click)="enable('cuantosOrganos')">Si</mat-radio-button>
-            <mat-radio-button value="no"(click)="disable('cuantosOrganos')">No</mat-radio-button>
+            <mat-radio-button value="Si" (click)="enable('porqueOrganos')">Si</mat-radio-button>
+            <mat-radio-button value="no"(click)="disable('porqueOrganos')">No</mat-radio-button>
       </mat-radio-group>
+      <mat-form-field>
+        <textarea matInput placeholder="¿Por qué los reemplazaron?" formControlName="porqueOrganos" ></textarea>
+ </mat-form-field>
        <mat-form-field>
               <textarea matInput placeholder="Cuántos organos" formControlName="cuantosOrganos" ></textarea>
        </mat-form-field>
@@ -87,7 +93,7 @@
                 <textarea matInput type="text" formControlName="explique brevemente" placeholder="Explique">  </textarea>
                 <mat-error *ngIf="form.get('explique').invalid">Por favor, escribe de que tipo fueron los problemas</mat-error>
         </mat-form-field>
-<!--varios-->
+
         <span>¿Está bajo cuidado medico?</span>
         <br>
           <mat-radio-group class="radioGroup" formControlName="cuidadomedico">
@@ -97,6 +103,12 @@
            <mat-form-field>
                   <textarea matInput placeholder="Hospital o clínica" formControlName="cuidadoHospital" ></textarea>
            </mat-form-field>
+           <mat-form-field>
+            <textarea matInput placeholder="Medico tratante" formControlName="cuidadoMedico" ></textarea>
+     </mat-form-field>
+     <mat-form-field>
+      <textarea matInput placeholder="Número de historial" formControlName="cuidadoHistorial" ></textarea>
+    </mat-form-field>
                 <br>
 
       <mat-form-field>

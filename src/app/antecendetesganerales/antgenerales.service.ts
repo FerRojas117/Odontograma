@@ -24,7 +24,22 @@ export class AntGService {
       perspat: string,
       ginecoobst: string,
       edades: string,
-      planifami: string
+      planifami: string,
+      partos	:string,
+      fechaParto	:string,
+      planifamitiem	:string,
+      cuantosParto	:string,
+      menarca	:string,
+      embarazos	:string,
+      bajoPeso	:string,
+      edadHijos	:string,
+      hijosMacro	:string,
+      ritmo	:string,
+      regla	:string,
+      cesareas	:string,
+      vidaSex	:string,
+      abortos	:string,
+
     ) {
     const registrarAntG: any = {
       anthereditarios: anthereditarios,
@@ -38,7 +53,22 @@ export class AntGService {
       perspat: perspat,
       ginecoobst: ginecoobst,
       edades: edades,
-      planifami: planifami
+      planifami: planifami,
+      partos	:	partos	,
+fechaParto	:	fechaParto	,
+planifamitiem	:	planifamitiem	,
+cuantosParto	:	cuantosParto	,
+menarca	:	menarca	,
+embarazos	:	embarazos	,
+bajoPeso	:	bajoPeso	,
+edadHijos	:	edadHijos	,
+hijosMacro	:	hijosMacro	,
+ritmo	:	ritmo	,
+regla	:	regla	,
+cesareas	:	cesareas	,
+vidaSex	:	vidaSex	,
+abortos	:	abortos	,
+
     };
     // imprimir objeto con los datos del front end
     console.log(registrarAntG);

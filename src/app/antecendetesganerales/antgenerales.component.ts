@@ -10,18 +10,7 @@ import { AntGService } from './antgenerales.service';
 
 export class AntgeneralesComponent implements OnInit {
   form: FormGroup;
-  menarca_dis : boolean;
-  embarazo_dis : boolean;
-  bajopeso_dis : boolean;
-  hijosvivos_dis : boolean;
-  hijosm_dis : boolean;
-  ritmo_dis : boolean;
-  regla_dis : boolean;
-  cesareas_dis : boolean;
-  edad_dis : boolean;
-  partos_dis : boolean;
-  fechap_dis : boolean;
-  abortos_dis : boolean;
+    parto_dis = false;
 
   ginobs = new FormControl();
   ginobsList: string[] = [
@@ -32,114 +21,6 @@ export class AntgeneralesComponent implements OnInit {
     'Tiempo de uso del metodo'];
     
   constructor(public antgeService: AntGService) {}
-  desapareceMenarca(){
-    this.menarca_dis = true;
-  }
-  apareceMenarca(){
-    if ( this.menarca_dis== true){
-      this.menarca_dis=false;
-    }
-  }
-
-  desapareceEmbarazo(){
-    this.embarazo_dis = true;
-  }
-  apareceEmbarazo(){
-    if ( this.embarazo_dis== true){
-      this.embarazo_dis=false;
-    }
-  }
- 
-  desapareceBajopeso(){
-    this.bajopeso_dis = true;
-  }
-  apareceBajopeso(){
-    if ( this.bajopeso_dis== true){
-      this.bajopeso_dis=false;
-    }
-  }
-
-  desapareceHijosvivos(){
-    this.hijosvivos_dis = true;
-  }
-  apareceHijosvivos(){
-    if ( this.hijosvivos_dis== true){
-      this.hijosvivos_dis=false;
-    }
-  }
-
-  desapareceHijosM(){
-    this.hijosm_dis = true;
-  }
-  apareceHijosM(){
-    if ( this.hijosm_dis== true){
-      this.hijosm_dis=false;
-    }
-  }
-
-  desapareceRitmo(){
-    this.ritmo_dis = true;
-  }
-  apareceRitmo(){
-    if ( this.ritmo_dis== true){
-      this.ritmo_dis=false;
-    }
-  }
-
-  desapareceRegla(){
-    this.regla_dis = true;
-  }
-  apareceRegla(){
-    if ( this.regla_dis== true){
-      this.regla_dis=false;
-    }
-  }
-
-  desapareceCesareas(){
-    this.cesareas_dis = true;
-  }
-  apareceCesareas(){
-    if ( this.cesareas_dis== true){
-      this.cesareas_dis=false;
-    }
-  }
-
-  desapareceEdad(){
-    this.edad_dis = true;
-  }
-  apareceEdad(){
-    if ( this.edad_dis== true){
-      this.edad_dis=false;
-    }
-  }
-
-  desaparecePartos(){
-    this.partos_dis = true;
-  }
-  aparecePartos(){
-    if ( this.partos_dis== true){
-      this.partos_dis=false;
-    }
-  }
-
-  desapareceFechaP(){
-    this.fechap_dis = true;
-  }
-  apareceFechaP(){
-    if ( this.fechap_dis== true){
-      this.fechap_dis=false;
-    }
-  }
-
-  desapareceAbortos(){
-    this.abortos_dis = true;
-  }
-  apareceAbortos(){
-    if ( this.abortos_dis== true){
-      this.abortos_dis=false;
-    }
-  }
-
   ngOnInit() {
     this.form = new FormGroup({
       anthereditarios: new FormControl(null, {
@@ -156,7 +37,22 @@ export class AntgeneralesComponent implements OnInit {
       ginecoobst: new FormControl(null, { validators: [Validators.required] }),
       edades: new FormControl(null, { validators: [Validators.required] }),
       planifami: new FormControl(null, { validators: [Validators.required] }),
+      partos: new FormControl(null, { validators: [Validators.required] }),
+      fechaParto: new FormControl(null, { validators: [Validators.required] }),
+      planifamitiem: new FormControl(null, { validators: [Validators.required] }),
+      cuantosParto: new FormControl(null, { validators: [Validators.required] }),
+      menarca: new FormControl(null, { validators: [Validators.required] }),
+      embarazos: new FormControl(null, { validators: [Validators.required] }),
+      bajoPeso: new FormControl(null, { validators: [Validators.required] }),
+      edadHijos: new FormControl(null, { validators: [Validators.required] }),
+      hijosMacro: new FormControl(null, { validators: [Validators.required] }),
+      ritmo: new FormControl(null, { validators: [Validators.required] }),
+      regla: new FormControl(null, { validators: [Validators.required] }),
+      cesareas: new FormControl(null, { validators: [Validators.required] }),
+      vidaSex: new FormControl(null, { validators: [Validators.required] }),
+      abortos: new FormControl(null, { validators: [Validators.required] }),
     });
+    this.form.controls['cuantosParto'].disable();
   }
 
   addAntG() {
@@ -173,6 +69,21 @@ export class AntgeneralesComponent implements OnInit {
       this.form.value.ginecoobst,
       this.form.value.edades,
       this.form.value.planifami,
+      this.form.value.	partos	,
+this.form.value.	fechaParto	,
+this.form.value.	planifamitiem	,
+this.form.value.	cuantosParto	,
+this.form.value.	menarca	,
+this.form.value.	embarazos	,
+this.form.value.	bajoPeso	,
+this.form.value.	edadHijos	,
+this.form.value.	hijosMacro	,
+this.form.value.	ritmo	,
+this.form.value.	regla	,
+this.form.value.	cesareas	,
+this.form.value.	vidaSex	,
+this.form.value.	abortos	,
+
     );
   }
 }

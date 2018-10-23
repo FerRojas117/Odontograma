@@ -37,5 +37,22 @@ export interface Antece {
     deschigieneoral: string;
     calculos: string;
     exploracionradiografica: string;
+    porqueOrganos	:string;
+    siReemplazoOrganos	:string;
+    comoReemplazoOrganos	:string;
+    cuandoReemplazoOrganos	:string;
+    cualesCirugias	:string;
+    problemasAnestesia	:string;
+    cualesProblemas	:string;
+    cuidadoHospital	:string;
+    cuidadoMedico	:string;
+    cuidadoHistorial	:string;
+    cuidadoParaque	:string;
+    cualesDrogas	:string;
+    cualesHemorragias	:string;
+    cualesAlergias	:string;
+    consultaPorque	:string;
+    organos:string;
+
   }
   
