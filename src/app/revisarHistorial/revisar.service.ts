@@ -9,10 +9,11 @@ import { Idents } from '../current-user.model';
 export class RevisarService {
   private ids: Idents[] = [];
   private identsUpdated = new Subject<{ ids: Idents[]; idsCount: number }>();
-
+  private mode;
   constructor(private http: HttpClient, private router: Router) {}
 
   getIds(idsPerPage: number, currentPage: number) {
+
     const queryParams = `?pagesize=${idsPerPage}&page=${currentPage}`;
     this.http
       .get<{ message: string; ids: any; maxIds: number }>(

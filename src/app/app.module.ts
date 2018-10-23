@@ -38,6 +38,7 @@ import { ErrorInterceptor } from './error-interceptor';
 import { ErrorComponent } from './error/error.component';
 import { CompletoComponent } from './completo/completo.component';
 import { RevisarComponent } from './revisarHistorial/revisar.component';
+import { ExploracionFisicaComponent } from './exploracionfisica/exploracionfisica.component';
 
 
 @NgModule({
@@ -54,7 +55,8 @@ import { RevisarComponent } from './revisarHistorial/revisar.component';
     ErrorComponent,
     DialogAssignSelfComponent,
     CompletoComponent,
-    RevisarComponent
+    RevisarComponent,
+    ExploracionFisicaComponent
   ],
   imports: [
     BrowserModule,

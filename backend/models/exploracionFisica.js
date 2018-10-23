@@ -18,6 +18,7 @@ const exFisica = mongoose.Schema({
   observaciones: { type: String, required: true },
   recomendaciones: { type: String, required: true },
   nombreMedico: { type: String, required: true },
+  paciente: { type: mongoose.Schema.Types.ObjectId, ref: "Ident", required: true }
 });
 
 module.exports = mongoose.model("ExFisica", exFisica);

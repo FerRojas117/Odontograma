@@ -21,8 +21,8 @@ export class IdentificacionComponent implements OnInit {
   private authStatusSub: Subscription;
   constructor(
     public identService: IdentService,
-    public route: ActivatedRoute,
     public dialog: MatDialog,
+    public route: ActivatedRoute,
     private authService: AuthService
   ) {}
 

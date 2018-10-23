@@ -6,7 +6,8 @@
     </mat-expansion-panel-header>
     <p>{{ id.telefono }}</p>
     <mat-action-row *ngIf="userIsAuthenticated ">
-      <a mat-button color="primary"  [routerLink]="['/sidenav/editId', id.id]"
+      <!--[routerLink]="['/sidenav/editId', id.id]"-->
+      <a mat-button color="primary"  [routerLink]="['sidenav/', id.id]"
        matTooltip="Editar histrial clínico de paciente completo">EDITAR</a>
     </mat-action-row>
   </mat-expansion-panel>

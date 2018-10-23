@@ -20,7 +20,6 @@ router.post("", checkAuth, (req, res, next) => {
       estadoSocioeconomico: req.body.estadoSocioeconomico,
       creator: req.userData.userId
     });
-    console.log(ident);
     ident.save()
     .then(createdIdent => {
       res.status(201).json({
