@@ -19,13 +19,13 @@
 
       <mat-form-field>
         <mat-select placeholder="Rango de ingresos" [formControl]="ingresos" multiple>
-          <mat-option *ngFor="let topping of ingresosList" [value]="ingresos">{{ingresos}}</mat-option>
+          <mat-option *ngFor="let ingresos of ingresosList" [value]="ingresos">{{ingresos}}</mat-option>
         </mat-select>
       </mat-form-field>
 
       <mat-form-field>
-        <mat-select placeholder="Grado de instrucción" [formControl]="grado" multiple>
-          <mat-option *ngFor="let topping of gradoList" [value]="grado">{{grado}}</mat-option>
+        <mat-select placeholder="Grado de instrucción" [formControl]="gradoinst" multiple>
+          <mat-option *ngFor="let gradoinst of gradoinstList" [value]="gradoinst">{{gradoinst}}</mat-option>
         </mat-select>
       </mat-form-field>
 

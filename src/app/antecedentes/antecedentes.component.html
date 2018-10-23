@@ -20,14 +20,13 @@
         <textarea matInput type="text" formControlName="cdcuantiempo" placeholder="Cada cuanto tiempo visita al estomatologo">  </textarea>
         <mat-error *ngIf="form.get('cdcuantiempo').invalid">Por favor, escribe cada que tiempo realiza la visita</mat-error>
       </mat-form-field>
-<!--Varios-->
+
       <span>¿Le han tomado radiografias?</span>
       <br>
         <mat-radio-group class="radiografia" formControlName="organos">
               <mat-radio-button value="Si" (click)="enable('cuantasRadio')">Si</mat-radio-button>
               <mat-radio-button value="no"(click)="disable('cuantasRadio')">No</mat-radio-button>
         </mat-radio-group>
-         <mat-form-field>
     <br>
     <mat-form-field>
       <textarea matInput placeholder="Cuántas radiografias" formControlName="cuantasRadio" ></textarea>
@@ -75,8 +74,8 @@
   <span>¿Ha tenido problemas con la anestesia local?</span>
   <br>
   <mat-radio-group class="radioGroup" formControlName="proanestesia">
-        <mat-radio-button value="Si" (click)="enable('problemasAntesia')">Si</mat-radio-button>
-        <mat-radio-button value="no"(click)="disable('problemasAntesia')">No</mat-radio-button>
+        <mat-radio-button value="Si" (click)="enable('cualesProblemas')">Si</mat-radio-button>
+        <mat-radio-button value="no"(click)="disable('cualesProblemas')">No</mat-radio-button>
   </mat-radio-group>
    <mat-form-field>
           <textarea matInput placeholder="De qué tipo" formControlName="cualesProblemas" ></textarea>
@@ -90,7 +89,7 @@
         </mat-form-field>
 
         <mat-form-field>
-                <textarea matInput type="text" formControlName="explique brevemente" placeholder="Explique">  </textarea>
+                <textarea matInput type="text" formControlName="explique" placeholder="Explique brevemente">  </textarea>
                 <mat-error *ngIf="form.get('explique').invalid">Por favor, escribe de que tipo fueron los problemas</mat-error>
         </mat-form-field>
 
@@ -151,8 +150,8 @@
     <span>¿Necesario hacer consulta médica?</span>
     <br>
       <mat-radio-group class="radioGroup" formControlName="consmedica">
-            <mat-radio-button value="Si" (click)="enable('cualesOtros')">Si</mat-radio-button>
-            <mat-radio-button value="no"(click)="disable('cualesOtros')">No</mat-radio-button>
+            <mat-radio-button value="Si" (click)="enable('consultaPorque')">Si</mat-radio-button>
+            <mat-radio-button value="no"(click)="disable('consultaPorque')">No</mat-radio-button>
       </mat-radio-group>
        <mat-form-field>
               <textarea matInput placeholder="¿Por qué es necesario?" formControlName="consultaPorque" ></textarea>

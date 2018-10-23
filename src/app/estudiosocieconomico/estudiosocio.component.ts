@@ -12,8 +12,8 @@ export class EstudiosocioComponent implements OnInit {
   ingresos = new FormControl();
   ingresosList: string[] = ['No tiene', 'Menor de $300', 'De $300 a $500', 'de $500 a $800', 'de $800 a $1200', 'de $1200 a $2400'];
   
-  grado = new FormControl();
-  gradoList: string[] = ['Analfabeta', 'Primaria', 'Secundaria', 'Preparatoria', 'Profesional', 'Técnica'];
+  gradoinst = new FormControl();
+  gradoinstList: string[] = ['Analfabeta', 'Primaria', 'Secundaria', 'Preparatoria', 'Profesional', 'Técnica'];
   constructor(public estuService: EstuService) {}
 
   ngOnInit() {

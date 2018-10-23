@@ -20,7 +20,16 @@ export class AntgeneralesComponent implements OnInit {
     'Edad de los hijos vivos', 'Hijos con bajo peso al nacer', 'Tipos de método de planificación familiar', 
     'Tiempo de uso del metodo'];
     
+    
   constructor(public antgeService: AntGService) {}
+  enable(componente: string) {
+    this.form.controls[componente].enable();
+    if (componente === 'fechaParto') { this.form.controls['cuantosParto'].enable(); }
+  }
+  disable(componente: string) {
+    this.form.controls[componente].disable();
+    if (componente === 'fechaParto') { this.form.controls['cuantosParto'].disable(); }
+  }
   ngOnInit() {
     this.form = new FormGroup({
       anthereditarios: new FormControl(null, {
@@ -53,6 +62,7 @@ export class AntgeneralesComponent implements OnInit {
       abortos: new FormControl(null, { validators: [Validators.required] }),
     });
     this.form.controls['cuantosParto'].disable();
+    this.form.controls['fechasParto'].disable();
   }
 
   addAntG() {

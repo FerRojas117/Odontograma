@@ -22,8 +22,8 @@ const routes: Routes = [
      children: [
        { path: 'identificacion', component: IdentificacionComponent },
        { path: 'antGenerales', component: AntgeneralesComponent },
-       { path: 'antcedentes', component: AntecedentesComponent },
-       { path: 'estudiosocio', component: EstudiosocioComponent }
+       { path: 'antecedentes', component: AntecedentesComponent },
+       { path: 'estudioSE', component: EstudiosocioComponent }
       ]
   },
   { path: 'inicio', component: InicioComponent },
