@@ -10,14 +10,7 @@ import { AnteceService } from './antecedentes.service';
 
 export class AntecedentesComponent implements OnInit {
   form: FormGroup;
-  radiografias_dis = false;
-  orgdent_dis= false;
-  remplazo_dis= false;
-  proanes_dis= false;
-  cuidadom_dis= false;
-  drogas_dis= false;
-  alergias_dis= false;
-  consulta_dis= false;
+ 
   ciru = new FormControl();
   ciruList: string[] = ['Hemorragias', 'Dolor prolongado', 'Cicatrización retardada', 'Alveolitis'];
   malestar = new FormControl();
@@ -52,14 +45,6 @@ export class AntecedentesComponent implements OnInit {
   }
 
   ngOnInit() {
-   this.radiografias_dis = false;
-  this.orgdent_dis= false;
-  this.remplazo_dis= false;
-  this.proanes_dis= false;
-  this.cuidadom_dis= false;
-  this.drogas_dis= false;
-  this.alergias_dis= false;
-  this.consulta_dis= false;
     this.form = new FormGroup({
       motivoconsulta: new FormControl(null, {
         validators: [Validators.required, Validators.minLength(3)]
@@ -84,13 +69,12 @@ export class AntecedentesComponent implements OnInit {
       higieneoral: new FormControl(null, { validators: [Validators.required] }),
       algvezhateni: new FormControl(null, { validators: [Validators.required] }),
       explique: new FormControl(null, { validators: [Validators.required] }),
-      cuidadomedico: new FormControl(null, { validators: [Validators.required] }),
       hospital: new FormControl(null, { validators: [Validators.required] }),
       vismedult: new FormControl(null, { validators: [Validators.required] }),
       paraque: new FormControl(null, { validators: [Validators.required] }),
       drogas: new FormControl(null, { validators: [Validators.required] }),
       cualesdr: new FormControl(null, { validators: [Validators.required] }),
-      hemorragias: new FormControl(null, { validators: [Validators.required] }),
+      hemorragiass: new FormControl(null, { validators: [Validators.required] }),
       hsig: new FormControl(null, { validators: [Validators.required] }),
       reacalergicas: new FormControl(null, { validators: [Validators.required] }),
       tipreac: new FormControl(null, { validators: [Validators.required] }),
@@ -123,6 +107,7 @@ export class AntecedentesComponent implements OnInit {
       cualesHemorragias	: new FormControl(null, { validators: [Validators.required] }),
       cualesAlergias	: new FormControl(null, { validators: [Validators.required] }),
       consultaPorque	: new FormControl(null, { validators: [Validators.required] }),
+      recalergicas : new FormControl(null, { validators: [Validators.required] }),
 
     });
     this.form.controls['cuantasRadio'].disable();
@@ -143,6 +128,7 @@ export class AntecedentesComponent implements OnInit {
       this.form.controls['cualesAlergias'].disable();
       this.form.controls['cualesHemorragias'].disable();
       this.form.controls['consultaPorque'].disable();
+      this.form.controls['recalergicas'].disable();
   }
 
   addAntece() {
@@ -157,7 +143,9 @@ export class AntecedentesComponent implements OnInit {
       this.form.value.cuantosporque,
       this.form.value.remplazo,
       this.form.value.comocuando,
-      this.form.value.cirugias,
+      this.form.value.cirugias[0],
+      this.form.value.malestar[0],
+      this.form.value.cavidad[0],
       this.form.value.tipos,
       this.form.value.proanestesia,
       this.form.value.quetipo,
@@ -170,9 +158,9 @@ export class AntecedentesComponent implements OnInit {
       this.form.value.paraque,
       this.form.value.drogas,
       this.form.value.cualesdr,
-      this.form.value.hemorragias,
+      this.form.value.hemorragiass[0],
       this.form.value.hsig,
-      this.form.value.reacalergicas,
+      this.form.value.reacalergicas[0],
       this.form.value.tipreac,
       this.form.value.cualesali,
       this.form.value.cualesd,
@@ -203,7 +191,8 @@ export class AntecedentesComponent implements OnInit {
       this.form.value.consultaPorque	,
       this.form.value.organos,
       this.form.value.vistmedult,
-
+      this.form.value.higieneo,
+      this.form.value.recalergicas,
     );
   }
 }

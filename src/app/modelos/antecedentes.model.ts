@@ -55,5 +55,6 @@ export interface Antece {
     organos:string;
     cuantosOrganos:string;
     vistmedult:string;
+    recalergicas:string;
   }
   
