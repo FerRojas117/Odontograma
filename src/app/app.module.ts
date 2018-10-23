@@ -16,6 +16,7 @@ import {
   MatDatepickerModule,
   MatNativeDateModule,
   MatIconModule,
+  MatTooltipModule
 } from '@angular/material';
 
 import { AppComponent } from './app.component';
@@ -75,7 +76,8 @@ import { RevisarComponent } from './revisarHistorial/revisar.component';
     MatDialogModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatIconModule
+    MatIconModule,
+    MatTooltipModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },

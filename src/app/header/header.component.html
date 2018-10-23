@@ -1,11 +1,13 @@
 <mat-toolbar color="primary" class="header-Class">
   <span class="facultad">
-    <a class="botoncillo" mat-button routerLink="/inicio"><h3>Facultad de Estomatología BUAP</h3><mat-icon>home</mat-icon></a>
+    <a class="botoncillo" mat-button routerLink="/inicio" matTooltip="Navegar a Inicio">
+      <h3>Facultad de Estomatología BUAP</h3><mat-icon>home</mat-icon>
+    </a>
   </span>
   <span class="spacer"></span>
   <ul>
     <li *ngIf="userIsAuthenticated">
-      <button class="bononcilliplox" mat-raised-button  (click)="onLogout()">Logout</button>
+      <button class="bononcilliplox" matTooltip="Cerrar sesión" mat-raised-button  (click)="onLogout()">Logout</button>
     </li>
   </ul>
 </mat-toolbar>
