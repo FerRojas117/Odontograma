@@ -37,74 +37,19 @@ export class AntecedentesComponent implements OnInit {
   constructor(public anteceService: AnteceService) {}
   enable(componente: string) {
     this.form.controls[componente].enable();
-    if (componente === 'cuandoDiabetes') { this.form.controls['glucosa'].enable(); }
-  }
-  disable(componente: string) {
-    this.form.controls[componente].disable();
-    if (componente === 'cuandoDiabetes') { this.form.controls['glucosa'].disable(); }
-  }
-  enable(componente: string) {
-    this.form.controls[componente].enable();
     if (componente === 'cuantasRadio') { this.form.controls['cuandoRadio'].enable(); }
+    if (componente === 'porqueOrganos') { this.form.controls['cuantosOrganos'].enable(); this.form.controls['siReemplazoOrganos'].enable();
+    this.form.controls['comoReemplazoOrganos'].enable(); this.form.controls['cuandoReemplazoOrganos'].enable(); }
+    if (componente === 'cuidadoHospital') { this.form.controls['cuidadoMedico'].enable();this.form.controls['cuidadoHistorial'].enable(); }
   }
   disable(componente: string) {
     this.form.controls[componente].disable();
-    if (componente === 'cuantasRadio') { this.form.controls['cuandoRadio'].disable(); }
-  }
-  enable(componente: string) {
-    this.form.controls[componente].enable();
-    if (componente === 'porqueOrganos') { this.form.controls['cuantosOrganos'].enable(); }
-  }
-  disable(componente: string) {
-    this.form.controls[componente].disable();
-    if (componente === 'porqueOrganos') { this.form.controls['cuantosOrganos'].disable(); }
-  }
-  enable(componente: string) {
-    this.form.controls[componente].enable();
-    if (componente === 'porqueOrganos') { this.form.controls['siReemplazoOrganos'].enable(); }
-  }
-  disable(componente: string) {
-    this.form.controls[componente].disable();
-    if (componente === 'porqueOrganos') { this.form.controls['siReemplazoOrganos'].disable(); }
-  }
-  enable(componente: string) {
-    this.form.controls[componente].enable();
-    if (componente === 'porqueOrganos') { this.form.controls['comoReemplazoOrganos'].enable(); }
-  }
-  disable(componente: string) {
-    this.form.controls[componente].disable();
-    if (componente === 'porqueOrganos') { this.form.controls['comoReemplazoOrganos'].disable(); }
-  }
-  enable(componente: string) {
-    this.form.controls[componente].enable();
-    if (componente === 'porqueOrganos') { this.form.controls['cuandoReemplazoOrganos'].enable(); }
-  }
-  disable(componente: string) {
-    this.form.controls[componente].disable();
-    if (componente === 'porqueOrganos') { this.form.controls['cuandoReemplazoOrganos'].disable(); }
-  }
-  enable(componente: string) {
-    this.form.controls[componente].enable();
-    if (componente === 'cuidadoHospital') { this.form.controls['cuidadoMedico'].enable(); }
-  }
-  disable(componente: string) {
-    this.form.controls[componente].disable();
-    if (componente === 'cuidadoHospital') { this.form.controls['cuidadoMedico'].disable(); }
-  }
 
-  enable(componente: string) {
-    this.form.controls[componente].enable();
-    if (componente === 'cuidadoHospital') { this.form.controls['cuidadoHistorial'].enable(); }
+    if (componente === 'cuantasRadio') { this.form.controls['cuandoRadio'].enable(); }
+    if (componente === 'porqueOrganos') { this.form.controls['cuantosOrganos'].enable(); this.form.controls['siReemplazoOrganos'].enable();
+    this.form.controls['comoReemplazoOrganos'].enable(); this.form.controls['cuandoReemplazoOrganos'].enable(); }
+    if (componente === 'cuidadoHospital') { this.form.controls['cuidadoMedico'].enable();this.form.controls['cuidadoHistorial'].enable(); } 
   }
-  disable(componente: string) {
-    this.form.controls[componente].disable();
-    if (componente === 'cuidadoHospital') { this.form.controls['cuidadoHistorial'].disable(); }
-  }
-
-
-
-
-
 
   ngOnInit() {
    this.radiografias_dis = false;
@@ -260,3 +205,4 @@ export class AntecedentesComponent implements OnInit {
     );
   }
 }
+
