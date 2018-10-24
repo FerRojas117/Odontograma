@@ -13,7 +13,8 @@ import {
   MatPaginatorModule,
   MatRadioModule,
   MatNativeDateModule,
-  MatTabBody
+  MatTabBody,
+  MatAutocompleteModule
 } from '@angular/material';
 
 import { AppComponent } from './app.component';
@@ -70,6 +71,7 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
     MatRadioModule,
     MatDatepickerModule,
     MatNativeDateModule,
+    MatAutocompleteModule
     ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }

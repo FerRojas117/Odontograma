@@ -13,6 +13,8 @@ import { PlandetratService } from './plandetratamiento.service';
 export class PlandetratamientoComponent implements OnInit {
   form: FormGroup;
   constructor(public plandeTratService: PlandetratService) { }
+    examenDental = new FormControl();
+    options: string[] = ['C', 'P', 'O', 'E', 'I'];
 
   ngOnInit() {
     this.form = new FormGroup({
@@ -39,6 +41,7 @@ export class PlandetratamientoComponent implements OnInit {
       sillonaux: new FormControl(null, {validators: [Validators.required] }),
     });
   } 
+
   addPlandeTratamiento(){
     this.plandeTratService.addPlandeTratamiento(
       this.form.value.trabajo,
