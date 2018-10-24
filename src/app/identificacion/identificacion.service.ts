@@ -59,9 +59,6 @@ export class IdentService {
     localStorage.setItem('pacienteId', pacienteId);
   }
 
-
-
-
   getIdent(id: string) {
     return this.http.get<{
       _id: string;
@@ -96,8 +93,8 @@ export class IdentService {
   ) {
     let identData: Ident;
     identData = {
-        id: id,
-        nombre: nombre,
+      id: id,
+      nombre: nombre,
       sexo: sexo,
       edad: edad,
       fechaNac: fechaNac,
@@ -114,7 +111,6 @@ export class IdentService {
       .put<{ message: string }>('http://localhost:3000/api/ident/' + id, identData)
       .subscribe(response => {
         this.dialog.open(CompletoComponent, {data: {message:  response.message}});
-        this.router.navigate(['/sidenav']);
       });
   }
 

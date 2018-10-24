@@ -18,6 +18,7 @@ export class ExploracionFisicaComponent implements OnInit, OnDestroy {
     isLoading = false; // COPIAR
     private mode = 'create'; // COPIAR
     private idsId: string; // COPIAR
+    private idComponent: string;
     private authStatusSub: Subscription; // COPIAR
     private idUpdated = new Subscription;
     idIdent: string;
@@ -66,6 +67,7 @@ export class ExploracionFisicaComponent implements OnInit, OnDestroy {
           this.isLoading = true;
           this.exploservice.getExplo(this.idsId).subscribe(postData => {
             this.isLoading = false;
+            this.idComponent = postData._id;
             this.explo = {
               id: postData._id,
               peso: postData.peso,
@@ -137,6 +139,60 @@ export class ExploracionFisicaComponent implements OnInit, OnDestroy {
         this.form.value.nombredelMedico,
         this.idsId
       );
+
+      if (this.form.invalid) {
+        return;
+      }
+      this.isLoading = true;
+      if (this.mode === 'create') {
+        this.exploservice.addExplo(
+          this.form.value.peso,
+          this.form.value.talla,
+          this.form.value.frecuenciaCardiaca,
+          this.form.value.presionArterial,
+          this.form.value.temperatura,
+          this.form.value.frecuenciaRespiratoria,
+          this.form.value.inspeccionGeneral,
+          this.form.value.cabeza,
+          this.form.value.cuello,
+          this.form.value.torax,
+          this.form.value.abdomen,
+          this.form.value.columnaVertebral,
+          this.form.value.extremidades,
+          this.form.value.diagnostico,
+          this.form.value.observaciones,
+          this.form.value.recomendaciones,
+          this.form.value.nombredelMedico,
+          this.idsId
+        );
+      } else {
+          console.log(this.idComponent);
+          this.exploservice.updateExp(
+          this.idComponent,
+          this.form.value.peso,
+          this.form.value.talla,
+          this.form.value.frecuenciaCardiaca,
+          this.form.value.presionArterial,
+          this.form.value.temperatura,
+          this.form.value.frecuenciaRespiratoria,
+          this.form.value.inspeccionGeneral,
+          this.form.value.cabeza,
+          this.form.value.cuello,
+          this.form.value.torax,
+          this.form.value.abdomen,
+          this.form.value.columnaVertebral,
+          this.form.value.extremidades,
+          this.form.value.diagnostico,
+          this.form.value.observaciones,
+          this.form.value.recomendaciones,
+          this.form.value.nombredelMedico,
+          this.idsId
+        );
+      }
+      this.form.reset();
+
+
+
     }
 
     ngOnDestroy() {

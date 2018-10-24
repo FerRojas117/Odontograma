@@ -5,7 +5,6 @@ const checkAuth = require("../middleware/check-auth");
 const router = express.Router();
 
 router.post("", checkAuth, (req, res, next) => {
-
   const ident = new Ident({
       nombre: req.body.nombre,
       sexo: req.body.sexo,

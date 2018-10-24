@@ -1,6 +1,6 @@
 const express = require("express");
 const ExFisica = require("../models/exploracionFisica");
-// const checkAuth = require("../middleware/check-auth");
+const checkAuth = require("../middleware/check-auth");
 
 const router = express.Router();
 
@@ -58,6 +58,49 @@ router.get("/:id", (req, res, next) => {
       });
     });
 });
+
+
+
+router.put("/:id",
+  (req, res, next) => {
+
+    console.log(req.body);
+    const exp = new ExFisica({
+      _id: req.body.id,
+      peso: req.body.peso,
+      talla: req.body.talla,
+      fCardiaca: req.body.fCardiaca,
+      presionArterial: req.body.presionArterial,
+      temperatura: req.body.temperatura,
+      frecuenciaResp: req.body.frecuenciaResp,
+      inspeccionGeneral: req.body.inspeccionGeneral,
+      cabeza: req.body.cabeza,
+      cuello: req.body.cuello,
+      torax: req.body.torax,
+      abdomen: req.body.abdomen,
+      columnaVertebral: req.body.columnaVertebral,
+      extremidades: req.body.extremidades,
+      diagnostico: req.body.diagnostico,
+      observaciones: req.body.observaciones,
+      recomendaciones: req.body.recomendaciones,
+      nombreMedico: req.body.nombreMedico,
+      paciente: req.body.paciente
+    });
+    ExFisica.updateOne({ _id: req.params.id}, exp)
+      .then(result => {
+        if (result.nModified > 0) {
+          res.status(200).json({ message: "Actualizacion correcta!" });
+        } else {
+          res.status(401).json({ message: "No autorizado!" });
+        }
+      })
+      .catch(error => {
+        res.status(500).json({
+          message: "No se pudo actualizar!"
+        });
+      });
+  }
+);
 
 
 
