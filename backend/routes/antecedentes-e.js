@@ -16,13 +16,13 @@ router.post("", (req, res, next) => {
       cuando: req.body.cuando,
       cuantas: req.body.cuantas
      },
-      
+
       organosDentarios:{
         respuesta: req.body.respuesta,
         cuantos: req.body.cuantos,
         porQue: req.body.porQue,
       },
-      
+
     reemplazos:{
       respuesta: req.body.respuesta,
     como: req.body.como,
@@ -36,7 +36,7 @@ router.post("", (req, res, next) => {
       cicatRetardada: req.body.cicatRetardada,
       alveolitis: req.body.alveolitis
     },
-    
+
     antestesiaLocal:{
       respuesta: req.body.respuesta,
     tipo: req.body.tipo,
@@ -53,23 +53,23 @@ router.post("", (req, res, next) => {
       otros: req.body.otros
     },
 
-    
+
     cuidadoMedico:{
       respuesta: req.body.respuesta,
       hospital: req.body.hospital,
       historiaNo: req.body.historiaNo
     },
-   
+
     visitaMedico:{
       respuesta: req.body.respuesta,
       razon: req.body.razon
     },
-    
+
     drogas:{
       respuesta: req.body.respuesta,
       cuales: req.body.cuales
     },
-   
+
     hemorragiasSignificativas:{
       respuesta: req.body.respuesta,
       heridasPequenas: req.body.heridasPequenas,
@@ -93,13 +93,13 @@ router.post("", (req, res, next) => {
       otros: req.body.otros,
       cualesO: req.body.cualesO
     },
-    
+
     consulta:{
       respuesta: req.body.respuesta,
       porQue: req.body.porQue,
       observaciones: req.body.observaciones
     },
-    
+
     cavidaOral:{
       noAnormal: req.body.noAnormal,
       pigmentacion: req.body.pigmentacion,
@@ -114,7 +114,7 @@ router.post("", (req, res, next) => {
       salivares: req.body.salivares,
       descripcion: req.body.descripcion
     },
-    
+
     higieneBoca:{
       buena: req.body.buena,
       regular: req.body.regular,
@@ -131,8 +131,8 @@ router.post("", (req, res, next) => {
       supragingivales: req.body.supragingivales,
       subgingivales: req.body.subgingivales
     },
-    exploracionRadiografica: req.body.exploracionRadiografica
-
+    exploracionRadiografica: req.body.exploracionRadiografica,
+    paciente:  req.body.pacienteId
     });
     antEst.save()
     .then(createdIdent => {

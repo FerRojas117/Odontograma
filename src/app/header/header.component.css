@@ -21,6 +21,17 @@ ul {
   top: 0;
   left: 0;
   right: 0;
-  height: 100px
+  height: 100px;
+
 }
 
+.botoncillo {
+  height: 60px;
+  border-radius: 5%;
+}
+
+.bononcilliplox {
+  background-color: white;
+  color: blue;
+  border-radius: 5%;
+}

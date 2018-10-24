@@ -1,0 +1,72 @@
+<mat-card class="cardForm">
+  <form [formGroup]="form" (submit)="addConsen()">
+
+    <p>
+            Fecha de Consentimiento:
+            <br><br>
+
+            <mat-form-field>
+                <input matInput [matDatepicker]="picker" formControlName="fechaConsen"  placeholder="Elige una fecha">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+            <br><br>
+        Yo
+
+    <mat-form-field>
+      <textarea matInput formControlName="paciente" placeholder="Paciente"></textarea>
+      <mat-error *ngIf="form.get('paciente').invalid">Por favor, escribe el nombre del paciente.</mat-error>
+    </mat-form-field>
+
+    , manifiesto que el personal estomatológico (Alumno
+
+    <mat-form-field>
+        <textarea matInput formControlName="alumno" placeholder="Alumno"></textarea>
+        <mat-error *ngIf="form.get('alumno').invalid">Por favor, escribe el nombre del alumno.</mat-error>
+    </mat-form-field>
+
+    , que se encuentra bajo la supervisión y tutoría del Odonto-Estomatólogo
+
+    <mat-form-field>
+        <textarea matInput formControlName="odontologo" placeholder="Odontólogo"></textarea>
+        <mat-error *ngIf="form.get('odontologo').invalid">Por favor, escribe el nombre del Odontólogo.</mat-error>
+    </mat-form-field>
+
+    ) de las clínicas de licenciatura de la Facultad de Estomatología de la Benemérita Universidad Autónoma de Puebla,
+    me realizaron una historia clínica en la cual respondí en forma verídica y se me informó de los diagnósticos, tratamientos
+    así como los posibles riesgos y complicaciones que los mismos conllevan y estoy conciente de: <br><br>
+    1.- En caso necesario acepto que se me realicen los medios de diagnóstico como pruebas de laboratorio, estudios radiográficos
+    y/o imagenología, así como los estudios especiales requeridos para el abordaje de mi tratamiento. <br><br>
+    2.- Habiendo manifestado las condiciones sistémicas (estado físico de salud), en las que me encuentro, comprendo todo el alcance,
+    consecuencias y complicaciones (reacciones alérgicas, crisis propias de mi condición de salud, inesperadas, así como reacciones
+    adversas medicamentosas) que pueden llegar a presentarse durante los procedimientos dentales propuestos para mi atención. <br><br>
+    3.- Que en caso de hallarme bajo terapia farmacológica para el control de mi enfermedad(s), me comprometo a no suspenderla y/o
+    modificarla sin la previa autorización de mi médico tratante. <br><br>
+    4.- Quedo entendido que el (los) tratamiento (s) pueden tener complicaciones, por lo que en caso necesario solicito y autorizo se
+    realicen los procedimientos necesarios que los responsables consideren pertinentes. <br><br>
+    5.- De que se me han informado sobre los distintos costos que el o los tratamientos propuestos, tienen en esta Institución Educativa. <br><br>
+
+    Una vez leída este formato:<br><br>
+    <mat-form-field>
+            <textarea matInput formControlName="nombre1" placeholder="Nombre del Paciente o Tutor"></textarea>
+            <mat-error *ngIf="form.get('nombre1').invalid">Por favor, escribe el nombre del paciente o tutor.</mat-error>
+        </mat-form-field>
+        <br><br>
+    a.)AUTORIZO al personal tratante me realicen los procedimientos necesarios para mi atención estomatológica.<br><br>
+
+
+    <br>
+    <button mat-raised-button color="accent" type="submit">Autorizar</button>
+    <br><br>
+
+    b.)NO AUTORIZO al personal tratante me realicen los procedimientos necesarios para mi atención estomatológica.<br><br>
+
+    <br>
+    <button mat-raised-button color="accent" type="submit">No Autorizar</button>
+    <br><br><br><br>
+
+    </p>
+
+  </form>
+
+</mat-card>

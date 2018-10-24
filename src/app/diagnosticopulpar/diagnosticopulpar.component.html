@@ -1,0 +1,207 @@
+<mat-card class="cardForm">
+  <form [formGroup]="form" (submit)="addDiagnostico()">
+
+    <h2>A. Signos y Síntomas</h2>
+
+    <mat-form-field>
+      <textarea matInput type="text" formControlName="organoa" placeholder="Órgano Dentario">  </textarea>
+      <mat-error *ngIf="form.get('organoa').invalid">Por favor, escribe el nombre del órgano dentario.</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+        <textarea matInput formControlName="tipodedolor" placeholder="Tipo de Dolor"></textarea>
+        <mat-error *ngIf="form.get('tipodedolor').invalid">Por favor, escribe el tipo de dolor.</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <textarea matInput formControlName="episodios" placeholder="Episodios"></textarea>
+      <mat-error *ngIf="form.get('episodios').invalid">Por favor, escribe los episodios.</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <textarea matInput formControlName="percusion" placeholder="Percusión"></textarea>
+      <mat-error *ngIf="form.get('percusion').invalid">Por favor, escribe la percusión.</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <textarea matInput formControlName="movilidad" placeholder="Movilidad"></textarea>
+      <mat-error *ngIf="form.get('movilidad').invalid">Por favor, escribe la movilidad.</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <textarea matInput formControlName="cambiodecolor" placeholder="Cambio de Color"></textarea>
+      <mat-error *ngIf="form.get('cambiodecolor').invalid">Por favor, escribe el cambio de color.</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <textarea matInput formControlName="trumefaccionintra" placeholder="Trumefacción Intra"></textarea>
+      <mat-error *ngIf="form.get('trumefaccionintra').invalid">Por favor, escribe la trumefacción intra</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <textarea matInput formControlName="trumefaccionextra" placeholder="Trumefacción Extra"></textarea>
+      <mat-error *ngIf="form.get('trumefaccionextra').invalid">Por favor, escribe la trumefacción extra.</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <textarea matInput formControlName="fistula" placeholder="Fístula"></textarea>
+      <mat-error *ngIf="form.get('fistula').invalid">Por favor, escribe la fístula.</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <textarea matInput formControlName="reaccionpulparcalor" placeholder="Reacción Pulpar a Calor"></textarea>
+      <mat-error *ngIf="form.get('reaccionpulparcalor').invalid">Por favor, escribe la reacción pulpar a calor.</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <textarea matInput formControlName="reaccionpulparfrio" placeholder="Reacción Pulpar a Frío"></textarea>
+      <mat-error *ngIf="form.get('reaccionpulparfrio').invalid">Por favor, escribe la reacción pulpar a frío.</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <textarea matInput formControlName="reaccionpulpartestcavit" placeholder="Reacción Pulpar a Test. Cavit."></textarea>
+      <mat-error *ngIf="form.get('reaccionpulpartestcavit').invalid">Por favor, escribe la reacción pulpar a test. cavit.</mat-error>
+    </mat-form-field>
+
+    <br>
+
+    <br><br>
+    <mat-divider></mat-divider>
+    <h2>B. Etiología</h2>
+
+    <mat-form-field>
+      <textarea matInput formControlName="organob" placeholder="Órgano Dentario"></textarea>
+      <mat-error *ngIf="form.get('organob').invalid">Por favor, escribe el nombre del órgano Dentario.</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <textarea matInput formControlName="caries" placeholder="Caries"></textarea>
+      <mat-error *ngIf="form.get('caries').invalid">Por favor, escribe las caries.</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <textarea matInput formControlName="trauma" placeholder="Trauma"></textarea>
+      <mat-error *ngIf="form.get('trauma').invalid">Por favor, escribe el trauma.</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <textarea matInput formControlName="enfperiodonta" placeholder="Enfermedad Periodontal"></textarea>
+      <mat-error *ngIf="form.get('enfperiodonta').invalid">Por favor, escribe la enfermedad periodontal.</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <textarea matInput formControlName="obtdefectuosa" placeholder="Obt. Defectuosa"></textarea>
+      <mat-error *ngIf="form.get('obtdefectuosa').invalid">Por favor, escribe la obt. defectuosa.</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <textarea matInput formControlName="fracturacorona" placeholder="Fractura Corona"></textarea>
+      <mat-error *ngIf="form.get('fracturacorona').invalid">Por favor, escribe la fractura corona.</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <textarea matInput formControlName="fracturaraiz" placeholder="Fractura Raíz"></textarea>
+      <mat-error *ngIf="form.get('fracturaraiz').invalid">Por favor, escribe la fractura raíz.</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <textarea matInput formControlName="otro2" placeholder="Otro"></textarea>
+      <mat-error *ngIf="form.get('otro2').invalid">Por favor, escribe otro.</mat-error>
+    </mat-form-field>
+
+    <br>
+
+    <br><br>
+<mat-divider></mat-divider>
+    <h2>C. Análisis Radiográfico</h2>
+
+    <mat-form-field>
+      <textarea matInput formControlName="organoc" placeholder="Órgano"></textarea>
+      <mat-error *ngIf="form.get('organoc').invalid">Por favor, escribe el nombre del órgano.</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <textarea matInput formControlName="calcificacionescorona2" placeholder="Calcificaciones Corona"></textarea>
+      <mat-error *ngIf="form.get('calcificacionescorona2').invalid">Por favor, escribe las calcificaciones corona.</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <textarea matInput formControlName="calcificacionesraiz2" placeholder="Calcificaiones Raíz"></textarea>
+      <mat-error *ngIf="form.get('calcificacionesraiz2').invalid">Por favor, escribe las calcificaciones raíz.</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <textarea matInput formControlName="resorcioninterno" placeholder="Resorción Interno"></textarea>
+      <mat-error *ngIf="form.get('resorcioninterno').invalid">Por favor, escribe la resorción interno.</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <textarea matInput formControlName="resorcionexterno" placeholder="Resorción Externo"></textarea>
+      <mat-error *ngIf="form.get('resorcionexterno').invalid">Por favor, escribe la resorción externo.</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <textarea matInput formControlName="rarefaccionpenapico" placeholder="Rarefacción Periapical"></textarea>
+      <mat-error *ngIf="form.get('rarefaccionpenapico').invalid">Por favor, escribe rarefacción periapical.</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <textarea matInput formControlName="rarefaccionradicular" placeholder="Rarefacción Radicular"></textarea>
+      <mat-error *ngIf="form.get('rarefaccionradicular').invalid">Por favor, escribe rarefacción radicular.</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <textarea matInput formControlName="obturaciondefectuosa2" placeholder="Obturación Defecutuosa"></textarea>
+      <mat-error *ngIf="form.get('obturaciondefectuosa2').invalid">Por favor, escribe la obturación defectuosa.</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <textarea matInput formControlName="otro3" placeholder="Otro"></textarea>
+      <mat-error *ngIf="form.get('otro3').invalid">Por favor, escribe otro.</mat-error>
+    </mat-form-field>
+
+
+    <br><br>
+     <mat-divider></mat-divider>
+    <h2>D. Diagnóstico</h2>
+
+    <mat-form-field>
+      <textarea matInput formControlName="organodentario" placeholder="Órgano Dentario"></textarea>
+      <mat-error *ngIf="form.get('organodentario').invalid">Por favor, escribe el órgano dentario.</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <textarea matInput formControlName="vitalreversible" placeholder="Vital Reversible"></textarea>
+      <mat-error *ngIf="form.get('vitalreversible').invalid">Por favor, escribe vital reversible.</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <textarea matInput formControlName="vitalirreversible" placeholder="Vital Irreversible"></textarea>
+      <mat-error *ngIf="form.get('vitalirreversible').invalid">Por favor, escribe vital irreversible.</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <textarea matInput formControlName="novitalaguda" placeholder="No Vital Aguda"></textarea>
+      <mat-error *ngIf="form.get('novitalaguda').invalid">Por favor, escribe vital aguda.</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <textarea matInput formControlName="novitalcronica" placeholder="No Vital Crónica"></textarea>
+      <mat-error *ngIf="form.get('novitalcronica').invalid">Por favor, escribe no vital crónica.</mat-error>
+    </mat-form-field>
+
+
+
+    <mat-form-field>
+      <textarea matInput formControlName="observaciones" placeholder="Observaciones"></textarea>
+      <mat-error *ngIf="form.get('observaciones').invalid">Por favor, escribe tus observaciones.</mat-error>
+    </mat-form-field>
+
+    <br>
+    <button mat-raised-button color="accent" type="submit">Enviar</button>
+    <br><br>
+
+  </form>
+
+</mat-card>
+

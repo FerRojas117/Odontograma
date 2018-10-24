@@ -4,8 +4,19 @@
   </mat-card-header>
 
   <mat-card-content>
-    <a mat-raised-button color="primary" routerLink="/sidenav" routerLinkActive="mat-accent">Agregar Historial</a>
-    <a mat-raised-button color="primary" routerLink="/sidenav" routerLinkActive="mat-accent">Revisar Historial</a>
-    <a mat-raised-button color="primary" routerLink="/" routerLinkActive="mat-accent">Salir</a>
+    <a
+    mat-raised-button
+    color="primary"
+    routerLink="/sidenav"
+    routerLinkActive="mat-accent"
+    matTooltip="Añadir un nuevo historial de paciente nuevo"
+    >Agregar Historial</a>
+    <a
+    mat-raised-button
+    color="primary"
+    routerLink="/revisar"
+    routerLinkActive="mat-accent"
+    matTooltip="Editar historial clínico de un paciente existente"
+    >Revisar Historial</a>
   </mat-card-content>
 </mat-card>

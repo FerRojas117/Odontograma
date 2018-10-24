@@ -17,7 +17,7 @@ router.post("/signup", (req, res, next) => {
       .save()
       .then(result => {
         res.status(201).json({
-          message: "User created!",
+          message: "!Registro Correcto, inicia Sesión de Inmediato!",
           result: result
         });
       })
@@ -35,7 +35,7 @@ router.post("/login", (req, res, next) => {
     .then(user => {
       if (!user) {
         return res.status(401).json({
-          message: "Auth failed"
+          message: "Usuario o contraseña incorrectas"
         });
       }
       fetchedUser = user;
@@ -44,7 +44,7 @@ router.post("/login", (req, res, next) => {
     .then(result => {
       if (!result) {
         return res.status(401).json({
-          message: "Auth failed"
+          message: "Usuario o contraseña incorrectas"
         });
       }
       const token = jwt.sign(
@@ -59,7 +59,7 @@ router.post("/login", (req, res, next) => {
     })
     .catch(err => {
       return res.status(401).json({
-        message: "Auth failed"
+        message: "Usuario o contraseña incorrectas"
       });
     });
 });

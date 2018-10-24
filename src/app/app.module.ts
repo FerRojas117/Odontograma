@@ -17,8 +17,14 @@ import {
 =======
   MatDialogModule,
   MatDatepickerModule,
+<<<<<<< HEAD
   MatNativeDateModule
 >>>>>>> 76888f0db70bdce5e83145007c3a14db2a340eac
+=======
+  MatNativeDateModule,
+  MatIconModule,
+  MatTooltipModule
+>>>>>>> 14a8cc1d10977f94d0970bedd70b1f6f60ec41c1
 } from '@angular/material';
 
 import { AppComponent } from './app.component';
@@ -38,6 +44,10 @@ import { IdentificacionComponent, DialogAssignSelfComponent } from './identifica
 import { DienteComponent } from './diente/diente.component';
 import { ErrorInterceptor } from './error-interceptor';
 import { ErrorComponent } from './error/error.component';
+import { CompletoComponent } from './completo/completo.component';
+import { RevisarComponent } from './revisarHistorial/revisar.component';
+import { ExploracionFisicaComponent } from './exploracionfisica/exploracionfisica.component';
+
 
 @NgModule({
   declarations: [
@@ -51,7 +61,10 @@ import { ErrorComponent } from './error/error.component';
     IdentificacionComponent,
     DienteComponent,
     ErrorComponent,
-    DialogAssignSelfComponent
+    DialogAssignSelfComponent,
+    CompletoComponent,
+    RevisarComponent,
+    ExploracionFisicaComponent
   ],
   imports: [
     BrowserModule,
@@ -75,8 +88,14 @@ import { ErrorComponent } from './error/error.component';
 =======
     MatDialogModule,
     MatDatepickerModule,
+<<<<<<< HEAD
     MatNativeDateModule
 >>>>>>> 76888f0db70bdce5e83145007c3a14db2a340eac
+=======
+    MatNativeDateModule,
+    MatIconModule,
+    MatTooltipModule
+>>>>>>> 14a8cc1d10977f94d0970bedd70b1f6f60ec41c1
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
@@ -85,7 +104,8 @@ import { ErrorComponent } from './error/error.component';
   bootstrap: [AppComponent],
   entryComponents: [
     ErrorComponent,
-    DialogAssignSelfComponent
+    DialogAssignSelfComponent,
+    CompletoComponent
   ]
 })
 export class AppModule {}

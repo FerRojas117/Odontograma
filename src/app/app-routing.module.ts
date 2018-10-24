@@ -8,6 +8,8 @@ import { HomeComponent } from './home/home.component';
 import { SidenavFixedComponent } from './Sidenav/sidenav.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { IdentificacionComponent } from './identificacion/identificacion.component';
+import { RevisarComponent } from './revisarHistorial/revisar.component';
+import { ExploracionFisicaComponent } from './exploracionfisica/exploracionfisica.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -18,10 +20,23 @@ const routes: Routes = [
      component: SidenavFixedComponent,
      children: [
        { path: 'identificacion', component: IdentificacionComponent },
+       { path: 'exploFisica', component: ExploracionFisicaComponent },
       ],
       canActivate: [AuthGuard]
   },
+  {
+    path: 'sidenavEdit/:idsId',
+     component: SidenavFixedComponent,
+     children: [
+       { path: 'editId/:id', component: IdentificacionComponent, canActivate: [AuthGuard] },
+       { path: 'editExploFisica/:id', component: ExploracionFisicaComponent, canActivate: [AuthGuard] },
+
+      ],
+      canActivate: [AuthGuard]
+  },
+
   { path: 'inicio', component: InicioComponent, canActivate: [AuthGuard] },
+  { path: 'revisar', component: RevisarComponent }
 ];
 
 @NgModule({
