@@ -1,0 +1,44 @@
+export interface Diagnostico {
+  organoa: 	string;
+      tipodedolor: 	string;
+      episodios: 	string;
+      percusion: 	string;
+      movilidad: 	string;
+      cambiodecolor: 	string;
+      trumetaccion: 	string;
+      intra: 	string;
+      extra: 	string;
+      fisura: 	string;
+      reaccionpulpar: 	string;
+      testcavit: 	string;
+      observaciones: 	string;
+      organob: 	string;
+      caries: 	string;
+      trauma: 	string;
+      enfperiodonta: 	string;
+      obtdefectuosa: 	string;
+      fractura: 	string;
+      corona: 	string;
+      raiz: 	string;
+      otro: 	string;
+      otro2: 	string;
+      otro3: 	string;
+      organoc: 	string;
+      calcificacionescorona2: 	string;
+      calcificacionesraiz2: 	string;
+      resorcion: 	string;
+      interno: 	string;
+      externo: 	string;
+      refacciones: 	string;
+      penapico: 	string;
+      radicular: 	string;
+      obturaciondefectuosa2: 	string;
+      organodentario: 	string;
+      vital: 	string;
+      reversible: 	string;
+      irreversible: 	string;
+      novital: 	string;
+      aguda: 	string;
+      cronica: 	string;
+
+}
