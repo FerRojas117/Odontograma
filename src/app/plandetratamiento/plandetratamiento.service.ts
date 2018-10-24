@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Subject } from 'rxjs';
 import { map } from 'rxjs/operators';
-// import { PlandeTratamiento } from '../modelos/plandetratamiento.model';
+import { PlandeTratamiento } from '../modelos/plandetratamiento.model';
 
 
 @Injectable({ providedIn: 'root' })
