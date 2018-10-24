@@ -2,10 +2,10 @@ export interface Explo {
   id: string;
   peso: string;
   talla: string;
-  frecuenciaCardiaca: string;
+  fCardiaca: string;
   presionArterial: string;
   temperatura: string;
-  frecuenciaRespiratoria: string;
+  frecuenciaResp: string;
   inspeccionGeneral: string;
   cabeza: string;
   cuello: string;
@@ -16,6 +16,7 @@ export interface Explo {
   diagnostico: string;
   observaciones: string;
   recomendaciones: string;
-  nombredelMedico: string;
+  nombreMedico: string;
   paciente: string;
+
 }

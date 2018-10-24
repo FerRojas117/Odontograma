@@ -12,32 +12,32 @@ export class ExploService {
   constructor(private http: HttpClient) {}
 
   addExplo(
-      peso: string,
-      talla: string,
-      frecuenciaCardiaca: string,
-      presionArterial: string,
-      temperatura: string,
-      frecuenciaRespiratoria: string,
-      inspeccionGeneral: string,
-      cabeza: string,
-      cuello: string,
-      torax: string,
-      abdomen: string,
-      columnaVertebral: string,
-      extremidades: string,
-      diagnostico: string,
-      observaciones: string,
-      recomendaciones: string,
-      nombredelMedico: string,
-      paciente: string
+    peso: string,
+    talla: string,
+    fCardiaca: string,
+    presionArterial: string,
+    temperatura: string,
+    frecuenciaResp: string,
+    inspeccionGeneral: string,
+    cabeza: string,
+    cuello: string,
+    torax: string,
+    abdomen: string,
+    columnaVertebral: string,
+    extremidades: string,
+    diagnostico: string,
+    observaciones: string,
+    recomendaciones: string,
+    nombreMedico: string,
+    paciente: string,
     ) {
     const registrarExplo: any = {
       peso: peso,
       talla: talla,
-      frecuenciaCardiaca: frecuenciaCardiaca,
+      fCardiaca: fCardiaca,
       presionArterial: presionArterial,
       temperatura: temperatura,
-      frecuenciaRespiratoria: frecuenciaRespiratoria,
+      frecuenciaResp: frecuenciaResp,
       inspeccionGeneral: inspeccionGeneral,
       cabeza: cabeza,
       cuello: cuello,
@@ -48,7 +48,7 @@ export class ExploService {
       diagnostico: diagnostico,
       observaciones: observaciones,
       recomendaciones: recomendaciones,
-      nombredelMedico: nombredelMedico,
+      nombreMedico: nombreMedico,
       paciente: paciente
     };
       console.log(registrarExplo);
@@ -61,14 +61,15 @@ export class ExploService {
 
 
     getExplo(id: string) {
+      console.log(id);
       return this.http.get<{
         _id: string;
         peso: string;
         talla: string;
-        frecuenciaCardiaca: string;
+        fCardiaca: string;
         presionArterial: string;
         temperatura: string;
-        frecuenciaRespiratoria: string;
+        frecuenciaResp: string;
         inspeccionGeneral: string;
         cabeza: string;
         cuello: string;
@@ -79,7 +80,7 @@ export class ExploService {
         diagnostico: string;
         observaciones: string;
         recomendaciones: string;
-        nombredelMedico: string;
+        nombreMedico: string;
         paciente: string;
       }>('http://localhost:3000/api/exploFisica/' + id);
     }

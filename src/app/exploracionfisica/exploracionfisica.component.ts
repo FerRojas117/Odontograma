@@ -26,7 +26,7 @@ export class ExploracionFisicaComponent implements OnInit, OnDestroy {
       public exploservice: ExploService,
       public route: ActivatedRoute, // COPIAR
       private authService: AuthService, // COPIAR
-      private identService: IdentService
+
     ) {}
 
     ngOnInit() {
@@ -38,10 +38,6 @@ export class ExploracionFisicaComponent implements OnInit, OnDestroy {
       });
       // COPIAR
 
-      this.idUpdated = this.identService.getIdUpdateListener()
-      .subscribe( (id: string) => {
-          this.idIdent = id;
-      });
 
       this.form = new FormGroup({
         peso: new FormControl(null, { validators: [Validators.required] }),
@@ -64,9 +60,9 @@ export class ExploracionFisicaComponent implements OnInit, OnDestroy {
       });
 
       this.route.paramMap.subscribe((paramMap: ParamMap) => {
-        if (paramMap.has('idsId')) {
+        if (paramMap.has('id')) {
           this.mode = 'edit';
-          this.idsId = paramMap.get('idsId');
+          this.idsId = paramMap.get('id');
           this.isLoading = true;
           this.exploservice.getExplo(this.idsId).subscribe(postData => {
             this.isLoading = false;
@@ -74,10 +70,10 @@ export class ExploracionFisicaComponent implements OnInit, OnDestroy {
               id: postData._id,
               peso: postData.peso,
               talla: postData.talla,
-              frecuenciaCardiaca: postData.frecuenciaCardiaca,
+              fCardiaca: postData.fCardiaca,
               presionArterial: postData.presionArterial,
               temperatura: postData.temperatura,
-              frecuenciaRespiratoria: postData.frecuenciaRespiratoria,
+              frecuenciaResp: postData.frecuenciaResp,
               inspeccionGeneral: postData.inspeccionGeneral,
               cabeza: postData.cabeza,
               cuello: postData.cuello,
@@ -88,16 +84,16 @@ export class ExploracionFisicaComponent implements OnInit, OnDestroy {
               diagnostico: postData.diagnostico,
               observaciones: postData.observaciones,
               recomendaciones: postData.recomendaciones,
-              nombredelMedico: postData.nombredelMedico,
-              paciente: postData.paciente
+              nombreMedico: postData.nombreMedico,
+              paciente: postData.paciente,
             };
             this.form.setValue({
               peso: this.explo.peso,
               talla: this.explo.talla,
-              frecuenciaCardiaca: this.explo.frecuenciaCardiaca,
+              frecuenciaCardiaca: this.explo.fCardiaca,
               presionArterial: this.explo.presionArterial,
               temperatura: this.explo.temperatura,
-              frecuenciaRespiratoria: this.explo.frecuenciaRespiratoria,
+              frecuenciaRespiratoria: this.explo.frecuenciaResp,
               inspeccionGeneral: this.explo.inspeccionGeneral,
               cabeza: this.explo.cabeza,
               cuello: this.explo.cuello,
@@ -108,18 +104,20 @@ export class ExploracionFisicaComponent implements OnInit, OnDestroy {
               diagnostico: this.explo.diagnostico,
               observaciones: this.explo.observaciones,
               recomendaciones: this.explo.recomendaciones,
-              nombredelMedico: this.explo.nombredelMedico,
+              nombredelMedico: this.explo.nombreMedico,
             });
           });
         } else {
           this.mode = 'create';
-          this.idsId = null;
+          this.idsId = localStorage.getItem('pacienteId');
+          console.log(this.idsId);
         }
       });
 
     }
     addExplo() {
-      this.exploservice.addExplo(
+      console.log(this.idsId);
+        this.exploservice.addExplo(
         this.form.value.peso,
         this.form.value.talla,
         this.form.value.frecuenciaCardiaca,
@@ -137,13 +135,12 @@ export class ExploracionFisicaComponent implements OnInit, OnDestroy {
         this.form.value.observaciones,
         this.form.value.recomendaciones,
         this.form.value.nombredelMedico,
-        this.idIdent
+        this.idsId
       );
     }
 
     ngOnDestroy() {
       this.authStatusSub.unsubscribe();
-      this.idUpdated.unsubscribe();
     }
 
  }

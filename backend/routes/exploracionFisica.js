@@ -5,7 +5,7 @@ const ExFisica = require("../models/exploracionFisica");
 const router = express.Router();
 
 router.post("", (req, res, next) => {
-  console.log(req);
+  console.log(req.body);
   const exFisica = new ExFisica({
     peso: req.body.peso,
     talla: req.body.talla,
@@ -33,7 +33,6 @@ router.post("", (req, res, next) => {
       });
     })
     .catch((err) => {
-      console.log(err);
       res.status(500).json({
         error: err
       });
@@ -43,7 +42,9 @@ router.post("", (req, res, next) => {
 
 
 router.get("/:id", (req, res, next) => {
-  Ident.findOne({  paciente:req.params.paciente })
+
+  console.log(req.params.id);
+  ExFisica.findOne({  paciente: req.params.id })
     .then(explo => {
       if (explo) {
         res.status(200).json(explo);

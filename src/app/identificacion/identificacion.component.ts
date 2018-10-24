@@ -49,9 +49,9 @@ export class IdentificacionComponent implements OnInit {
     });
 
     this.route.paramMap.subscribe((paramMap: ParamMap) => {
-      if (paramMap.has('idsId')) {
+      if (paramMap.has('id')) {
         this.mode = 'edit';
-        this.idsId = paramMap.get('idsId');
+        this.idsId = paramMap.get('id');
         this.isLoading = true;
         this.identService.getIdent(this.idsId).subscribe(postData => {
           this.isLoading = false;
@@ -86,7 +86,6 @@ export class IdentificacionComponent implements OnInit {
         });
       } else {
         this.mode = 'create';
-        this.idsId = null;
       }
     });
   }

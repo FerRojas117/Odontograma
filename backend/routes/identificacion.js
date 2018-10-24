@@ -22,6 +22,7 @@ router.post("", checkAuth, (req, res, next) => {
     });
     ident.save()
     .then(createdIdent => {
+      console.log(createdIdent._id);
       res.status(201).json({
         message: "Identificacion añadida correctamente",
         id: createdIdent._id
@@ -52,15 +53,16 @@ router.get("", (req, res, next) => {
     })
     .then(count => {
       res.status(200).json({
-        message: "Idents fetched successfully!",
+        message: "Idents recuperados exitosamente!",
         ids: fetchedIds,
         maxIds: count
       });
 
     })
     .catch(error => {
+      console.log(error);
       res.status(500).json({
-        message: "Fetching posts failed!"
+        message: "No se pudo recuperar ningun registro clinico!"
       });
     });
 });

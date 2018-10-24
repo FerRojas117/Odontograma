@@ -20,14 +20,21 @@ const routes: Routes = [
      component: SidenavFixedComponent,
      children: [
        { path: 'identificacion', component: IdentificacionComponent },
-       { path: 'editId/:idsId', component: IdentificacionComponent, canActivate: [AuthGuard] },
-
        { path: 'exploFisica', component: ExploracionFisicaComponent },
-       { path: 'editExploFisica/:idsId', component: ExploracionFisicaComponent, canActivate: [AuthGuard] },
+      ],
+      canActivate: [AuthGuard]
+  },
+  {
+    path: 'sidenavEdit/:idsId',
+     component: SidenavFixedComponent,
+     children: [
+       { path: 'editId/:id', component: IdentificacionComponent, canActivate: [AuthGuard] },
+       { path: 'editExploFisica/:id', component: ExploracionFisicaComponent, canActivate: [AuthGuard] },
 
       ],
       canActivate: [AuthGuard]
   },
+
   { path: 'inicio', component: InicioComponent, canActivate: [AuthGuard] },
   { path: 'revisar', component: RevisarComponent }
 ];

@@ -45,13 +45,22 @@ export class IdentService {
       estadoSocioeconomico: estadoSocioeconomico
     };
     this.http
-      .post<{ _id: string, message: string }>('http://localhost:3000/api/ident', registrarIdent)
+      .post<{ id: string, message: string }>('http://localhost:3000/api/ident', registrarIdent)
       .subscribe(responseData => {
-        this.id = responseData._id;
+        this.id = responseData.id;
+        this.saveIdData( this.id);
         this.idUpdated.next(this.id);
         this.messageUpdated.next(responseData.message);
       });
   }
+
+
+  private saveIdData(pacienteId: string) {
+    localStorage.setItem('pacienteId', pacienteId);
+  }
+
+
+
 
   getIdent(id: string) {
     return this.http.get<{
