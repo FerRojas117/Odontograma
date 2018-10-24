@@ -1,3 +1,6 @@
-<div ng-controller="appController" ng-app="app">
-    <a ng-href="{{ fileUrl }}" download="file.xls">download</a>
-</div>
+<div ng-app="myApp" ng-controller="MainCtrl">
+    <div class="container">
+      <input type="checkbox" ng-model="boxClass" />
+      <div class="box rotate" ng-class="{'box': boxClass, 'circle': !boxClass} "></div>
+    </div>
+  </div>

@@ -1,30 +1,17 @@
-input[type='checkbox'] {
-  -ms-transform: scale(2); /* IE */
-  -moz-transform: scale(2); /* FF */
-  -webkit-transform: scale(2); /* Safari and Chrome */
-  -o-transform: scale(2); /* Opera */
-  margin: 20px;
-}
-
 .box {
   margin: 20px auto;
   background: #5FCF80;
   width: 150px;
   height: 150px;
 }
-
 .circle {
-  -webkit-transform: rotate(360deg);
+  transform: rotate(360deg);
   background: #9351A6;
   border-radius: 50%;
   margin: 20px auto;
   width: 150px;
   height: 150px;
 }
-
 .rotate {
-  -webkit-transition: all 1s ease-in-out;
-    -moz-transition: all 1s ease-in-out;
-    -o-transition: all 1s ease-in-out;
-    transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
 }
