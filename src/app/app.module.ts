@@ -12,25 +12,13 @@ import {
   MatProgressSpinnerModule,
   MatPaginatorModule,
   MatRadioModule,
-<<<<<<< HEAD
-  MatSelectModule
-=======
+  MatSelectModule,
   MatDialogModule,
   MatDatepickerModule,
-<<<<<<< HEAD
-  MatNativeDateModule
->>>>>>> 76888f0db70bdce5e83145007c3a14db2a340eac
-=======
   MatNativeDateModule,
   MatIconModule,
-<<<<<<< HEAD
-  MatTooltipModule
->>>>>>> 14a8cc1d10977f94d0970bedd70b1f6f60ec41c1
-=======
   MatTooltipModule,
-  MatSelectModule,
   MatGridListModule
->>>>>>> 651a0326c2e7f06a407db4adda1e81160ac52bfd
 } from '@angular/material';
 
 import { AppComponent } from './app.component';
@@ -110,25 +98,15 @@ import { RehabilitacionComponent } from './rehabilitacion/rehabilitacion.compone
     MatSidenavModule,
     HttpClientModule,
     MatRadioModule,
-<<<<<<< HEAD
-    MatSelectModule
-=======
+    MatSelectModule,
     MatDialogModule,
     MatDatepickerModule,
-<<<<<<< HEAD
-    MatNativeDateModule
->>>>>>> 76888f0db70bdce5e83145007c3a14db2a340eac
-=======
+    MatNativeDateModule,
     MatNativeDateModule,
     MatIconModule,
-<<<<<<< HEAD
-    MatTooltipModule
->>>>>>> 14a8cc1d10977f94d0970bedd70b1f6f60ec41c1
-=======
     MatTooltipModule,
     MatSelectModule,
     MatGridListModule
->>>>>>> 651a0326c2e7f06a407db4adda1e81160ac52bfd
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
