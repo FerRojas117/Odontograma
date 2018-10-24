@@ -10,6 +10,16 @@ import { InicioComponent } from './inicio/inicio.component';
 import { IdentificacionComponent } from './identificacion/identificacion.component';
 import { RevisarComponent } from './revisarHistorial/revisar.component';
 import { ExploracionFisicaComponent } from './exploracionfisica/exploracionfisica.component';
+import { AntecedentesComponent } from './antecedentes/antecedentes.component';
+import { AntgeneralesComponent } from './antecendetesganerales/antgenerales.component';
+import { ConsentimientoComponent } from './consentimiento/consentimiento.component';
+import { DiagnosticopulparComponent } from './diagnosticopulpar/diagnosticopulpar.component';
+import { EstudiosocioComponent } from './estudiosocieconomico/estudiosocio.component';
+import { HojadetratamientoComponent } from './hojadetratamiento/hojadetratamiento.component';
+import { InterrogatorioComponent } from './interrogatorio/interrogatorio.component';
+import { LaboratorioGabineteComponent } from './laboratoriogabinete/laboratoriogabinete.component';
+import { PlandetratamientoComponent } from './plandetratamiento/plandetratamiento.component';
+import { RehabilitacionComponent } from './rehabilitacion/rehabilitacion.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -20,7 +30,17 @@ const routes: Routes = [
      component: SidenavFixedComponent,
      children: [
        { path: 'identificacion', component: IdentificacionComponent },
+       { path: 'antecedentes', component: AntecedentesComponent },
+       { path: 'antecedentesGenerales', component: AntgeneralesComponent },
+       { path: 'consentimiento', component: ConsentimientoComponent },
+       { path: 'diagnosticopulpar', component: DiagnosticopulparComponent },
+       { path: 'estudiosocio', component: EstudiosocioComponent },
        { path: 'exploFisica', component: ExploracionFisicaComponent },
+       { path: 'hojadetratamiento', component: HojadetratamientoComponent },
+       { path: 'interrogatorio', component: InterrogatorioComponent },
+       { path: 'laboratoriogabinete', component: LaboratorioGabineteComponent },
+       { path: 'plandetratamiento', component: PlandetratamientoComponent },
+       { path: 'rehabilitacion', component: RehabilitacionComponent },
       ],
       canActivate: [AuthGuard]
   },
@@ -30,6 +50,16 @@ const routes: Routes = [
      children: [
        { path: 'editId/:id', component: IdentificacionComponent, canActivate: [AuthGuard] },
        { path: 'editExploFisica/:id', component: ExploracionFisicaComponent, canActivate: [AuthGuard] },
+       { path: 'antecedentes', component: AntecedentesComponent },
+       { path: 'antecedentesGenerales', component: AntgeneralesComponent },
+       { path: 'consentimiento', component: ConsentimientoComponent },
+       { path: 'diagnosticopulpar', component: DiagnosticopulparComponent },
+       { path: 'estudiosocio', component: EstudiosocioComponent },
+       { path: 'hojadetratamiento', component: HojadetratamientoComponent },
+       { path: 'interrogatorio', component: InterrogatorioComponent },
+       { path: 'laboratoriogabinete', component: LaboratorioGabineteComponent },
+       { path: 'plandetratamiento', component: PlandetratamientoComponent },
+       { path: 'rehabilitacion', component: RehabilitacionComponent },
 
       ],
       canActivate: [AuthGuard]

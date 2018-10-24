@@ -23,8 +23,14 @@ import {
 =======
   MatNativeDateModule,
   MatIconModule,
+<<<<<<< HEAD
   MatTooltipModule
 >>>>>>> 14a8cc1d10977f94d0970bedd70b1f6f60ec41c1
+=======
+  MatTooltipModule,
+  MatSelectModule,
+  MatGridListModule
+>>>>>>> 651a0326c2e7f06a407db4adda1e81160ac52bfd
 } from '@angular/material';
 
 import { AppComponent } from './app.component';
@@ -47,6 +53,16 @@ import { ErrorComponent } from './error/error.component';
 import { CompletoComponent } from './completo/completo.component';
 import { RevisarComponent } from './revisarHistorial/revisar.component';
 import { ExploracionFisicaComponent } from './exploracionfisica/exploracionfisica.component';
+import { AntecedentesComponent } from './antecedentes/antecedentes.component';
+import { AntgeneralesComponent } from './antecendetesganerales/antgenerales.component';
+import { ConsentimientoComponent } from './consentimiento/consentimiento.component';
+import { DiagnosticopulparComponent } from './diagnosticopulpar/diagnosticopulpar.component';
+import { EstudiosocioComponent } from './estudiosocieconomico/estudiosocio.component';
+import { HojadetratamientoComponent } from './hojadetratamiento/hojadetratamiento.component';
+import { InterrogatorioComponent } from './interrogatorio/interrogatorio.component';
+import { LaboratorioGabineteComponent } from './laboratoriogabinete/laboratoriogabinete.component';
+import { PlandetratamientoComponent } from './plandetratamiento/plandetratamiento.component';
+import { RehabilitacionComponent } from './rehabilitacion/rehabilitacion.component';
 
 
 @NgModule({
@@ -64,7 +80,18 @@ import { ExploracionFisicaComponent } from './exploracionfisica/exploracionfisic
     DialogAssignSelfComponent,
     CompletoComponent,
     RevisarComponent,
-    ExploracionFisicaComponent
+    ExploracionFisicaComponent,
+    AntecedentesComponent,
+    AntgeneralesComponent,
+    ConsentimientoComponent,
+    DiagnosticopulparComponent,
+    EstudiosocioComponent,
+    HojadetratamientoComponent,
+    InterrogatorioComponent,
+    LaboratorioGabineteComponent,
+    PlandetratamientoComponent,
+    RehabilitacionComponent
+
   ],
   imports: [
     BrowserModule,
@@ -94,8 +121,14 @@ import { ExploracionFisicaComponent } from './exploracionfisica/exploracionfisic
 =======
     MatNativeDateModule,
     MatIconModule,
+<<<<<<< HEAD
     MatTooltipModule
 >>>>>>> 14a8cc1d10977f94d0970bedd70b1f6f60ec41c1
+=======
+    MatTooltipModule,
+    MatSelectModule,
+    MatGridListModule
+>>>>>>> 651a0326c2e7f06a407db4adda1e81160ac52bfd
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
