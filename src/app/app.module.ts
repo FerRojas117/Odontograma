@@ -51,7 +51,7 @@ import { InterrogatorioComponent } from './interrogatorio/interrogatorio.compone
 import { LaboratorioGabineteComponent } from './laboratoriogabinete/laboratoriogabinete.component';
 import { PlandetratamientoComponent } from './plandetratamiento/plandetratamiento.component';
 import { RehabilitacionComponent } from './rehabilitacion/rehabilitacion.component';
-
+import { Exportar } from './exportar/exportar.component';
 
 @NgModule({
   declarations: [
@@ -78,7 +78,8 @@ import { RehabilitacionComponent } from './rehabilitacion/rehabilitacion.compone
     InterrogatorioComponent,
     LaboratorioGabineteComponent,
     PlandetratamientoComponent,
-    RehabilitacionComponent
+    RehabilitacionComponent,
+    Exportar
 
   ],
   imports: [
@@ -106,7 +107,7 @@ import { RehabilitacionComponent } from './rehabilitacion/rehabilitacion.compone
     MatIconModule,
     MatTooltipModule,
     MatSelectModule,
-    MatGridListModule
+    MatGridListModule,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },

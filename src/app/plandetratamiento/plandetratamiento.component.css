@@ -21,3 +21,28 @@ mat-form-field {
   border-style: solid blue;
   background: blue;
 }
+
+button{
+  background-color:rgb(15, 15, 192); /* Green */
+    border: white, 3px;
+    color: white;
+    padding: 8px 8px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto auto auto;
+  grid-gap: 2px;
+  background-color:white;
+  padding: 10px;
+}
+.grid-container > div {
+  background-color: white;
+  text-align: center;
+  padding: 10px 0;
+
+}

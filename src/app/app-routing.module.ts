@@ -20,11 +20,13 @@ import { InterrogatorioComponent } from './interrogatorio/interrogatorio.compone
 import { LaboratorioGabineteComponent } from './laboratoriogabinete/laboratoriogabinete.component';
 import { PlandetratamientoComponent } from './plandetratamiento/plandetratamiento.component';
 import { RehabilitacionComponent } from './rehabilitacion/rehabilitacion.component';
+import { Exportar } from './exportar/exportar.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
+  { path: 'exportar', component: Exportar },
   {
     path: 'sidenav',
      component: SidenavFixedComponent,

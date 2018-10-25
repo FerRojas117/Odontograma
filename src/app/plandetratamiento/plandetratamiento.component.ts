@@ -12,9 +12,66 @@ import { PlandetratService } from './plandetratamiento.service';
 
 export class PlandetratamientoComponent implements OnInit {
   form: FormGroup;
+  imageSource18: string;
+  imageSource17: string;
+  imageSource16: string;
+  imageSource15: string;
+  imageSource14: string;
+  imageSource13: string;
+  imageSource12: string;
+  imageSource11: string;
+
+  imageSource21: string;
+  imageSource22: string;
+  imageSource23: string;
+  imageSource24: string;
+  imageSource25: string;
+  imageSource26: string;
+  imageSource27: string;
+  imageSource28: string;
+
+  imageSource55:string;
+imageSource54:string;
+imageSource53:string;
+imageSource52:string;
+imageSource51:string;
+imageSource61:string;
+imageSource62:string;
+imageSource63:string;
+imageSource64:string;
+imageSource65:string;
+
+
   constructor(public plandeTratService: PlandetratService) { }
 
   ngOnInit() {
+    this. imageSource18 =  'https://scontent.fmex7-1.fna.fbcdn.net/v/t1.15752-9/44756340_160676414884342_4149668513721614336_n.png?_nc_cat=108&_nc_ht=scontent.fmex7-1.fna&oh=6fc071888198fbbef925702e508e656e&oe=5C485CFB',
+    this. imageSource17 =  'https://scontent.fmex7-1.fna.fbcdn.net/v/t1.15752-9/44756340_160676414884342_4149668513721614336_n.png?_nc_cat=108&_nc_ht=scontent.fmex7-1.fna&oh=6fc071888198fbbef925702e508e656e&oe=5C485CFB',
+    this. imageSource16 =  'https://scontent.fmex7-1.fna.fbcdn.net/v/t1.15752-9/44756340_160676414884342_4149668513721614336_n.png?_nc_cat=108&_nc_ht=scontent.fmex7-1.fna&oh=6fc071888198fbbef925702e508e656e&oe=5C485CFB',
+    this. imageSource15 =  'https://scontent.fmex7-1.fna.fbcdn.net/v/t1.15752-9/44756340_160676414884342_4149668513721614336_n.png?_nc_cat=108&_nc_ht=scontent.fmex7-1.fna&oh=6fc071888198fbbef925702e508e656e&oe=5C485CFB',
+    this. imageSource14 =  'https://scontent.fmex7-1.fna.fbcdn.net/v/t1.15752-9/44756340_160676414884342_4149668513721614336_n.png?_nc_cat=108&_nc_ht=scontent.fmex7-1.fna&oh=6fc071888198fbbef925702e508e656e&oe=5C485CFB',
+    this. imageSource13 =  'https://scontent.fmex7-1.fna.fbcdn.net/v/t1.15752-9/44756340_160676414884342_4149668513721614336_n.png?_nc_cat=108&_nc_ht=scontent.fmex7-1.fna&oh=6fc071888198fbbef925702e508e656e&oe=5C485CFB',
+    this. imageSource12 =  'https://scontent.fmex7-1.fna.fbcdn.net/v/t1.15752-9/44756340_160676414884342_4149668513721614336_n.png?_nc_cat=108&_nc_ht=scontent.fmex7-1.fna&oh=6fc071888198fbbef925702e508e656e&oe=5C485CFB',
+    this. imageSource11 =  'https://scontent.fmex7-1.fna.fbcdn.net/v/t1.15752-9/44756340_160676414884342_4149668513721614336_n.png?_nc_cat=108&_nc_ht=scontent.fmex7-1.fna&oh=6fc071888198fbbef925702e508e656e&oe=5C485CFB',
+    this. imageSource21 =  'https://scontent.fmex7-1.fna.fbcdn.net/v/t1.15752-9/44756340_160676414884342_4149668513721614336_n.png?_nc_cat=108&_nc_ht=scontent.fmex7-1.fna&oh=6fc071888198fbbef925702e508e656e&oe=5C485CFB',
+    this. imageSource22 =  'https://scontent.fmex7-1.fna.fbcdn.net/v/t1.15752-9/44756340_160676414884342_4149668513721614336_n.png?_nc_cat=108&_nc_ht=scontent.fmex7-1.fna&oh=6fc071888198fbbef925702e508e656e&oe=5C485CFB',
+    this. imageSource23 =  'https://scontent.fmex7-1.fna.fbcdn.net/v/t1.15752-9/44756340_160676414884342_4149668513721614336_n.png?_nc_cat=108&_nc_ht=scontent.fmex7-1.fna&oh=6fc071888198fbbef925702e508e656e&oe=5C485CFB',
+    this. imageSource24 =  'https://scontent.fmex7-1.fna.fbcdn.net/v/t1.15752-9/44756340_160676414884342_4149668513721614336_n.png?_nc_cat=108&_nc_ht=scontent.fmex7-1.fna&oh=6fc071888198fbbef925702e508e656e&oe=5C485CFB',
+    this. imageSource25 =  'https://scontent.fmex7-1.fna.fbcdn.net/v/t1.15752-9/44756340_160676414884342_4149668513721614336_n.png?_nc_cat=108&_nc_ht=scontent.fmex7-1.fna&oh=6fc071888198fbbef925702e508e656e&oe=5C485CFB',
+    this. imageSource26 =  'https://scontent.fmex7-1.fna.fbcdn.net/v/t1.15752-9/44756340_160676414884342_4149668513721614336_n.png?_nc_cat=108&_nc_ht=scontent.fmex7-1.fna&oh=6fc071888198fbbef925702e508e656e&oe=5C485CFB',
+    this. imageSource27 =  'https://scontent.fmex7-1.fna.fbcdn.net/v/t1.15752-9/44756340_160676414884342_4149668513721614336_n.png?_nc_cat=108&_nc_ht=scontent.fmex7-1.fna&oh=6fc071888198fbbef925702e508e656e&oe=5C485CFB',
+    this. imageSource28 =  'https://scontent.fmex7-1.fna.fbcdn.net/v/t1.15752-9/44756340_160676414884342_4149668513721614336_n.png?_nc_cat=108&_nc_ht=scontent.fmex7-1.fna&oh=6fc071888198fbbef925702e508e656e&oe=5C485CFB',
+    this. imageSource55 =  'https://scontent.fmex7-1.fna.fbcdn.net/v/t1.15752-9/44723291_2199766887015118_42292298150576128_n.png?_nc_cat=100&_nc_ht=scontent.fmex7-1.fna&oh=028af10afe5d3370c841fdfc4ea65dd2&oe=5C442D21',
+    this. imageSource54 =  'https://scontent.fmex7-1.fna.fbcdn.net/v/t1.15752-9/44723291_2199766887015118_42292298150576128_n.png?_nc_cat=100&_nc_ht=scontent.fmex7-1.fna&oh=028af10afe5d3370c841fdfc4ea65dd2&oe=5C442D21',
+    this. imageSource53 =  'https://scontent.fmex7-1.fna.fbcdn.net/v/t1.15752-9/44723291_2199766887015118_42292298150576128_n.png?_nc_cat=100&_nc_ht=scontent.fmex7-1.fna&oh=028af10afe5d3370c841fdfc4ea65dd2&oe=5C442D21',
+    this. imageSource52 =  'https://scontent.fmex7-1.fna.fbcdn.net/v/t1.15752-9/44723291_2199766887015118_42292298150576128_n.png?_nc_cat=100&_nc_ht=scontent.fmex7-1.fna&oh=028af10afe5d3370c841fdfc4ea65dd2&oe=5C442D21',
+    this. imageSource51 =  'https://scontent.fmex7-1.fna.fbcdn.net/v/t1.15752-9/44723291_2199766887015118_42292298150576128_n.png?_nc_cat=100&_nc_ht=scontent.fmex7-1.fna&oh=028af10afe5d3370c841fdfc4ea65dd2&oe=5C442D21',
+    this. imageSource61 =  'https://scontent.fmex7-1.fna.fbcdn.net/v/t1.15752-9/44723291_2199766887015118_42292298150576128_n.png?_nc_cat=100&_nc_ht=scontent.fmex7-1.fna&oh=028af10afe5d3370c841fdfc4ea65dd2&oe=5C442D21',
+    this. imageSource62 =  'https://scontent.fmex7-1.fna.fbcdn.net/v/t1.15752-9/44723291_2199766887015118_42292298150576128_n.png?_nc_cat=100&_nc_ht=scontent.fmex7-1.fna&oh=028af10afe5d3370c841fdfc4ea65dd2&oe=5C442D21',
+    this. imageSource63 =  'https://scontent.fmex7-1.fna.fbcdn.net/v/t1.15752-9/44723291_2199766887015118_42292298150576128_n.png?_nc_cat=100&_nc_ht=scontent.fmex7-1.fna&oh=028af10afe5d3370c841fdfc4ea65dd2&oe=5C442D21',
+    this. imageSource64 =  'https://scontent.fmex7-1.fna.fbcdn.net/v/t1.15752-9/44723291_2199766887015118_42292298150576128_n.png?_nc_cat=100&_nc_ht=scontent.fmex7-1.fna&oh=028af10afe5d3370c841fdfc4ea65dd2&oe=5C442D21',
+    this. imageSource65 =  'https://scontent.fmex7-1.fna.fbcdn.net/v/t1.15752-9/44723291_2199766887015118_42292298150576128_n.png?_nc_cat=100&_nc_ht=scontent.fmex7-1.fna&oh=028af10afe5d3370c841fdfc4ea65dd2&oe=5C442D21',
+    
     this.form = new FormGroup({
       fechaTrab: new FormControl((new Date()).toISOString(), { validators: [Validators.required] }),
       trabajo: new FormControl(null, {validators: [Validators.required] }),
