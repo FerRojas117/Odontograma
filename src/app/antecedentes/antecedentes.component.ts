@@ -10,13 +10,17 @@ import { AnteceService } from './antecedentes.service';
 
 export class AntecedentesComponent implements OnInit {
   form: FormGroup;
+ 
+  ciru = new FormControl();
+  ciruList: string[] = ['Hemorragias', 'Dolor prolongado', 'Cicatrización retardada', 'Alveolitis'];
   malestar = new FormControl();
   malestarList: string[] = ['Hemorragias', 'Dolores', 'Sabor desagradable', 'Fracturas', 'Trismus', 'Paresia', 'Parestesia', 'Otros'];
+  hemorragiass = new FormControl();
+  hemorragiassList: string[] = ['Heridas pequeñas', 'Trauma leve ', 'Menstruación', 'Hematomas', 'Petequias', 'Esquimosis', 'Espitaxis'];
+  alergicas = new FormControl();
+  alergicasList: string[] = ['Ninguna','Alimentos', 'Drogas', 'Anestésicos', 'Otros'];
   cavidad = new FormControl();
-  cavidadList: string[] = ['No hay anomalidad',
-   'Pigmentación',
-    'Labios', 'Carrillo y surco vestibular',
-    'Lengua', 'Glánsulas salivares(Tamaño,Calidad y flujo de saliva,etc)',
+  cavidadList: string[] = ['No hay anomalidad',   'Pigmentación',    'Labios', 'Carrillo y surco vestibular',    'Lengua', 'Glánsulas salivares(Tamaño,Calidad y flujo de saliva,etc)',
     'Piso de boca', 'Paladar', 'Orofaringe', 'Encia'];
   higieneo = new FormControl();
   higieneoList: string[] = ['Buena', 'Regualar', 'Mala', 'Halitosis', 'Placa', 'Materia Alba', 'Pigmentaciones'];
@@ -24,6 +28,21 @@ export class AntecedentesComponent implements OnInit {
   calList: string[] = ['Ausentes', 'Reggulares', 'Abundantes', 'Supragingivales', 'Subgingivales'];
 
   constructor(public anteceService: AnteceService) {}
+  enable(componente: string) {
+    this.form.controls[componente].enable();
+    if (componente === 'cuantasRadio') { this.form.controls['cuandoRadio'].enable(); }
+    if (componente === 'siReemplazoOrganos') { this.form.controls['porqueOrganos'].enable(); this.form.controls['cuantosOrganos'].enable(); 
+    this.form.controls['comoReemplazoOrganos'].enable(); this.form.controls['cuandoReemplazoOrganos'].enable(); }
+    if (componente === 'cuidadoHospital') { this.form.controls['cuidadoMedico'].enable();this.form.controls['cuidadoHistorial'].enable(); }
+  }
+  disable(componente: string) {
+    this.form.controls[componente].disable();
+
+    if (componente === 'cuantasRadio') { this.form.controls['cuandoRadio'].enable(); }
+    if (componente === 'porqueOrganos') { this.form.controls['cuantosOrganos'].enable(); this.form.controls['siReemplazoOrganos'].enable();
+    this.form.controls['comoReemplazoOrganos'].enable(); this.form.controls['cuandoReemplazoOrganos'].enable(); }
+    if (componente === 'cuidadoHospital') { this.form.controls['cuidadoMedico'].enable();this.form.controls['cuidadoHistorial'].enable(); } 
+  }
 
   ngOnInit() {
     this.form = new FormGroup({
@@ -40,21 +59,22 @@ export class AntecedentesComponent implements OnInit {
       orgdentarios: new FormControl(null, { validators: [Validators.required] }),
       cuantosporque: new FormControl(null, { validators: [Validators.required] }),
       remplazo: new FormControl(null, { validators: [Validators.required] }),
+      organos: new FormControl(null, { validators: [Validators.required] }),
       comocuando: new FormControl(null, { validators: [Validators.required] }),
       cirugias: new FormControl(null, { validators: [Validators.required] }),
+      malestar: new FormControl(null, { validators: [Validators.required] }),
       tipos: new FormControl(null, { validators: [Validators.required] }),
       proanestesia: new FormControl(null, { validators: [Validators.required] }),
       quetipo: new FormControl(null, { validators: [Validators.required] }),
       higieneoral: new FormControl(null, { validators: [Validators.required] }),
       algvezhateni: new FormControl(null, { validators: [Validators.required] }),
       explique: new FormControl(null, { validators: [Validators.required] }),
-      cuidadomedico: new FormControl(null, { validators: [Validators.required] }),
       hospital: new FormControl(null, { validators: [Validators.required] }),
       vismedult: new FormControl(null, { validators: [Validators.required] }),
       paraque: new FormControl(null, { validators: [Validators.required] }),
       drogas: new FormControl(null, { validators: [Validators.required] }),
       cualesdr: new FormControl(null, { validators: [Validators.required] }),
-      hemorragias: new FormControl(null, { validators: [Validators.required] }),
+      hemorragiass: new FormControl(null, { validators: [Validators.required] }),
       hsig: new FormControl(null, { validators: [Validators.required] }),
       reacalergicas: new FormControl(null, { validators: [Validators.required] }),
       tipreac: new FormControl(null, { validators: [Validators.required] }),
@@ -69,7 +89,46 @@ export class AntecedentesComponent implements OnInit {
       deschigieneoral: new FormControl(null, { validators: [Validators.required] }),
       calculos: new FormControl(null, { validators: [Validators.required] }),
       exploracionradiografica: new FormControl(null, { validators: [Validators.required] }),
+      cuantasRadio  : new FormControl(null, { validators: [Validators.required] }),
+      cuandoRadio : new FormControl(null, { validators: [Validators.required] }),
+      cuantosOrganos  : new FormControl(null, { validators: [Validators.required] }),
+      porqueOrganos : new FormControl(null, { validators: [Validators.required] }),
+      siReemplazoOrganos  : new FormControl(null, { validators: [Validators.required] }),
+      comoReemplazoOrganos  : new FormControl(null, { validators: [Validators.required] }),
+      cuandoReemplazoOrganos  : new FormControl(null, { validators: [Validators.required] }),
+      cualesCirugias  : new FormControl(null, { validators: [Validators.required] }),
+      problemasAnestesia  : new FormControl(null, { validators: [Validators.required] }),
+      cualesProblemas : new FormControl(null, { validators: [Validators.required] }),
+      cuidadoHospital : new FormControl(null, { validators: [Validators.required] }),
+      cuidadoMedico : new FormControl(null, { validators: [Validators.required] }),
+      cuidadoHistorial  : new FormControl(null, { validators: [Validators.required] }),
+      cuidadoParaque  : new FormControl(null, { validators: [Validators.required] }),
+      cualesDrogas  : new FormControl(null, { validators: [Validators.required] }),
+      cualesHemorragias : new FormControl(null, { validators: [Validators.required] }),
+      cualesAlergias  : new FormControl(null, { validators: [Validators.required] }),
+      consultaPorque  : new FormControl(null, { validators: [Validators.required] }),
+      recalergicas : new FormControl(null, { validators: [Validators.required] }),
+
     });
+    this.form.controls['cuantasRadio'].disable();
+      this.form.controls['cuandoRadio'].disable();
+      this.form.controls['cuantosOrganos'].disable();
+      this.form.controls['porqueOrganos'].disable();
+      this.form.controls['siReemplazoOrganos'].disable();
+      this.form.controls['comoReemplazoOrganos'].disable();
+      this.form.controls['cuandoReemplazoOrganos'].disable();
+      this.form.controls['cualesCirugias'].disable();
+      this.form.controls['problemasAnestesia'].disable();
+      this.form.controls['cualesProblemas'].disable();
+      this.form.controls['cuidadoHospital'].disable();
+      this.form.controls['cuidadoMedico'].disable();
+      this.form.controls['cuidadoHistorial'].disable();
+      this.form.controls['cuidadoParaque'].disable();
+      this.form.controls['cualesDrogas'].disable();
+      this.form.controls['cualesAlergias'].disable();
+      this.form.controls['cualesHemorragias'].disable();
+      this.form.controls['consultaPorque'].disable();
+      this.form.controls['recalergicas'].disable();
   }
 
   addAntece() {
@@ -84,7 +143,9 @@ export class AntecedentesComponent implements OnInit {
       this.form.value.cuantosporque,
       this.form.value.remplazo,
       this.form.value.comocuando,
-      this.form.value.cirugias,
+      this.form.value.cirugias[0],
+      this.form.value.malestar[0],
+      this.form.value.cavidad[0],
       this.form.value.tipos,
       this.form.value.proanestesia,
       this.form.value.quetipo,
@@ -97,9 +158,9 @@ export class AntecedentesComponent implements OnInit {
       this.form.value.paraque,
       this.form.value.drogas,
       this.form.value.cualesdr,
-      this.form.value.hemorragias,
+      this.form.value.hemorragiass[0],
       this.form.value.hsig,
-      this.form.value.reacalergicas,
+      this.form.value.reacalergicas[0],
       this.form.value.tipreac,
       this.form.value.cualesali,
       this.form.value.cualesd,
@@ -112,6 +173,26 @@ export class AntecedentesComponent implements OnInit {
       this.form.value.deschigieneoral,
       this.form.value.calculos,
       this.form.value.exploracionradiografica,
+      this.form.value.porqueOrganos ,
+      this.form.value.cuantosOrganos,
+      this.form.value.siReemplazoOrganos  ,
+      this.form.value.comoReemplazoOrganos  ,
+      this.form.value.cuandoReemplazoOrganos  ,
+      this.form.value.cualesCirugias  ,
+      this.form.value.problemasAnestesia  ,
+      this.form.value.cualesProblemas ,
+      this.form.value.cuidadoHospital ,
+      this.form.value.cuidadoMedico ,
+      this.form.value.cuidadoHistorial  ,
+      this.form.value.cuidadoParaque  ,
+      this.form.value.cualesDrogas  ,
+      this.form.value.cualesHemorragias ,
+      this.form.value.cualesAlergias  ,
+      this.form.value.consultaPorque  ,
+      this.form.value.organos,
+      this.form.value.vistmedult,
+      this.form.value.higieneo,
+      this.form.value.recalergicas,
     );
   }
 }

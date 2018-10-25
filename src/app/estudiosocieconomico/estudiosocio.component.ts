@@ -9,7 +9,11 @@ import { EstuService } from './estudiosocio.service';
 })
 export class EstudiosocioComponent implements OnInit {
   form: FormGroup;
-
+  ingresos = new FormControl();
+  ingresosList: string[] = ['No tiene', 'Menor de $300', 'De $300 a $500', 'de $500 a $800', 'de $800 a $1200', 'de $1200 a $2400'];
+  
+  gradoinst = new FormControl();
+  gradoinstList: string[] = ['Analfabeta', 'Primaria', 'Secundaria', 'Preparatoria', 'Profesional', 'Técnica'];
   constructor(public estuService: EstuService) {}
 
   ngOnInit() {
@@ -64,3 +68,6 @@ export class EstudiosocioComponent implements OnInit {
     );
   }
 }
+
+
+
