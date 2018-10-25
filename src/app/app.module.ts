@@ -18,7 +18,8 @@ import {
   MatNativeDateModule,
   MatIconModule,
   MatTooltipModule,
-  MatGridListModule
+  MatGridListModule,
+  MatChipsModule
 } from '@angular/material';
 
 import { AppComponent } from './app.component';
@@ -52,6 +53,7 @@ import { LaboratorioGabineteComponent } from './laboratoriogabinete/laboratoriog
 import { PlandetratamientoComponent } from './plandetratamiento/plandetratamiento.component';
 import { RehabilitacionComponent } from './rehabilitacion/rehabilitacion.component';
 import { Exportar } from './exportar/exportar.component';
+import { Faqs } from './faqs/faqs.component';
 
 @NgModule({
   declarations: [
@@ -79,7 +81,8 @@ import { Exportar } from './exportar/exportar.component';
     LaboratorioGabineteComponent,
     PlandetratamientoComponent,
     RehabilitacionComponent,
-    Exportar
+    Exportar,
+    Faqs
 
   ],
   imports: [
@@ -108,7 +111,7 @@ import { Exportar } from './exportar/exportar.component';
     MatTooltipModule,
     MatSelectModule,
     MatGridListModule,
-    
+    MatChipsModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },

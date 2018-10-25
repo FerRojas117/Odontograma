@@ -21,12 +21,14 @@ import { LaboratorioGabineteComponent } from './laboratoriogabinete/laboratoriog
 import { PlandetratamientoComponent } from './plandetratamiento/plandetratamiento.component';
 import { RehabilitacionComponent } from './rehabilitacion/rehabilitacion.component';
 import { Exportar } from './exportar/exportar.component';
+import { Faqs } from './faqs/faqs.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'exportar', component: Exportar },
+  { path: 'faqs', component: Faqs },
   {
     path: 'sidenav',
      component: SidenavFixedComponent,

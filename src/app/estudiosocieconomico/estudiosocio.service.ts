@@ -3,13 +3,12 @@ import { HttpClient } from '@angular/common/http';
 import { Subject } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-
 import { Estu } from '../modelos/estudiosocio.model';
 import { setContextDirty } from '@angular/core/src/render3/styling';
 
 @Injectable({ providedIn: 'root' })
 export class EstuService {
-  private ident: Estu[] = [];
+  private estu: Estu[] = [];
 
   constructor(private http: HttpClient) {}
 
@@ -56,11 +55,16 @@ export class EstuService {
       tutor: tutor,
       obs: obs,
     };
-    this.http
-      .post<{ message: string }>('http://localhost:3000/api/estu', registrarEstu)
-      .subscribe(responseData => {
-        console.log(responseData);
-      });
-  }
+       // imprimir objeto con los datos del front end
+       console.log(registrarEstu);
+       /*
+       this.http
+         .post<{ _id: string }>('http://localhost:3000/api/ident', registrarIdent)
+         .subscribe(responseData => {
+           this.id = responseData._id;
+         });
+         */
+     }
+   
+   }
 
-}
