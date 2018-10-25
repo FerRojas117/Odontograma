@@ -1,17 +1,30 @@
-.box {
-  margin: 20px auto;
-  background: #5FCF80;
-  width: 150px;
-  height: 150px;
+
+button{
+  background-color:rgb(15, 15, 192); /* Green */
+    border: white, 3px;
+    color: white;
+    padding: 8px 8px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
 }
-.circle {
-  transform: rotate(360deg);
-  background: #9351A6;
-  border-radius: 50%;
-  margin: 20px auto;
-  width: 150px;
-  height: 150px;
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto auto auto;
+  grid-gap: 2px;
+  background-color:white;
+  padding: 10px;
 }
-.rotate {
-  transition: all 1s ease-in-out;
+.grid-container > div {
+  background-color: white;
+  text-align: center;
+  padding: 10px 0;
+
 }
+
+a:hover .teal { fill:teal; }
+a:focus .pink { fill:orange; }
+a:click .red { fill:red; }
+a:hover .blue { fill:blue; }
