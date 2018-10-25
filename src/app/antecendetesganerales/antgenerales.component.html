@@ -1,67 +1,152 @@
 <mat-card class="cardForm">
-    <form [formGroup]="form" (submit)="addAntG()">
-  
-      <mat-form-field>
-        <textarea matInput type="text" formControlName="anthereditarios" placeholder="Antecedentes Hereditarios">  </textarea>
-        <mat-error *ngIf="form.get('anthereditarios').invalid">Por favor, escribe los antecedentes hereditarios</mat-error>
-      </mat-form-field>
-    <br>
-            <span>Personales no patológicos</span>
-            <br>
-      <mat-form-field>
-          <textarea matInput formControlName="religion" placeholder="Religion"></textarea>
-          <mat-error *ngIf="form.get('religion').invalid">Por favor, escribe la religion.</mat-error>
-      </mat-form-field>
-  
-      <mat-form-field>
-          <textarea matInput  formControlName="tiprelsex" placeholder="Tipo de relaciones sexuales"></textarea>
-          <mat-error *ngIf="form.get('tiprelsex').invalid">Por favor, escribe el tipo de relaciones sexuales.</mat-error>
-      </mat-form-field>
-  
-      <mat-form-field>
-          <textarea matInput formControlName="parejas" placeholder="Número de parejas"></textarea>
-          <mat-error *ngIf="form.get('parejas').invalid">Por favor, escribe el número de parejas.</mat-error>
-      </mat-form-field>
-  
-      <mat-form-field>
-          <textarea matInput formControlName="calalim" placeholder="Calidad de alimentación"></textarea>
-          <mat-error *ngIf="form.get('calalim').invalid">Por favor, escribe la calidad de alimentación.</mat-error>
-      </mat-form-field>
-  
-      <mat-form-field>
-          <textarea matInput formControlName="higpers" placeholder="Higiene personal"></textarea>
-          <mat-error *ngIf="form.get('higpers').invalid">Por favor, escribe como es la higiene personal.</mat-error>
-      </mat-form-field>
-  
-      <mat-form-field>
-          <textarea matInput formControlName="sedentarismo" placeholder="Sedentarismo"></textarea>
-          <mat-error *ngIf="form.get('sedentarismo').invalid">Por favor, escribe si hay sedentarismo.</mat-error>
-      </mat-form-field>
-  
-      <mat-form-field>
-          <textarea matInput  formControlName="calhabit" placeholder="Calidad de habitación"></textarea>
-          <mat-error *ngIf="form.get('calhabit').invalid">Por favor escribe la calidad de habitación.</mat-error>
-      </mat-form-field>
+        <form [formGroup]="form" (submit)="addAntG()">
+      
+          <mat-form-field>
+            <textarea matInput type="text" formControlName="anthereditarios" placeholder="Antecedentes Hereditarios">  </textarea>
+            <mat-error *ngIf="form.get('anthereditarios').invalid">Por favor, escribe los antecedentes hereditarios</mat-error>
+          </mat-form-field>
+        <br>
+                <span>Personales no patológicos</span>
+                <br>
+          <mat-form-field>
+              <textarea matInput formControlName="religion" placeholder="Religion"></textarea>
+              <mat-error *ngIf="form.get('religion').invalid">Por favor, escribe la religion.</mat-error>
+          </mat-form-field>
+      
+          <mat-form-field>
+              <textarea matInput  formControlName="tiprelsex" placeholder="Tipo de relaciones sexuales"></textarea>
+              <mat-error *ngIf="form.get('tiprelsex').invalid">Por favor, escribe el tipo de relaciones sexuales.</mat-error>
+          </mat-form-field>
+      
+          <mat-form-field>
+              <textarea matInput formControlName="parejas" placeholder="Número de parejas"></textarea>
+              <mat-error *ngIf="form.get('parejas').invalid">Por favor, escribe el número de parejas.</mat-error>
+          </mat-form-field>
+      
+          <mat-form-field>
+              <textarea matInput formControlName="calalim" placeholder="Calidad de alimentación"></textarea>
+              <mat-error *ngIf="form.get('calalim').invalid">Por favor, escribe la calidad de alimentación.</mat-error>
+          </mat-form-field>
+      
+          <mat-form-field>
+              <textarea matInput formControlName="higpers" placeholder="Higiene personal"></textarea>
+              <mat-error *ngIf="form.get('higpers').invalid">Por favor, escribe como es la higiene personal.</mat-error>
+          </mat-form-field>
+      
+          <mat-form-field>
+              <textarea matInput formControlName="sedentarismo" placeholder="Sedentarismo"></textarea>
+              <mat-error *ngIf="form.get('sedentarismo').invalid">Por favor, escribe si hay sedentarismo.</mat-error>
+          </mat-form-field>
+      
+          <mat-form-field>
+              <textarea matInput  formControlName="calhabit" placeholder="Calidad de habitación"></textarea>
+              <mat-error *ngIf="form.get('calhabit').invalid">Por favor escribe la calidad de habitación.</mat-error>
+          </mat-form-field>
+          <br>
+          <span>Personales patológicos</span>
+          <mat-form-field>
+                <textarea matInput  formControlName="perspat" placeholder="Personales patológicos"></textarea>
+                <mat-error *ngIf="form.get('perspat').invalid">Por favor escribe los antecedentes patologicos personales.</mat-error>
+          </mat-form-field>
+          <br>
+    
+          <span>Gineco-obstétricos</span>
+          <br>
+          <span>Menarca</span>
+          <br>
+          <mat-radio-group class="radioGroup" formControlName="menarca">
+            <mat-radio-button value="si">Si</mat-radio-button>
+            <mat-radio-button value="no">No</mat-radio-button>
+          </mat-radio-group>
+          <br>
+              <br>
+            <mat-form-field>
+                <textarea formControlName="embarazos" matInput placeholder="¿Número de embarazos?" ></textarea>
+            </mat-form-field>
+          <br>
+    
+          <span> Hijos con bajo peso al nacer </span>
+          <br>
+          <mat-radio-group class="radioGroup" formControlName="bajoPeso">
+            <mat-radio-button value="si" >Si</mat-radio-button>
+            <mat-radio-button value="no">No</mat-radio-button>
+          </mat-radio-group>
+          <br>
+    
+              <mat-form-field>
+                <textarea formControlName="edadHijos"matInput placeholder="¿Qué edad tienen sus hijos?"></textarea>
+            </mat-form-field>
+          <br>
+    
+          <span>Hijos Macrosómicos</span>
+          <br>
+          <mat-radio-group class="radioGroup" formControlName="hijosMacro">
+            <mat-radio-button value="si">Si</mat-radio-button>
+            <mat-radio-button value="no">No</mat-radio-button>
+          </mat-radio-group>
+          <br>
+    
+          
+          <br>
+            <mat-form-field>
+                <textarea  formControlName="ritmo" matInput placeholder="Ritmo menstrual" ></textarea>
+            </mat-form-field>
+          <br>
+    
+            <mat-form-field>
+                <textarea formControlName="regla"matInput placeholder="¿Cuando fue su ultima regla?"></textarea>
+            </mat-form-field>
+          <br>
+    
+              <mat-form-field>
+                <textarea  formControlName="cesareas" matInput placeholder="Cesáreas"></textarea>
+            </mat-form-field>
+          <br>
+    
+            <mat-form-field>
+                <textarea class="radioGroup" formControlName="vidaSex" matInput placeholder="Edad de inicio de vida sexual" ></textarea>
+            </mat-form-field>
+          <br>
+    
+          <span>Partos</span>
+          <br>
+            <mat-radio-group class="radioGroup" formControlName="partos">
+                  <mat-radio-button value="Si" (click)="enable('fechaParto')">Si</mat-radio-button>
+                  <mat-radio-button value="no"(click)="disable('fechaParto')">No</mat-radio-button>
+            </mat-radio-group>
+             <mat-form-field>
+                    <textarea matInput placeholder="Fecha del último parto" formControlName="fechaParto" ></textarea>
+             </mat-form-field>
+             <mat-form-field>
+              <textarea matInput placeholder="Cuántos partos lleva" formControlName="cuantosParto" ></textarea>
+       </mat-form-field>
+                  <br>
+    
+          <span>Abortos</span>
+          <br>
+          <mat-radio-group  formControlName="abortos">
+            <mat-radio-button value="si">Si</mat-radio-button>
+            <mat-radio-button value="no">No</mat-radio-button>
+          </mat-radio-group>
+          <br>
+    
+          <br>
+          <mat-form-field>
+                <textarea matInput  formControlName="planifami" placeholder="Tipo de metodo de palnificación familiar"></textarea>
+                <mat-error *ngIf="form.get('planifami').invalid">Por favor escribe el tipo de planificacion familiar.</mat-error>
+          </mat-form-field>
+        <br>
+    
+        <br>
+        <mat-form-field>
+              <textarea matInput  formControlName="planifamitiem" placeholder="Tiempo de uso del metodo"></textarea>
+              <mat-error *ngIf="form.get('planifamitiem').invalid">Por favor escribe el tipo de planificacion familiar.</mat-error>
+        </mat-form-field>
       <br>
-      <mat-form-field>
-            <textarea matInput  formControlName="perspat" placeholder="Personales patológicos"></textarea>
-            <mat-error *ngIf="form.get('perspat').invalid">Por favor escribe los antecedentes patologicos personales.</mat-error>
-      </mat-form-field>
-      <br>
-      <mat-form-field>
-        <mat-select placeholder="Gineco-Obstétricos" [formControl]="ginobs" multiple>
-          <mat-option *ngFor="let ginobs of ginobsList" [value]="topping">{{ginobs}}</mat-option>
-        </mat-select>
-      </mat-form-field>
-      <br>
-      <mat-form-field>
-            <textarea matInput  formControlName="planifami" placeholder="Tipo de palnificación familiar"></textarea>
-            <mat-error *ngIf="form.get('planifami').invalid">Por favor escribe el tipo de planificacion familiar.</mat-error>
-      </mat-form-field>
-    <br>
-    <br>
-      <button mat-raised-button color="accent" type="submit">Guardar</button>
-    </form>
-  
-  </mat-card>
-  
+    
+        <br>
+          <button mat-raised-button color="accent" type="submit">Guardar</button>
+        </form>
+      
+      </mat-card>
+    
