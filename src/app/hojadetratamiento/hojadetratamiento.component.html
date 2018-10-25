@@ -1,32 +1,31 @@
 <mat-card class="cardForm">
   <form [formGroup]="form" (submit)="addHojadeTrat()">
 
-      <br><br>
+          <mat-form-field>
+              <textarea matInput formControlName="paciente" placeholder="Paciente"></textarea>
+              <mat-error *ngIf="form.get('paciente').invalid">Por favor, escribe el nombre del paciente.</mat-error>
+            </mat-form-field>
+      <br> <br>
+          <mat-form-field>
+              <textarea matInput formControlName="alumno" placeholder="Alumno"></textarea>
+              <mat-error *ngIf="form.get('alumno').invalid">Por favor, escribe el nombre del alumno.</mat-error>
+            </mat-form-field>        
+            <br> <br>
+          <mat-form-field>
+              <textarea matInput formControlName="profesorresponsable" placeholder="Profesor Responsable"></textarea>
+              <mat-error *ngIf="form.get('profesorresponsable').invalid">Por favor, escribe el nombre del profesor responsable.</mat-error>
+            </mat-form-field>
+            <br> <br>
+          <mat-form-field>
+              <textarea matInput formControlName="noempleado" placeholder="No. Empleado"></textarea>
+              <mat-error *ngIf="form.get('noempleado').invalid">Por favor, escribe el no. empleado.</mat-error>
+            </mat-form-field>
+     
 
-    <mat-form-field>
-      <textarea matInput formControlName="paciente" placeholder="Paciente"></textarea>
-      <mat-error *ngIf="form.get('paciente').invalid">Por favor, escribe el nombre del paciente.</mat-error>
-    </mat-form-field>
-
-    <mat-form-field>
-      <textarea matInput formControlName="alumno" placeholder="Alumno"></textarea>
-      <mat-error *ngIf="form.get('alumno').invalid">Por favor, escribe el nombre del alumno.</mat-error>
-    </mat-form-field>
-
-    <mat-form-field>
-      <textarea matInput formControlName="profesorresponsable" placeholder="Profesor Responsable"></textarea>
-      <mat-error *ngIf="form.get('profesorresponsable').invalid">Por favor, escribe el nombre del profesor responsable.</mat-error>
-    </mat-form-field>
-    <br><br>
-     <mat-form-field>
-      <textarea matInput formControlName="noempleado" placeholder="No. Empleado"></textarea>
-      <mat-error *ngIf="form.get('noempleado').invalid">Por favor, escribe el no. empleado.</mat-error>
-    </mat-form-field>
    <!--
       Apartir de aquí se debe de borrar
     -->
 
-    <mat-divider></mat-divider><br><br>
     <mat-form-field>
       <textarea matInput formControlName="organodental" placeholder="Órgano Dental"></textarea>
       <mat-error *ngIf="form.get('organodental').invalid">Por favor, escribe el órgano dental.</mat-error>
@@ -53,7 +52,7 @@
     </mat-form-field>
 
     <br>
-    <button mat-raised-button color="primary" type="submit">Enviar</button>
+    <button mat-raised-button color="primary" type="submit">Guardar <mat-icon>save</mat-icon></button>
 
   </form>
 

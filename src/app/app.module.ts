@@ -108,6 +108,7 @@ import { Exportar } from './exportar/exportar.component';
     MatTooltipModule,
     MatSelectModule,
     MatGridListModule,
+    
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },

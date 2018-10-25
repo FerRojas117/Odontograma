@@ -24,3 +24,17 @@ mat-form-field {
   #subtit{
     font-size: 140%
   }
+  
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto ;
+  grid-gap: 2px;
+  background-color:white;
+  padding: 10px;
+}
+.grid-container > div {
+  background-color: white;
+  text-align: center;
+  padding: 10px 0;
+
+}

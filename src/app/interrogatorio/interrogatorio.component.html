@@ -1,8 +1,6 @@
 <mat-card class="cardForm">
     <form [formGroup]="form" (submit)="addInter()">
-
-
-        <span  id="subtit" >Aparato cardiovascular</span>
+        <h2  >Aparato cardiovascular</h2>
         <br> <br>
             <mat-radio-group class="radioGroup" formControlName="presionArterial">
                     <span>Presión Arterial</span>
@@ -55,7 +53,7 @@
       <mat-radio-group class="radioGroup" formControlName="aparatoRespiratorio">
             <br><br>
             <mat-divider></mat-divider><br><br>
-            <span id="subtit">Aparato Respiratorio</span>
+            <h2>Aparato Respiratorio</h2>
             <br> <br>
                   <span>Tuberculósis</span>
                   <br>
@@ -95,7 +93,7 @@
                         </mat-radio-group>
       <mat-radio-group class="radioGroup" formControlName="aparatoDigestivo">
             <mat-divider></mat-divider><br><br>
-            <span id="subtit">Aparato Digestivo</span>
+            <h2>Aparato Digestivo</h2>
             <br> <br>
                 <span>Gastitris</span>
                 <br>
@@ -146,7 +144,7 @@
               <br>
             </mat-radio-group>
 
-      <button mat-raised-button color="accent" type="submit">Guardar</button>
+      <button mat-raised-button color="accent" type="submit">Guardar<mat-icon>save</mat-icon></button>
       <br>
     </form>
 
