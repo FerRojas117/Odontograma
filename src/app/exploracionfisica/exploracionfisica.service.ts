@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { CompletoComponent } from '../completo/completo.component';
+import { CompletoComponent } from '../completo/completo.component'; // copiar
 import { Explo } from '../modelos/exploracionfisica.model';
 import { Subscription } from 'rxjs';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog'; // dialog
 
 @Injectable({ providedIn: 'root' })
 export class ExploService {
@@ -61,7 +61,7 @@ export class ExploService {
         });
     }
 
-
+// ROUTER GET
     getExplo(id: string) {
       console.log(id);
       return this.http.get<{
@@ -87,7 +87,7 @@ export class ExploService {
       }>('http://localhost:3000/api/exploFisica/' + id);
     }
 
-
+/// añadir tambien ca componente
     updateExp(
       id: string,
       peso: string,

@@ -60,6 +60,8 @@ export class ExploracionFisicaComponent implements OnInit, OnDestroy {
         nombredelMedico: new FormControl(null, { validators: [Validators.required] }),
       });
 
+
+      // COPUIAR
       this.route.paramMap.subscribe((paramMap: ParamMap) => {
         if (paramMap.has('id')) {
           this.mode = 'edit';
@@ -190,8 +192,6 @@ export class ExploracionFisicaComponent implements OnInit, OnDestroy {
         );
       }
       this.form.reset();
-
-
 
     }
 

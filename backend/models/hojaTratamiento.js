@@ -9,7 +9,8 @@ const hojaTratamiento = mongoose.Schema({
   noPoliza: { type: String, required: true },
   paciente: { type: String, required: true },
   alumno: { type: String, required: true },
-  profResponsable: { type: String, required: true }
+  profResponsable: { type: String, required: true },
+  paciente: { type: mongoose.Schema.Types.ObjectId, ref: "Ident", required: true }
 });
 
 module.exports = mongoose.model("HTratamiento", hojaTratamiento);
