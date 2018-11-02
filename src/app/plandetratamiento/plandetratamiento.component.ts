@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-
 import { PlandeTratamiento } from '../modelos/plandetratamiento.model';
 import { PlandetratService } from './plandetratamiento.service';
-
+import { ActivatedRoute, ParamMap } from '@angular/router'; // COPIAR
+import { AuthService } from '../auth/auth.service'; // COPIAR
+import { Subscription } from 'rxjs'; // COPIAR
+import { IdentService } from '../identificacion/identificacion.service'; // COPIAR
 @Component({
   selector: 'app-plandetratamiento',
   templateUrl: './plandetratamiento.component.html',
@@ -12,6 +14,15 @@ import { PlandetratService } from './plandetratamiento.service';
 
 export class PlandetratamientoComponent implements OnInit {
   form: FormGroup;
+  isLoading = false; // COPIAR
+    private mode = 'create'; // COPIAR
+    private idsId: string; // COPIAR
+    private idComponent: string;
+    private authStatusSub: Subscription; // COPIAR
+    private idUpdated = new Subscription;
+    idIdent: string;
+    plandeTratamiento: PlandeTratamiento;
+
   imageSource18: string;
   imageSource17: string;
   imageSource16: string;
@@ -42,9 +53,19 @@ imageSource64:string;
 imageSource65:string;
 
 
-  constructor(public plandeTratService: PlandetratService) { }
+  constructor(public plandeTratService: PlandetratService,
+      public route: ActivatedRoute, // COPIAR
+      private authService: AuthService, // COPIAR
+) { }
 
   ngOnInit() {
+     // COPIAR
+     this.authStatusSub = this.authService
+     .getAuthStatusListener()
+     .subscribe(authStatus => {
+       this.isLoading = false;
+     });
+     // COPIAR
     this. imageSource18 =  'https://scontent.fmex7-1.fna.fbcdn.net/v/t1.15752-9/44756340_160676414884342_4149668513721614336_n.png?_nc_cat=108&_nc_ht=scontent.fmex7-1.fna&oh=6fc071888198fbbef925702e508e656e&oe=5C485CFB',
     this. imageSource17 =  'https://scontent.fmex7-1.fna.fbcdn.net/v/t1.15752-9/44756340_160676414884342_4149668513721614336_n.png?_nc_cat=108&_nc_ht=scontent.fmex7-1.fna&oh=6fc071888198fbbef925702e508e656e&oe=5C485CFB',
     this. imageSource16 =  'https://scontent.fmex7-1.fna.fbcdn.net/v/t1.15752-9/44756340_160676414884342_4149668513721614336_n.png?_nc_cat=108&_nc_ht=scontent.fmex7-1.fna&oh=6fc071888198fbbef925702e508e656e&oe=5C485CFB',
@@ -95,30 +116,162 @@ imageSource65:string;
       equipoaux: new FormControl(null, {validators: [Validators.required] }),
       sillonaux: new FormControl(null, {validators: [Validators.required] }),
     });
-  }
+  // COPUIAR
+  this.route.paramMap.subscribe((paramMap: ParamMap) => {
+    if (paramMap.has('id')) {
+      this.mode = 'edit';
+      this.idsId = paramMap.get('id');
+      this.isLoading = true;
+      this.plandeTratService.getPlandeTratamiento(this.idsId).subscribe(postData => {
+        this.isLoading = false;
+        this.idComponent = postData._id;
+        this.plandeTratamiento = {
+          id: postData._id,
+          trabajo	: postData.	trabajo	,
+          fechaTrab	: postData.	fechaTrab	,
+          profesor	: postData.	profesor	,
+          cariadas	: postData.	cariadas	,
+          perdidas	: postData.	perdidas	,
+          obturadas	: postData.	obturadas	,
+          extracciones	: postData.	extracciones	,
+          indicadas	: postData.	indicadas	,
+          cariadastem	: postData.	cariadastem	,
+          perdidastem	: postData.	perdidastem	,
+          obturadastem	: postData.	obturadastem	,
+          extraccionestem	: postData.	extraccionestem	,
+          indicadastem	: postData.	indicadastem	,
+          nombre	: postData.	nombre	,
+          cuat	: postData.	cuat	,
+          equipo	: postData.	equipo	,
+          sillon	: postData.	sillon	,
+          nombreaux	: postData.	nombreaux	,
+          cuataux	: postData.	cuataux	,
+          equipoaux	: postData.	equipoaux	,
+          sillonaux	: postData.	sillonaux	,          
+          paciente: postData.paciente,
+        };
+        this.form.setValue({
+          trabajo	: this.plandeTratamiento.	trabajo	,
+fechaTrab	: this.plandeTratamiento.	fechaTrab	,
+profesor	: this.plandeTratamiento.	profesor	,
+cariadas	: this.plandeTratamiento.	cariadas	,
+perdidas	: this.plandeTratamiento.	perdidas	,
+obturadas	: this.plandeTratamiento.	obturadas	,
+extracciones	: this.plandeTratamiento.	extracciones	,
+indicadas	: this.plandeTratamiento.	indicadas	,
+cariadastem	: this.plandeTratamiento.	cariadastem	,
+perdidastem	: this.plandeTratamiento.	perdidastem	,
+obturadastem	: this.plandeTratamiento.	obturadastem	,
+extraccionestem	: this.plandeTratamiento.	extraccionestem	,
+indicadastem	: this.plandeTratamiento.	indicadastem	,
+nombre	: this.plandeTratamiento.	nombre	,
+cuat	: this.plandeTratamiento.	cuat	,
+equipo	: this.plandeTratamiento.	equipo	,
+sillon	: this.plandeTratamiento.	sillon	,
+nombreaux	: this.plandeTratamiento.	nombreaux	,
+cuataux	: this.plandeTratamiento.	cuataux	,
+equipoaux	: this.plandeTratamiento.	equipoaux	,
+sillonaux	: this.plandeTratamiento.	sillonaux	,
+
+        });
+      });
+    } else {
+      this.mode = 'create';
+      this.idsId = localStorage.getItem('pacienteId');
+      console.log(this.idsId);
+    }
+  });
+
+}
   addPlandeTratamiento(){
+    console.log(this.idsId);
     this.plandeTratService.addPlandeTratamiento(
-      this.form.value.trabajo,
-      this.form.value.fechaTrab,
-      this.form.value.profesor,
-      this.form.value.cariadas,
-      this.form.value.perdidas,
-      this.form.value.obturadas,
-      this.form.value.extracciones,
-      this.form.value.indicadas,
-      this.form.value.cariadastem,
-      this.form.value.perdidastem,
-      this.form.value.obturadastem,
-      this.form.value.extraccionestem,
-      this.form.value.indicadastem,
-      this.form.value.nombre,
-      this.form.value.cuat,
-      this.form.value.equipo,
-      this.form.value.sillon,
-      this.form.value.nombreaux,
-      this.form.value.cuataux,
-      this.form.value.equipoaux,
-      this.form.value.sillonaux,
+      this.form.value.	trabajo	,
+this.form.value.	fechaTrab	,
+this.form.value.	profesor	,
+this.form.value.	cariadas	,
+this.form.value.	perdidas	,
+this.form.value.	obturadas	,
+this.form.value.	extracciones	,
+this.form.value.	indicadas	,
+this.form.value.	cariadastem	,
+this.form.value.	perdidastem	,
+this.form.value.	obturadastem	,
+this.form.value.	extraccionestem	,
+this.form.value.	indicadastem	,
+this.form.value.	nombre	,
+this.form.value.	cuat	,
+this.form.value.	equipo	,
+this.form.value.	sillon	,
+this.form.value.	nombreaux	,
+this.form.value.	cuataux	,
+this.form.value.	equipoaux	,
+this.form.value.	sillonaux	,
+      this.idsId
     );
+    if (this.form.invalid) {
+      return;
+    }
+    this.isLoading = true;
+    if (this.mode === 'create') {
+      this.plandeTratService.addPlandeTratamiento(
+        this.form.value.	trabajo	,
+this.form.value.	fechaTrab	,
+this.form.value.	profesor	,
+this.form.value.	cariadas	,
+this.form.value.	perdidas	,
+this.form.value.	obturadas	,
+this.form.value.	extracciones	,
+this.form.value.	indicadas	,
+this.form.value.	cariadastem	,
+this.form.value.	perdidastem	,
+this.form.value.	obturadastem	,
+this.form.value.	extraccionestem	,
+this.form.value.	indicadastem	,
+this.form.value.	nombre	,
+this.form.value.	cuat	,
+this.form.value.	equipo	,
+this.form.value.	sillon	,
+this.form.value.	nombreaux	,
+this.form.value.	cuataux	,
+this.form.value.	equipoaux	,
+this.form.value.	sillonaux	,
+        this.idsId
+      );
+    } else {
+        console.log(this.idComponent);
+        this.plandeTratService.updatePlandeTratamiento(
+        this.idComponent,
+        this.form.value.	trabajo	,
+this.form.value.	fechaTrab	,
+this.form.value.	profesor	,
+this.form.value.	cariadas	,
+this.form.value.	perdidas	,
+this.form.value.	obturadas	,
+this.form.value.	extracciones	,
+this.form.value.	indicadas	,
+this.form.value.	cariadastem	,
+this.form.value.	perdidastem	,
+this.form.value.	obturadastem	,
+this.form.value.	extraccionestem	,
+this.form.value.	indicadastem	,
+this.form.value.	nombre	,
+this.form.value.	cuat	,
+this.form.value.	equipo	,
+this.form.value.	sillon	,
+this.form.value.	nombreaux	,
+this.form.value.	cuataux	,
+this.form.value.	equipoaux	,
+this.form.value.	sillonaux	,
+        this.idsId
+      );
+    }
+    this.form.reset();
+
   }
+
+  ngOnDestroy() {
+    this.authStatusSub.unsubscribe();
+  }
+
 }

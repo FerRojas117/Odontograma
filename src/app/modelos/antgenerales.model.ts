@@ -25,5 +25,6 @@ regla	:	string	;
 cesareas	:	string	;
 vidaSex	:	string	;
 abortos	:	string	;
-
+paciente: string;
+id: string;
 }

@@ -7,16 +7,19 @@ export interface Inter {
   otros: string;
   tuberculosis: string;
   neumonia: string;
-  asma: string;
-  faringeammigdalitis: string;
+  hasma: string;
+  faringeamigdalitis: string;
   bronquitis: string;
   gastritis: string;
   colitis: string;
   gastroenteritis: string;
   hepatitis: string;
-  desdeCuando: string;
+  cuandoHepatitis: string;
+  cuandoDiabetes: string;
+  glucosa: string;
+  cualesOtros:string;
+  aparatoDigestivo: string;
   diabetes: string;
-  haceCuanto: string;
-  valorGlucosa: string;
-  proRenal: string;
+ paciente: string;
+  id: string;
 }

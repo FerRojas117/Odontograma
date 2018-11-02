@@ -25,8 +25,8 @@ const antecedentesG = mongoose.Schema({
     { edadHijos: Boolean },
     {tipoPlanificacion: String},
     {tiempoMet: String},//falto
-  ]
-  
+  ],
+  paciente: { type: mongoose.Schema.Types.ObjectId, ref: "Ident", required: true }
 });
 
 module.exports = mongoose.model("AntecedentesG", antecedentesG);

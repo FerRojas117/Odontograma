@@ -1,64 +1,43 @@
 const mongoose = require("mongoose");
 
 const diagnosticoPulp = mongoose.Schema({
-  organoA: { type: String, required: true },
-  tipoDeDolor: { type: String, required: true },
-  episodios: { type: String, required: true },
-  percusion: { type: String, required: true },
-  movilidad: { type: String, required: true },
-  cambioColor: { type: String, required: true },
-  trumetaccion: [
-     { intra: String, required: true },
-     { extra: String, required: true },
-  ],
-  fistula: { type: String, required: true },
-  reaccionPulpar: [
-    { Calor: String, required: true },
-    { Frio: String, required: true },
-    { testCavit: String, required: true }
-  ],
-
-  organoB: { type: String, required: true },
-  caries: { type: String, required: true },
-  trauma: { type: String, required: true },
-  enfPeriodonta: { type: String, required: true },
-  obtDefectuosa: { type: String, required: true },
-  fractura: [
-  {corona:  String, required: true },
-   {raiz: String, required: true }
-],
-otro: { type:String, required: true },
-
-
-  organoC: { type: String, required: true },
-  calcificaciones: 
- [ { corona: String, required: true },
-   { raiz: String, required: true }
-],
-  resorcion: [ 
-    { interno: String, required: true },
-    { externo: String, required: true }
- ],
-  rarefaccion: [ 
-    { periapical: String, required: true },
-    { radicular: String, required: true }
- ],
-  obturacionDefectuosa: { type: String, required: true },
-  otro: { type: String, required: true },
-
-  organoDentario: { type: String, required: true },
-  vital: 
-  [ 
-    { reversible: String, required: true },
-    { irreversible: String, required: true }
- ],
-  
-  noVital:  [ 
-    { aguda: String, required: true },
-    { cronica: String, required: true }
- ],
-
-  observaciones: { type: String, required: true }
+  organoa:	{ type: String, required: true },	
+  tipodedolor:	{ type: String, required: true },	
+  episodios:	{ type: String, required: true },	
+  percusion:	{ type: String, required: true },	
+  movilidad:	{ type: String, required: true },	
+  cambiodecolor:	{ type: String, required: true },	
+  trumefaccionintra:	{ type: String, required: true },	
+  trumefaccionextra:	{ type: String, required: true },	
+  fistula:	{ type: String, required: true },	
+  reaccionpulparcalor:	{ type: String, required: true },	
+  reaccionpulparfrio:	{ type: String, required: true },	
+  reacciontestcavit:	{ type: String, required: true },	
+  observaciones:	{ type: String, required: true },	
+  organob:	{ type: String, required: true },	
+  caries:	{ type: String, required: true },	
+  trauma:	{ type: String, required: true },	
+  enfperiodonta:	{ type: String, required: true },	
+  obtdefectuosa:	{ type: String, required: true },	
+  fracturacorona:	{ type: String, required: true },	
+  fracturaraiz:	{ type: String, required: true },	
+  otro:	{ type: String, required: true },	
+  otro2:	{ type: String, required: true },	
+  otro3:	{ type: String, required: true },	
+  organoc:	{ type: String, required: true },	
+  calcificacionescorona2:	{ type: String, required: true },	
+  calcificacionesraiz2:	{ type: String, required: true },	
+  resorcioninterno:	{ type: String, required: true },	
+  resorcionexterno:	{ type: String, required: true },	
+  rarefaccionpenapico:	{ type: String, required: true },	
+  rarefaccionradicular:	{ type: String, required: true },	
+  obturaciondefectuosa2:	{ type: String, required: true },	
+  organodentario:	{ type: String, required: true },	
+  vitalreversible:	{ type: String, required: true },	
+  vitalirreversible:	{ type: String, required: true },	
+  novitalaguda:	{ type: String, required: true },	
+  novitalcronica:	{ type: String, required: true },	  
+  paciente: { type: mongoose.Schema.Types.ObjectId, ref: "Ident", required: true }
 });
 
 module.exports = mongoose.model("DiagPulpar", diagnosticoPulp);

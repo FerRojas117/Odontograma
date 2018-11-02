@@ -1,8 +1,6 @@
 const mongoose = require("mongoose");
 
 const socioEconomico = mongoose.Schema({
-  nombre: { type: String, required: true },//r_ident
-  edad: { type: String, required: true },//r_ident
   direccion: { type: String, required: true },//r_ident
   tiempoRadicar: { type: String, required: true },
   fechaNacimiento: { type: String, required: true },
@@ -22,6 +20,7 @@ const socioEconomico = mongoose.Schema({
   alumno: { type: Boolean, required: true },
   tutor: { type: String },
   observaciones: { type: String, required: true },
+  paciente: { type: mongoose.Schema.Types.ObjectId, ref: "Ident", required: true }
 });
 
 module.exports = mongoose.model("Socioec", socioEconomico);

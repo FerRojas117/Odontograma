@@ -12,4 +12,5 @@ export interface Ident {
   procedencia: string;
   estadoSocioeconomico: string;
   creator: string;
+  
 }

@@ -8,5 +8,7 @@ export interface HojadeTrat {
       paciente	:	string	;
       alumno	:	string	;
       profesorresponsable  	:	string	;
+      id: string;
+      pacienteh: string;
 
 }

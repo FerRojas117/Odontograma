@@ -1,6 +1,4 @@
 export interface Estu {
-  nombre: string;
-  edad: string;
   direccion: string;
   tiemporadi: string;
   fechnac: string;
@@ -19,4 +17,6 @@ export interface Estu {
   asignacion: string;
   tutor: string;
   obs: string;
+  paciente: string;
+  id: string;
 }

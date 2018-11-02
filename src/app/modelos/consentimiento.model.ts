@@ -1,7 +1,9 @@
 export interface Consen {
-  paciente	:	string;
+  pacienteh	:	string;
 alumno	:	string;
 odontologo	:	string;
     nombre1	:	string;
-
+    id: string;
+    paciente: string;
+    fechaConsen:Date;
 }

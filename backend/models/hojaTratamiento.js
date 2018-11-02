@@ -7,7 +7,7 @@ const hojaTratamiento = mongoose.Schema({
   tratamiento: { type: String, required: true },
   costo: { type: String, required: true },
   noPoliza: { type: String, required: true },
-  paciente: { type: String, required: true },
+  pacienteh: { type: String, required: true },
   alumno: { type: String, required: true },
   profResponsable: { type: String, required: true },
   paciente: { type: mongoose.Schema.Types.ObjectId, ref: "Ident", required: true }

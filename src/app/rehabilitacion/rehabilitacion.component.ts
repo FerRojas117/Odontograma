@@ -1,14 +1,28 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,  OnDestroy  } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { RehaService } from './rehabilitacion.service';
+import { ActivatedRoute, ParamMap } from '@angular/router'; // COPIAR
+import { AuthService } from '../auth/auth.service'; // COPIAR
+import { Subscription } from 'rxjs'; // COPIAR
+import { Reha } from '../modelos/rehabilitacion.model';
+import { IdentService } from '../identificacion/identificacion.service'; // COPIAR
+
 
 @Component({
   selector: 'app-rehabilitacion',
   templateUrl: './rehabilitacion.component.html',
   styleUrls: ['./rehabilitacion.component.css']
 })
-export class RehabilitacionComponent implements OnInit {
+export class RehabilitacionComponent implements OnInit, OnDestroy  {
     form: FormGroup;
+    isLoading = false; // COPIAR
+    private mode = 'create'; // COPIAR
+    private idsId: string; // COPIAR
+    private idComponent: string;
+    private authStatusSub: Subscription; // COPIAR
+    private idUpdated = new Subscription;
+    idIdent: string;
+    reha: Reha;
     examenpara = new FormControl();
     examenParaList: string[] = ['Trauma o desarmonia oclusal',
                                 'Estado de organos dentarios pilares',
@@ -32,9 +46,20 @@ export class RehabilitacionComponent implements OnInit {
                                 'Desviaciones de la oclusion'
                                 ];
 
-    constructor(public rehaservice: RehaService) {}
+    constructor(public rehaservice: RehaService,
+      public route: ActivatedRoute, // COPIAR
+      private authService: AuthService, // COPIAR
+) {}
 
     ngOnInit() {
+      // COPIAR
+      this.authStatusSub = this.authService
+      .getAuthStatusListener()
+      .subscribe(authStatus => {
+        this.isLoading = false;
+      });
+      // COPIAR
+
       this.form = new FormGroup({
         referidoPor: new FormControl(null, {validators: [Validators.required, Validators.minLength(3)]}),
         motivoConsulta: new FormControl(null, { validators: [Validators.required] }),
@@ -112,10 +137,181 @@ export class RehabilitacionComponent implements OnInit {
         remov38	: new FormControl(null, { validators: [Validators.required] }),
 
       });
+     // COPUIAR
+      this.route.paramMap.subscribe((paramMap: ParamMap) => {
+        if (paramMap.has('id')) {
+          this.mode = 'edit';
+          this.idsId = paramMap.get('id');
+          this.isLoading = true;
+          this.rehaservice.getReha(this.idsId).subscribe(postData => {
+            this.isLoading = false;
+            this.idComponent = postData._id;
+            this.reha = {
+              id: postData._id,
+              referidoPor	:postData.	referidoPor	,
+motivoConsulta	:postData.	motivoConsulta,	
+moEstu	:postData.	moEstu	,
+descripcion	:postData.	descripcion	,
+diagO	:postData.	diagO	,
+exTem	:postData.	exTem	,
+examenPara	:postData.	examenPara	,
+otrasEx	:postData.	otrasEx	,
+analisisRadio	:postData.	analisisRadio	,
+trataProte	:postData.	trataProte	,
+fijo11	:postData.	fijo11	,
+fijo12	:postData.	fijo12	,
+fijo13	:postData.	fijo13	,
+fijo14	:postData.	fijo14	,
+fijo15	:postData.	fijo15	,
+fijo16	:postData.	fijo16	,
+fijo17	:postData.	fijo17	,
+fijo18	:postData.	fijo18	,
+fijo21	:postData.	fijo21	,
+fijo22	:postData.	fijo22	,
+fijo23	:postData.	fijo23	,
+fijo24	:postData.	fijo24	,
+fijo25	:postData.	fijo25	,
+fijo26	:postData.	fijo26	,
+fijo27	:postData.	fijo27	,
+fijo28	:postData.	fijo28	,
+fijo41	:postData.	fijo41	,
+fijo42	:postData.	fijo42	,
+fijo43	:postData.	fijo43	,
+fijo44	:postData.	fijo44	,
+fijo45	:postData.	fijo45	,
+fijo46	:postData.	fijo46	,
+fijo47	:postData.	fijo47	,
+fijo48	:postData.	fijo48	,
+fijo31	:postData.	fijo31	,
+fijo32	:postData.	fijo32	,
+fijo33	:postData.	fijo33	,
+fijo34	:postData.	fijo34	,
+fijo35	:postData.	fijo35	,
+fijo36	:postData.	fijo36	,
+fijo37	:postData.	fijo37	,
+fijo38	:postData.	fijo38	,
+remov11	:postData.	remov11	,
+remov12	:postData.	remov12	,
+remov13	:postData.	remov13	,
+remov14	:postData.	remov14	,
+remov15	:postData.	remov15	,
+remov16	:postData.	remov16	,
+remov17	:postData.	remov17	,
+remov18	:postData.	remov18	,
+remov21	:postData.	remov21	,
+remov22	:postData.	remov22	,
+remov23	:postData.	remov23	,
+remov24	:postData.	remov24	,
+remov25	:postData.	remov25	,
+remov26	:postData.	remov26	,
+remov27	:postData.	remov27	,
+remov28	:postData.	remov28	,
+remov41	:postData.	remov41	,
+remov42	:postData.	remov42	,
+remov43	:postData.	remov43	,
+remov44	:postData.	remov44	,
+remov45	:postData.	remov45	,
+remov46	:postData.	remov46	,
+remov47	:postData.	remov47	,
+remov48	:postData.	remov48	,
+remov31	:postData.	remov31	,
+remov32	:postData.	remov32	,
+remov33	:postData.	remov33	,
+remov34	:postData.	remov34	,
+remov35	:postData.	remov35	,
+remov36	:postData.	remov36	,
+remov37	:postData.	remov37	,
+remov38	:postData.	remov38	,
+              paciente: postData.paciente,
+            };
+            this.form.setValue({
+              referidoPor	:this.reha.	referidoPor	,
+motivoConsulta	:this.reha.	motivoConsulta	,
+moEstu	:this.reha.	moEstu	,
+descripcion	:this.reha.	descripcion	,
+diagO	:this.reha.	diagO	,
+exTem	:this.reha.	exTem	,
+examenPara	:this.reha.	examenPara	,
+otrasEx	:this.reha.	otrasEx	,
+analisisRadio	:this.reha.	analisisRadio	,
+trataProte	:this.reha.	trataProte	,
+fijo11	:this.reha.	fijo11	,
+fijo12	:this.reha.	fijo12	,
+fijo13	:this.reha.	fijo13	,
+fijo14	:this.reha.	fijo14	,
+fijo15	:this.reha.	fijo15	,
+fijo16	:this.reha.	fijo16	,
+fijo17	:this.reha.	fijo17	,
+fijo18	:this.reha.	fijo18	,
+fijo21	:this.reha.	fijo21	,
+fijo22	:this.reha.	fijo22	,
+fijo23	:this.reha.	fijo23	,
+fijo24	:this.reha.	fijo24	,
+fijo25	:this.reha.	fijo25	,
+fijo26	:this.reha.	fijo26	,
+fijo27	:this.reha.	fijo27	,
+fijo28	:this.reha.	fijo28	,
+fijo41	:this.reha.	fijo41	,
+fijo42	:this.reha.	fijo42	,
+fijo43	:this.reha.	fijo43	,
+fijo44	:this.reha.	fijo44	,
+fijo45	:this.reha.	fijo45	,
+fijo46	:this.reha.	fijo46	,
+fijo47	:this.reha.	fijo47	,
+fijo48	:this.reha.	fijo48	,
+fijo31	:this.reha.	fijo31	,
+fijo32	:this.reha.	fijo32	,
+fijo33	:this.reha.	fijo33	,
+fijo34	:this.reha.	fijo34	,
+fijo35	:this.reha.	fijo35	,
+fijo36	:this.reha.	fijo36	,
+fijo37	:this.reha.	fijo37	,
+fijo38	:this.reha.	fijo38	,
+remov11	:this.reha.	remov11	,
+remov12	:this.reha.	remov12	,
+remov13	:this.reha.	remov13	,
+remov14	:this.reha.	remov14	,
+remov15	:this.reha.	remov15	,
+remov16	:this.reha.	remov16	,
+remov17	:this.reha.	remov17	,
+remov18	:this.reha.	remov18	,
+remov21	:this.reha.	remov21	,
+remov22	:this.reha.	remov22	,
+remov23	:this.reha.	remov23	,
+remov24	:this.reha.	remov24	,
+remov25	:this.reha.	remov25	,
+remov26	:this.reha.	remov26	,
+remov27	:this.reha.	remov27	,
+remov28	:this.reha.	remov28	,
+remov41	:this.reha.	remov41	,
+remov42	:this.reha.	remov42	,
+remov43	:this.reha.	remov43	,
+remov44	:this.reha.	remov44	,
+remov45	:this.reha.	remov45	,
+remov46	:this.reha.	remov46	,
+remov47	:this.reha.	remov47	,
+remov48	:this.reha.	remov48	,
+remov31	:this.reha.	remov31	,
+remov32	:this.reha.	remov32	,
+remov33	:this.reha.	remov33	,
+remov34	:this.reha.	remov34	,
+remov35	:this.reha.	remov35	,
+remov36	:this.reha.	remov36	,
+remov37	:this.reha.	remov37	,
+remov38	:this.reha.	remov38	,
+
+            });
+          });
+        } else {
+          this.mode = 'create';
+          this.idsId = localStorage.getItem('pacienteId');
+          console.log(this.idsId);
+        }
+      });
+
     }
     addReha() {
-
-      console.log( this.form.value.examenPara);
+      console.log(this.idsId);
       this.rehaservice.addReha(
         this.form.value.referidoPor,
         this.form.value.motivoConsulta,
@@ -191,6 +387,178 @@ this.form.value.remov35,
 this.form.value.remov36,
 this.form.value.remov37,
 this.form.value.remov38,
-      );
-    }
-  }
+this.idsId
+);
+
+if (this.form.invalid) {
+  return;
+}
+this.isLoading = true;
+if (this.mode === 'create') {
+  this.rehaservice.addReha(
+    this.form.value.	referidoPor	,
+this.form.value.	motivoConsulta	,
+this.form.value.	moEstu	,
+this.form.value.	descripcion	,
+this.form.value.	diagO	,
+this.form.value.	exTem	,
+this.form.value.	examenPara	,
+this.form.value.	otrasEx	,
+this.form.value.	analisisRadio	,
+this.form.value.	trataProte	,
+this.form.value.	fijo11	,
+this.form.value.	fijo12	,
+this.form.value.	fijo13	,
+this.form.value.	fijo14	,
+this.form.value.	fijo15	,
+this.form.value.	fijo16	,
+this.form.value.	fijo17	,
+this.form.value.	fijo18	,
+this.form.value.	fijo21	,
+this.form.value.	fijo22	,
+this.form.value.	fijo23	,
+this.form.value.	fijo24	,
+this.form.value.	fijo25	,
+this.form.value.	fijo26	,
+this.form.value.	fijo27	,
+this.form.value.	fijo28	,
+this.form.value.	fijo41	,
+this.form.value.	fijo42	,
+this.form.value.	fijo43	,
+this.form.value.	fijo44	,
+this.form.value.	fijo45	,
+this.form.value.	fijo46	,
+this.form.value.	fijo47	,
+this.form.value.	fijo48	,
+this.form.value.	fijo31	,
+this.form.value.	fijo32	,
+this.form.value.	fijo33	,
+this.form.value.	fijo34	,
+this.form.value.	fijo35	,
+this.form.value.	fijo36	,
+this.form.value.	fijo37	,
+this.form.value.	fijo38	,
+this.form.value.	remov11	,
+this.form.value.	remov12	,
+this.form.value.	remov13	,
+this.form.value.	remov14	,
+this.form.value.	remov15	,
+this.form.value.	remov16	,
+this.form.value.	remov17	,
+this.form.value.	remov18	,
+this.form.value.	remov21	,
+this.form.value.	remov22	,
+this.form.value.	remov23	,
+this.form.value.	remov24	,
+this.form.value.	remov25	,
+this.form.value.	remov26	,
+this.form.value.	remov27	,
+this.form.value.	remov28	,
+this.form.value.	remov41	,
+this.form.value.	remov42	,
+this.form.value.	remov43	,
+this.form.value.	remov44	,
+this.form.value.	remov45	,
+this.form.value.	remov46	,
+this.form.value.	remov47	,
+this.form.value.	remov48	,
+this.form.value.	remov31	,
+this.form.value.	remov32	,
+this.form.value.	remov33	,
+this.form.value.	remov34	,
+this.form.value.	remov35	,
+this.form.value.	remov36	,
+this.form.value.	remov37	,
+this.form.value.	remov38	,
+    this.idsId
+  );
+} else {
+    console.log(this.idComponent);
+    this.rehaservice.updateReha(
+    this.idComponent,
+    this.form.value.	referidoPor	,
+    this.form.value.	motivoConsulta	,
+    this.form.value.	moEstu	,
+    this.form.value.	descripcion	,
+    this.form.value.	diagO	,
+    this.form.value.	exTem	,
+    this.form.value.	examenPara	,
+    this.form.value.	otrasEx	,
+    this.form.value.	analisisRadio	,
+    this.form.value.	trataProte	,
+    this.form.value.	fijo11	,
+    this.form.value.	fijo12	,
+    this.form.value.	fijo13	,
+    this.form.value.	fijo14	,
+    this.form.value.	fijo15	,
+    this.form.value.	fijo16	,
+    this.form.value.	fijo17	,
+    this.form.value.	fijo18	,
+    this.form.value.	fijo21	,
+    this.form.value.	fijo22	,
+    this.form.value.	fijo23	,
+    this.form.value.	fijo24	,
+    this.form.value.	fijo25	,
+    this.form.value.	fijo26	,
+    this.form.value.	fijo27	,
+    this.form.value.	fijo28	,
+    this.form.value.	fijo41	,
+    this.form.value.	fijo42	,
+    this.form.value.	fijo43	,
+    this.form.value.	fijo44	,
+    this.form.value.	fijo45	,
+    this.form.value.	fijo46	,
+    this.form.value.	fijo47	,
+    this.form.value.	fijo48	,
+    this.form.value.	fijo31	,
+    this.form.value.	fijo32	,
+    this.form.value.	fijo33	,
+    this.form.value.	fijo34	,
+    this.form.value.	fijo35	,
+    this.form.value.	fijo36	,
+    this.form.value.	fijo37	,
+    this.form.value.	fijo38	,
+    this.form.value.	remov11	,
+    this.form.value.	remov12	,
+    this.form.value.	remov13	,
+    this.form.value.	remov14	,
+    this.form.value.	remov15	,
+    this.form.value.	remov16	,
+    this.form.value.	remov17	,
+    this.form.value.	remov18	,
+    this.form.value.	remov21	,
+    this.form.value.	remov22	,
+    this.form.value.	remov23	,
+    this.form.value.	remov24	,
+    this.form.value.	remov25	,
+    this.form.value.	remov26	,
+    this.form.value.	remov27	,
+    this.form.value.	remov28	,
+    this.form.value.	remov41	,
+    this.form.value.	remov42	,
+    this.form.value.	remov43	,
+    this.form.value.	remov44	,
+    this.form.value.	remov45	,
+    this.form.value.	remov46	,
+    this.form.value.	remov47	,
+    this.form.value.	remov48	,
+    this.form.value.	remov31	,
+    this.form.value.	remov32	,
+    this.form.value.	remov33	,
+    this.form.value.	remov34	,
+    this.form.value.	remov35	,
+    this.form.value.	remov36	,
+    this.form.value.	remov37	,
+    this.form.value.	remov38	,    
+    this.idsId
+  );
+}
+this.form.reset();
+
+}
+
+ngOnDestroy() {
+this.authStatusSub.unsubscribe();
+}
+
+}
