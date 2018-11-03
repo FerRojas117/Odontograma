@@ -97,31 +97,32 @@ export class AntgeneralesComponent implements OnInit, OnDestroy {
           this.idComponent = postData._id;
           this.antg = {
             id: postData._id,
-            religion	:postData.	religion	,
-            tiprelsex	:postData.	tiprelsex	,
-            parejas	:postData.	parejas	,
-            calalim	:postData.	calalim	,
-            higpers	:postData.	higpers	,
-            sedentarismo	:postData.	sedentarismo	,
-            calhabit	:postData.	calhabit	,
-            perspat	:postData.	perspat	,
-            ginecoobst	:postData.	ginecoobst	,
-            edades	:postData.	edades	,
-            planifami	:postData.	planifami	,
-            partos	:postData.	partos	,
-            fechaParto	:postData.	fechaParto	,
-            planifamitiem	:postData.	planifamitiem	,
-            cuantosParto	:postData.	cuantosParto	,
-            menarca	:postData.	menarca	,
-            embarazos	:postData.	embarazos	,
-            bajoPeso	:postData.	bajoPeso	,
-            edadHijos	:postData.	edadHijos	,
-            hijosMacro	:postData.	hijosMacro	,
-            ritmo	:postData.	ritmo	,
-            regla	:postData.	regla	,
-            cesareas	:postData.	cesareas	,
-            vidaSex	:postData.	vidaSex	,
-            abortos	:postData.	abortos	,
+            religion  	: postData.	religion  	,
+            tiprelsex 	: postData.	tiprelsex 	,
+            parejas 	: postData.	parejas 	,
+            calalim 	: postData.	calalim 	,
+            higpers 	: postData.	higpers 	,
+            sedentarismo  	: postData.	sedentarismo  	,
+            calhabit  	: postData.	calhabit  	,
+            perspat 	: postData.	perspat 	,
+            ginecoobst  	: postData.	ginecoobst  	,
+            edades  	: postData.	edades  	,
+            planifami 	: postData.	planifami 	,
+            partos  	: postData.	partos  	,
+            fechaParto  	: postData.	fechaParto  	,
+            planifamitiem 	: postData.	planifamitiem 	,
+            cuantosParto  	: postData.	cuantosParto  	,
+            menarca 	: postData.	menarca 	,
+            embarazos 	: postData.	embarazos 	,
+            bajoPeso  	: postData.	bajoPeso  	,
+            edadHijos 	: postData.	edadHijos 	,
+            hijosMacro  	: postData.	hijosMacro  	,
+            ritmo 	: postData.	ritmo 	,
+            regla 	: postData.	regla 	,
+            cesareas  	: postData.	cesareas  	,
+            vidaSex 	: postData.	vidaSex 	,
+            abortos 	: postData.	abortos 	,
+            anthereditarios	: postData.	anthereditarios	,            
             paciente: postData.paciente,
 
           };
@@ -151,7 +152,7 @@ export class AntgeneralesComponent implements OnInit, OnDestroy {
             cesareas	:this.antg.	cesareas	,
             vidaSex	:this.antg.	vidaSex	,
             abortos	:this.antg.	abortos	,
-            
+            anthereditarios:this.antg.anthereditarios
           });
         });
       } else {
@@ -199,7 +200,6 @@ this.idsId
     this.isLoading = true;
     if (this.mode === 'create') {
       this.antgeService.addAntG(
-        this.form.value.peso,
         this.form.value.religion	,
         this.form.value.tiprelsex	,
         this.form.value.parejas	,
@@ -225,13 +225,13 @@ this.idsId
         this.form.value.cesareas	,
         this.form.value.vidaSex	,
         this.form.value.abortos	,
+        this.form.value.anthereditarios,
         this.idsId
       );
     } else {
         console.log(this.idComponent);
         this.antgeService.updateAntG(
         this.idComponent,
-        this.form.value.peso,
         this.form.value.religion	,
         this.form.value.tiprelsex	,
         this.form.value.parejas	,
@@ -257,6 +257,7 @@ this.idsId
         this.form.value.cesareas	,
         this.form.value.vidaSex	,
         this.form.value.abortos	,
+        this.form.value.anthereditarios,
         this.idsId
       );
     }

@@ -7,7 +7,7 @@ import { saveAs } from 'file-saver';
   styleUrls: ['exportar.component.css'],
 })
 export class Exportar {
-   blob = new Blob(['Nombre:\nValeria\nVera Lagos\nSexo:\nF\nFecha de nacimiento:6/15/1997\nEstado\ncivil:\nSoltera\nDireccion:rionazas\nTelefono:\n7713820022\nOcupacion:Estudiante\nLugar\nde\nNacimiento:Pachuca\nProcedente\nde:\nPachuca\nEstado\nsocioeconomico:D\nPeso\n:7\nTalla:\n42\nFrecuencia\nCardiaca:\n32\nPresion\nArterial:\n36\nTemperatura:\n48/2\nFrecuencia\nRespiratoria:\nexploracion\nFísica:incorrecta\nInspeccion\nGeneral:\ncorrecta\nCabeza:\ncorrecta\nCuello:correcta\nTórax:correcta\nAbdómen:correcta\nColumna\nVertebral:correcta\nExtremidades:correcta\nDiagnostico:\ncorrecta\nObservaciones:\ncorrecta\nRecomendaciones:correcta'], { type:'Historial1.xls' });
+   blob = new Blob(['ayuda'], { type:'Historial.xls' });
    url = window.URL;
    
    fileUrl = this.url.createObjectURL(this.blob);
@@ -19,7 +19,7 @@ export class Exportar {
       {
       var url= window.URL.createObjectURL(this.blob);
         window.open(url);
-        saveAs(this.blob, 'Historial1.xls');
+        saveAs(this.blob, 'Historial.xls');
       }
   }
 }

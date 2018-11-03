@@ -44,6 +44,7 @@ export class AntGService {
       vidaSex :string,
       abortos :string,
       paciente: string,
+
     ) {
     const registrarAntG: any = {
       anthereditarios: anthereditarios,
@@ -110,6 +111,7 @@ ritmo	:string;
 regla	:string;
 cesareas	:string;
 vidaSex	:string;
+anthereditarios:string;
 abortos	:string;
 paciente: string;
     }>('http://localhost:3000/api/antGenerales/' + id);
@@ -142,6 +144,7 @@ paciente: string;
     cesareas	:string,
     vidaSex	:string,
     abortos	:string,
+    anthereditarios:string,
     paciente: string,
   ) {
     let antg: AntG;
@@ -172,7 +175,8 @@ regla	:	regla	,
 cesareas	:	cesareas	,
 vidaSex	:	vidaSex	,
 abortos	:	abortos	,
-paciente: paciente
+anthereditarios:anthereditarios
+,paciente: paciente
       };
     this.http
       .put<{ message: string }>('http://localhost:3000/api/antGenerales/' + id, antg)
