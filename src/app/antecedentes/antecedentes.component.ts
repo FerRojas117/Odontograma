@@ -31,7 +31,10 @@ export class AntecedentesComponent implements OnInit,  OnDestroy  {
   alergicas = new FormControl();
   alergicasList: string[] = ['Ninguna','Alimentos', 'Drogas', 'Anestésicos', 'Otros'];
   cavidad = new FormControl();
-  cavidadList: string[] = ['No hay anomalidad',   'Pigmentación',    'Labios', 'Carrillo y surco vestibular',    'Lengua', 'Glánsulas salivares(Tamaño,Calidad y flujo de saliva,etc)',
+  cavidadList: string[] = ['No hay anomalidad',
+     'Pigmentación',    'Labios',
+      'Carrillo y surco vestibular',
+          'Lengua', 'Glánsulas salivares(Tamaño,Calidad y flujo de saliva,etc)',
     'Piso de boca', 'Paladar', 'Orofaringe', 'Encia'];
   higieneo = new FormControl();
   higieneoList: string[] = ['Buena', 'Regualar', 'Mala', 'Halitosis', 'Placa', 'Materia Alba', 'Pigmentaciones'];
@@ -46,7 +49,7 @@ export class AntecedentesComponent implements OnInit,  OnDestroy  {
   enable(componente: string) {
     this.form.controls[componente].enable();
     if (componente === 'cuantasRadio') { this.form.controls['cuandoRadio'].enable(); }
-    if (componente === 'siReemplazoOrganos') { this.form.controls['porqueOrganos'].enable(); this.form.controls['cuantosOrganos'].enable(); 
+    if (componente === 'siReemplazoOrganos') { this.form.controls['porqueOrganos'].enable(); this.form.controls['cuantosOrganos'].enable();
     this.form.controls['comoReemplazoOrganos'].enable(); this.form.controls['cuandoReemplazoOrganos'].enable(); }
     if (componente === 'cuidadoHospital') { this.form.controls['cuidadoMedico'].enable();this.form.controls['cuidadoHistorial'].enable(); }
   }
@@ -56,7 +59,7 @@ export class AntecedentesComponent implements OnInit,  OnDestroy  {
     if (componente === 'cuantasRadio') { this.form.controls['cuandoRadio'].enable(); }
     if (componente === 'porqueOrganos') { this.form.controls['cuantosOrganos'].enable(); this.form.controls['siReemplazoOrganos'].enable();
     this.form.controls['comoReemplazoOrganos'].enable(); this.form.controls['cuandoReemplazoOrganos'].enable(); }
-    if (componente === 'cuidadoHospital') { this.form.controls['cuidadoMedico'].enable();this.form.controls['cuidadoHistorial'].enable(); } 
+    if (componente === 'cuidadoHospital') { this.form.controls['cuidadoMedico'].enable();this.form.controls['cuidadoHistorial'].enable(); }
   }
 
   ngOnInit() {
@@ -228,7 +231,6 @@ export class AntecedentesComponent implements OnInit,  OnDestroy  {
             paciente:postData.paciente,
             cavidad:postData.cavidad,
             higieneo:postData.higieneo
-
             };
             this.form.setValue({
               cuanvisito:this.antece.cuanvisito,
@@ -442,6 +444,7 @@ export class AntecedentesComponent implements OnInit,  OnDestroy  {
         this.idComponent,
         this.form.value.motivoconsulta,
         this.form.value.cuanvisito,
+        this.form.value.vismedult,
         this.form.value.motivo,
         this.form.value.cdcuantiempo,
         this.form.value.radiografias,
@@ -449,6 +452,7 @@ export class AntecedentesComponent implements OnInit,  OnDestroy  {
         this.form.value.orgdentarios,
         this.form.value.cuantosporque,
         this.form.value.remplazo,
+        this.form.value.organos,
         this.form.value.comocuando,
         this.form.value.cirugias[0],
         this.form.value.malestar[0],
