@@ -18,10 +18,11 @@ router.post("", (req, res, next) => {
     consentimiento.save()
     .then(createdIdent => {
       res.status(201).json({
-        message: "Consentimiento added successfully",
+        message: "Consentimiento añadido exitosamente",
       });
     })
     .catch((err) => {
+      console.log(err);
       res.status(500).json({
         error: err
       });

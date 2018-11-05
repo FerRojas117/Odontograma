@@ -35,9 +35,11 @@ export class EstuService {
     digsoci	:string,
     asignacion	:string,
     tutor	:string,
-    obs	:string,    
+    obs	:string,
     paciente: string,
     ) {
+
+
     const registrarEstu: any = {
       direccion: direccion,
       tiemporadi: tiemporadi,
@@ -61,9 +63,9 @@ export class EstuService {
     };
     console.log(registrarEstu);
     this.http
-      .post<{ _id: string }>('http://localhost:3000/api/estu', registrarEstu)
+      .post<{ message: string }>('http://localhost:3000/api/estu', registrarEstu)
       .subscribe(responseData => {
-        this.id = responseData._id;
+        this.dialog.open(CompletoComponent, {data: {message:  responseData.message}});
       });
   }
 
@@ -137,7 +139,7 @@ obs	:string,
       digsoci	:	digsoci	,
       asignacion	:	asignacion	,
       tutor	:	tutor	,
-      obs	:	obs	,      
+      obs	:	obs	,
       paciente: paciente
       };
     this.http

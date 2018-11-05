@@ -43,9 +43,9 @@ export class HojadeTratService {
     };
     console.log(registrarHojadeTrat);
     this.http
-      .post<{ _id: string }>('http://localhost:3000/api/hojadeTrat', registrarHojadeTrat)
+      .post<{ message: string }>('http://localhost:3000/api/hojadeTrat', registrarHojadeTrat)
       .subscribe(responseData => {
-        this.id = responseData._id;
+        this.dialog.open(CompletoComponent, {data: {message:  responseData.message}});
       });
   }
 
@@ -62,7 +62,7 @@ export class HojadeTratService {
       nopoliza	:string;
       pacienteh	:string;
       alumno	:string;
-      profesorresponsable	:string;      
+      profesorresponsable	:string;
       paciente: string;
     }>('http://localhost:3000/api/exploFisica/' + id);
   }
@@ -78,7 +78,7 @@ export class HojadeTratService {
     nopoliza	:string,
     pacienteh	:string,
     alumno	:string,
-    profesorresponsable	:string,    
+    profesorresponsable	:string,
     paciente: string,
   ) {
     let hojadetrat: HojadeTrat;
@@ -92,7 +92,7 @@ export class HojadeTratService {
       nopoliza	:	nopoliza	,
       pacienteh	:	paciente	,
       alumno	:	alumno	,
-      profesorresponsable	:	profesorresponsable	,      
+      profesorresponsable	:	profesorresponsable	,
       paciente: paciente
       };
     this.http

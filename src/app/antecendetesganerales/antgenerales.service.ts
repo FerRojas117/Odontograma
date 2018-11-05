@@ -77,9 +77,9 @@ paciente: paciente
     };
     console.log(registrarAntG);
     this.http
-      .post<{ _id: string }>('http://localhost:3000/api/antGenerales', registrarAntG)
+      .post<{ message: string }>('http://localhost:3000/api/antGenerales', registrarAntG)
       .subscribe(responseData => {
-        this.id = responseData._id;
+        this.dialog.open(CompletoComponent, {data: {message:  responseData.message}});
       });
   }
   // ROUTER GET

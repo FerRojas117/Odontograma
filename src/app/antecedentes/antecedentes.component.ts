@@ -122,7 +122,7 @@ export class AntecedentesComponent implements OnInit,  OnDestroy  {
       porqueOrganos : new FormControl(null, { validators: [Validators.required] }),
       siReemplazoOrganos  : new FormControl(null, { validators: [Validators.required] }),
       comoReemplazoOrganos  : new FormControl(null, { validators: [Validators.required] }),
-      cuandoReemplazoOrganos  : new FormControl(null, { validators: [Validators.required] }),
+      cuanReemplazoOrganos  : new FormControl(null, { validators: [Validators.required] }),
       cualesCirugias  : new FormControl(null, { validators: [Validators.required] }),
       problemasAnestesia  : new FormControl(null, { validators: [Validators.required] }),
       cualesProblemas : new FormControl(null, { validators: [Validators.required] }),
@@ -144,7 +144,7 @@ export class AntecedentesComponent implements OnInit,  OnDestroy  {
       this.form.controls['porqueOrganos'].disable();
       this.form.controls['siReemplazoOrganos'].disable();
       this.form.controls['comoReemplazoOrganos'].disable();
-      this.form.controls['cuandoReemplazoOrganos'].disable();
+      this.form.controls['cuanReemplazoOrganos'].disable();
       this.form.controls['cualesCirugias'].disable();
       this.form.controls['problemasAnestesia'].disable();
       this.form.controls['cualesProblemas'].disable();

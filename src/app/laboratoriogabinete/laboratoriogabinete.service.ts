@@ -30,9 +30,9 @@ export class LaboService {
     // imprimir objeto con los datos del front end
     console.log(registrarLabo);
     this.http
-        .post<{ _id: string }>('http://localhost:3000/api/labo', registrarLabo)
+        .post<{ message: string }>('http://localhost:3000/api/labo', registrarLabo)
         .subscribe(responseData => {
-          this.id = responseData._id;
+          this.dialog.open(CompletoComponent, {data: {message:  responseData.message}});
         });
     }
 

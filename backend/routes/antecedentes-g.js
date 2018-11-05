@@ -42,6 +42,7 @@ paciente: req.body.paciente
       });
     })
     .catch((err) => {
+      console.log(err);
       res.status(500).json({
         error: err
       });
@@ -61,6 +62,7 @@ router.get("/:id", (req, res, next) => {
       }
     })
     .catch(error => {
+      console.log(err);
       res.status(500).json({
         message: "No se pudo recuperar Antecedentes generales!"
       });
@@ -99,7 +101,7 @@ router.put("/:id",
       vidaSex 	: req.body.	vidaSex 	,
       abortos 	: req.body.	abortos 	,
       anthereditarios	: req.body.	anthereditarios	,
-      
+
       paciente: req.body.paciente,
     });
     ExFisica.updateOne({ _id: req.params.id}, exp)

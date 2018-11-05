@@ -13,19 +13,20 @@ router.post("", (req, res, next) => {
     tratamiento: req.body.tratamiento,
     costo: req.body.costo,
     noPoliza: req.body.noPoliza,
-    paciente: req.body.paciente,
+    pacienteh: req.body.pacienteh,
     alumno: req.body.alumno,
     profResponsable: req.body.profResponsable,
-    pacienteh: req.body.pacienteh,
+    paciente: req.body.paciente,
     });
     hTratamiento.save()
     .then(createdIdent => {
       res.status(201).json({
-        message: "Exploración added successfully",
+        message: "Exploración añadido exitosamente",
       //  id: createdIdent._id
       });
     })
     .catch((err) => {
+      console.log(err);
       res.status(500).json({
         error: err
       });
@@ -67,7 +68,7 @@ router.put("/:id",
       nopoliza	:req.body.	nopoliza	,
       pacienteh	:req.body.	paciente	,
       alumno	:req.body.	alumno	,
-      profesorresponsable	:req.body.	profesorresponsable	,      
+      profesorresponsable	:req.body.	profesorresponsable	,
       paciente: req.body.paciente
     });
     HojadeTrat.updateOne({ _id: req.params.id}, hojadetrat)

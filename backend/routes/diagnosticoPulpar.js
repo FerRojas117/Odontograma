@@ -48,11 +48,12 @@ router.post("", (req, res, next) => {
     diagPulpar.save()
     .then(createdIdent => {
       res.status(201).json({
-        message: "diagnóstico pulpar added successfully",
+        message: "diagnóstico pulpar añadido exitosamente",
       //  id: createdIdent._id
       });
     })
     .catch((err) => {
+      console.log(err);
       res.status(500).json({
         error: err
       });
@@ -73,6 +74,7 @@ router.get("/:id", (req, res, next) => {
       }
     })
     .catch(error => {
+      console.log(err);
       res.status(500).json({
         message: "No se pudo recuperar Ident!"
       });

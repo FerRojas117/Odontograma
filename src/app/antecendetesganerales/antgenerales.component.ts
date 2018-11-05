@@ -85,7 +85,7 @@ export class AntgeneralesComponent implements OnInit, OnDestroy {
       abortos: new FormControl(null, { validators: [Validators.required] }),
     });
     this.form.controls['cuantosParto'].disable();
-    this.form.controls['fechasParto'].disable();
+    this.form.controls['fechaParto'].disable();
 
     this.route.paramMap.subscribe((paramMap: ParamMap) => {
       if (paramMap.has('id')) {

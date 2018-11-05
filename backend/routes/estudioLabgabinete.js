@@ -11,14 +11,15 @@ router.post("", (req, res, next) => {
     resultPrevios2: req.body.resultPrevios2,
     paciente: req.body.paciente
     });
-    LabGab.save()
+    labGab.save()
     .then(createdIdent => {
       res.status(201).json({
-        message: "EstudiosLG added successfully",
+        message: "EstudiosLG añadido exitosamente",
       //  id: createdIdent._id
       });
     })
     .catch((err) => {
+      console.log(err);
       res.status(500).json({
         error: err
       });
@@ -38,6 +39,7 @@ router.get("/:id", (req, res, next) => {
       }
     })
     .catch(error => {
+      console.log(err);
       res.status(500).json({
         message: "No se pudo recuperar Ident!"
       });

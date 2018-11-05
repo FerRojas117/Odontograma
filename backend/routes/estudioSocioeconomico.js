@@ -30,11 +30,12 @@ router.post("", (req, res, next) => {
     socioec.save()
     .then(createdIdent => {
       res.status(201).json({
-        message: "Estudios Socioeconómicos added successfully",
+        message: "Estudios Socioeconómicos añadido exitosamente",
       //  id: createdIdent._id
       });
     })
     .catch((err) => {
+      console.log(err);
       res.status(500).json({
         error: err
       });
@@ -86,7 +87,7 @@ router.put("/:id",
       digsoci	:req.body.	digsoci	,
       asignacion	:req.body.	asignacion	,
       tutor	:req.body.	tutor	,
-      obs	:req.body.	obs	,      
+      obs	:req.body.	obs	,
       paciente: req.body.paciente
     });
     EstudioSE.updateOne({ _id: req.params.id}, socioec)

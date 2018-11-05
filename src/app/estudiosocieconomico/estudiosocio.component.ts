@@ -126,7 +126,7 @@ obs	: this.estu.	obs	,
     if (this.form.invalid) {
       return;
     }
-    this.isLoading = true;
+
     if (this.mode === 'create') {
       this.estuService.addEstu(
 this.form.value.	direccion	,

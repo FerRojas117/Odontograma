@@ -2,71 +2,71 @@
     <form [formGroup]="form" (submit)="addAntece()">
 
       <mat-form-field>
-        <textarea matInput type="text" formControlName="motivoconsulta" placeholder="Motivo de la Consulta">  </textarea>
+        <textarea matInput type="text" [formControl]="motivoconsulta" placeholder="Motivo de la Consulta">  </textarea>
         <mat-error *ngIf="form.get('motivoconsulta').invalid">Por favor, escribe el motivo de la consulta</mat-error>
       </mat-form-field>
       <br>
       <mat-form-field>
-        <textarea matInput type="text" formControlName="cuanvisito" placeholder="Cuando visito al estomatologo">  </textarea>
+        <textarea matInput type="text" [formControl]="cuanvisito" placeholder="Cuando visito al estomatologo">  </textarea>
         <mat-error *ngIf="form.get('cuanvisito').invalid">Por favor, escribe cuando visito al estomatologo</mat-error>
       </mat-form-field>
       <br>
       <mat-form-field>
-        <textarea matInput type="text" formControlName="motivo" placeholder="Motivo de la ultima consulta">  </textarea>
+        <textarea matInput type="text" [formControl]="motivo" placeholder="Motivo de la ultima consulta">  </textarea>
         <mat-error *ngIf="form.get('motivo').invalid">Por favor, escribe el motivo de la ultima consulta</mat-error>
       </mat-form-field>
       <br>
       <mat-form-field>
-        <textarea matInput type="text" formControlName="cdcuantiempo" placeholder="Cada cuanto tiempo visita al estomatologo">  </textarea>
+        <textarea matInput type="text" [formControl]="cdcuantiempo" placeholder="Cada cuanto tiempo visita al estomatologo">  </textarea>
         <mat-error *ngIf="form.get('cdcuantiempo').invalid">Por favor, escribe cada que tiempo realiza la visita</mat-error>
       </mat-form-field>
       <br>
       <span>¿Le han tomado radiografias?</span>
       <br>
-        <mat-radio-group class="radioGroup" formControlName="radiografia">
+        <mat-radio-group class="radioGroup" [formControl]="radiografia">
               <mat-radio-button value="Si" (click)="enable('cuantasRadio')">Si</mat-radio-button>
               <mat-radio-button value="no"(click)="disable('cuantasRadio')">No</mat-radio-button>
         </mat-radio-group>
     <br>
     <mat-form-field>
-      <textarea matInput placeholder="Cuántas radiografias" formControlName="cuantasRadio" ></textarea>
+      <textarea matInput placeholder="Cuántas radiografias" [formControl]="cuantasRadio" ></textarea>
     </mat-form-field>
     <br>
     <mat-form-field>
-      <textarea matInput placeholder="¿Cuándo las tomaron?" formControlName="cuandoRadio" ></textarea>
+      <textarea matInput placeholder="¿Cuándo las tomaron?" [formControl]="cuandoRadio" ></textarea>
     </mat-form-field>
     <br>
 
       <span>¿Ha perdido organos dentarios?</span>
       <br>
-      <mat-radio-group class="radioGroup" formControlName="organos">
+      <mat-radio-group class="radioGroup" [formControl]="organos">
             <mat-radio-button value="Si" (click)="enable('siReemplazoOrganos')">Si</mat-radio-button>
             <mat-radio-button value="no"(click)="disable('siReemplazoOrganos')">No</mat-radio-button>
       </mat-radio-group>
       <br>
       <mat-form-field>
-        <textarea matInput placeholder="Los reemplazaron?" formControlName="siReemplazoOrganos" ></textarea>
+        <textarea matInput placeholder="Los reemplazaron?" [formControl]="siReemplazoOrganos" ></textarea>
  </mat-form-field>
  <br>
       <mat-form-field>
-        <textarea matInput placeholder="¿Por qué los reemplazaron?" formControlName="porqueOrganos" ></textarea>
+        <textarea matInput placeholder="¿Por qué los reemplazaron?" [formControl]="porqueOrganos" ></textarea>
  </mat-form-field>
  <br>
        <mat-form-field>
-              <textarea matInput placeholder="Cuántos organos" formControlName="cuantosOrganos" ></textarea>
+              <textarea matInput placeholder="Cuántos organos" [formControl]="cuantosOrganos" ></textarea>
        </mat-form-field>
-           
-            
-            <br> 
+
+
+            <br>
             <mat-form-field>
-              <textarea matInput placeholder="Cómo los reemplazaron?" formControlName="comoReemplazoOrganos" ></textarea>
+              <textarea matInput placeholder="Cómo los reemplazaron?" [formControl]="comoReemplazoOrganos" ></textarea>
        </mat-form-field>
-            <br> 
+            <br>
             <mat-form-field>
-              <textarea matInput placeholder="Cuándo los reemplazaron?" formControlName="cuandoReemplazoOrganos" ></textarea>
+         <textarea matInput placeholder="Cuándo los reemplazaron?" [formControl]="cuanReemplazoOrganos" ></textarea>
        </mat-form-field>
-            <br> 
-    
+            <br>
+
   <span>Experiencia con cirugias dentoalvelares</span>
   <mat-form-field>
   <mat-select placeholder="Algunas de las cirugias son:" [formControl]="cirugias" multiple>
@@ -77,12 +77,12 @@
 
   <span>¿Ha tenido problemas con la anestesia local?</span>
   <br>
-  <mat-radio-group class="radioGroup" formControlName="proanestesia">
+  <mat-radio-group class="radioGroup" [formControl]="proanestesia">
         <mat-radio-button value="Si" (click)="enable('cualesProblemas')">Si</mat-radio-button>
         <mat-radio-button value="no"(click)="disable('cualesProblemas')">No</mat-radio-button>
   </mat-radio-group>
    <mat-form-field>
-          <textarea matInput placeholder="De qué tipo" formControlName="cualesProblemas" ></textarea>
+          <textarea matInput placeholder="De qué tipo" [formControl]="cualesProblemas" ></textarea>
    </mat-form-field>
         <br>
 
@@ -93,52 +93,52 @@
         </mat-form-field>
         <br>
         <mat-form-field>
-                <textarea matInput type="text" formControlName="explique" placeholder="Explique brevemente">  </textarea>
+                <textarea matInput type="text" [formControl]="explique" placeholder="Explique brevemente">  </textarea>
                 <mat-error *ngIf="form.get('explique').invalid">Por favor, escribe de que tipo fueron los problemas</mat-error>
         </mat-form-field>
         <br>
         <span>¿Está bajo cuidado medico?</span>
         <br>
-          <mat-radio-group class="radioGroup" formControlName="cuidadomedico">
+          <mat-radio-group class="radioGroup" [formControl]="cuidadoMedico">
                 <mat-radio-button value="Si" (click)="enable('cuidadoHospital')">Si</mat-radio-button>
                 <mat-radio-button value="no"(click)="disable('cuidadoHospital')">No</mat-radio-button>
           </mat-radio-group>
           <br>
            <mat-form-field>
-                  <textarea matInput placeholder="Hospital o clínica" formControlName="cuidadoHospital" ></textarea>
+                  <textarea matInput placeholder="Hospital o clínica" [formControl]="cuidadoHospital" ></textarea>
                   <mat-error *ngIf="form.get('cuidadoHospital').invalid">Por favor, ingresa el hospital .</mat-error>
            </mat-form-field>
            <br>
            <mat-form-field>
-            <textarea matInput placeholder="Medico tratante" formControlName="cuidadoMedico" ></textarea>
+            <textarea matInput placeholder="Medico tratante" [formControl]="cuidadoMedico" ></textarea>
             <mat-error *ngIf="form.get('cuidadoMedico').invalid">Por favor, ingresa el médico .</mat-error>
      </mat-form-field>
      <br>
      <mat-form-field>
-      <textarea matInput placeholder="Número de historial" formControlName="cuidadoHistorial" ></textarea>
+      <textarea matInput placeholder="Número de historial" [formControl]="cuidadoHistorial" ></textarea>
       <mat-error *ngIf="form.get('cuidadoMedico').invalid">Por favor, ingresa el número de historial .</mat-error>
     </mat-form-field>
                 <br>
 
       <mat-form-field>
-        <textarea matInput formControlName="vistmedult" placeholder="¿Cuándo visito al médico por ultima vez?"></textarea>
+        <textarea matInput [formControl]="vistmedult" placeholder="¿Cuándo visito al médico por ultima vez?"></textarea>
         <mat-error *ngIf="form.get('vistmedult').invalid">Por favor, ingresa la fecha .</mat-error>
     </mat-form-field>
     <br>
     <mat-form-field>
-      <textarea matInput formControlName="paraque" placeholder="¿Para que?"></textarea>
+      <textarea matInput [formControl]="paraque" placeholder="¿Para que?"></textarea>
       <mat-error *ngIf="form.get('paraque').invalid">Por favor, excribe el porque .</mat-error>
   </mat-form-field>
   <br>
       <span>¿Está recibiendo drogas?</span>
       <br>
-        <mat-radio-group class="radioGroup" formControlName="drogas">
+        <mat-radio-group class="radioGroup" [formControl]="drogas">
               <mat-radio-button value="Si" (click)="enable('cualesDrogas')">Si</mat-radio-button>
               <mat-radio-button value="no"(click)="disable('cualesDrogas')">No</mat-radio-button>
         </mat-radio-group>
         <br>
          <mat-form-field>
-                <textarea matInput placeholder="Cuáles" formControlName="cualesDrogas" ></textarea>
+                <textarea matInput placeholder="Cuáles" [formControl]="cualesDrogas" ></textarea>
          </mat-form-field>
               <br>
 
@@ -149,7 +149,7 @@
                 </mat-select>
               </mat-form-field>
               <br>
-      
+
       <span>¿Ha presentado reacciones alergicas?</span>
        <mat-form-field>
       <mat-select placeholder="Tipos de reacciones alergicas:" [formControl]="recalergicas" multiple>
@@ -160,13 +160,13 @@
      <br>
     <span>¿Necesario hacer consulta médica?</span>
     <br>
-      <mat-radio-group class="radioGroup" formControlName="consmedica">
+      <mat-radio-group class="radioGroup" [formControl]="consmedica">
             <mat-radio-button value="Si" (click)="enable('consultaPorque')">Si</mat-radio-button>
             <mat-radio-button value="no"(click)="disable('consultaPorque')">No</mat-radio-button>
       </mat-radio-group>
       <br>
        <mat-form-field>
-              <textarea matInput placeholder="¿Por qué es necesario?" formControlName="consultaPorque" ></textarea>
+              <textarea matInput placeholder="¿Por qué es necesario?" [formControl]="consultaPorque" ></textarea>
        </mat-form-field>
             <br>
 
@@ -189,7 +189,7 @@
       </mat-form-field>
       <br>
       <mat-form-field>
-          <textarea matInput formControlName="exploracionradiografica" placeholder="Exploracion radiografica"></textarea>
+          <textarea matInput [formControl]="exploracionradiografica" placeholder="Exploracion radiografica"></textarea>
           <mat-error *ngIf="form.get('exploracionradiografica').invalid">Por favor, ingresa la exploracion .</mat-error>
       </mat-form-field>
       <br><br>

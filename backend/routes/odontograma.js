@@ -34,7 +34,7 @@ router.post("", (req, res, next) => {
     odontograma.save()
     .then(createdIdent => {
       res.status(201).json({
-        message: "Odontograma added successfully",
+        message: "Odontograma añadido exitosamente",
       //  id: createdIdent._id
       });
     })
@@ -57,7 +57,7 @@ router.get("/:id", (req, res, next) => {
       if (explo) {
         res.status(200).json(explo);
       } else {
-        res.status(404).json({ message: "Odontograma!" });
+        res.status(404).json({ message: "Odontograma no encontrado!" });
       }
     })
     .catch(error => {

@@ -86,11 +86,11 @@ remov38	:req.body.	remov38	,
     rehab.save()
     .then(createdIdent => {
       res.status(201).json({
-        message: "Rehabilitación added successfully",
-      //  id: createdIdent._id
+        message: "Rehabilitación añadida exitosamente",
       });
     })
     .catch((err) => {
+      console.log(err);
       res.status(500).json({
         error: err
       });
@@ -111,7 +111,7 @@ router.get("/:id", (req, res, next) => {
     })
     .catch(error => {
       res.status(500).json({
-        message: "No se pudo recuperar Ident!"
+        message: "No se pudo recuperar Rehabilitacion!"
       });
     });
 });

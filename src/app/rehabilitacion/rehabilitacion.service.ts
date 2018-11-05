@@ -20,10 +20,10 @@ export class RehaService {
       moEst: string,
       descripcion: string,
       diagO: string,
-      exTem: string, 
+      exTem: string,
       otrasEx: string,
       examenPara: string,
-      analisisRadio: string, 
+      analisisRadio: string,
       trataProte: string,
       fijo11:string,
 fijo12:string,
@@ -101,7 +101,7 @@ paciente: string,
         exTem: exTem,
         examenPara: examenPara,
         otrasEx: otrasEx,
-        analisisRadio: analisisRadio, 
+        analisisRadio: analisisRadio,
         trataProte: trataProte,
         fijo11	:	fijo11	,
 fijo12	:	fijo12	,
@@ -172,9 +172,9 @@ paciente: paciente
     };
     console.log(registrarReha);
       this.http
-        .post<{ _id: string }>('http://localhost:3000/api/reha', registrarReha)
+        .post<{ message: string }>('http://localhost:3000/api/reha', registrarReha)
         .subscribe(responseData => {
-          this.id = responseData._id;
+          this.dialog.open(CompletoComponent, {data: {message:  responseData.message}});
         });
     }
 
@@ -417,7 +417,7 @@ remov38	:string,
         remov35	:	remov35	,
         remov36	:	remov36	,
         remov37	:	remov37	,
-        remov38	:	remov38	,        
+        remov38	:	remov38	,
         paciente: paciente
         };
       this.http
@@ -429,4 +429,3 @@ remov38	:string,
 
   }
 
- 

@@ -66,9 +66,9 @@ export class InterService {
     };
     console.log(registrarInter);
     this.http
-      .post<{ _id: string }>('http://localhost:3000/api/inter', registrarInter)
+      .post<{ message: string }>('http://localhost:3000/api/inter', registrarInter)
       .subscribe(responseData => {
-        this.id = responseData._id;
+        this.dialog.open(CompletoComponent, {data: {message:  responseData.message}});
       });
   }
 
@@ -97,7 +97,7 @@ export class InterService {
       diabetes	:string;
       cuandoDiabetes	:string;
       glucosa	:string;
-  aparatoDigestivo	:string;  
+  aparatoDigestivo	:string;
       paciente: string;
     }>('http://localhost:3000/api/inter/' + id);
   }
@@ -151,7 +151,7 @@ export class InterService {
       diabetes	:	    diabetes	,
       cuandoDiabetes	:	    cuandoDiabetes	,
       glucosa	:	    glucosa	,
-  aparatoDigestivo	:	aparatoDigestivo	,  
+  aparatoDigestivo	:	aparatoDigestivo	,
       paciente: paciente
       };
     this.http

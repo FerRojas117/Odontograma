@@ -71,6 +71,6 @@ app.use("/api/estu", estSocioEc);
 app.use("/api/hojadeTrat", hojaTrata);
 app.use("/api/inter", interrogatorio);
 app.use("/api/plandeTratamiento", odontograma);
-app.use("/api/rehabilitacion", rehabilitacion);
+app.use("/api/reha", rehabilitacion);
 
 module.exports = app;

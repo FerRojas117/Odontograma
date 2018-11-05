@@ -95,9 +95,9 @@ export class DiagnosticoService {
     };
     console.log(registrarDiagnostico);
     this.http
-      .post<{ _id: string }>('http://localhost:3000/api/diagnostico', registrarDiagnostico)
+      .post<{ message: string }>('http://localhost:3000/api/diagnostico', registrarDiagnostico)
       .subscribe(responseData => {
-        this.id = responseData._id;
+        this.dialog.open(CompletoComponent, {data: {message:  responseData.message}});
       });
   }
   // ROUTER GET
@@ -140,7 +140,7 @@ export class DiagnosticoService {
       vitalreversible:	string;
       vitalirreversible:	string;
       novitalaguda:	string;
-      novitalcronica:	string;      
+      novitalcronica:	string;
       paciente: string;
     }>('http://localhost:3000/api/diagnostico/' + id);
   }

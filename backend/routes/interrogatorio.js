@@ -34,11 +34,12 @@ aparatoDigestivo	:req.body.	aparatoDigestivo	,
     inter.save()
     .then(createdIdent => {
       res.status(201).json({
-        message: "Interrogatorio added successfully",
+        message: "Interrogatorio  añadido exitosamente",
       //  id: createdIdent._id
       });
     })
     .catch((err) => {
+      console.log(err);
       res.status(500).json({
         error: err
       });
@@ -92,7 +93,7 @@ router.put("/:id",
       diabetes	:req.body.	    diabetes	,
       cuandoDiabetes	:req.body.	    cuandoDiabetes	,
       glucosa	:req.body.	    glucosa	,
-  aparatoDigestivo	:req.body.	aparatoDigestivo	,  
+  aparatoDigestivo	:req.body.	aparatoDigestivo	,
       paciente: req.body.paciente
     });
     inter.updateOne({ _id: req.params.id}, exp)
