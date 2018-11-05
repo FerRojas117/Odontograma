@@ -27,13 +27,13 @@ export class AntgeneralesComponent implements OnInit, OnDestroy {
 
   ginobs = new FormControl();
   ginobsList: string[] = [
-    'Menarca', 'Ritmo menstrual', 'Edad de inicio de vida sexual', 
-    'Fecha de ultima regla', 'Embarazos', 'Partos', 'Fecha del ultimo parto', 
-    'Cesáreas', 'Abortos', 'Hijos con bajo peso al nacer', 'Hijos macrósomicos', 
-    'Edad de los hijos vivos', 'Hijos con bajo peso al nacer', 'Tipos de método de planificación familiar', 
+    'Menarca', 'Ritmo menstrual', 'Edad de inicio de vida sexual',
+    'Fecha de ultima regla', 'Embarazos', 'Partos', 'Fecha del ultimo parto',
+    'Cesáreas', 'Abortos', 'Hijos con bajo peso al nacer', 'Hijos macrósomicos',
+    'Edad de los hijos vivos', 'Hijos con bajo peso al nacer', 'Tipos de método de planificación familiar',
     'Tiempo de uso del metodo'];
-    
-    
+
+
   constructor(
     public antgeService: AntGService,
     public route: ActivatedRoute, // COPIAR
@@ -122,7 +122,7 @@ export class AntgeneralesComponent implements OnInit, OnDestroy {
             cesareas  	: postData.	cesareas  	,
             vidaSex 	: postData.	vidaSex 	,
             abortos 	: postData.	abortos 	,
-            anthereditarios	: postData.	anthereditarios	,            
+            anthereditarios	: postData.	anthereditarios	,
             paciente: postData.paciente,
 
           };
@@ -165,35 +165,7 @@ export class AntgeneralesComponent implements OnInit, OnDestroy {
 
   addAntG() {
     console.log(this.idsId);
-    this.antgeService.addAntG(
-      this.form.value.anthereditarios,
-      this.form.value.religion,
-      this.form.value.tiprelsex,
-      this.form.value.parejas,
-      this.form.value.calalim,
-      this.form.value.higpers,
-      this.form.value.sedentarismo,
-      this.form.value.calhabit,
-      this.form.value.perspat,
-      this.form.value.ginecoobst,
-      this.form.value.edades,
-      this.form.value.planifami,
-      this.form.value.  partos  ,
-this.form.value.  fechaParto  ,
-this.form.value.  planifamitiem ,
-this.form.value.  cuantosParto  ,
-this.form.value.  menarca ,
-this.form.value.  embarazos ,
-this.form.value.  bajoPeso  ,
-this.form.value.  edadHijos ,
-this.form.value.  hijosMacro  ,
-this.form.value.  ritmo ,
-this.form.value.  regla ,
-this.form.value.  cesareas  ,
-this.form.value.  vidaSex ,
-this.form.value.  abortos ,
-this.idsId
-    );
+
     if (this.form.invalid) {
       return;
     }

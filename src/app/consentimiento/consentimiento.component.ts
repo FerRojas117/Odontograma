@@ -79,15 +79,7 @@ export class ConsentimientoComponent implements OnInit, OnDestroy {
   }
   addConsen() {
     console.log(this.idsId);
-    this.consenService.addConsen(
-      this.form.value.fechaConsen,
-      this.form.value.pacienteh,
-      this.form.value.alumno,
-      this.form.value.odontologo,
-      this.form.value.nombre1,
-      this.idsId
-    );
-    
+
     if (this.form.invalid) {
       return;
     }

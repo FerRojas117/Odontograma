@@ -1,19 +1,1678 @@
 
+
+
+  <mat-card class="cardLogin">
+
+
+          <mat-grid-list cols="1" rowHeight="50px">
+        <mat-grid-tile>
+          <button mat-raised-button class="botonRojo" (click)="changeRed()">Rojo</button>
+          <button mat-raised-button color="primary" (click)="changeBlue()">Azul</button>
+        </mat-grid-tile>
+      </mat-grid-list>
+         <!--   0 - 6   -->
+         <mat-grid-list cols="7" rowHeight="50px">
+            <mat-grid-tile> 1 </mat-grid-tile>
+            <mat-grid-tile> 2 </mat-grid-tile>
+            <mat-grid-tile> 3 </mat-grid-tile>
+            <mat-grid-tile> 4 </mat-grid-tile>
+            <mat-grid-tile> 5 </mat-grid-tile>
+            <mat-grid-tile> 6 </mat-grid-tile>
+            <mat-grid-tile> 7 </mat-grid-tile>
+           </mat-grid-list>
+
+
+
+           <mat-grid-list cols="1" rowHeight="148px">
+          <mat-grid-tile>
+
+              <svg class="svgRectangulo">
+                  <!-- Centro -->
+                  <a (click)="checkRed(0, 0)"><polygon [style.fill]="valorC[0][0]" points="15 15 60 15 60 60 15 60" /></a>
+                  <!-- trapecio superior -->
+                  <a (click)="checkRed(0, 1)"><polygon [style.fill]="valorC[0][1]" points="0 0 15 15 60 15 75 0" /></a>
+                  <!-- trapecio Izquierda -->
+                  <a (click)="checkRed(0, 2)"><polygon [style.fill]="valorC[0][2]" points="0 0 15 15 15 60 0 75" /></a>
+                 <!-- trapecio derecho -->
+                  <a (click)="checkRed(0, 3)"><polygon [style.fill]="valorC[0][3]" points="75 0 60 15 60 15 60 60 75 75" /></a>
+                   <!-- trapecio inferior -->
+                  <a (click)="checkRed(0, 4)"><polygon [style.fill]="valorC[0][4]" points="0 75 15 60 60 60 75 75" /></a>
+                </svg>
+
+                <svg class="svgRectangulo">
+                  <!-- Centro -->
+                  <a (click)="checkRed(1, 0)"><polygon [style.fill]="valorC[1][0]" points="15 15 60 15 60 60 15 60" /></a>
+                  <!-- trapecio superior -->
+                  <a (click)="checkRed(1, 1)"><polygon [style.fill]="valorC[1][1]" points="0 0 15 15 60 15 75 0" /></a>
+                  <!-- trapecio Izquierda -->
+                  <a (click)="checkRed(1, 2)"><polygon [style.fill]="valorC[1][2]" points="0 0 15 15 15 60 0 75" /></a>
+                 <!-- trapecio derecho -->
+                  <a (click)="checkRed(1, 3)"><polygon [style.fill]="valorC[1][3]" points="75 0 60 15 60 15 60 60 75 75" /></a>
+                   <!-- trapecio inferior -->
+                  <a (click)="checkRed(1, 4)"><polygon [style.fill]="valorC[1][4]" points="0 75 15 60 60 60 75 75" /></a>
+                </svg>
+
+                <svg class="svgRectangulo">
+                  <!-- Centro -->
+                  <a (click)="checkRed(2, 0)"><polygon [style.fill]="valorC[2][0]" points="15 15 60 15 60 60 15 60" /></a>
+                  <!-- trapecio superior -->
+                  <a (click)="checkRed(2, 1)"><polygon [style.fill]="valorC[2][1]" points="0 0 15 15 60 15 75 0" /></a>
+                  <!-- trapecio Izquierda -->
+                  <a (click)="checkRed(2, 2)"><polygon [style.fill]="valorC[2][2]" points="0 0 15 15 15 60 0 75" /></a>
+                 <!-- trapecio derecho -->
+                  <a (click)="checkRed(2, 3)"><polygon [style.fill]="valorC[2][3]" points="75 0 60 15 60 15 60 60 75 75" /></a>
+                   <!-- trapecio inferior -->
+                  <a (click)="checkRed(2, 4)"><polygon [style.fill]="valorC[2][4]" points="0 75 15 60 60 60 75 75" /></a>
+                </svg>
+
+                <svg class="svgRectangulo">
+                  <!-- Centro -->
+                  <a (click)="checkRed(3, 0)"><polygon [style.fill]="valorC[3][0]" points="15 15 60 15 60 60 15 60" /></a>
+                  <!-- trapecio superior -->
+                  <a (click)="checkRed(3, 1)"><polygon [style.fill]="valorC[3][1]" points="0 0 15 15 60 15 75 0" /></a>
+                  <!-- trapecio Izquierda -->
+                  <a (click)="checkRed(3, 2)"><polygon [style.fill]="valorC[3][2]" points="0 0 15 15 15 60 0 75" /></a>
+                 <!-- trapecio derecho -->
+                  <a (click)="checkRed(3, 3)"><polygon [style.fill]="valorC[3][3]" points="75 0 60 15 60 15 60 60 75 75" /></a>
+                   <!-- trapecio inferior -->
+                  <a (click)="checkRed(3, 4)"><polygon [style.fill]="valorC[3][4]" points="0 75 15 60 60 60 75 75" /></a>
+                </svg>
+
+                <svg class="svgRectangulo">
+                  <!-- Centro -->
+                  <a (click)="checkRed(4, 0)"><polygon [style.fill]="valorC[4][0]" points="15 15 60 15 60 60 15 60" /></a>
+                  <!-- trapecio superior -->
+                  <a (click)="checkRed(4, 1)"><polygon [style.fill]="valorC[4][1]" points="0 0 15 15 60 15 75 0" /></a>
+                  <!-- trapecio Izquierda -->
+                  <a (click)="checkRed(4, 2)"><polygon [style.fill]="valorC[4][2]" points="0 0 15 15 15 60 0 75" /></a>
+                 <!-- trapecio derecho -->
+                  <a (click)="checkRed(4, 3)"><polygon [style.fill]="valorC[4][3]" points="75 0 60 15 60 15 60 60 75 75" /></a>
+                   <!-- trapecio inferior -->
+                  <a (click)="checkRed(4, 4)"><polygon [style.fill]="valorC[4][4]" points="0 75 15 60 60 60 75 75" /></a>
+                </svg>
+
+                <svg class="svgRectangulo">
+                  <!-- Centro -->
+                  <a (click)="checkRed(5, 0)"><polygon [style.fill]="valorC[5][0]" points="15 15 60 15 60 60 15 60" /></a>
+                  <!-- trapecio superior -->
+                  <a (click)="checkRed(5, 1)"><polygon [style.fill]="valorC[5][1]" points="0 0 15 15 60 15 75 0" /></a>
+                  <!-- trapecio Izquierda -->
+                  <a (click)="checkRed(5, 2)"><polygon [style.fill]="valorC[5][2]" points="0 0 15 15 15 60 0 75" /></a>
+                 <!-- trapecio derecho -->
+                  <a (click)="checkRed(5, 3)"><polygon [style.fill]="valorC[5][3]" points="75 0 60 15 60 15 60 60 75 75" /></a>
+                   <!-- trapecio inferior -->
+                  <a (click)="checkRed(5, 4)"><polygon [style.fill]="valorC[5][4]" points="0 75 15 60 60 60 75 75" /></a>
+                </svg>
+
+                <svg class="svgRectangulo">
+                    <!-- Centro -->
+                    <a (click)="checkRed(6, 0)"><polygon [style.fill]="valorC[6][0]" points="15 15 60 15 60 60 15 60" /></a>
+                    <!-- trapecio superior -->
+                    <a (click)="checkRed(6, 1)"><polygon [style.fill]="valorC[6][1]" points="0 0 15 15 60 15 75 0" /></a>
+                    <!-- trapecio Izquierda -->
+                    <a (click)="checkRed(6, 2)"><polygon [style.fill]="valorC[6][2]" points="0 0 15 15 15 60 0 75" /></a>
+                   <!-- trapecio derecho -->
+                    <a (click)="checkRed(6, 3)"><polygon [style.fill]="valorC[6][3]" points="75 0 60 15 60 15 60 60 75 75" /></a>
+                     <!-- trapecio inferior -->
+                    <a (click)="checkRed(6, 4)"><polygon [style.fill]="valorC[6][4]" points="0 75 15 60 60 60 75 75" /></a>
+                  </svg>
+
+          </mat-grid-tile>
+      </mat-grid-list>
+ <!--   14 - 18   -->
+
+ <mat-grid-list cols="5" rowHeight="50px">
+
+    <mat-grid-tile> 15 </mat-grid-tile>
+    <mat-grid-tile> 16 </mat-grid-tile>
+    <mat-grid-tile> 17 </mat-grid-tile>
+    <mat-grid-tile> 18 </mat-grid-tile>
+    <mat-grid-tile> 19 </mat-grid-tile>
+ </mat-grid-list>
+
+ <mat-grid-list cols="1" rowHeight="148px">
+ <mat-grid-tile>
+
+
+
+    <svg class="svgRectangulo">
+      <!-- Centro -->
+      <a (click)="checkRed(14, 0)"><polygon [style.fill]="valorC[14][0]" points="15 15 60 15 60 60 15 60" /></a>
+      <!-- trapecio superior -->
+      <a (click)="checkRed(14, 1)"><polygon [style.fill]="valorC[14][1]" points="0 0 15 15 60 15 75 0" /></a>
+      <!-- trapecio Izquierda -->
+      <a (click)="checkRed(14, 2)"><polygon [style.fill]="valorC[14][2]" points="0 0 15 15 15 60 0 75" /></a>
+     <!-- trapecio derecho -->
+      <a (click)="checkRed(14, 3)"><polygon [style.fill]="valorC[14][3]" points="75 0 60 15 60 15 60 60 75 75" /></a>
+       <!-- trapecio inferior -->
+      <a (click)="checkRed(14, 4)"><polygon [style.fill]="valorC[14][4]" points="0 75 15 60 60 60 75 75" /></a>
+    </svg>
+
+    <svg class="svgRectangulo">
+      <!-- Centro -->
+      <a (click)="checkRed(15, 0)"><polygon [style.fill]="valorC[15][0]" points="15 15 60 15 60 60 15 60" /></a>
+      <!-- trapecio superior -->
+      <a (click)="checkRed(15, 1)"><polygon [style.fill]="valorC[15][1]" points="0 0 15 15 60 15 75 0" /></a>
+      <!-- trapecio Izquierda -->
+      <a (click)="checkRed(15, 2)"><polygon [style.fill]="valorC[15][2]" points="0 0 15 15 15 60 0 75" /></a>
+     <!-- trapecio derecho -->
+      <a (click)="checkRed(15, 3)"><polygon [style.fill]="valorC[15][3]" points="75 0 60 15 60 15 60 60 75 75" /></a>
+       <!-- trapecio inferior -->
+      <a (click)="checkRed(15, 4)"><polygon [style.fill]="valorC[15][4]" points="0 75 15 60 60 60 75 75" /></a>
+    </svg>
+
+    <svg class="svgRectangulo">
+      <!-- Centro -->
+      <a (click)="checkRed(16, 0)"><polygon [style.fill]="valorC[16][0]" points="15 15 60 15 60 60 15 60" /></a>
+      <!-- trapecio superior -->
+      <a (click)="checkRed(16, 1)"><polygon [style.fill]="valorC[16][1]" points="0 0 15 15 60 15 75 0" /></a>
+      <!-- trapecio Izquierda -->
+      <a (click)="checkRed(16, 2)"><polygon [style.fill]="valorC[16][2]" points="0 0 15 15 15 60 0 75" /></a>
+     <!-- trapecio derecho -->
+      <a (click)="checkRed(16, 3)"><polygon [style.fill]="valorC[16][3]" points="75 0 60 15 60 15 60 60 75 75" /></a>
+       <!-- trapecio inferior -->
+      <a (click)="checkRed(16, 4)"><polygon [style.fill]="valorC[16][4]" points="0 75 15 60 60 60 75 75" /></a>
+    </svg>
+
+    <svg class="svgRectangulo">
+      <!-- Centro -->
+      <a (click)="checkRed(17, 0)"><polygon [style.fill]="valorC[17][0]" points="15 15 60 15 60 60 15 60" /></a>
+      <!-- trapecio superior -->
+      <a (click)="checkRed(17, 1)"><polygon [style.fill]="valorC[17][1]" points="0 0 15 15 60 15 75 0" /></a>
+      <!-- trapecio Izquierda -->
+      <a (click)="checkRed(17, 2)"><polygon [style.fill]="valorC[17][2]" points="0 0 15 15 15 60 0 75" /></a>
+     <!-- trapecio derecho -->
+      <a (click)="checkRed(17, 3)"><polygon [style.fill]="valorC[17][3]" points="75 0 60 15 60 15 60 60 75 75" /></a>
+       <!-- trapecio inferior -->
+      <a (click)="checkRed(17, 4)"><polygon [style.fill]="valorC[17][4]" points="0 75 15 60 60 60 75 75" /></a>
+    </svg>
+
+    <svg class="svgRectangulo">
+        <!-- Centro -->
+        <a (click)="checkRed(18, 0)"><polygon [style.fill]="valorC[18][0]" points="15 15 60 15 60 60 15 60" /></a>
+        <!-- trapecio superior -->
+        <a (click)="checkRed(18, 1)"><polygon [style.fill]="valorC[18][1]" points="0 0 15 15 60 15 75 0" /></a>
+        <!-- trapecio Izquierda -->
+        <a (click)="checkRed(18, 2)"><polygon [style.fill]="valorC[18][2]" points="0 0 15 15 15 60 0 75" /></a>
+       <!-- trapecio derecho -->
+        <a (click)="checkRed(18, 3)"><polygon [style.fill]="valorC[18][3]" points="75 0 60 15 60 15 60 60 75 75" /></a>
+         <!-- trapecio inferior -->
+        <a (click)="checkRed(18, 4)"><polygon [style.fill]="valorC[18][4]" points="0 75 15 60 60 60 75 75" /></a>
+      </svg>
+
+
+          </mat-grid-tile>
+        </mat-grid-list>
+
+
+        <mat-grid-list cols="1" rowHeight="50px">
+        <mat-grid-tile>
+              <mat-divider></mat-divider>
+        </mat-grid-tile>
+        </mat-grid-list>
+
+
+        <mat-grid-list cols="1" rowHeight="50px">
+        <mat-grid-tile>
+            <button mat-raised-button class="botonRojo" (click)="changeRed()">Rojo</button>
+            <button mat-raised-button color="primary" (click)="changeBlue()">Azul</button>
+          </mat-grid-tile>
+
+          </mat-grid-list>
+
+
+          <mat-grid-list cols="7" rowHeight="50px">
+
+              <mat-grid-tile> 8 </mat-grid-tile>
+              <mat-grid-tile> 9 </mat-grid-tile>
+              <mat-grid-tile> 10 </mat-grid-tile>
+              <mat-grid-tile> 11 </mat-grid-tile>
+              <mat-grid-tile> 12 </mat-grid-tile>
+              <mat-grid-tile> 13 </mat-grid-tile>
+              <mat-grid-tile> 14 </mat-grid-tile>
+           </mat-grid-list>
+    <!--   7 - 13  -->
+
+    <mat-grid-list cols="1" rowHeight="148px">
+          <mat-grid-tile>
+
+
+                <svg class="svgRectangulo">
+                  <!-- Centro -->
+                  <a (click)="checkRed(7, 0)"><polygon [style.fill]="valorC[7][0]" points="15 15 60 15 60 60 15 60" /></a>
+                  <!-- trapecio superior -->
+                  <a (click)="checkRed(7, 1)"><polygon [style.fill]="valorC[7][1]" points="0 0 15 15 60 15 75 0" /></a>
+                  <!-- trapecio Izquierda -->
+                  <a (click)="checkRed(7, 2)"><polygon [style.fill]="valorC[7][2]" points="0 0 15 15 15 60 0 75" /></a>
+                 <!-- trapecio derecho -->
+                  <a (click)="checkRed(7, 3)"><polygon [style.fill]="valorC[7][3]" points="75 0 60 15 60 15 60 60 75 75" /></a>
+                   <!-- trapecio inferior -->
+                  <a (click)="checkRed(7, 4)"><polygon [style.fill]="valorC[7][4]" points="0 75 15 60 60 60 75 75" /></a>
+                </svg>
+
+                <svg class="svgRectangulo">
+                  <!-- Centro -->
+                  <a (click)="checkRed(8, 0)"><polygon [style.fill]="valorC[8][0]" points="15 15 60 15 60 60 15 60" /></a>
+                  <!-- trapecio superior -->
+                  <a (click)="checkRed(8, 1)"><polygon [style.fill]="valorC[8][1]" points="0 0 15 15 60 15 75 0" /></a>
+                  <!-- trapecio Izquierda -->
+                  <a (click)="checkRed(8, 2)"><polygon [style.fill]="valorC[8][2]" points="0 0 15 15 15 60 0 75" /></a>
+                 <!-- trapecio derecho -->
+                  <a (click)="checkRed(8, 3)"><polygon [style.fill]="valorC[8][3]" points="75 0 60 15 60 15 60 60 75 75" /></a>
+                   <!-- trapecio inferior -->
+                  <a (click)="checkRed(8, 4)"><polygon [style.fill]="valorC[8][4]" points="0 75 15 60 60 60 75 75" /></a>
+                </svg>
+
+                <svg class="svgRectangulo">
+                  <!-- Centro -->
+                  <a (click)="checkRed(9, 0)"><polygon [style.fill]="valorC[9][0]" points="15 15 60 15 60 60 15 60" /></a>
+                  <!-- trapecio superior -->
+                  <a (click)="checkRed(9, 1)"><polygon [style.fill]="valorC[9][1]" points="0 0 15 15 60 15 75 0" /></a>
+                  <!-- trapecio Izquierda -->
+                  <a (click)="checkRed(9, 2)"><polygon [style.fill]="valorC[9][2]" points="0 0 15 15 15 60 0 75" /></a>
+                 <!-- trapecio derecho -->
+                  <a (click)="checkRed(9, 3)"><polygon [style.fill]="valorC[9][3]" points="75 0 60 15 60 15 60 60 75 75" /></a>
+                   <!-- trapecio inferior -->
+                  <a (click)="checkRed(9, 4)"><polygon [style.fill]="valorC[9][4]" points="0 75 15 60 60 60 75 75" /></a>
+                </svg>
+
+                <svg class="svgRectangulo">
+                  <!-- Centro -->
+                  <a (click)="checkRed(10, 0)"><polygon [style.fill]="valorC[10][0]" points="15 15 60 15 60 60 15 60" /></a>
+                  <!-- trapecio superior -->
+                  <a (click)="checkRed(10, 1)"><polygon [style.fill]="valorC[10][1]" points="0 0 15 15 60 15 75 0" /></a>
+                  <!-- trapecio Izquierda -->
+                  <a (click)="checkRed(10, 2)"><polygon [style.fill]="valorC[10][2]" points="0 0 15 15 15 60 0 75" /></a>
+                 <!-- trapecio derecho -->
+                  <a (click)="checkRed(10, 3)"><polygon [style.fill]="valorC[10][3]" points="75 0 60 15 60 15 60 60 75 75" /></a>
+                   <!-- trapecio inferior -->
+                  <a (click)="checkRed(10, 4)"><polygon [style.fill]="valorC[10][4]" points="0 75 15 60 60 60 75 75" /></a>
+                </svg>
+
+                <svg class="svgRectangulo">
+                  <!-- Centro -->
+                  <a (click)="checkRed(11, 0)"><polygon [style.fill]="valorC[11][0]" points="15 15 60 15 60 60 15 60" /></a>
+                  <!-- trapecio superior -->
+                  <a (click)="checkRed(11, 1)"><polygon [style.fill]="valorC[11][1]" points="0 0 15 15 60 15 75 0" /></a>
+                  <!-- trapecio Izquierda -->
+                  <a (click)="checkRed(11, 2)"><polygon [style.fill]="valorC[11][2]" points="0 0 15 15 15 60 0 75" /></a>
+                 <!-- trapecio derecho -->
+                  <a (click)="checkRed(11, 3)"><polygon [style.fill]="valorC[11][3]" points="75 0 60 15 60 15 60 60 75 75" /></a>
+                   <!-- trapecio inferior -->
+                  <a (click)="checkRed(11, 4)"><polygon [style.fill]="valorC[11][4]" points="0 75 15 60 60 60 75 75" /></a>
+                </svg>
+
+                <svg class="svgRectangulo">
+                    <!-- Centro -->
+                    <a (click)="checkRed(12, 0)"><polygon [style.fill]="valorC[12][0]" points="15 15 60 15 60 60 15 60" /></a>
+                    <!-- trapecio superior -->
+                    <a (click)="checkRed(12, 1)"><polygon [style.fill]="valorC[12][1]" points="0 0 15 15 60 15 75 0" /></a>
+                    <!-- trapecio Izquierda -->
+                    <a (click)="checkRed(12, 2)"><polygon [style.fill]="valorC[12][2]" points="0 0 15 15 15 60 0 75" /></a>
+                   <!-- trapecio derecho -->
+                    <a (click)="checkRed(12, 3)"><polygon [style.fill]="valorC[12][3]" points="75 0 60 15 60 15 60 60 75 75" /></a>
+                     <!-- trapecio inferior -->
+                    <a (click)="checkRed(12, 4)"><polygon [style.fill]="valorC[12][4]" points="0 75 15 60 60 60 75 75" /></a>
+                  </svg>
+
+                  <svg class="svgRectangulo">
+                    <!-- Centro -->
+                    <a (click)="checkRed(13, 0)"><polygon [style.fill]="valorC[13][0]" points="15 15 60 15 60 60 15 60" /></a>
+                    <!-- trapecio superior -->
+                    <a (click)="checkRed(13, 1)"><polygon [style.fill]="valorC[13][1]" points="0 0 15 15 60 15 75 0" /></a>
+                    <!-- trapecio Izquierda -->
+                    <a (click)="checkRed(13, 2)"><polygon [style.fill]="valorC[13][2]" points="0 0 15 15 15 60 0 75" /></a>
+                   <!-- trapecio derecho -->
+                    <a (click)="checkRed(13, 3)"><polygon [style.fill]="valorC[13][3]" points="75 0 60 15 60 15 60 60 75 75" /></a>
+                     <!-- trapecio inferior -->
+                    <a (click)="checkRed(13, 4)"><polygon [style.fill]="valorC[13][4]" points="0 75 15 60 60 60 75 75" /></a>
+                  </svg>
+          </mat-grid-tile>
+
+</mat-grid-list>
+
+<mat-grid-list cols="5" rowHeight="50px">
+
+    <mat-grid-tile> 20 </mat-grid-tile>
+    <mat-grid-tile> 21 </mat-grid-tile>
+    <mat-grid-tile> 22 </mat-grid-tile>
+    <mat-grid-tile> 23 </mat-grid-tile>
+    <mat-grid-tile> 24 </mat-grid-tile>
+ </mat-grid-list>
+
+          <!--   19 - 23   -->
+          <mat-grid-list cols="1" rowHeight="148px">
+          <mat-grid-tile>
+
+
+    <svg class="svgRectangulo">
+      <!-- Centro -->
+      <a (click)="checkRed(19, 0)"><polygon [style.fill]="valorC[19][0]" points="15 15 60 15 60 60 15 60" /></a>
+      <!-- trapecio superior -->
+      <a (click)="checkRed(19, 1)"><polygon [style.fill]="valorC[19][1]" points="0 0 15 15 60 15 75 0" /></a>
+      <!-- trapecio Izquierda -->
+      <a (click)="checkRed(19, 2)"><polygon [style.fill]="valorC[19][2]" points="0 0 15 15 15 60 0 75" /></a>
+     <!-- trapecio derecho -->
+      <a (click)="checkRed(19, 3)"><polygon [style.fill]="valorC[19][3]" points="75 0 60 15 60 15 60 60 75 75" /></a>
+       <!-- trapecio inferior -->
+      <a (click)="checkRed(19, 4)"><polygon [style.fill]="valorC[19][4]" points="0 75 15 60 60 60 75 75" /></a>
+    </svg>
+
+    <svg class="svgRectangulo">
+      <!-- Centro -->
+      <a (click)="checkRed(20, 0)"><polygon [style.fill]="valorC[20][0]" points="15 15 60 15 60 60 15 60" /></a>
+      <!-- trapecio superior -->
+      <a (click)="checkRed(20, 1)"><polygon [style.fill]="valorC[20][1]" points="0 0 15 15 60 15 75 0" /></a>
+      <!-- trapecio Izquierda -->
+      <a (click)="checkRed(20, 2)"><polygon [style.fill]="valorC[20][2]" points="0 0 15 15 15 60 0 75" /></a>
+     <!-- trapecio derecho -->
+      <a (click)="checkRed(20, 3)"><polygon [style.fill]="valorC[20][3]" points="75 0 60 15 60 15 60 60 75 75" /></a>
+       <!-- trapecio inferior -->
+      <a (click)="checkRed(20, 4)"><polygon [style.fill]="valorC[20][4]" points="0 75 15 60 60 60 75 75" /></a>
+    </svg>
+
+    <svg class="svgRectangulo">
+      <!-- Centro -->
+      <a (click)="checkRed(21, 0)"><polygon [style.fill]="valorC[21][0]" points="15 15 60 15 60 60 15 60" /></a>
+      <!-- trapecio superior -->
+      <a (click)="checkRed(21, 1)"><polygon [style.fill]="valorC[21][1]" points="0 0 15 15 60 15 75 0" /></a>
+      <!-- trapecio Izquierda -->
+      <a (click)="checkRed(21, 2)"><polygon [style.fill]="valorC[21][2]" points="0 0 15 15 15 60 0 75" /></a>
+     <!-- trapecio derecho -->
+      <a (click)="checkRed(21, 3)"><polygon [style.fill]="valorC[21][3]" points="75 0 60 15 60 15 60 60 75 75" /></a>
+       <!-- trapecio inferior -->
+      <a (click)="checkRed(21, 4)"><polygon [style.fill]="valorC[21][4]" points="0 75 15 60 60 60 75 75" /></a>
+    </svg>
+
+    <svg class="svgRectangulo">
+      <!-- Centro -->
+      <a (click)="checkRed(22, 0)"><polygon [style.fill]="valorC[22][0]" points="15 15 60 15 60 60 15 60" /></a>
+      <!-- trapecio superior -->
+      <a (click)="checkRed(22, 1)"><polygon [style.fill]="valorC[22][1]" points="0 0 15 15 60 15 75 0" /></a>
+      <!-- trapecio Izquierda -->
+      <a (click)="checkRed(22, 2)"><polygon [style.fill]="valorC[22][2]" points="0 0 15 15 15 60 0 75" /></a>
+     <!-- trapecio derecho -->
+      <a (click)="checkRed(22, 3)"><polygon [style.fill]="valorC[22][3]" points="75 0 60 15 60 15 60 60 75 75" /></a>
+       <!-- trapecio inferior -->
+      <a (click)="checkRed(22, 4)"><polygon [style.fill]="valorC[22][4]" points="0 75 15 60 60 60 75 75" /></a>
+    </svg>
+
+    <svg class="svgRectangulo">
+      <!-- Centro -->
+      <a (click)="checkRed(23, 0)"><polygon [style.fill]="valorC[23][0]" points="15 15 60 15 60 60 15 60" /></a>
+      <!-- trapecio superior -->
+      <a (click)="checkRed(23, 1)"><polygon [style.fill]="valorC[23][1]" points="0 0 15 15 60 15 75 0" /></a>
+      <!-- trapecio Izquierda -->
+      <a (click)="checkRed(23, 2)"><polygon [style.fill]="valorC[23][2]" points="0 0 15 15 15 60 0 75" /></a>
+     <!-- trapecio derecho -->
+      <a (click)="checkRed(23, 3)"><polygon [style.fill]="valorC[23][3]" points="75 0 60 15 60 15 60 60 75 75" /></a>
+       <!-- trapecio inferior -->
+      <a (click)="checkRed(23, 4)"><polygon [style.fill]="valorC[23][4]" points="0 75 15 60 60 60 75 75" /></a>
+    </svg>
+
+          </mat-grid-tile>
+</mat-grid-list>
+
+<mat-grid-list cols="1" rowHeight="50px">
+          <mat-grid-tile>
+              <mat-divider></mat-divider>
+        </mat-grid-tile>
+</mat-grid-list>
+        <mat-grid-list cols="1" rowHeight="50px">
+        <mat-grid-tile>
+            <button mat-raised-button class="botonRojo" (click)="changeRed()">Rojo</button>
+            <button mat-raised-button color="primary" (click)="changeBlue()">Azul</button>
+          </mat-grid-tile>
+        </mat-grid-list>
+
+        <mat-grid-list cols="5" rowHeight="50px">
+
+            <mat-grid-tile> 25 </mat-grid-tile>
+            <mat-grid-tile> 26 </mat-grid-tile>
+            <mat-grid-tile> 27 </mat-grid-tile>
+            <mat-grid-tile> 28 </mat-grid-tile>
+            <mat-grid-tile> 29 </mat-grid-tile>
+         </mat-grid-list>
+
+           <!--   24 - 28   -->
+
+           <mat-grid-list cols="1" rowHeight="148px">
+          <mat-grid-tile>
+
+
+              <svg class="svgRectangulo">
+                  <!-- Centro -->
+                  <a (click)="checkRed(24, 0)"><polygon [style.fill]="valorC[24][0]" points="15 15 60 15 60 60 15 60" /></a>
+                  <!-- trapecio superior -->
+                  <a (click)="checkRed(24, 1)"><polygon [style.fill]="valorC[24][1]" points="0 0 15 15 60 15 75 0" /></a>
+                  <!-- trapecio Izquierda -->
+                  <a (click)="checkRed(24, 2)"><polygon [style.fill]="valorC[24][2]" points="0 0 15 15 15 60 0 75" /></a>
+                 <!-- trapecio derecho -->
+                  <a (click)="checkRed(24, 3)"><polygon [style.fill]="valorC[24][3]" points="75 0 60 15 60 15 60 60 75 75" /></a>
+                   <!-- trapecio inferior -->
+                  <a (click)="checkRed(24, 4)"><polygon [style.fill]="valorC[24][4]" points="0 75 15 60 60 60 75 75" /></a>
+                </svg>
+
+
+                <svg class="svgRectangulo">
+                  <!-- Centro -->
+                  <a (click)="checkRed(25, 0)"><polygon [style.fill]="valorC[25][0]" points="15 15 60 15 60 60 15 60" /></a>
+                  <!-- trapecio superior -->
+                  <a (click)="checkRed(25, 1)"><polygon [style.fill]="valorC[25][1]" points="0 0 15 15 60 15 75 0" /></a>
+                  <!-- trapecio Izquierda -->
+                  <a (click)="checkRed(25, 2)"><polygon [style.fill]="valorC[25][2]" points="0 0 15 15 15 60 0 75" /></a>
+                 <!-- trapecio derecho -->
+                  <a (click)="checkRed(25, 3)"><polygon [style.fill]="valorC[25][3]" points="75 0 60 15 60 15 60 60 75 75" /></a>
+                   <!-- trapecio inferior -->
+                  <a (click)="checkRed(25, 4)"><polygon [style.fill]="valorC[25][4]" points="0 75 15 60 60 60 75 75" /></a>
+                </svg>
+
+                <svg class="svgRectangulo">
+                  <!-- Centro -->
+                  <a (click)="checkRed(26, 0)"><polygon [style.fill]="valorC[26][0]" points="15 15 60 15 60 60 15 60" /></a>
+                  <!-- trapecio superior -->
+                  <a (click)="checkRed(26, 1)"><polygon [style.fill]="valorC[26][1]" points="0 0 15 15 60 15 75 0" /></a>
+                  <!-- trapecio Izquierda -->
+                  <a (click)="checkRed(26, 2)"><polygon [style.fill]="valorC[26][2]" points="0 0 15 15 15 60 0 75" /></a>
+                 <!-- trapecio derecho -->
+                  <a (click)="checkRed(26, 3)"><polygon [style.fill]="valorC[26][3]" points="75 0 60 15 60 15 60 60 75 75" /></a>
+                   <!-- trapecio inferior -->
+                  <a (click)="checkRed(26, 4)"><polygon [style.fill]="valorC[26][4]" points="0 75 15 60 60 60 75 75" /></a>
+                </svg>
+
+                <svg class="svgRectangulo">
+                  <!-- Centro -->
+                  <a (click)="checkRed(27, 0)"><polygon [style.fill]="valorC[27][0]" points="15 15 60 15 60 60 15 60" /></a>
+                  <!-- trapecio superior -->
+                  <a (click)="checkRed(27, 1)"><polygon [style.fill]="valorC[27][1]" points="0 0 15 15 60 15 75 0" /></a>
+                  <!-- trapecio Izquierda -->
+                  <a (click)="checkRed(27, 2)"><polygon [style.fill]="valorC[27][2]" points="0 0 15 15 15 60 0 75" /></a>
+                 <!-- trapecio derecho -->
+                  <a (click)="checkRed(27, 3)"><polygon [style.fill]="valorC[27][3]" points="75 0 60 15 60 15 60 60 75 75" /></a>
+                   <!-- trapecio inferior -->
+                  <a (click)="checkRed(27, 4)"><polygon [style.fill]="valorC[27][4]" points="0 75 15 60 60 60 75 75" /></a>
+                </svg>
+
+                <svg class="svgRectangulo">
+                  <!-- Centro -->
+                  <a (click)="checkRed(28, 0)"><polygon [style.fill]="valorC[28][0]" points="15 15 60 15 60 60 15 60" /></a>
+                  <!-- trapecio superior -->
+                  <a (click)="checkRed(28, 1)"><polygon [style.fill]="valorC[28][1]" points="0 0 15 15 60 15 75 0" /></a>
+                  <!-- trapecio Izquierda -->
+                  <a (click)="checkRed(28, 2)"><polygon [style.fill]="valorC[28][2]" points="0 0 15 15 15 60 0 75" /></a>
+                 <!-- trapecio derecho -->
+                  <a (click)="checkRed(28, 3)"><polygon [style.fill]="valorC[28][3]" points="75 0 60 15 60 15 60 60 75 75" /></a>
+                   <!-- trapecio inferior -->
+                  <a (click)="checkRed(28, 4)"><polygon [style.fill]="valorC[28][4]" points="0 75 15 60 60 60 75 75" /></a>
+                </svg>
+          </mat-grid-tile>
+
+</mat-grid-list>
+
+
+<mat-grid-list cols="7" rowHeight="50px">
+
+    <mat-grid-tile> 35 </mat-grid-tile>
+    <mat-grid-tile> 36 </mat-grid-tile>
+    <mat-grid-tile> 37 </mat-grid-tile>
+    <mat-grid-tile> 38 </mat-grid-tile>
+    <mat-grid-tile> 39 </mat-grid-tile>
+    <mat-grid-tile> 40 </mat-grid-tile>
+    <mat-grid-tile> 41 </mat-grid-tile>
+ </mat-grid-list>
+  <!--   34 - 40   -->
+
+  <mat-grid-list cols="1" rowHeight="148px">
+  <mat-grid-tile>
+
+
+      <svg class="svgRectangulo">
+        <!-- Centro -->
+        <a (click)="checkRed(34, 0)"><polygon [style.fill]="valorC[34][0]" points="15 15 60 15 60 60 15 60" /></a>
+        <!-- trapecio superior -->
+        <a (click)="checkRed(34, 1)"><polygon [style.fill]="valorC[34][1]" points="0 0 15 15 60 15 75 0" /></a>
+        <!-- trapecio Izquierda -->
+        <a (click)="checkRed(34, 2)"><polygon [style.fill]="valorC[34][2]" points="0 0 15 15 15 60 0 75" /></a>
+       <!-- trapecio derecho -->
+        <a (click)="checkRed(34, 3)"><polygon [style.fill]="valorC[34][3]" points="75 0 60 15 60 15 60 60 75 75" /></a>
+         <!-- trapecio inferior -->
+        <a (click)="checkRed(34, 4)"><polygon [style.fill]="valorC[34][4]" points="0 75 15 60 60 60 75 75" /></a>
+      </svg>
+
+      <svg class="svgRectangulo">
+        <!-- Centro -->
+        <a (click)="checkRed(35, 0)"><polygon [style.fill]="valorC[35][0]" points="15 15 60 15 60 60 15 60" /></a>
+        <!-- trapecio superior -->
+        <a (click)="checkRed(35, 1)"><polygon [style.fill]="valorC[35][1]" points="0 0 15 15 60 15 75 0" /></a>
+        <!-- trapecio Izquierda -->
+        <a (click)="checkRed(35, 2)"><polygon [style.fill]="valorC[35][2]" points="0 0 15 15 15 60 0 75" /></a>
+       <!-- trapecio derecho -->
+        <a (click)="checkRed(35, 3)"><polygon [style.fill]="valorC[35][3]" points="75 0 60 15 60 15 60 60 75 75" /></a>
+         <!-- trapecio inferior -->
+        <a (click)="checkRed(35, 4)"><polygon [style.fill]="valorC[35][4]" points="0 75 15 60 60 60 75 75" /></a>
+      </svg>
+
+
+      <svg class="svgRectangulo">
+        <!-- Centro -->
+        <a (click)="checkRed(36, 0)"><polygon [style.fill]="valorC[36][0]" points="15 15 60 15 60 60 15 60" /></a>
+        <!-- trapecio superior -->
+        <a (click)="checkRed(36, 1)"><polygon [style.fill]="valorC[36][1]" points="0 0 15 15 60 15 75 0" /></a>
+        <!-- trapecio Izquierda -->
+        <a (click)="checkRed(36, 2)"><polygon [style.fill]="valorC[36][2]" points="0 0 15 15 15 60 0 75" /></a>
+       <!-- trapecio derecho -->
+        <a (click)="checkRed(36, 3)"><polygon [style.fill]="valorC[36][3]" points="75 0 60 15 60 15 60 60 75 75" /></a>
+         <!-- trapecio inferior -->
+        <a (click)="checkRed(36, 4)"><polygon [style.fill]="valorC[36][4]" points="0 75 15 60 60 60 75 75" /></a>
+      </svg>
+
+      <svg class="svgRectangulo">
+        <!-- Centro -->
+        <a (click)="checkRed(37, 0)"><polygon [style.fill]="valorC[37][0]" points="15 15 60 15 60 60 15 60" /></a>
+        <!-- trapecio superior -->
+        <a (click)="checkRed(37, 1)"><polygon [style.fill]="valorC[37][1]" points="0 0 15 15 60 15 75 0" /></a>
+        <!-- trapecio Izquierda -->
+        <a (click)="checkRed(37, 2)"><polygon [style.fill]="valorC[37][2]" points="0 0 15 15 15 60 0 75" /></a>
+       <!-- trapecio derecho -->
+        <a (click)="checkRed(37, 3)"><polygon [style.fill]="valorC[37][3]" points="75 0 60 15 60 15 60 60 75 75" /></a>
+         <!-- trapecio inferior -->
+        <a (click)="checkRed(37, 4)"><polygon [style.fill]="valorC[37][4]" points="0 75 15 60 60 60 75 75" /></a>
+      </svg>
+
+      <svg class="svgRectangulo">
+        <!-- Centro -->
+        <a (click)="checkRed(38, 0)"><polygon [style.fill]="valorC[38][0]" points="15 15 60 15 60 60 15 60" /></a>
+        <!-- trapecio superior -->
+        <a (click)="checkRed(38, 1)"><polygon [style.fill]="valorC[38][1]" points="0 0 15 15 60 15 75 0" /></a>
+        <!-- trapecio Izquierda -->
+        <a (click)="checkRed(38, 2)"><polygon [style.fill]="valorC[38][2]" points="0 0 15 15 15 60 0 75" /></a>
+       <!-- trapecio derecho -->
+        <a (click)="checkRed(38, 3)"><polygon [style.fill]="valorC[38][3]" points="75 0 60 15 60 15 60 60 75 75" /></a>
+         <!-- trapecio inferior -->
+        <a (click)="checkRed(38, 4)"><polygon [style.fill]="valorC[38][4]" points="0 75 15 60 60 60 75 75" /></a>
+      </svg>
+
+      <svg class="svgRectangulo">
+        <!-- Centro -->
+        <a (click)="checkRed(39, 0)"><polygon [style.fill]="valorC[39][0]" points="15 15 60 15 60 60 15 60" /></a>
+        <!-- trapecio superior -->
+        <a (click)="checkRed(39, 1)"><polygon [style.fill]="valorC[39][1]" points="0 0 15 15 60 15 75 0" /></a>
+        <!-- trapecio Izquierda -->
+        <a (click)="checkRed(39, 2)"><polygon [style.fill]="valorC[39][2]" points="0 0 15 15 15 60 0 75" /></a>
+       <!-- trapecio derecho -->
+        <a (click)="checkRed(39, 3)"><polygon [style.fill]="valorC[39][3]" points="75 0 60 15 60 15 60 60 75 75" /></a>
+         <!-- trapecio inferior -->
+        <a (click)="checkRed(39, 4)"><polygon [style.fill]="valorC[39][4]" points="0 75 15 60 60 60 75 75" /></a>
+      </svg>
+
+      <svg class="svgRectangulo">
+        <!-- Centro -->
+        <a (click)="checkRed(40, 0)"><polygon [style.fill]="valorC[40][0]" points="15 15 60 15 60 60 15 60" /></a>
+        <!-- trapecio superior -->
+        <a (click)="checkRed(40, 1)"><polygon [style.fill]="valorC[40][1]" points="0 0 15 15 60 15 75 0" /></a>
+        <!-- trapecio Izquierda -->
+        <a (click)="checkRed(40, 2)"><polygon [style.fill]="valorC[40][2]" points="0 0 15 15 15 60 0 75" /></a>
+       <!-- trapecio derecho -->
+        <a (click)="checkRed(40, 3)"><polygon [style.fill]="valorC[40][3]" points="75 0 60 15 60 15 60 60 75 75" /></a>
+         <!-- trapecio inferior -->
+        <a (click)="checkRed(40, 4)"><polygon [style.fill]="valorC[40][4]" points="0 75 15 60 60 60 75 75" /></a>
+      </svg>
+
+</mat-grid-tile>
+</mat-grid-list>
+
+<mat-grid-list cols="1" rowHeight="50px">
+<mat-grid-tile>
+    <mat-divider></mat-divider>
+</mat-grid-tile>
+</mat-grid-list>
+
+<mat-grid-list cols="1" rowHeight="50px">
+<mat-grid-tile>
+    <button mat-raised-button class="botonRojo" (click)="changeRed()">Rojo</button>
+    <button mat-raised-button color="primary" (click)="changeBlue()">Azul</button>
+  </mat-grid-tile>
+</mat-grid-list>
+
+
+<mat-grid-list cols="5" rowHeight="50px">
+
+    <mat-grid-tile> 30 </mat-grid-tile>
+    <mat-grid-tile> 31 </mat-grid-tile>
+    <mat-grid-tile> 32 </mat-grid-tile>
+    <mat-grid-tile> 33 </mat-grid-tile>
+    <mat-grid-tile> 34 </mat-grid-tile>
+ </mat-grid-list>
+           <!--   29 - 33   -->
+
+           <mat-grid-list cols="1" rowHeight="148px">
+          <mat-grid-tile>
+                <svg class="svgRectangulo">
+                  <!-- Centro -->
+                  <a (click)="checkRed(29, 0)"><polygon [style.fill]="valorC[29][0]" points="15 15 60 15 60 60 15 60" /></a>
+                  <!-- trapecio superior -->
+                  <a (click)="checkRed(29, 1)"><polygon [style.fill]="valorC[29][1]" points="0 0 15 15 60 15 75 0" /></a>
+                  <!-- trapecio Izquierda -->
+                  <a (click)="checkRed(29, 2)"><polygon [style.fill]="valorC[29][2]" points="0 0 15 15 15 60 0 75" /></a>
+                 <!-- trapecio derecho -->
+                  <a (click)="checkRed(29, 3)"><polygon [style.fill]="valorC[29][3]" points="75 0 60 15 60 15 60 60 75 75" /></a>
+                   <!-- trapecio inferior -->
+                  <a (click)="checkRed(29, 4)"><polygon [style.fill]="valorC[29][4]" points="0 75 15 60 60 60 75 75" /></a>
+                </svg>
+
+                <svg class="svgRectangulo">
+                    <!-- Centro -->
+                    <a (click)="checkRed(30, 0)"><polygon [style.fill]="valorC[30][0]" points="15 15 60 15 60 60 15 60" /></a>
+                    <!-- trapecio superior -->
+                    <a (click)="checkRed(30, 1)"><polygon [style.fill]="valorC[30][1]" points="0 0 15 15 60 15 75 0" /></a>
+                    <!-- trapecio Izquierda -->
+                    <a (click)="checkRed(30, 2)"><polygon [style.fill]="valorC[30][2]" points="0 0 15 15 15 60 0 75" /></a>
+                   <!-- trapecio derecho -->
+                    <a (click)="checkRed(30, 3)"><polygon [style.fill]="valorC[30][3]" points="75 0 60 15 60 15 60 60 75 75" /></a>
+                     <!-- trapecio inferior -->
+                    <a (click)="checkRed(30, 4)"><polygon [style.fill]="valorC[30][4]" points="0 75 15 60 60 60 75 75" /></a>
+                  </svg>
+
+                  <svg class="svgRectangulo">
+                    <!-- Centro -->
+                    <a (click)="checkRed(31, 0)"><polygon [style.fill]="valorC[31][0]" points="15 15 60 15 60 60 15 60" /></a>
+                    <!-- trapecio superior -->
+                    <a (click)="checkRed(31, 1)"><polygon [style.fill]="valorC[31][1]" points="0 0 15 15 60 15 75 0" /></a>
+                    <!-- trapecio Izquierda -->
+                    <a (click)="checkRed(31, 2)"><polygon [style.fill]="valorC[31][2]" points="0 0 15 15 15 60 0 75" /></a>
+                   <!-- trapecio derecho -->
+                    <a (click)="checkRed(31, 3)"><polygon [style.fill]="valorC[31][3]" points="75 0 60 15 60 15 60 60 75 75" /></a>
+                     <!-- trapecio inferior -->
+                    <a (click)="checkRed(31, 4)"><polygon [style.fill]="valorC[31][4]" points="0 75 15 60 60 60 75 75" /></a>
+                  </svg>
+
+                  <svg class="svgRectangulo">
+                    <!-- Centro -->
+                    <a (click)="checkRed(32, 0)"><polygon [style.fill]="valorC[32][0]" points="15 15 60 15 60 60 15 60" /></a>
+                    <!-- trapecio superior -->
+                    <a (click)="checkRed(32, 1)"><polygon [style.fill]="valorC[32][1]" points="0 0 15 15 60 15 75 0" /></a>
+                    <!-- trapecio Izquierda -->
+                    <a (click)="checkRed(32, 2)"><polygon [style.fill]="valorC[32][2]" points="0 0 15 15 15 60 0 75" /></a>
+                   <!-- trapecio derecho -->
+                    <a (click)="checkRed(32, 3)"><polygon [style.fill]="valorC[32][3]" points="75 0 60 15 60 15 60 60 75 75" /></a>
+                     <!-- trapecio inferior -->
+                    <a (click)="checkRed(32, 4)"><polygon [style.fill]="valorC[32][4]" points="0 75 15 60 60 60 75 75" /></a>
+                  </svg>
+
+                  <svg class="svgRectangulo">
+                    <!-- Centro -->
+                    <a (click)="checkRed(33, 0)"><polygon [style.fill]="valorC[33][0]" points="15 15 60 15 60 60 15 60" /></a>
+                    <!-- trapecio superior -->
+                    <a (click)="checkRed(33, 1)"><polygon [style.fill]="valorC[33][1]" points="0 0 15 15 60 15 75 0" /></a>
+                    <!-- trapecio Izquierda -->
+                    <a (click)="checkRed(33, 2)"><polygon [style.fill]="valorC[33][2]" points="0 0 15 15 15 60 0 75" /></a>
+                   <!-- trapecio derecho -->
+                    <a (click)="checkRed(33, 3)"><polygon [style.fill]="valorC[33][3]" points="75 0 60 15 60 15 60 60 75 75" /></a>
+                     <!-- trapecio inferior -->
+                    <a (click)="checkRed(33, 4)"><polygon [style.fill]="valorC[33][4]" points="0 75 15 60 60 60 75 75" /></a>
+                  </svg>
+
+          </mat-grid-tile>
+
+
+        </mat-grid-list>
+
+        <mat-grid-list cols="7" rowHeight="50px">
+
+            <mat-grid-tile> 42 </mat-grid-tile>
+            <mat-grid-tile> 43 </mat-grid-tile>
+            <mat-grid-tile> 44 </mat-grid-tile>
+            <mat-grid-tile> 45 </mat-grid-tile>
+            <mat-grid-tile> 46 </mat-grid-tile>
+            <mat-grid-tile> 47 </mat-grid-tile>
+            <mat-grid-tile> 48 </mat-grid-tile>
+         </mat-grid-list>
+           <!--   41 - 47   -->
+
+           <mat-grid-list cols="1" rowHeight="148px">
+          <mat-grid-tile>
+
+
+                <svg class="svgRectangulo">
+                  <!-- Centro -->
+                  <a (click)="checkRed(41, 0)"><polygon [style.fill]="valorC[41][0]" points="15 15 60 15 60 60 15 60" /></a>
+                  <!-- trapecio superior -->
+                  <a (click)="checkRed(41, 1)"><polygon [style.fill]="valorC[41][1]" points="0 0 15 15 60 15 75 0" /></a>
+                  <!-- trapecio Izquierda -->
+                  <a (click)="checkRed(41, 2)"><polygon [style.fill]="valorC[41][2]" points="0 0 15 15 15 60 0 75" /></a>
+                 <!-- trapecio derecho -->
+                  <a (click)="checkRed(41, 3)"><polygon [style.fill]="valorC[41][3]" points="75 0 60 15 60 15 60 60 75 75" /></a>
+                   <!-- trapecio inferior -->
+                  <a (click)="checkRed(41, 4)"><polygon [style.fill]="valorC[41][4]" points="0 75 15 60 60 60 75 75" /></a>
+                </svg>
+
+                <svg class="svgRectangulo">
+                  <!-- Centro -->
+                  <a (click)="checkRed(42, 0)"><polygon [style.fill]="valorC[42][0]" points="15 15 60 15 60 60 15 60" /></a>
+                  <!-- trapecio superior -->
+                  <a (click)="checkRed(42, 1)"><polygon [style.fill]="valorC[42][1]" points="0 0 15 15 60 15 75 0" /></a>
+                  <!-- trapecio Izquierda -->
+                  <a (click)="checkRed(42, 2)"><polygon [style.fill]="valorC[42][2]" points="0 0 15 15 15 60 0 75" /></a>
+                 <!-- trapecio derecho -->
+                  <a (click)="checkRed(42, 3)"><polygon [style.fill]="valorC[42][3]" points="75 0 60 15 60 15 60 60 75 75" /></a>
+                   <!-- trapecio inferior -->
+                  <a (click)="checkRed(42, 4)"><polygon [style.fill]="valorC[42][4]" points="0 75 15 60 60 60 75 75" /></a>
+                </svg>
+
+                <svg class="svgRectangulo">
+                  <!-- Centro -->
+                  <a (click)="checkRed(43, 0)"><polygon [style.fill]="valorC[43][0]" points="15 15 60 15 60 60 15 60" /></a>
+                  <!-- trapecio superior -->
+                  <a (click)="checkRed(43, 1)"><polygon [style.fill]="valorC[43][1]" points="0 0 15 15 60 15 75 0" /></a>
+                  <!-- trapecio Izquierda -->
+                  <a (click)="checkRed(43, 2)"><polygon [style.fill]="valorC[43][2]" points="0 0 15 15 15 60 0 75" /></a>
+                 <!-- trapecio derecho -->
+                  <a (click)="checkRed(43, 3)"><polygon [style.fill]="valorC[43][3]" points="75 0 60 15 60 15 60 60 75 75" /></a>
+                   <!-- trapecio inferior -->
+                  <a (click)="checkRed(43, 4)"><polygon [style.fill]="valorC[43][4]" points="0 75 15 60 60 60 75 75" /></a>
+                </svg>
+
+                <svg class="svgRectangulo">
+                  <!-- Centro -->
+                  <a (click)="checkRed(44, 0)"><polygon [style.fill]="valorC[44][0]" points="15 15 60 15 60 60 15 60" /></a>
+                  <!-- trapecio superior -->
+                  <a (click)="checkRed(44, 1)"><polygon [style.fill]="valorC[44][1]" points="0 0 15 15 60 15 75 0" /></a>
+                  <!-- trapecio Izquierda -->
+                  <a (click)="checkRed(44, 2)"><polygon [style.fill]="valorC[44][2]" points="0 0 15 15 15 60 0 75" /></a>
+                 <!-- trapecio derecho -->
+                  <a (click)="checkRed(44, 3)"><polygon [style.fill]="valorC[44][3]" points="75 0 60 15 60 15 60 60 75 75" /></a>
+                   <!-- trapecio inferior -->
+                  <a (click)="checkRed(44, 4)"><polygon [style.fill]="valorC[44][4]" points="0 75 15 60 60 60 75 75" /></a>
+                </svg>
+
+                <svg class="svgRectangulo">
+                  <!-- Centro -->
+                  <a (click)="checkRed(45, 0)"><polygon [style.fill]="valorC[45][0]" points="15 15 60 15 60 60 15 60" /></a>
+                  <!-- trapecio superior -->
+                  <a (click)="checkRed(45, 1)"><polygon [style.fill]="valorC[45][1]" points="0 0 15 15 60 15 75 0" /></a>
+                  <!-- trapecio Izquierda -->
+                  <a (click)="checkRed(45, 2)"><polygon [style.fill]="valorC[45][2]" points="0 0 15 15 15 60 0 75" /></a>
+                 <!-- trapecio derecho -->
+                  <a (click)="checkRed(45, 3)"><polygon [style.fill]="valorC[45][3]" points="75 0 60 15 60 15 60 60 75 75" /></a>
+                   <!-- trapecio inferior -->
+                  <a (click)="checkRed(45, 4)"><polygon [style.fill]="valorC[45][4]" points="0 75 15 60 60 60 75 75" /></a>
+                </svg>
+
+                <svg class="svgRectangulo">
+                  <!-- Centro -->
+                  <a (click)="checkRed(46, 0)"><polygon [style.fill]="valorC[46][0]" points="15 15 60 15 60 60 15 60" /></a>
+                  <!-- trapecio superior -->
+                  <a (click)="checkRed(46, 1)"><polygon [style.fill]="valorC[46][1]" points="0 0 15 15 60 15 75 0" /></a>
+                  <!-- trapecio Izquierda -->
+                  <a (click)="checkRed(46, 2)"><polygon [style.fill]="valorC[46][2]" points="0 0 15 15 15 60 0 75" /></a>
+                 <!-- trapecio derecho -->
+                  <a (click)="checkRed(46, 3)"><polygon [style.fill]="valorC[46][3]" points="75 0 60 15 60 15 60 60 75 75" /></a>
+                   <!-- trapecio inferior -->
+                  <a (click)="checkRed(46, 4)"><polygon [style.fill]="valorC[46][4]" points="0 75 15 60 60 60 75 75" /></a>
+                </svg>
+
+                <svg class="svgRectangulo">
+                  <!-- Centro -->
+                  <a (click)="checkRed(47, 0)"><polygon [style.fill]="valorC[47][0]" points="15 15 60 15 60 60 15 60" /></a>
+                  <!-- trapecio superior -->
+                  <a (click)="checkRed(47, 1)"><polygon [style.fill]="valorC[47][1]" points="0 0 15 15 60 15 75 0" /></a>
+                  <!-- trapecio Izquierda -->
+                  <a (click)="checkRed(47, 2)"><polygon [style.fill]="valorC[47][2]" points="0 0 15 15 15 60 0 75" /></a>
+                 <!-- trapecio derecho -->
+                  <a (click)="checkRed(47, 3)"><polygon [style.fill]="valorC[47][3]" points="75 0 60 15 60 15 60 60 75 75" /></a>
+                   <!-- trapecio inferior -->
+                  <a (click)="checkRed(47, 4)"><polygon [style.fill]="valorC[47][4]" points="0 75 15 60 60 60 75 75" /></a>
+                </svg>
+
+          </mat-grid-tile>
+</mat-grid-list>
+
+</mat-card>
+
+
+
+
+
+
+
+
+<!-- Odontograma  -->
+
+
+
+
+
+<mat-card class="cardLogin">
+
+
+    <mat-grid-list cols="1" rowHeight="50px">
+  <mat-grid-tile>
+    <button mat-raised-button class="botonRojo" (click)="changeRed()">Rojo</button>
+    <button mat-raised-button color="primary" (click)="changeBlue()">Azul</button>
+  </mat-grid-tile>
+</mat-grid-list>
+   <!--   0 - 6   -->
+   <mat-grid-list cols="7" rowHeight="50px">
+      <mat-grid-tile> 1 </mat-grid-tile>
+      <mat-grid-tile> 2 </mat-grid-tile>
+      <mat-grid-tile> 3 </mat-grid-tile>
+      <mat-grid-tile> 4 </mat-grid-tile>
+      <mat-grid-tile> 5 </mat-grid-tile>
+      <mat-grid-tile> 6 </mat-grid-tile>
+      <mat-grid-tile> 7 </mat-grid-tile>
+     </mat-grid-list>
+
+
+
+     <mat-grid-list cols="1" rowHeight="148px">
+    <mat-grid-tile>
+
+        <svg class="svgRectangulo">
+            <!-- Centro -->
+            <a (click)="checkRed(0)"><polygon [style.fill]="valorC[0]" points="15 15 60 15 60 60 15 60" /></a>
+            <!-- trapecio superior -->
+            <a (click)="checkRed(1)"><polygon [style.fill]="valorC[1]" points="0 0 15 15 60 15 75 0" /></a>
+            <!-- trapecio Izquierda -->
+            <a (click)="checkRed(2)"><polygon [style.fill]="valorC[2]" points="0 0 15 15 15 60 0 75" /></a>
+           <!-- trapecio derecho -->
+            <a (click)="checkRed(3)"><polygon [style.fill]="valorC[3]" points="75 0 60 15 60 15 60 60 75 75" /></a>
+             <!-- trapecio inferior -->
+            <a (click)="checkRed(4)"><polygon [style.fill]="valorC[4]" points="0 75 15 60 60 60 75 75" /></a>
+          </svg>
+
+          <svg class="svgRectangulo">
+            <!-- Centro -->
+            <a (click)="checkRed(5)"><polygon [style.fill]="valorC[5]" points="15 15 60 15 60 60 15 60" /></a>
+            <!-- trapecio superior -->
+            <a (click)="checkRed(6)"><polygon [style.fill]="valorC[6]" points="0 0 15 15 60 15 75 0" /></a>
+            <!-- trapecio Izquierda -->
+            <a (click)="checkRed(7)"><polygon [style.fill]="valorC[7]"6 points="0 0 15 15 15 60 0 75" /></a>
+           <!-- trapecio derecho -->
+            <a (click)="checkRed(8)"><polygon [style.fill]="valorC[8]"65points="75 0 60 15 60 15 60 60 75 75" /></a>
+             <!-- trapecio inferior -->
+            <a (click)="checkRed(9)"><polygon [style.fill]="valorC[9]"7 points="0 75 15 60 60 60 75 75" /></a>
+          </svg>
+
+          <svg class="svgRectangulo">
+            <!-- Centro -->
+            <a (click)="checkRed(10)"><polygon [style.fill]="valorC[10]"7 points="15 15 60 15 60 60 15 60" /></a>
+            <!-- trapecio superior -->
+            <a (click)="checkRed(11)"><polygon [style.fill]="valorC[11]"8 points="0 0 15 15 60 15 75 0" /></a>
+            <!-- trapecio Izquierda -->
+            <a (click)="checkRed(12)"><polygon [style.fill]="valorC[12]"8points="0 0 15 15 15 60 0 75" /></a>
+           <!-- trapecio derecho -->
+            <a (click)="checkRed(13)"><polygon [style.fill]="valorC[13]"9 points="75 0 60 15 60 15 60 60 75 75" /></a>
+             <!-- trapecio inferior -->
+            <a (click)="checkRed(14)"><polygon [style.fill]="valorC[14]" points="0 75 15 60 60 60 75 75" /></a>
+          </svg>
+
+          <svg class="svgRectangulo">
+            <!-- Centro -->
+            <a (click)="checkRed(15)"><polygon [style.fill]="valorC[15]" points="15 15 60 15 60 60 15 60" /></a>
+            <!-- trapecio superior -->
+            <a (click)="checkRed(16)"><polygon [style.fill]="valorC[16]" points="0 0 15 15 60 15 75 0" /></a>
+            <!-- trapecio Izquierda -->
+            <a (click)="checkRed(17)"><polygon [style.fill]="valorC[17]"5 points="0 0 15 15 15 60 0 75" /></a>
+           <!-- trapecio derecho -->
+            <a (click)="checkRed(18)"><polygon [style.fill]="valorC[18]" points="75 0 60 15 60 15 60 60 75 75" /></a>
+             <!-- trapecio inferior -->
+            <a (click)="checkRed(19)"><polygon [style.fill]="valorC[19]"9points="0 75 15 60 60 60 75 75" /></a>
+          </svg>
+
+          <svg class="svgRectangulo">
+            <!-- Centro -->
+            <a (click)="checkRed(20)"><polygon [style.fill]="valorC[20]"10 points="15 15 60 15 60 60 15 60" /></a>
+            <!-- trapecio superior -->
+            <a (click)="checkRed(21)"><polygon [style.fill]="valorC[21]" points="0 0 15 15 60 15 75 0" /></a>
+            <!-- trapecio Izquierda -->
+            <a (click)="checkRed(22)"><polygon [style.fill]="valorC[22]"11 points="0 0 15 15 15 60 0 75" /></a>
+           <!-- trapecio derecho -->
+            <a (click)="checkRed(23)"><polygon [style.fill]="valorC[23]" points="75 0 60 15 60 15 60 60 75 75" /></a>
+             <!-- trapecio inferior -->
+            <a (click)="checkRed(24)"><polygon [style.fill]="valorC[24]"12 points="0 75 15 60 60 60 75 75" /></a>
+          </svg>
+
+          <svg class="svgRectangulo">
+            <!-- Centro -->
+            <a (click)="checkRed(25)"><polygon [style.fill]="valorC[25]"12points="15 15 60 15 60 60 15 60" /></a>
+            <!-- trapecio superior -->
+            <a (click)="checkRed(26)"><polygon [style.fill]="valorC[26]"13 points="0 0 15 15 60 15 75 0" /></a>
+            <!-- trapecio Izquierda -->
+            <a (click)="checkRed(27)"><polygon [style.fill]="valorC[27]"13 points="0 0 15 15 15 60 0 75" /></a>
+           <!-- trapecio derecho -->
+            <a (click)="checkRed(28)"><polygon [style.fill]="valorC[28]"14 points="75 0 60 15 60 15 60 60 75 75" /></a>
+             <!-- trapecio inferior -->
+            <a (click)="checkRed(29)"><polygon [style.fill]="valorC[29]"18 points="0 75 15 60 60 60 75 75" /></a>
+          </svg>
+
+          <svg class="svgRectangulo">
+              <!-- Centro -->
+              <a (click)="checkRed(30)"><polygon [style.fill]="valorC[30]"18points="15 15 60 15 60 60 15 60" /></a>
+              <!-- trapecio superior -->
+              <a (click)="checkRed(31)"><polygon [style.fill]="valorC[31]"19 points="0 0 15 15 60 15 75 0" /></a>
+              <!-- trapecio Izquierda -->
+              <a (click)="checkRed(32)"><polygon [style.fill]="valorC[32]"19points="0 0 15 15 15 60 0 75" /></a>
+             <!-- trapecio derecho -->
+              <a (click)="checkRed(33)"><polygon [style.fill]="valorC[33]"20 points="75 0 60 15 60 15 60 60 75 75" /></a>
+               <!-- trapecio inferior -->
+              <a (click)="checkRed(34)"><polygon [style.fill]="valorC[34]"14 points="0 75 15 60 60 60 75 75" /></a>
+            </svg>
+
+    </mat-grid-tile>
+</mat-grid-list>
+<!--   14 - 18   -->
+
+<mat-grid-list cols="5" rowHeight="50px">
+
+<mat-grid-tile> 15 </mat-grid-tile>
+<mat-grid-tile> 16 </mat-grid-tile>
+<mat-grid-tile> 17 </mat-grid-tile>
+<mat-grid-tile> 18 </mat-grid-tile>
+<mat-grid-tile> 19 </mat-grid-tile>
+</mat-grid-list>
+
+<mat-grid-list cols="1" rowHeight="148px">
+<mat-grid-tile>
+
+
+
+<svg class="svgRectangulo">
+<!-- Centro -->
+<a (click)="checkRed(35)"><polygon [style.fill]="valorC[35]"15 points="15 15 60 15 60 60 15 60" /></a>
+<!-- trapecio superior -->
+<a (click)="checkRed(36)"><polygon [style.fill]="valorC[36]"15points="0 0 15 15 60 15 75 0" /></a>
+<!-- trapecio Izquierda -->
+<a (click)="checkRed(37)"><polygon [style.fill]="valorC[37]"16 points="0 0 15 15 15 60 0 75" /></a>
+<!-- trapecio derecho -->
+<a (click)="checkRed(38)"><polygon [style.fill]="valorC[38]"16 points="75 0 60 15 60 15 60 60 75 75" /></a>
+ <!-- trapecio inferior -->
+<a (click)="checkRed(39)"><polygon [style.fill]="valorC[39]"17 points="0 75 15 60 60 60 75 75" /></a>
+</svg>
+
+<svg class="svgRectangulo">
+<!-- Centro -->
+<a (click)="checkRed(40)"><polygon [style.fill]="valorC[40]"17 points="15 15 60 15 60 60 15 60" /></a>
+<!-- trapecio superior -->
+<a (click)="checkRed(41)"><polygon [style.fill]="valorC[41]"20points="0 0 15 15 60 15 75 0" /></a>
+<!-- trapecio Izquierda -->
+<a (click)="checkRed(42)"><polygon [style.fill]="valorC[42]"21 points="0 0 15 15 15 60 0 75" /></a>
+<!-- trapecio derecho -->
+<a (click)="checkRed(43)"><polygon [style.fill]="valorC[43]"21 points="75 0 60 15 60 15 60 60 75 75" /></a>
+ <!-- trapecio inferior -->
+<a (click)="checkRed(44)"><polygon [style.fill]="valorC[44]"22 points="0 75 15 60 60 60 75 75" /></a>
+</svg>
+
+<svg class="svgRectangulo">
+<!-- Centro -->
+<a (click)="checkRed(45)"><polygon [style.fill]="valorC[45]"22points="15 15 60 15 60 60 15 60" /></a>
+<!-- trapecio superior -->
+<a (click)="checkRed(46)"><polygon [style.fill]="valorC[46]"23 points="0 0 15 15 60 15 75 0" /></a>
+<!-- trapecio Izquierda -->
+<a (click)="checkRed(47)"><polygon [style.fill]="valorC[47]"23points="0 0 15 15 15 60 0 75" /></a>
+<!-- trapecio derecho -->
+<a (click)="checkRed(48)"><polygon [style.fill]="valorC[48]" points="75 0 60 15 60 15 60 60 75 75" /></a>
+ <!-- trapecio inferior -->
+<a (click)="checkRed(49)"><polygon [style.fill]="valorC[49]" points="0 75 15 60 60 60 75 75" /></a>
+</svg>
+
+<svg class="svgRectangulo">
+<!-- Centro -->
+<a (click)="checkRed(50)"><polygon [style.fill]="valorC[50]" points="15 15 60 15 60 60 15 60" /></a>
+<!-- trapecio superior -->
+<a (click)="checkRed(51)"><polygon [style.fill]="valorC[51]" points="0 0 15 15 60 15 75 0" /></a>
+<!-- trapecio Izquierda -->
+<a (click)="checkRed(52)"><polygon [style.fill]="valorC[52]" points="0 0 15 15 15 60 0 75" /></a>
+<!-- trapecio derecho -->
+<a (click)="checkRed(53)"><polygon [style.fill]="valorC[53]" points="75 0 60 15 60 15 60 60 75 75" /></a>
+ <!-- trapecio inferior -->
+<a (click)="checkRed(54)"><polygon [style.fill]="valorC[54]" points="0 75 15 60 60 60 75 75" /></a>
+</svg>
+
 <svg class="svgRectangulo">
   <!-- Centro -->
-  <a ng-click="changeRed()"><polygon class="teal" points="15 15 60 15 60 60 15 60" /></a>
+  <a (click)="checkRed(55)"><polygon [style.fill]="valorC[55]" points="15 15 60 15 60 60 15 60" /></a>
   <!-- trapecio superior -->
-  <a xlink:href="#"><polygon class="teal" points="0 0 15 15 60 15 75 0" /></a>
+  <a (click)="checkRed(56)"><polygon [style.fill]="valorC[56]" points="0 0 15 15 60 15 75 0" /></a>
   <!-- trapecio Izquierda -->
-  <a xlink:href="#"><polygon class="teal" points="0 0 15 15 15 60 0 75" /></a>
+  <a (click)="checkRed(57)"><polygon [style.fill]="valorC[57]" points="0 0 15 15 15 60 0 75" /></a>
  <!-- trapecio derecho -->
-  <a xlink:href="#"><polygon class="teal" points="75 0 60 15 60 15 60 60 75 75" /></a>
+  <a (click)="checkRed(58)"><polygon [style.fill]="valorC[58]" points="75 0 60 15 60 15 60 60 75 75" /></a>
    <!-- trapecio inferior -->
-  <a xlink:href="#"><polygon class="teal" points="0 75 15 60 60 60 75 75" /></a>
+  <a (click)="checkRed(59)"><polygon [style.fill]="valorC[59]" points="0 75 15 60 60 60 75 75" /></a>
+</svg>
+
+
+    </mat-grid-tile>
+  </mat-grid-list>
+
+
+  <mat-grid-list cols="1" rowHeight="50px">
+  <mat-grid-tile>
+        <mat-divider></mat-divider>
+  </mat-grid-tile>
+  </mat-grid-list>
+
+
+  <mat-grid-list cols="1" rowHeight="50px">
+  <mat-grid-tile>
+      <button mat-raised-button class="botonRojo" (click)="changeRed()">Rojo</button>
+      <button mat-raised-button color="primary" (click)="changeBlue()">Azul</button>
+    </mat-grid-tile>
+
+    </mat-grid-list>
+
+
+    <mat-grid-list cols="7" rowHeight="50px">
+
+        <mat-grid-tile> 8 </mat-grid-tile>
+        <mat-grid-tile> 9 </mat-grid-tile>
+        <mat-grid-tile> 10 </mat-grid-tile>
+        <mat-grid-tile> 11 </mat-grid-tile>
+        <mat-grid-tile> 12 </mat-grid-tile>
+        <mat-grid-tile> 13 </mat-grid-tile>
+        <mat-grid-tile> 14 </mat-grid-tile>
+     </mat-grid-list>
+<!--   7 - 13  -->
+
+<mat-grid-list cols="1" rowHeight="148px">
+    <mat-grid-tile>
+
+
+          <svg class="svgRectangulo">
+            <!-- Centro -->
+            <a (click)="checkRed(60)"><polygon [style.fill]="valorC[60]" points="15 15 60 15 60 60 15 60" /></a>
+            <!-- trapecio superior -->
+            <a (click)="checkRed(61)"><polygon [style.fill]="valorC[61]" points="0 0 15 15 60 15 75 0" /></a>
+            <!-- trapecio Izquierda -->
+            <a (click)="checkRed(62)"><polygon [style.fill]="valorC[62]" points="0 0 15 15 15 60 0 75" /></a>
+           <!-- trapecio derecho -->
+            <a (click)="checkRed(63)"><polygon [style.fill]="valorC[63]" points="75 0 60 15 60 15 60 60 75 75" /></a>
+             <!-- trapecio inferior -->
+            <a (click)="checkRed(64)"><polygon [style.fill]="valorC[64]" points="0 75 15 60 60 60 75 75" /></a>
+          </svg>
+
+          <svg class="svgRectangulo">
+            <!-- Centro -->
+            <a (click)="checkRed(65)"><polygon [style.fill]="valorC[65]" points="15 15 60 15 60 60 15 60" /></a>
+            <!-- trapecio superior -->
+            <a (click)="checkRed(66)"><polygon [style.fill]="valorC[66]" points="0 0 15 15 60 15 75 0" /></a>
+            <!-- trapecio Izquierda -->
+            <a (click)="checkRed(67)"><polygon [style.fill]="valorC[67]" points="0 0 15 15 15 60 0 75" /></a>
+           <!-- trapecio derecho -->
+            <a (click)="checkRed(68)"><polygon [style.fill]="valorC[68]" points="75 0 60 15 60 15 60 60 75 75" /></a>
+             <!-- trapecio inferior -->
+            <a (click)="checkRed(69)"><polygon [style.fill]="valorC[69]" points="0 75 15 60 60 60 75 75" /></a>
+          </svg>
+
+          <svg class="svgRectangulo">
+            <!-- Centro -->
+            <a (click)="checkRed(70)"><polygon [style.fill]="valorC[70]" points="15 15 60 15 60 60 15 60" /></a>
+            <!-- trapecio superior -->
+            <a (click)="checkRed(71)"><polygon [style.fill]="valorC[71]" points="0 0 15 15 60 15 75 0" /></a>
+            <!-- trapecio Izquierda -->
+            <a (click)="checkRed(72)"><polygon [style.fill]="valorC[72]" points="0 0 15 15 15 60 0 75" /></a>
+           <!-- trapecio derecho -->
+            <a (click)="checkRed(73)"><polygon [style.fill]="valorC[73]" points="75 0 60 15 60 15 60 60 75 75" /></a>
+             <!-- trapecio inferior -->
+            <a (click)="checkRed(74)"><polygon [style.fill]="valorC[74]" points="0 75 15 60 60 60 75 75" /></a>
+          </svg>
+
+          <svg class="svgRectangulo">
+            <!-- Centro -->
+            <a (click)="checkRed(75)"><polygon [style.fill]="valorC[75]" points="15 15 60 15 60 60 15 60" /></a>
+            <!-- trapecio superior -->
+            <a (click)="checkRed(76)"><polygon [style.fill]="valorC[76]" points="0 0 15 15 60 15 75 0" /></a>
+            <!-- trapecio Izquierda -->
+            <a (click)="checkRed(77)"><polygon [style.fill]="valorC[77]" points="0 0 15 15 15 60 0 75" /></a>
+           <!-- trapecio derecho -->
+            <a (click)="checkRed(78)"><polygon [style.fill]="valorC[78]" points="75 0 60 15 60 15 60 60 75 75" /></a>
+             <!-- trapecio inferior -->
+            <a (click)="checkRed(79)"><polygon [style.fill]="valorC[79]" points="0 75 15 60 60 60 75 75" /></a>
+          </svg>
+
+          <svg class="svgRectangulo">
+            <!-- Centro -->
+            <a (click)="checkRed(80)"><polygon [style.fill]="valorC[80]" points="15 15 60 15 60 60 15 60" /></a>
+            <!-- trapecio superior -->
+            <a (click)="checkRed(81)"><polygon [style.fill]="valorC[81]" points="0 0 15 15 60 15 75 0" /></a>
+            <!-- trapecio Izquierda -->
+            <a (click)="checkRed(82)"><polygon [style.fill]="valorC[82]" points="0 0 15 15 15 60 0 75" /></a>
+           <!-- trapecio derecho -->
+            <a (click)="checkRed(83)"><polygon [style.fill]="valorC[83]" points="75 0 60 15 60 15 60 60 75 75" /></a>
+             <!-- trapecio inferior -->
+            <a (click)="checkRed(84)"><polygon [style.fill]="valorC[84]" points="0 75 15 60 60 60 75 75" /></a>
+          </svg>
+
+          <svg class="svgRectangulo">
+              <!-- Centro -->
+              <a (click)="checkRed(85)"><polygon [style.fill]="valorC[85]" points="15 15 60 15 60 60 15 60" /></a>
+              <!-- trapecio superior -->
+              <a (click)="checkRed(86)"><polygon [style.fill]="valorC[86]" points="0 0 15 15 60 15 75 0" /></a>
+              <!-- trapecio Izquierda -->
+              <a (click)="checkRed(87)"><polygon [style.fill]="valorC[87]" points="0 0 15 15 15 60 0 75" /></a>
+             <!-- trapecio derecho -->
+              <a (click)="checkRed(88)"><polygon [style.fill]="valorC[88]" points="75 0 60 15 60 15 60 60 75 75" /></a>
+               <!-- trapecio inferior -->
+              <a (click)="checkRed(89)"><polygon [style.fill]="valorC[89]" points="0 75 15 60 60 60 75 75" /></a>
+            </svg>
+
+            <svg class="svgRectangulo">
+              <!-- Centro -->
+              <a (click)="checkRed(90)"><polygon [style.fill]="valorC[90]" points="15 15 60 15 60 60 15 60" /></a>
+              <!-- trapecio superior -->
+              <a (click)="checkRed(91)"><polygon [style.fill]="valorC[91]" points="0 0 15 15 60 15 75 0" /></a>
+              <!-- trapecio Izquierda -->
+              <a (click)="checkRed(92)"><polygon [style.fill]="valorC[92]" points="0 0 15 15 15 60 0 75" /></a>
+             <!-- trapecio derecho -->
+              <a (click)="checkRed(93)"><polygon [style.fill]="valorC[93]" points="75 0 60 15 60 15 60 60 75 75" /></a>
+               <!-- trapecio inferior -->
+              <a (click)="checkRed(94)"><polygon [style.fill]="valorC[94]" points="0 75 15 60 60 60 75 75" /></a>
+            </svg>
+    </mat-grid-tile>
+
+</mat-grid-list>
+
+<mat-grid-list cols="5" rowHeight="50px">
+
+<mat-grid-tile> 20 </mat-grid-tile>
+<mat-grid-tile> 21 </mat-grid-tile>
+<mat-grid-tile> 22 </mat-grid-tile>
+<mat-grid-tile> 23 </mat-grid-tile>
+<mat-grid-tile> 24 </mat-grid-tile>
+</mat-grid-list>
+
+    <!--   19 - 23   -->
+    <mat-grid-list cols="1" rowHeight="148px">
+    <mat-grid-tile>
+
+
+<svg class="svgRectangulo">
+<!-- Centro -->
+<a (click)="checkRed(95)"><polygon [style.fill]="valorC[95]" points="15 15 60 15 60 60 15 60" /></a>
+<!-- trapecio superior -->
+<a (click)="checkRed(96)"><polygon [style.fill]="valorC[96]" points="0 0 15 15 60 15 75 0" /></a>
+<!-- trapecio Izquierda -->
+<a (click)="checkRed(97)"><polygon [style.fill]="valorC[97]" points="0 0 15 15 15 60 0 75" /></a>
+<!-- trapecio derecho -->
+<a (click)="checkRed(98)"><polygon [style.fill]="valorC[98]" points="75 0 60 15 60 15 60 60 75 75" /></a>
+ <!-- trapecio inferior -->
+<a (click)="checkRed(99)"><polygon [style.fill]="valorC[99]" points="0 75 15 60 60 60 75 75" /></a>
+</svg>
+
+<svg class="svgRectangulo">
+<!-- Centro -->
+<a (click)="checkRed(100)"><polygon [style.fill]="valorC[100]" points="15 15 60 15 60 60 15 60" /></a>
+<!-- trapecio superior -->
+<a (click)="checkRed(101)"><polygon [style.fill]="valorC[101]" points="0 0 15 15 60 15 75 0" /></a>
+<!-- trapecio Izquierda -->
+<a (click)="checkRed(102)"><polygon [style.fill]="valorC[102]" points="0 0 15 15 15 60 0 75" /></a>
+<!-- trapecio derecho -->
+<a (click)="checkRed(103)"><polygon [style.fill]="valorC[103]" points="75 0 60 15 60 15 60 60 75 75" /></a>
+ <!-- trapecio inferior -->
+<a (click)="checkRed(104)"><polygon [style.fill]="valorC[104]" points="0 75 15 60 60 60 75 75" /></a>
+</svg>
+
+<svg class="svgRectangulo">
+<!-- Centro -->
+<a (click)="checkRed(105)"><polygon [style.fill]="valorC[105]" points="15 15 60 15 60 60 15 60" /></a>
+<!-- trapecio superior -->
+<a (click)="checkRed(106)"><polygon [style.fill]="valorC[106]" points="0 0 15 15 60 15 75 0" /></a>
+<!-- trapecio Izquierda -->
+<a (click)="checkRed(107)"><polygon [style.fill]="valorC[107]" points="0 0 15 15 15 60 0 75" /></a>
+<!-- trapecio derecho -->
+<a (click)="checkRed(108)"><polygon [style.fill]="valorC[108]" points="75 0 60 15 60 15 60 60 75 75" /></a>
+ <!-- trapecio inferior -->
+<a (click)="checkRed(109)"><polygon [style.fill]="valorC[109]" points="0 75 15 60 60 60 75 75" /></a>
+</svg>
+
+<svg class="svgRectangulo">
+<!-- Centro -->
+<a (click)="checkRed(110)"><polygon [style.fill]="valorC[110]" points="15 15 60 15 60 60 15 60" /></a>
+<!-- trapecio superior -->
+<a (click)="checkRed(111)"><polygon [style.fill]="valorC[111]" points="0 0 15 15 60 15 75 0" /></a>
+<!-- trapecio Izquierda -->
+<a (click)="checkRed(112)"><polygon [style.fill]="valorC[112]" points="0 0 15 15 15 60 0 75" /></a>
+<!-- trapecio derecho -->
+<a (click)="checkRed(113)"><polygon [style.fill]="valorC[113]" points="75 0 60 15 60 15 60 60 75 75" /></a>
+ <!-- trapecio inferior -->
+<a (click)="checkRed(114)"><polygon [style.fill]="valorC[114]" points="0 75 15 60 60 60 75 75" /></a>
+</svg>
+
+<svg class="svgRectangulo">
+<!-- Centro -->
+<a (click)="checkRed(115)"><polygon [style.fill]="valorC[115]" points="15 15 60 15 60 60 15 60" /></a>
+<!-- trapecio superior -->
+<a (click)="checkRed(116)"><polygon [style.fill]="valorC[116]" points="0 0 15 15 60 15 75 0" /></a>
+<!-- trapecio Izquierda -->
+<a (click)="checkRed(117)"><polygon [style.fill]="valorC[117]" points="0 0 15 15 15 60 0 75" /></a>
+<!-- trapecio derecho -->
+<a (click)="checkRed(118)"><polygon [style.fill]="valorC[118]" points="75 0 60 15 60 15 60 60 75 75" /></a>
+ <!-- trapecio inferior -->
+<a (click)="checkRed(119)"><polygon [style.fill]="valorC[119]" points="0 75 15 60 60 60 75 75" /></a>
+</svg>
+
+    </mat-grid-tile>
+</mat-grid-list>
+
+<mat-grid-list cols="1" rowHeight="50px">
+    <mat-grid-tile>
+        <mat-divider></mat-divider>
+  </mat-grid-tile>
+</mat-grid-list>
+  <mat-grid-list cols="1" rowHeight="50px">
+  <mat-grid-tile>
+      <button mat-raised-button class="botonRojo" (click)="changeRed()">Rojo</button>
+      <button mat-raised-button color="primary" (click)="changeBlue()">Azul</button>
+    </mat-grid-tile>
+  </mat-grid-list>
+
+  <mat-grid-list cols="5" rowHeight="50px">
+
+      <mat-grid-tile> 25 </mat-grid-tile>
+      <mat-grid-tile> 26 </mat-grid-tile>
+      <mat-grid-tile> 27 </mat-grid-tile>
+      <mat-grid-tile> 28 </mat-grid-tile>
+      <mat-grid-tile> 29 </mat-grid-tile>
+   </mat-grid-list>
+
+     <!--   24 - 28   -->
+
+     <mat-grid-list cols="1" rowHeight="148px">
+    <mat-grid-tile>
+
+
+        <svg class="svgRectangulo">
+            <!-- Centro -->
+            <a (click)="checkRed(120)"><polygon [style.fill]="valorC[120]" points="15 15 60 15 60 60 15 60" /></a>
+            <!-- trapecio superior -->
+            <a (click)="checkRed(121)"><polygon [style.fill]="valorC[121]" points="0 0 15 15 60 15 75 0" /></a>
+            <!-- trapecio Izquierda -->
+            <a (click)="checkRed(122)"><polygon [style.fill]="valorC[122]" points="0 0 15 15 15 60 0 75" /></a>
+           <!-- trapecio derecho -->
+            <a (click)="checkRed(123)"><polygon [style.fill]="valorC[123]" points="75 0 60 15 60 15 60 60 75 75" /></a>
+             <!-- trapecio inferior -->
+            <a (click)="checkRed(124)"><polygon [style.fill]="valorC[124]" points="0 75 15 60 60 60 75 75" /></a>
+          </svg>
+
+
+          <svg class="svgRectangulo">
+            <!-- Centro -->
+            <a (click)="checkRed(125)"><polygon [style.fill]="valorC[125]" points="15 15 60 15 60 60 15 60" /></a>
+            <!-- trapecio superior -->
+            <a (click)="checkRed(126)"><polygon [style.fill]="valorC[126]" points="0 0 15 15 60 15 75 0" /></a>
+            <!-- trapecio Izquierda -->
+            <a (click)="checkRed(127)"><polygon [style.fill]="valorC[127]" points="0 0 15 15 15 60 0 75" /></a>
+           <!-- trapecio derecho -->
+            <a (click)="checkRed(128)"><polygon [style.fill]="valorC[128]" points="75 0 60 15 60 15 60 60 75 75" /></a>
+             <!-- trapecio inferior -->
+            <a (click)="checkRed(129)"><polygon [style.fill]="valorC[129]" points="0 75 15 60 60 60 75 75" /></a>
+          </svg>
+
+          <svg class="svgRectangulo">
+            <!-- Centro -->
+            <a (click)="checkRed(130)"><polygon [style.fill]="valorC[130]" points="15 15 60 15 60 60 15 60" /></a>
+            <!-- trapecio superior -->
+            <a (click)="checkRed(131)"><polygon [style.fill]="valorC[131]" points="0 0 15 15 60 15 75 0" /></a>
+            <!-- trapecio Izquierda -->
+            <a (click)="checkRed(132)"><polygon [style.fill]="valorC[132]" points="0 0 15 15 15 60 0 75" /></a>
+           <!-- trapecio derecho -->
+            <a (click)="checkRed(133)"><polygon [style.fill]="valorC[133]" points="75 0 60 15 60 15 60 60 75 75" /></a>
+             <!-- trapecio inferior -->
+            <a (click)="checkRed(134)"><polygon [style.fill]="valorC[134]" points="0 75 15 60 60 60 75 75" /></a>
+          </svg>
+
+          <svg class="svgRectangulo">
+            <!-- Centro -->
+            <a (click)="checkRed(135)"><polygon [style.fill]="valorC[135]" points="15 15 60 15 60 60 15 60" /></a>
+            <!-- trapecio superior -->
+            <a (click)="checkRed(136)"><polygon [style.fill]="valorC[136]" points="0 0 15 15 60 15 75 0" /></a>
+            <!-- trapecio Izquierda -->
+            <a (click)="checkRed(137)"><polygon [style.fill]="valorC[137]" points="0 0 15 15 15 60 0 75" /></a>
+           <!-- trapecio derecho -->
+            <a (click)="checkRed(138)"><polygon [style.fill]="valorC[138]" points="75 0 60 15 60 15 60 60 75 75" /></a>
+             <!-- trapecio inferior -->
+            <a (click)="checkRed(139)"><polygon [style.fill]="valorC[139]" points="0 75 15 60 60 60 75 75" /></a>
+          </svg>
+
+          <svg class="svgRectangulo">
+            <!-- Centro -->
+            <a (click)="checkRed(140)"><polygon [style.fill]="valorC[140]" points="15 15 60 15 60 60 15 60" /></a>
+            <!-- trapecio superior -->
+            <a (click)="checkRed(141)"><polygon [style.fill]="valorC[141]" points="0 0 15 15 60 15 75 0" /></a>
+            <!-- trapecio Izquierda -->
+            <a (click)="checkRed(142)"><polygon [style.fill]="valorC[142]" points="0 0 15 15 15 60 0 75" /></a>
+           <!-- trapecio derecho -->
+            <a (click)="checkRed(143)"><polygon [style.fill]="valorC[143]" points="75 0 60 15 60 15 60 60 75 75" /></a>
+             <!-- trapecio inferior -->
+            <a (click)="checkRed(144)"><polygon [style.fill]="valorC[144]" points="0 75 15 60 60 60 75 75" /></a>
+          </svg>
+    </mat-grid-tile>
+
+</mat-grid-list>
+
+
+<mat-grid-list cols="7" rowHeight="50px">
+
+<mat-grid-tile> 35 </mat-grid-tile>
+<mat-grid-tile> 36 </mat-grid-tile>
+<mat-grid-tile> 37 </mat-grid-tile>
+<mat-grid-tile> 38 </mat-grid-tile>
+<mat-grid-tile> 39 </mat-grid-tile>
+<mat-grid-tile> 40 </mat-grid-tile>
+<mat-grid-tile> 41 </mat-grid-tile>
+</mat-grid-list>
+<!--   34 - 40   -->
+
+<mat-grid-list cols="1" rowHeight="148px">
+<mat-grid-tile>
+
+
+<svg class="svgRectangulo">
+  <!-- Centro -->
+  <a (click)="checkRed(145)"><polygon [style.fill]="valorC[145]" points="15 15 60 15 60 60 15 60" /></a>
+  <!-- trapecio superior -->
+  <a (click)="checkRed(146)"><polygon [style.fill]="valorC[146]" points="0 0 15 15 60 15 75 0" /></a>
+  <!-- trapecio Izquierda -->
+  <a (click)="checkRed(147)"><polygon [style.fill]="valorC[147]" points="0 0 15 15 15 60 0 75" /></a>
+ <!-- trapecio derecho -->
+  <a (click)="checkRed(148)"><polygon [style.fill]="valorC[148]" points="75 0 60 15 60 15 60 60 75 75" /></a>
+   <!-- trapecio inferior -->
+  <a (click)="checkRed(149)"><polygon [style.fill]="valorC[149]" points="0 75 15 60 60 60 75 75" /></a>
 </svg>
 
 <svg class="svgRectangulo">
   <!-- Centro -->
-  <a xlink:href="#"><polygon id="rojo" class="red" points="0 0 50 0 50 50 0 50" /></a>
-
+  <a (click)="checkRed(150)"><polygon [style.fill]="valorC[150]" points="15 15 60 15 60 60 15 60" /></a>
+  <!-- trapecio superior -->
+  <a (click)="checkRed(151)"><polygon [style.fill]="valorC[151]" points="0 0 15 15 60 15 75 0" /></a>
+  <!-- trapecio Izquierda -->
+  <a (click)="checkRed(152)"><polygon [style.fill]="valorC[152]" points="0 0 15 15 15 60 0 75" /></a>
+ <!-- trapecio derecho -->
+  <a (click)="checkRed(153)"><polygon [style.fill]="valorC[153]" points="75 0 60 15 60 15 60 60 75 75" /></a>
+   <!-- trapecio inferior -->
+  <a (click)="checkRed(154)"><polygon [style.fill]="valorC[154]" points="0 75 15 60 60 60 75 75" /></a>
 </svg>
+
+
+<svg class="svgRectangulo">
+  <!-- Centro -->
+  <a (click)="checkRed(155)"><polygon [style.fill]="valorC[155]" points="15 15 60 15 60 60 15 60" /></a>
+  <!-- trapecio superior -->
+  <a (click)="checkRed(156)"><polygon [style.fill]="valorC[156]" points="0 0 15 15 60 15 75 0" /></a>
+  <!-- trapecio Izquierda -->
+  <a (click)="checkRed(157)"><polygon [style.fill]="valorC[157]" points="0 0 15 15 15 60 0 75" /></a>
+ <!-- trapecio derecho -->
+  <a (click)="checkRed(158)"><polygon [style.fill]="valorC[158]" points="75 0 60 15 60 15 60 60 75 75" /></a>
+   <!-- trapecio inferior -->
+  <a (click)="checkRed(159)"><polygon [style.fill]="valorC[159]" points="0 75 15 60 60 60 75 75" /></a>
+</svg>
+
+<svg class="svgRectangulo">
+  <!-- Centro -->
+  <a (click)="checkRed(160)"><polygon [style.fill]="valorC[160]" points="15 15 60 15 60 60 15 60" /></a>
+  <!-- trapecio superior -->
+  <a (click)="checkRed(161)"><polygon [style.fill]="valorC[161]" points="0 0 15 15 60 15 75 0" /></a>
+  <!-- trapecio Izquierda -->
+  <a (click)="checkRed(162)"><polygon [style.fill]="valorC[162]" points="0 0 15 15 15 60 0 75" /></a>
+ <!-- trapecio derecho -->
+  <a (click)="checkRed(163)"><polygon [style.fill]="valorC[163]" points="75 0 60 15 60 15 60 60 75 75" /></a>
+   <!-- trapecio inferior -->
+  <a (click)="checkRed(164)"><polygon [style.fill]="valorC[164]" points="0 75 15 60 60 60 75 75" /></a>
+</svg>
+
+<svg class="svgRectangulo">
+  <!-- Centro -->
+  <a (click)="checkRed(165)"><polygon [style.fill]="valorC[165]" points="15 15 60 15 60 60 15 60" /></a>
+  <!-- trapecio superior -->
+  <a (click)="checkRed(166)"><polygon [style.fill]="valorC[166]" points="0 0 15 15 60 15 75 0" /></a>
+  <!-- trapecio Izquierda -->
+  <a (click)="checkRed(167)"><polygon [style.fill]="valorC[167]" points="0 0 15 15 15 60 0 75" /></a>
+ <!-- trapecio derecho -->
+  <a (click)="checkRed(168)"><polygon [style.fill]="valorC[168]" points="75 0 60 15 60 15 60 60 75 75" /></a>
+   <!-- trapecio inferior -->
+  <a (click)="checkRed(169)"><polygon [style.fill]="valorC[169]" points="0 75 15 60 60 60 75 75" /></a>
+</svg>
+
+<svg class="svgRectangulo">
+  <!-- Centro -->
+  <a (click)="checkRed(170)"><polygon [style.fill]="valorC[170]" points="15 15 60 15 60 60 15 60" /></a>
+  <!-- trapecio superior -->
+  <a (click)="checkRed(171)"><polygon [style.fill]="valorC[171]" points="0 0 15 15 60 15 75 0" /></a>
+  <!-- trapecio Izquierda -->
+  <a (click)="checkRed(172)"><polygon [style.fill]="valorC[172]" points="0 0 15 15 15 60 0 75" /></a>
+ <!-- trapecio derecho -->
+  <a (click)="checkRed(173)"><polygon [style.fill]="valorC[173]" points="75 0 60 15 60 15 60 60 75 75" /></a>
+   <!-- trapecio inferior -->
+  <a (click)="checkRed(174)"><polygon [style.fill]="valorC[174]" points="0 75 15 60 60 60 75 75" /></a>
+</svg>
+
+<svg class="svgRectangulo">
+  <!-- Centro -->
+  <a (click)="checkRed(175)"><polygon [style.fill]="valorC[175]" points="15 15 60 15 60 60 15 60" /></a>
+  <!-- trapecio superior -->
+  <a (click)="checkRed(176)"><polygon [style.fill]="valorC[176]" points="0 0 15 15 60 15 75 0" /></a>
+  <!-- trapecio Izquierda -->
+  <a (click)="checkRed(177)"><polygon [style.fill]="valorC[177]" points="0 0 15 15 15 60 0 75" /></a>
+ <!-- trapecio derecho -->
+  <a (click)="checkRed(178)"><polygon [style.fill]="valorC[178]" points="75 0 60 15 60 15 60 60 75 75" /></a>
+   <!-- trapecio inferior -->
+  <a (click)="checkRed(179)"><polygon [style.fill]="valorC[179]" points="0 75 15 60 60 60 75 75" /></a>
+</svg>
+
+</mat-grid-tile>
+</mat-grid-list>
+
+<mat-grid-list cols="1" rowHeight="50px">
+<mat-grid-tile>
+<mat-divider></mat-divider>
+</mat-grid-tile>
+</mat-grid-list>
+
+<mat-grid-list cols="1" rowHeight="50px">
+<mat-grid-tile>
+<button mat-raised-button class="botonRojo" (click)="changeRed()">Rojo</button>
+<button mat-raised-button color="primary" (click)="changeBlue()">Azul</button>
+</mat-grid-tile>
+</mat-grid-list>
+
+
+<mat-grid-list cols="5" rowHeight="50px">
+
+<mat-grid-tile> 30 </mat-grid-tile>
+<mat-grid-tile> 31 </mat-grid-tile>
+<mat-grid-tile> 32 </mat-grid-tile>
+<mat-grid-tile> 33 </mat-grid-tile>
+<mat-grid-tile> 34 </mat-grid-tile>
+</mat-grid-list>
+     <!--   29 - 33   -->
+
+     <mat-grid-list cols="1" rowHeight="148px">
+    <mat-grid-tile>
+          <svg class="svgRectangulo">
+            <!-- Centro -->
+            <a (click)="checkRed(180)"><polygon [style.fill]="valorC[180]" points="15 15 60 15 60 60 15 60" /></a>
+            <!-- trapecio superior -->
+            <a (click)="checkRed(181)"><polygon [style.fill]="valorC[181]" points="0 0 15 15 60 15 75 0" /></a>
+            <!-- trapecio Izquierda -->
+            <a (click)="checkRed(182)"><polygon [style.fill]="valorC[182]" points="0 0 15 15 15 60 0 75" /></a>
+           <!-- trapecio derecho -->
+            <a (click)="checkRed(183)"><polygon [style.fill]="valorC[183]" points="75 0 60 15 60 15 60 60 75 75" /></a>
+             <!-- trapecio inferior -->
+            <a (click)="checkRed(184)"><polygon [style.fill]="valorC[184]" points="0 75 15 60 60 60 75 75" /></a>
+          </svg>
+
+          <svg class="svgRectangulo">
+              <!-- Centro -->
+              <a (click)="checkRed(185)"><polygon [style.fill]="valorC[185]" points="15 15 60 15 60 60 15 60" /></a>
+              <!-- trapecio superior -->
+              <a (click)="checkRed(186)"><polygon [style.fill]="valorC[186]" points="0 0 15 15 60 15 75 0" /></a>
+              <!-- trapecio Izquierda -->
+              <a (click)="checkRed(187)"><polygon [style.fill]="valorC[187]" points="0 0 15 15 15 60 0 75" /></a>
+             <!-- trapecio derecho -->
+              <a (click)="checkRed(188)"><polygon [style.fill]="valorC[188]" points="75 0 60 15 60 15 60 60 75 75" /></a>
+               <!-- trapecio inferior -->
+              <a (click)="checkRed(189)"><polygon [style.fill]="valorC[189]" points="0 75 15 60 60 60 75 75" /></a>
+            </svg>
+
+            <svg class="svgRectangulo">
+              <!-- Centro -->
+              <a (click)="checkRed(190)"><polygon [style.fill]="valorC[190]" points="15 15 60 15 60 60 15 60" /></a>
+              <!-- trapecio superior -->
+              <a (click)="checkRed(191)"><polygon [style.fill]="valorC[191]" points="0 0 15 15 60 15 75 0" /></a>
+              <!-- trapecio Izquierda -->
+              <a (click)="checkRed(192)"><polygon [style.fill]="valorC[192]" points="0 0 15 15 15 60 0 75" /></a>
+             <!-- trapecio derecho -->
+              <a (click)="checkRed(193)"><polygon [style.fill]="valorC[193]" points="75 0 60 15 60 15 60 60 75 75" /></a>
+               <!-- trapecio inferior -->
+              <a (click)="checkRed(194)"><polygon [style.fill]="valorC[194]" points="0 75 15 60 60 60 75 75" /></a>
+            </svg>
+
+            <svg class="svgRectangulo">
+              <!-- Centro -->
+              <a (click)="checkRed(195)"><polygon [style.fill]="valorC[195]" points="15 15 60 15 60 60 15 60" /></a>
+              <!-- trapecio superior -->
+              <a (click)="checkRed(196)"><polygon [style.fill]="valorC[196]" points="0 0 15 15 60 15 75 0" /></a>
+              <!-- trapecio Izquierda -->
+              <a (click)="checkRed(197)"><polygon [style.fill]="valorC[197]" points="0 0 15 15 15 60 0 75" /></a>
+             <!-- trapecio derecho -->
+              <a (click)="checkRed(198)"><polygon [style.fill]="valorC[198]" points="75 0 60 15 60 15 60 60 75 75" /></a>
+               <!-- trapecio inferior -->
+              <a (click)="checkRed(199)"><polygon [style.fill]="valorC[199]" points="0 75 15 60 60 60 75 75" /></a>
+            </svg>
+
+            <svg class="svgRectangulo">
+              <!-- Centro -->
+              <a (click)="checkRed(200)"><polygon [style.fill]="valorC[200]" points="15 15 60 15 60 60 15 60" /></a>
+              <!-- trapecio superior -->
+              <a (click)="checkRed(201)"><polygon [style.fill]="valorC[201]" points="0 0 15 15 60 15 75 0" /></a>
+              <!-- trapecio Izquierda -->
+              <a (click)="checkRed(202)"><polygon [style.fill]="valorC[202]" points="0 0 15 15 15 60 0 75" /></a>
+             <!-- trapecio derecho -->
+              <a (click)="checkRed(203)"><polygon [style.fill]="valorC[203]" points="75 0 60 15 60 15 60 60 75 75" /></a>
+               <!-- trapecio inferior -->
+              <a (click)="checkRed(204)"><polygon [style.fill]="valorC[204]" points="0 75 15 60 60 60 75 75" /></a>
+            </svg>
+
+    </mat-grid-tile>
+
+
+  </mat-grid-list>
+
+  <mat-grid-list cols="7" rowHeight="50px">
+
+      <mat-grid-tile> 42 </mat-grid-tile>
+      <mat-grid-tile> 43 </mat-grid-tile>
+      <mat-grid-tile> 44 </mat-grid-tile>
+      <mat-grid-tile> 45 </mat-grid-tile>
+      <mat-grid-tile> 46 </mat-grid-tile>
+      <mat-grid-tile> 47 </mat-grid-tile>
+      <mat-grid-tile> 48 </mat-grid-tile>
+   </mat-grid-list>
+     <!--   41 - 47   -->
+
+     <mat-grid-list cols="1" rowHeight="148px">
+    <mat-grid-tile>
+
+
+          <svg class="svgRectangulo">
+            <!-- Centro -->
+            <a (click)="checkRed(205)"><polygon [style.fill]="valorC[205]" points="15 15 60 15 60 60 15 60" /></a>
+            <!-- trapecio superior -->
+            <a (click)="checkRed(206)"><polygon [style.fill]="valorC[206]" points="0 0 15 15 60 15 75 0" /></a>
+            <!-- trapecio Izquierda -->
+            <a (click)="checkRed(207)"><polygon [style.fill]="valorC[207]" points="0 0 15 15 15 60 0 75" /></a>
+           <!-- trapecio derecho -->
+            <a (click)="checkRed(208)"><polygon [style.fill]="valorC[208]" points="75 0 60 15 60 15 60 60 75 75" /></a>
+             <!-- trapecio inferior -->
+            <a (click)="checkRed(209)"><polygon [style.fill]="valorC[209]" points="0 75 15 60 60 60 75 75" /></a>
+          </svg>
+
+          <svg class="svgRectangulo">
+            <!-- Centro -->
+            <a (click)="checkRed(210)"><polygon [style.fill]="valorC[210]" points="15 15 60 15 60 60 15 60" /></a>
+            <!-- trapecio superior -->
+            <a (click)="checkRed(211)"><polygon [style.fill]="valorC[211]" points="0 0 15 15 60 15 75 0" /></a>
+            <!-- trapecio Izquierda -->
+            <a (click)="checkRed(212)"><polygon [style.fill]="valorC[212]" points="0 0 15 15 15 60 0 75" /></a>
+           <!-- trapecio derecho -->
+            <a (click)="checkRed(213)"><polygon [style.fill]="valorC[213]" points="75 0 60 15 60 15 60 60 75 75" /></a>
+             <!-- trapecio inferior -->
+            <a (click)="checkRed(214)"><polygon [style.fill]="valorC[214]" points="0 75 15 60 60 60 75 75" /></a>
+          </svg>
+
+          <svg class="svgRectangulo">
+            <!-- Centro -->
+            <a (click)="checkRed(215)"><polygon [style.fill]="valorC[215]" points="15 15 60 15 60 60 15 60" /></a>
+            <!-- trapecio superior -->
+            <a (click)="checkRed(216)"><polygon [style.fill]="valorC[216]" points="0 0 15 15 60 15 75 0" /></a>
+            <!-- trapecio Izquierda -->
+            <a (click)="checkRed(217)"><polygon [style.fill]="valorC[217]" points="0 0 15 15 15 60 0 75" /></a>
+           <!-- trapecio derecho -->
+            <a (click)="checkRed(218)"><polygon [style.fill]="valorC[218]" points="75 0 60 15 60 15 60 60 75 75" /></a>
+             <!-- trapecio inferior8 -->
+            <a (click)="checkRed(219)"><polygon [style.fill]="valorC[219]" points="0 75 15 60 60 60 75 75" /></a>
+          </svg>
+
+          <svg class="svgRectangulo">
+            <!-- Centro -->
+            <a (click)="checkRed(220)"><polygon [style.fill]="valorC[220]" points="15 15 60 15 60 60 15 60" /></a>
+            <!-- trapecio superior -->
+            <a (click)="checkRed(221)"><polygon [style.fill]="valorC[221]" points="0 0 15 15 60 15 75 0" /></a>
+            <!-- trapecio Izquierda -->
+            <a (click)="checkRed(222)"><polygon [style.fill]="valorC[222]" points="0 0 15 15 15 60 0 75" /></a>
+           <!-- trapecio derecho -->
+            <a (click)="checkRed(223)"><polygon [style.fill]="valorC[223]" points="75 0 60 15 60 15 60 60 75 75" /></a>
+             <!-- trapecio inferior -->
+            <a (click)="checkRed(224)"><polygon [style.fill]="valorC[224]" points="0 75 15 60 60 60 75 75" /></a>
+          </svg>
+
+          <svg class="svgRectangulo">
+            <!-- Centro -->
+            <a (click)="checkRed(225)"><polygon [style.fill]="valorC[225]" points="15 15 60 15 60 60 15 60" /></a>
+            <!-- trapecio superior -->
+            <a (click)="checkRed(226)"><polygon [style.fill]="valorC[226]" points="0 0 15 15 60 15 75 0" /></a>
+            <!-- trapecio Izquierda -->
+            <a (click)="checkRed(227)"><polygon [style.fill]="valorC[227]" points="0 0 15 15 15 60 0 75" /></a>
+           <!-- trapecio derecho -->
+            <a (click)="checkRed(228)"><polygon [style.fill]="valorC[228]" points="75 0 60 15 60 15 60 60 75 75" /></a>
+             <!-- trapecio inferior -->
+            <a (click)="checkRed(229)"><polygon [style.fill]="valorC[229]" points="0 75 15 60 60 60 75 75" /></a>
+          </svg>
+
+          <svg class="svgRectangulo">
+            <!-- Centro -->
+            <a (click)="checkRed(230)"><polygon [style.fill]="valorC[230]" points="15 15 60 15 60 60 15 60" /></a>
+            <!-- trapecio superior -->
+            <a (click)="checkRed(231)"><polygon [style.fill]="valorC[231]" points="0 0 15 15 60 15 75 0" /></a>
+            <!-- trapecio Izquierda -->
+            <a (click)="checkRed(232)"><polygon [style.fill]="valorC[232]" points="0 0 15 15 15 60 0 75" /></a>
+           <!-- trapecio derecho -->
+            <a (click)="checkRed(233)"><polygon [style.fill]="valorC[233]" points="75 0 60 15 60 15 60 60 75 75" /></a>
+             <!-- trapecio inferior -->
+            <a (click)="checkRed(234)"><polygon [style.fill]="valorC[234]" points="0 75 15 60 60 60 75 75" /></a>
+          </svg>
+
+          <svg class="svgRectangulo">
+            <!-- Centro -->
+            <a (click)="checkRed(235)"><polygon [style.fill]="valorC[235]" points="15 15 60 15 60 60 15 60" /></a>
+            <!-- trapecio superior -->
+            <a (click)="checkRed(236)"><polygon [style.fill]="valorC[236]" points="0 0 15 15 60 15 75 0" /></a>
+            <!-- trapecio Izquierda -->
+            <a (click)="checkRed(237)"><polygon [style.fill]="valorC[237]" points="0 0 15 15 15 60 0 75" /></a>
+           <!-- trapecio derecho -->
+            <a (click)="checkRed(238)"><polygon [style.fill]="valorC[238]" points="75 0 60 15 60 15 60 60 75 75" /></a>
+             <!-- trapecio inferior -->
+            <a (click)="checkRed(239)"><polygon [style.fill]="valorC[239]" points="0 75 15 60 60 60 75 75" /></a>
+          </svg>
+
+    </mat-grid-tile>
+</mat-grid-list>
+
+</mat-card>
+
+
+
+
+
+
+<!-- Fin de Odontograma-->

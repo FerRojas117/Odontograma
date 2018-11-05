@@ -1,4 +1,5 @@
 export interface PlandeTratamiento {
+  odont: string[];
   trabajo	: string;
   fechaTrab	: string;
   profesor	: string;
@@ -19,7 +20,7 @@ export interface PlandeTratamiento {
   nombreaux	: string;
   cuataux	: string;
   equipoaux	: string;
-  sillonaux	: string;  
+  sillonaux	: string;
     paciente: string;
     id: string;
   }

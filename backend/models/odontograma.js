@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 
 const odontograma = mongoose.Schema({
+  odont: { type: [String], required: true },
   trabajo	: { type: String, required: true },
 fechaTrab	: { type: String, required: true },
 profesor	: { type: String, required: true },
@@ -23,7 +24,7 @@ cuataux	: { type: String, required: true },
 equipoaux	: { type: String, required: true },
 sillonaux	: { type: String, required: true },
   paciente: { type: mongoose.Schema.Types.ObjectId, ref: "Ident", required: true }
-  
+
 });
 
 module.exports = mongoose.model("Odontograma", odontograma);

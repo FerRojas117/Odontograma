@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { PlandeTratamiento } from '../modelos/plandetratamiento.model';
 import { PlandetratService } from './plandetratamiento.service';
@@ -12,8 +12,10 @@ import { IdentService } from '../identificacion/identificacion.service'; // COPI
   styleUrls: ['./plandetratamiento.component.css']
 })
 
-export class PlandetratamientoComponent implements OnInit {
+export class PlandetratamientoComponent implements OnInit, OnDestroy {
   form: FormGroup;
+  rojo = false;
+  valorC: string[];
   isLoading = false; // COPIAR
     private mode = 'create'; // COPIAR
     private idsId: string; // COPIAR
@@ -23,40 +25,63 @@ export class PlandetratamientoComponent implements OnInit {
     idIdent: string;
     plandeTratamiento: PlandeTratamiento;
 
-  imageSource18: string;
-  imageSource17: string;
-  imageSource16: string;
-  imageSource15: string;
-  imageSource14: string;
-  imageSource13: string;
-  imageSource12: string;
-  imageSource11: string;
-
-  imageSource21: string;
-  imageSource22: string;
-  imageSource23: string;
-  imageSource24: string;
-  imageSource25: string;
-  imageSource26: string;
-  imageSource27: string;
-  imageSource28: string;
-
-  imageSource55:string;
-imageSource54:string;
-imageSource53:string;
-imageSource52:string;
-imageSource51:string;
-imageSource61:string;
-imageSource62:string;
-imageSource63:string;
-imageSource64:string;
-imageSource65:string;
-
-
-  constructor(public plandeTratService: PlandetratService,
+  constructor(
+    public plandeTratService: PlandetratService,
       public route: ActivatedRoute, // COPIAR
       private authService: AuthService, // COPIAR
-) { }
+  ) {
+    this.valorC =
+    [
+      '#3f51b5', '#3f51b5', '#3f51b5', '#3f51b5', '#3f51b5',
+      '#3f51b5', '#3f51b5', '#3f51b5', '#3f51b5', '#3f51b5',
+      '#3f51b5', '#3f51b5', '#3f51b5', '#3f51b5', '#3f51b5',
+      '#3f51b5', '#3f51b5', '#3f51b5', '#3f51b5', '#3f51b5',
+      '#3f51b5', '#3f51b5', '#3f51b5', '#3f51b5', '#3f51b5',
+      '#3f51b5', '#3f51b5', '#3f51b5', '#3f51b5', '#3f51b5',
+      '#3f51b5', '#3f51b5', '#3f51b5', '#3f51b5', '#3f51b5',
+      '#3f51b5', '#3f51b5', '#3f51b5', '#3f51b5', '#3f51b5',
+      '#3f51b5', '#3f51b5', '#3f51b5', '#3f51b5', '#3f51b5',
+      '#3f51b5', '#3f51b5', '#3f51b5', '#3f51b5', '#3f51b5',
+      '#3f51b5', '#3f51b5', '#3f51b5', '#3f51b5', '#3f51b5',
+      '#3f51b5', '#3f51b5', '#3f51b5', '#3f51b5', '#3f51b5',
+      '#3f51b5', '#3f51b5', '#3f51b5', '#3f51b5', '#3f51b5',
+      '#3f51b5', '#3f51b5', '#3f51b5', '#3f51b5', '#3f51b5',
+      '#3f51b5', '#3f51b5', '#3f51b5', '#3f51b5', '#3f51b5',
+      '#3f51b5', '#3f51b5', '#3f51b5', '#3f51b5', '#3f51b5',
+      '#3f51b5', '#3f51b5', '#3f51b5', '#3f51b5', '#3f51b5',
+      '#3f51b5', '#3f51b5', '#3f51b5', '#3f51b5', '#3f51b5',
+      '#3f51b5', '#3f51b5', '#3f51b5', '#3f51b5', '#3f51b5',
+      '#3f51b5', '#3f51b5', '#3f51b5', '#3f51b5', '#3f51b5',
+      '#3f51b5', '#3f51b5', '#3f51b5', '#3f51b5', '#3f51b5',
+      '#3f51b5', '#3f51b5', '#3f51b5', '#3f51b5', '#3f51b5',
+      '#3f51b5', '#3f51b5', '#3f51b5', '#3f51b5', '#3f51b5',
+      '#3f51b5', '#3f51b5', '#3f51b5', '#3f51b5', '#3f51b5',
+      '#3f51b5', '#3f51b5', '#3f51b5', '#3f51b5', '#3f51b5',
+      '#3f51b5', '#3f51b5', '#3f51b5', '#3f51b5', '#3f51b5',
+      '#3f51b5', '#3f51b5', '#3f51b5', '#3f51b5', '#3f51b5',
+      '#3f51b5', '#3f51b5', '#3f51b5', '#3f51b5', '#3f51b5',
+      '#3f51b5', '#3f51b5', '#3f51b5', '#3f51b5', '#3f51b5',
+      '#3f51b5', '#3f51b5', '#3f51b5', '#3f51b5', '#3f51b5',
+      '#3f51b5', '#3f51b5', '#3f51b5', '#3f51b5', '#3f51b5',
+      '#3f51b5', '#3f51b5', '#3f51b5', '#3f51b5', '#3f51b5',
+      '#3f51b5', '#3f51b5', '#3f51b5', '#3f51b5', '#3f51b5',
+      '#3f51b5', '#3f51b5', '#3f51b5', '#3f51b5', '#3f51b5',
+      '#3f51b5', '#3f51b5', '#3f51b5', '#3f51b5', '#3f51b5',
+      '#3f51b5', '#3f51b5', '#3f51b5', '#3f51b5', '#3f51b5',
+      '#3f51b5', '#3f51b5', '#3f51b5', '#3f51b5', '#3f51b5',
+      '#3f51b5', '#3f51b5', '#3f51b5', '#3f51b5', '#3f51b5',
+      '#3f51b5', '#3f51b5', '#3f51b5', '#3f51b5', '#3f51b5',
+      '#3f51b5', '#3f51b5', '#3f51b5', '#3f51b5', '#3f51b5',
+      '#3f51b5', '#3f51b5', '#3f51b5', '#3f51b5', '#3f51b5',
+      '#3f51b5', '#3f51b5', '#3f51b5', '#3f51b5', '#3f51b5',
+      '#3f51b5', '#3f51b5', '#3f51b5', '#3f51b5', '#3f51b5',
+      '#3f51b5', '#3f51b5', '#3f51b5', '#3f51b5', '#3f51b5',
+      '#3f51b5', '#3f51b5', '#3f51b5', '#3f51b5', '#3f51b5',
+      '#3f51b5', '#3f51b5', '#3f51b5', '#3f51b5', '#3f51b5',
+      '#3f51b5', '#3f51b5', '#3f51b5', '#3f51b5', '#3f51b5',
+      '#3f51b5', '#3f51b5', '#3f51b5', '#3f51b5', '#3f51b5'
+    ];
+  }
 
   ngOnInit() {
      // COPIAR
@@ -66,33 +91,7 @@ imageSource65:string;
        this.isLoading = false;
      });
      // COPIAR
-    this. imageSource18 =  'https://scontent.fmex7-1.fna.fbcdn.net/v/t1.15752-9/44756340_160676414884342_4149668513721614336_n.png?_nc_cat=108&_nc_ht=scontent.fmex7-1.fna&oh=6fc071888198fbbef925702e508e656e&oe=5C485CFB',
-    this. imageSource17 =  'https://scontent.fmex7-1.fna.fbcdn.net/v/t1.15752-9/44756340_160676414884342_4149668513721614336_n.png?_nc_cat=108&_nc_ht=scontent.fmex7-1.fna&oh=6fc071888198fbbef925702e508e656e&oe=5C485CFB',
-    this. imageSource16 =  'https://scontent.fmex7-1.fna.fbcdn.net/v/t1.15752-9/44756340_160676414884342_4149668513721614336_n.png?_nc_cat=108&_nc_ht=scontent.fmex7-1.fna&oh=6fc071888198fbbef925702e508e656e&oe=5C485CFB',
-    this. imageSource15 =  'https://scontent.fmex7-1.fna.fbcdn.net/v/t1.15752-9/44756340_160676414884342_4149668513721614336_n.png?_nc_cat=108&_nc_ht=scontent.fmex7-1.fna&oh=6fc071888198fbbef925702e508e656e&oe=5C485CFB',
-    this. imageSource14 =  'https://scontent.fmex7-1.fna.fbcdn.net/v/t1.15752-9/44756340_160676414884342_4149668513721614336_n.png?_nc_cat=108&_nc_ht=scontent.fmex7-1.fna&oh=6fc071888198fbbef925702e508e656e&oe=5C485CFB',
-    this. imageSource13 =  'https://scontent.fmex7-1.fna.fbcdn.net/v/t1.15752-9/44756340_160676414884342_4149668513721614336_n.png?_nc_cat=108&_nc_ht=scontent.fmex7-1.fna&oh=6fc071888198fbbef925702e508e656e&oe=5C485CFB',
-    this. imageSource12 =  'https://scontent.fmex7-1.fna.fbcdn.net/v/t1.15752-9/44756340_160676414884342_4149668513721614336_n.png?_nc_cat=108&_nc_ht=scontent.fmex7-1.fna&oh=6fc071888198fbbef925702e508e656e&oe=5C485CFB',
-    this. imageSource11 =  'https://scontent.fmex7-1.fna.fbcdn.net/v/t1.15752-9/44756340_160676414884342_4149668513721614336_n.png?_nc_cat=108&_nc_ht=scontent.fmex7-1.fna&oh=6fc071888198fbbef925702e508e656e&oe=5C485CFB',
-    this. imageSource21 =  'https://scontent.fmex7-1.fna.fbcdn.net/v/t1.15752-9/44756340_160676414884342_4149668513721614336_n.png?_nc_cat=108&_nc_ht=scontent.fmex7-1.fna&oh=6fc071888198fbbef925702e508e656e&oe=5C485CFB',
-    this. imageSource22 =  'https://scontent.fmex7-1.fna.fbcdn.net/v/t1.15752-9/44756340_160676414884342_4149668513721614336_n.png?_nc_cat=108&_nc_ht=scontent.fmex7-1.fna&oh=6fc071888198fbbef925702e508e656e&oe=5C485CFB',
-    this. imageSource23 =  'https://scontent.fmex7-1.fna.fbcdn.net/v/t1.15752-9/44756340_160676414884342_4149668513721614336_n.png?_nc_cat=108&_nc_ht=scontent.fmex7-1.fna&oh=6fc071888198fbbef925702e508e656e&oe=5C485CFB',
-    this. imageSource24 =  'https://scontent.fmex7-1.fna.fbcdn.net/v/t1.15752-9/44756340_160676414884342_4149668513721614336_n.png?_nc_cat=108&_nc_ht=scontent.fmex7-1.fna&oh=6fc071888198fbbef925702e508e656e&oe=5C485CFB',
-    this. imageSource25 =  'https://scontent.fmex7-1.fna.fbcdn.net/v/t1.15752-9/44756340_160676414884342_4149668513721614336_n.png?_nc_cat=108&_nc_ht=scontent.fmex7-1.fna&oh=6fc071888198fbbef925702e508e656e&oe=5C485CFB',
-    this. imageSource26 =  'https://scontent.fmex7-1.fna.fbcdn.net/v/t1.15752-9/44756340_160676414884342_4149668513721614336_n.png?_nc_cat=108&_nc_ht=scontent.fmex7-1.fna&oh=6fc071888198fbbef925702e508e656e&oe=5C485CFB',
-    this. imageSource27 =  'https://scontent.fmex7-1.fna.fbcdn.net/v/t1.15752-9/44756340_160676414884342_4149668513721614336_n.png?_nc_cat=108&_nc_ht=scontent.fmex7-1.fna&oh=6fc071888198fbbef925702e508e656e&oe=5C485CFB',
-    this. imageSource28 =  'https://scontent.fmex7-1.fna.fbcdn.net/v/t1.15752-9/44756340_160676414884342_4149668513721614336_n.png?_nc_cat=108&_nc_ht=scontent.fmex7-1.fna&oh=6fc071888198fbbef925702e508e656e&oe=5C485CFB',
-    this. imageSource55 =  'https://scontent.fmex7-1.fna.fbcdn.net/v/t1.15752-9/44723291_2199766887015118_42292298150576128_n.png?_nc_cat=100&_nc_ht=scontent.fmex7-1.fna&oh=028af10afe5d3370c841fdfc4ea65dd2&oe=5C442D21',
-    this. imageSource54 =  'https://scontent.fmex7-1.fna.fbcdn.net/v/t1.15752-9/44723291_2199766887015118_42292298150576128_n.png?_nc_cat=100&_nc_ht=scontent.fmex7-1.fna&oh=028af10afe5d3370c841fdfc4ea65dd2&oe=5C442D21',
-    this. imageSource53 =  'https://scontent.fmex7-1.fna.fbcdn.net/v/t1.15752-9/44723291_2199766887015118_42292298150576128_n.png?_nc_cat=100&_nc_ht=scontent.fmex7-1.fna&oh=028af10afe5d3370c841fdfc4ea65dd2&oe=5C442D21',
-    this. imageSource52 =  'https://scontent.fmex7-1.fna.fbcdn.net/v/t1.15752-9/44723291_2199766887015118_42292298150576128_n.png?_nc_cat=100&_nc_ht=scontent.fmex7-1.fna&oh=028af10afe5d3370c841fdfc4ea65dd2&oe=5C442D21',
-    this. imageSource51 =  'https://scontent.fmex7-1.fna.fbcdn.net/v/t1.15752-9/44723291_2199766887015118_42292298150576128_n.png?_nc_cat=100&_nc_ht=scontent.fmex7-1.fna&oh=028af10afe5d3370c841fdfc4ea65dd2&oe=5C442D21',
-    this. imageSource61 =  'https://scontent.fmex7-1.fna.fbcdn.net/v/t1.15752-9/44723291_2199766887015118_42292298150576128_n.png?_nc_cat=100&_nc_ht=scontent.fmex7-1.fna&oh=028af10afe5d3370c841fdfc4ea65dd2&oe=5C442D21',
-    this. imageSource62 =  'https://scontent.fmex7-1.fna.fbcdn.net/v/t1.15752-9/44723291_2199766887015118_42292298150576128_n.png?_nc_cat=100&_nc_ht=scontent.fmex7-1.fna&oh=028af10afe5d3370c841fdfc4ea65dd2&oe=5C442D21',
-    this. imageSource63 =  'https://scontent.fmex7-1.fna.fbcdn.net/v/t1.15752-9/44723291_2199766887015118_42292298150576128_n.png?_nc_cat=100&_nc_ht=scontent.fmex7-1.fna&oh=028af10afe5d3370c841fdfc4ea65dd2&oe=5C442D21',
-    this. imageSource64 =  'https://scontent.fmex7-1.fna.fbcdn.net/v/t1.15752-9/44723291_2199766887015118_42292298150576128_n.png?_nc_cat=100&_nc_ht=scontent.fmex7-1.fna&oh=028af10afe5d3370c841fdfc4ea65dd2&oe=5C442D21',
-    this. imageSource65 =  'https://scontent.fmex7-1.fna.fbcdn.net/v/t1.15752-9/44723291_2199766887015118_42292298150576128_n.png?_nc_cat=100&_nc_ht=scontent.fmex7-1.fna&oh=028af10afe5d3370c841fdfc4ea65dd2&oe=5C442D21',
-    
+
     this.form = new FormGroup({
       fechaTrab: new FormControl((new Date()).toISOString(), { validators: [Validators.required] }),
       trabajo: new FormControl(null, {validators: [Validators.required] }),
@@ -127,6 +126,7 @@ imageSource65:string;
         this.idComponent = postData._id;
         this.plandeTratamiento = {
           id: postData._id,
+          odont: postData.odont,
           trabajo	: postData.	trabajo	,
           fechaTrab	: postData.	fechaTrab	,
           profesor	: postData.	profesor	,
@@ -147,9 +147,10 @@ imageSource65:string;
           nombreaux	: postData.	nombreaux	,
           cuataux	: postData.	cuataux	,
           equipoaux	: postData.	equipoaux	,
-          sillonaux	: postData.	sillonaux	,          
+          sillonaux	: postData.	sillonaux	,
           paciente: postData.paciente,
         };
+        this.valorC = this.plandeTratamiento.odont;
         this.form.setValue({
           trabajo	: this.plandeTratamiento.	trabajo	,
 fechaTrab	: this.plandeTratamiento.	fechaTrab	,
@@ -183,38 +184,27 @@ sillonaux	: this.plandeTratamiento.	sillonaux	,
   });
 
 }
-  addPlandeTratamiento(){
+
+changeBlue() {
+  this.rojo = false;
+}
+changeRed() {
+  this.rojo = true;
+}
+checkRed(index) {
+  if (this.rojo) { this.valorC[index] = 'red'; } else { this.valorC[index] = '#3f51b5'; }
+}
+
+
+  addPlandeTratamiento() {
     console.log(this.idsId);
-    this.plandeTratService.addPlandeTratamiento(
-      this.form.value.	trabajo	,
-this.form.value.	fechaTrab	,
-this.form.value.	profesor	,
-this.form.value.	cariadas	,
-this.form.value.	perdidas	,
-this.form.value.	obturadas	,
-this.form.value.	extracciones	,
-this.form.value.	indicadas	,
-this.form.value.	cariadastem	,
-this.form.value.	perdidastem	,
-this.form.value.	obturadastem	,
-this.form.value.	extraccionestem	,
-this.form.value.	indicadastem	,
-this.form.value.	nombre	,
-this.form.value.	cuat	,
-this.form.value.	equipo	,
-this.form.value.	sillon	,
-this.form.value.	nombreaux	,
-this.form.value.	cuataux	,
-this.form.value.	equipoaux	,
-this.form.value.	sillonaux	,
-      this.idsId
-    );
     if (this.form.invalid) {
       return;
     }
     this.isLoading = true;
     if (this.mode === 'create') {
       this.plandeTratService.addPlandeTratamiento(
+        this.valorC,
         this.form.value.	trabajo	,
 this.form.value.	fechaTrab	,
 this.form.value.	profesor	,
@@ -241,7 +231,9 @@ this.form.value.	sillonaux	,
     } else {
         console.log(this.idComponent);
         this.plandeTratService.updatePlandeTratamiento(
+
         this.idComponent,
+        this.valorC,
         this.form.value.	trabajo	,
 this.form.value.	fechaTrab	,
 this.form.value.	profesor	,

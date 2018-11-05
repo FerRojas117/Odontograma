@@ -1,17 +1,33 @@
+.cardLogin {
+  top: 120px;
+  width: 90%;
+  bottom: 100px;
+}
+
 .svgRectangulo {
   display: block;
-  width:40%; height:auto;
+  width: 20%;
+  height: auto;
   margin: 0 auto;
 }
+
 polygon {
   fill:#ccc;
-  stroke:#fff; stroke-width:0.3;
+  stroke:#fff;
+  stroke-width:0.5;
   transition: fill .15s;
 }
 
-a:hover .teal { fill:teal; }
-a:hover .pink { fill:pink; }
-a:focus .teal,
-a:focus .pink { fill:orange; }
-a:click .red { fill:red; }
-a:hover .blue { fill:blue; }
+
+a {
+  cursor: pointer;
+}
+
+.botonRojo {
+  background-color: red;
+  color: white;
+}
+
+mat-divider {
+  border-width: 10px;
+}

@@ -46,3 +46,33 @@ button{
   padding: 10px 0;
 
 }
+
+
+
+.svgRectangulo {
+  display: block;
+  width: 20%;
+  height: auto;
+  margin: 0 auto;
+}
+
+polygon {
+  fill:#ccc;
+  stroke:#fff;
+  stroke-width:0.5;
+  transition: fill .15s;
+}
+
+
+a {
+  cursor: pointer;
+}
+
+.botonRojo {
+  background-color: red;
+  color: white;
+}
+
+mat-divider {
+  border-width: 10px;
+}

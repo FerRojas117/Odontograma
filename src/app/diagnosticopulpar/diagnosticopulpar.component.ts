@@ -176,46 +176,9 @@ novitalcronica:	this.diagnostico.		novitalcronica	,
     });
 
   }
-  addDiagnostico() {console.log(this.idsId);
-    this.diagnosticoService.addDiagnostico(
-      this.form.value.organoa,
-      this.form.value.tipodedolor		,
-      this.form.value.episodios		,
-      this.form.value.percusion		,
-      this.form.value.movilidad		,
-      this.form.value.cambiodecolor		,
-      this.form.value.trumefaccionintra		,
-      this.form.value.trumefaccionextra		,
-      this.form.value.fistula		,
-      this.form.value.reaccionpulparcalor,
-      this.form.value.reaccionpulparfrio,
-      this.form.value.reaccionpulpartestcavit,
-      this.form.value.	    observaciones		,
-      this.form.value.	    organob		,
-      this.form.value.	    caries		,
-      this.form.value.	    trauma		,
-      this.form.value.	    enfperiodonta		,
-      this.form.value.	    obtdefectuosa		,
-      this.form.value.	    fracturacorona		,
-      this.form.value.	    fracturaraiz		,
-      this.form.value.	    otro		,
-      this.form.value.	    otro2		,
-      this.form.value.	    otro3		,
-      this.form.value.	    organoc		,
-      this.form.value.calcificacionescorona2		,
-      this.form.value.calcificacionesraiz2		,
-      this.form.value.	    resorcioninterno		,
-      this.form.value.	    resorcionexterno		,
-      this.form.value.	    rarefaccionpenapico		,
-      this.form.value.	    rarefaccionradicular		,
-      this.form.value.	    obturaciondefectuosa2		,
-      this.form.value.	    organodentario		,
-      this.form.value.	    vitalreversible		,
-      this.form.value.	    vitalirreversible		,
-      this.form.value.	    novitalaguda		,
-      this.form.value.	    novitalcronica,
-      this.idsId
-    );
+  addDiagnostico() {
+    console.log(this.idsId);
+
     if (this.form.invalid) {
       return;
     }

@@ -7,18 +7,18 @@ const router = express.Router();
 router.post("", (req, res, next) => {
   console.log(req.body);
   const diagPulpar = new DiagPuplar({
-    organoa:	req.body.		organoa	,
-    tipodedolor:	req.body.		tipodedolor	,
-    episodios:	req.body.		episodios	,
-    percusion:	req.body.		percusion	,
-    movilidad:	req.body.		movilidad	,
-    cambiodecolor:	req.body.		cambiodecolor	,
-    trumefaccionintra:	req.body.		trumefaccionintra	,
-    trumefaccionextra:	req.body.		trumefaccionextra	,
-    fistula:	req.body.		fistula	,
-    reaccionpulparcalor:	req.body.		reaccionpulparcalor	,
-    reaccionpulparfrio:	req.body.		reaccionpulparfrio	,
-    reacciontestcavit:	req.body.		reaccionpulpartestcavit	,
+    organoa:	req.body.organoa	,
+    tipodedolor:	req.body.tipodedolor	,
+    episodios:	req.body.episodios	,
+    percusion:	req.body.percusion	,
+    movilidad:	req.body.movilidad	,
+    cambiodecolor:	req.body.cambiodecolor	,
+    trumefaccionintra:	req.body.trumefaccionintra	,
+    trumefaccionextra:	req.body.trumefaccionextra	,
+    fistula:	req.body.fistula	,
+    reaccionpulparcalor:	req.body.reaccionpulparcalor	,
+    reaccionpulparfrio:	req.body.reaccionpulparfrio	,
+    reacciontestcavit:	req.body.reaccionpulpartestcavit	,
     observaciones:	req.body.		observaciones	,
     organob:	req.body.		organob	,
     caries:	req.body.		caries	,
@@ -42,7 +42,7 @@ router.post("", (req, res, next) => {
     vitalreversible:	req.body.		vitalreversible	,
     vitalirreversible:	req.body.		vitalirreversible	,
     novitalaguda:	req.body.		novitalaguda	,
-    novitalcronica:	req.body.		novitalcronica	,    
+    novitalcronica:	req.body.		novitalcronica	,
     paciente: req.body.paciente
     });
     diagPulpar.save()
@@ -122,7 +122,7 @@ router.put("/:id",
       vitalreversible:	req.body.		vitalreversible	,
       vitalirreversible:	req.body.		vitalirreversible	,
       novitalaguda:	req.body.		novitalaguda	,
-      novitalcronica:	req.body.		novitalcronica	,      
+      novitalcronica:	req.body.		novitalcronica	,
       paciente: req.body.paciente
     });
     ExFisica.updateOne({ _id: req.params.id}, exp)

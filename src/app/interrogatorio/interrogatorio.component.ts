@@ -76,7 +76,7 @@ export class InterrogatorioComponent implements OnInit, OnDestroy {
         diabetes	: new FormControl(null, { validators: [Validators.required] }),
         cuandoDiabetes	: new FormControl(null, { validators: [Validators.required] }),
         glucosa	: new FormControl(null, { validators: [Validators.required] }),
-    aparatoDigestivo	: new FormControl(null, { validators: [Validators.required] }),    
+    aparatoDigestivo	: new FormControl(null, { validators: [Validators.required] }),
       });
       this.form.controls['cualesOtros'].disable();
       this.form.controls['cuandoHepatitis'].disable();
@@ -114,7 +114,7 @@ export class InterrogatorioComponent implements OnInit, OnDestroy {
     cuandoDiabetes	:postData.	    cuandoDiabetes	,
     glucosa	:postData.	    glucosa	,
 aparatoDigestivo	:postData.	aparatoDigestivo	,
-            
+
             paciente: postData.paciente,
           };
           this.form.setValue({
@@ -139,7 +139,7 @@ aparatoDigestivo	:postData.	aparatoDigestivo	,
             cuandoDiabetes	:this.inter.	    cuandoDiabetes	,
             glucosa	:this.inter.	    glucosa	,
         aparatoDigestivo	:this.inter.	aparatoDigestivo	,
-        
+
           });
         });
       } else {
@@ -152,30 +152,7 @@ aparatoDigestivo	:postData.	aparatoDigestivo	,
     }
     addInter() {
       console.log(this.idsId);
-      this.interService.addInter(
-        this.form.value.	 presionArterial	,
-this.form.value.	    fiebreReumatica	,
-this.form.value.	    hemorragias	,
-this.form.value.	    anemia	,
-this.form.value.	    infarto	,
-this.form.value.	    otros	,
-this.form.value.	    cualesOtros	,
-this.form.value.	    tuberculosis	,
-this.form.value.	    neumonia	,
-this.form.value.	    hasma	,
-this.form.value.	    faringeamigdalitis	,
-this.form.value.	    bronquitis	,
-this.form.value.	    gastritis	,
-this.form.value.	    colitis	,
-this.form.value.	    gastroenteritis	,
-this.form.value.	    hepatitis	,
-this.form.value.	    cuandoHepatitis	,
-this.form.value.	    diabetes	,
-this.form.value.	    cuandoDiabetes	,
-this.form.value.	    glucosa	,
-this.form.value.	aparatoDigestivo	,
-this.idsId
-      );
+
       if (this.form.invalid) {
         return;
       }
@@ -202,7 +179,7 @@ this.idsId
           this.form.value.	    diabetes	,
           this.form.value.	    cuandoDiabetes	,
           this.form.value.	    glucosa	,
-          this.form.value.	aparatoDigestivo	,            
+          this.form.value.	aparatoDigestivo	,
           this.idsId
         );
       } else {

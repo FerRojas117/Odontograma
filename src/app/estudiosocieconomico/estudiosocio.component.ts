@@ -24,7 +24,7 @@ export class EstudiosocioComponent implements OnInit,  OnDestroy {
   estu: Estu;
   ingresos = new FormControl();
   ingresosList: string[] = ['No tiene', 'Menor de $300', 'De $300 a $500', 'de $500 a $800', 'de $800 a $1200', 'de $1200 a $2400'];
-  
+
   gradoinst = new FormControl();
   gradoinstList: string[] = ['Analfabeta', 'Primaria', 'Secundaria', 'Preparatoria', 'Profesional', 'Técnica'];
   constructor(public estuService: EstuService,
@@ -123,27 +123,6 @@ obs	: this.estu.	obs	,
 }
   addEstu() {
     console.log(this.idsId);
-    this.estuService.addEstu(
-      this.form.value.direccion,
-      this.form.value.tiemporadi,
-      this.form.value.fechnac,
-      this.form.value.telefono,
-      this.form.value.lugarDeNacimiento,
-      this.form.value.nacionalidad,
-      this.form.value.sexo,
-      this.form.value.estadocivil,
-      this.form.value.ocupacion,
-      this.form.value.lugar,
-      this.form.value.direcc,
-      this.form.value.ingresos,
-      this.form.value.gradoinst,
-      this.form.value.numfam,
-      this.form.value.digsoci,
-      this.form.value.asigancion,
-      this.form.value.tutor,
-      this.form.value.obs,
-      this.idsId
-    );
     if (this.form.invalid) {
       return;
     }
@@ -191,7 +170,7 @@ this.form.value.	obs	,
         this.form.value.	digsoci	,
         this.form.value.	asignacion	,
         this.form.value.	tutor	,
-        this.form.value.	obs	,        
+        this.form.value.	obs	,
         this.idsId
       );
     }

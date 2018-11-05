@@ -1,4 +1,4 @@
-import { Component, OnInit   } from '@angular/core';
+import { Component, OnInit, OnDestroy   } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { LaboService } from './laboratoriogabinete.service';
 import { ActivatedRoute, ParamMap } from '@angular/router'; // COPIAR
@@ -12,7 +12,7 @@ import { IdentService } from '../identificacion/identificacion.service'; // COPI
   templateUrl: './laboratoriogabinete.component.html',
   styleUrls: ['./laboratoriogabinete.component.css']
 })
-export class LaboratorioGabineteComponent implements OnInit {
+export class LaboratorioGabineteComponent implements OnInit, OnDestroy{
     form: FormGroup;
     isLoading = false; // COPIAR
     private mode = 'create'; // COPIAR
@@ -27,7 +27,7 @@ export class LaboratorioGabineteComponent implements OnInit {
       public route: ActivatedRoute, // COPIAR
       private authService: AuthService, // COPIAR
 ) {}
-  
+
     ngOnInit() {
        // COPIAR
        this.authStatusSub = this.authService
@@ -70,11 +70,7 @@ export class LaboratorioGabineteComponent implements OnInit {
   }
     addLabo() {
       console.log(this.idsId);
-      this.laboservice.addLabo(
-        this.form.value.resultadosPrevios,
-        this.form.value.resultPrevios2,
-        this.idsId
-      );
+
       if (this.form.invalid) {
         return;
       }

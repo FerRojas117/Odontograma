@@ -121,26 +121,6 @@ export class ExploracionFisicaComponent implements OnInit, OnDestroy {
     }
     addExplo() {
       console.log(this.idsId);
-        this.exploservice.addExplo(
-        this.form.value.peso,
-        this.form.value.talla,
-        this.form.value.frecuenciaCardiaca,
-        this.form.value.presionArterial,
-        this.form.value.temperatura,
-        this.form.value.frecuenciaRespiratoria,
-        this.form.value.inspeccionGeneral,
-        this.form.value.cabeza,
-        this.form.value.cuello,
-        this.form.value.torax,
-        this.form.value.abdomen,
-        this.form.value.columnaVertebral,
-        this.form.value.extremidades,
-        this.form.value.diagnostico,
-        this.form.value.observaciones,
-        this.form.value.recomendaciones,
-        this.form.value.nombredelMedico,
-        this.idsId
-      );
 
       if (this.form.invalid) {
         return;

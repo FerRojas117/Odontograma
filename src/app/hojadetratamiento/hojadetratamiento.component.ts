@@ -27,7 +27,7 @@ export class HojadetratamientoComponent implements OnInit, OnDestroy {
   constructor(public hojadeTratService: HojadeTratService,
     public route: ActivatedRoute, // COPIAR
     private authService: AuthService, // COPIAR
-    
+
     ) { }
 
   ngOnInit() {
@@ -37,7 +37,7 @@ export class HojadetratamientoComponent implements OnInit, OnDestroy {
      .subscribe(authStatus => {
        this.isLoading = false;
      });
-     // COPIAR 
+     // COPIAR
 
     this.form = new FormGroup({
       noempleado: new FormControl(null, {validators: [Validators.required] }),
@@ -81,7 +81,7 @@ profesorresponsable	:postData.	profesorresponsable	,
             nopoliza	:this.hojadetrat.	nopoliza	,
             pacienteh	:this.hojadetrat.	pacienteh	,
             alumno	:this.hojadetrat.	alumno	,
-            profesorresponsable	:this.hojadetrat.	profesorresponsable	,            
+            profesorresponsable	:this.hojadetrat.	profesorresponsable	,
           });
         });
       } else {
@@ -93,18 +93,7 @@ profesorresponsable	:postData.	profesorresponsable	,
 
   }
   addHojadeTrat() {
-    this.hojadeTratService.addHojadeTrat(
-      this.form.value.	noempleado	,
-      this.form.value.	organodental	,
-      this.form.value.	diagnostico	,
-      this.form.value.	tratamiento	,
-      this.form.value.	costo	,
-      this.form.value.	nopoliza	,
-      this.form.value.	pacienteh	,
-      this.form.value.	alumno	,
-      this.form.value.	profesorresponsable	,      
-      this.idsId
-    );
+
     if (this.form.invalid) {
       return;
     }
