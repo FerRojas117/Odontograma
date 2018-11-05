@@ -71,9 +71,9 @@ export class PlandetratService {
     // imprimir objeto con los datos del front end
    console.log(registrarPlandeTratamiento);
    this.http
-   .post<{ _id: string }>('http://localhost:3000/api/plandeTratamiento', registrarPlandeTratamiento)
+   .post<{ message: string }>('http://localhost:3000/api/plandeTratamiento', registrarPlandeTratamiento)
    .subscribe(responseData => {
-     this.id = responseData._id;
+    this.dialog.open(CompletoComponent, {data: {message:  responseData.message}});
    });
 }
 
