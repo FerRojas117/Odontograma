@@ -1,10 +1,10 @@
 const mongoose = require("mongoose");
 
 const antecedentes_e = mongoose.Schema({
-  motivoConsulta: { type: String, required: true },
-  visitaEstomatologo: { type: String, required: true },
-  motivo: { type: String, required: true },
-  frecuenciaVisita: { type: String, required: true },
+  motivoConsulta: { type: String },
+  visitaEstomatologo: { type: String },
+  motivo: { type: String },
+  frecuenciaVisita: { type: String },
   radiografias: {
      respuesta: String,
      cuando: String,
@@ -31,7 +31,7 @@ const antecedentes_e = mongoose.Schema({
      respuesta: String,
      tipo: String
   },
-  higieneOral: { type: String, required: true },
+  higieneOral: { type: String },
   boca: {
      hemorragias: Boolean ,
      dolores: Boolean ,
@@ -113,7 +113,7 @@ const antecedentes_e = mongoose.Schema({
      supragingivales: Boolean ,
      subgingivales: Boolean
   },
-  exploracionRadiografica: { type: String, required: true },
+  exploracionRadiografica: { type: String },
   paciente: { type: mongoose.Schema.Types.ObjectId, ref: "Ident", required: true }
 });
 
