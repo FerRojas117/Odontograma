@@ -1,66 +1,38 @@
 export interface Antece {
+  id: string;
   motivoconsulta: string;
   cuanvisito: string;
   motivo: string;
   cdcuantiempo: string;
-  radiografias: string;
-  cuantascuando: string;
-  orgdentarios: string;
-  cuantosporque: string;
-  remplazo: string;
-  comocuando: string;
-  cirugias: string;
-  tipos: string;
-  proanestesia: string;
-  quetipo: string;
-  higieneoral: string;
-  algvezhateni: string;
-  explique: string;
-  hospital: string;
-  vismedult: string;
-  paraque: string;
-  drogas: string;
-  cualesdr: string;
-  hsig: string;
-  reacalergicas: string;
-  tipreac: string;
-  cualesali: string;
-  cualesd: string;
-  cualesanes: string;
-  cualesotr: string;
-  consmedica: string;
-  porque: string;
-  obs: string;
-  exploracion: string;
-  deschigieneoral: string;
-  calculos: string;
-  exploracionradiografica: string;
-  porqueOrganos	:string;
-  siReemplazoOrganos	:string;
-  comoReemplazoOrganos	:string;
-  cuandoReemplazoOrganos	:string;
-  cualesCirugias	:string;
-  problemasAnestesia	:string;
-  cualesProblemas	:string;
-  cuidadoHospital	:string;
-  cuidadoMedico	:string;
-  cuidadoHistorial	:string;
-  cuidadoParaque	:string;
-  cualesDrogas	:string;
-  cualesHemorragias	:string;
-  cualesAlergias	:string;
-  consultaPorque	:string;
-  organos:string;
-  cuantosOrganos:string;
-  vistmedult:string;
-  recalergicas:string;
-  paciente: string;
   radiografia: string;
-  malestar: string;
-  hemorragiass: string;
   cuantasRadio: string;
   cuandoRadio: string;
-  id: string;
-  cavidad:string;
-  higieneo:string;
+  organos: string;
+  siReemplazoOrganos: string;
+  porqueOrganos: string;
+  cuantosOrganos: string;
+  comoReemplazoOrganos: string;
+  cuanReemplazoOrganos: string;
+  cirugias: string[]; // array
+  proanestesia: string;
+  cualesProblemas: string;
+  malestar: string[]; // array
+  explique: string;
+  cuidadoMedico: string;
+  cuidadoHospital: string;
+  medico: string;
+  cuidadoHistorial: string;
+  vistmedult: string;
+  paraque: string;
+  drogas: string;
+  cualesDrogas: string;
+  hemorragiass: string[]; // array
+  recalergicas: string[]; // array
+  consmedica: string;
+  consultaPorque: string;
+  cavidad: string[]; // array
+  higieneo: string[]; // array
+  calculos: string[]; // array
+  exploracionradiografica: string;
+  paciente: string;
 }

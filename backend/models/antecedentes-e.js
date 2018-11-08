@@ -1,119 +1,40 @@
 const mongoose = require("mongoose");
 
 const antecedentes_e = mongoose.Schema({
-  motivoConsulta: { type: String },
-  visitaEstomatologo: { type: String },
-  motivo: { type: String },
-  frecuenciaVisita: { type: String },
-  radiografias: {
-     respuesta: String,
-     cuando: String,
-     cuantas: String
-  },
-  organosDentarios: {
-    respuesta: String,
-     cuantos: String ,
-     porQue: String ,
-  },
-  reemplazos: {
-     respuesta: String,
-     como: String ,
-     cuando: String ,
-  },
-  cirugiasDentoalveolares: {
-     respuesta: String,
-     hemorragias: Boolean ,
-     dolorProlongado: Boolean ,
-     cicatRetardada: Boolean ,
-     alveolitis: Boolean
-  },
-  anestesiaLocal: {
-     respuesta: String,
-     tipo: String
-  },
-  higieneOral: { type: String },
-  boca: {
-     hemorragias: Boolean ,
-     dolores: Boolean ,
-     saborDes: Boolean ,
-     fracturas: Boolean ,
-     trismus: Boolean ,
-     paresia: Boolean ,
-     parestesia: Boolean ,
-     otros: String
-  },
-  cuidadoMedico: {
-     respuesta: String,
-     hospital: String ,
-     historiaNo: String
-  },
-  visitaMedico: {
-     respuesta: String,
-     razon: String
-  },
-  drogas: {
-     respuesta: String,
-     cuales: String
-  },
-  hemorragiasSignificativas: {
-     respuesta: String,
-     heridasPequenas: Boolean ,
-     traumaLeve: Boolean ,
-     menstruacion: Boolean ,
-     hematomas: Boolean ,
-     petequias: Boolean ,
-     esquimosis: Boolean ,
-     epistaxis: Boolean
-  },
-  alergias: {
-     respuesta: String,
-     alimentos: Boolean ,
-     cualesA: String ,
-     drogas: Boolean ,
-     cualesD: String ,
-     anestesicos: Boolean ,
-     cualesAn: String ,
-     cosmeticos: Boolean ,
-     cualesC: String ,
-     otros: Boolean ,
-     cualesO: String
-  },
-  consulta: {
-     respuesta: String,
-     porQue: String ,
-     observaciones: String
-  },
-  cavidadOral: {
-     noAnormal: Boolean ,
-     pigmentacion: Boolean ,
-     labios: Boolean ,
-     pisoBoca: Boolean ,
-     encia: Boolean ,
-     carrillo: Boolean ,
-     paladar: Boolean ,
-     glandulas: Boolean ,
-     lengua: Boolean ,
-     orofaringe: Boolean ,
-     salivares: Boolean ,
-     descripcion: String
-  },
-  higieneBoca: {
-     buena: Boolean ,
-     regular: Boolean ,
-     mala: Boolean ,
-     haliotosis: Boolean ,
-     materiaAlba: Boolean ,
-   pigmentaciones: Boolean ,
-     placa: Boolean
-  },
-  calculos: {
-     ausentes: Boolean ,
-     regulares: Boolean ,
-     abundantes: Boolean ,
-     supragingivales: Boolean ,
-     subgingivales: Boolean
-  },
-  exploracionRadiografica: { type: String },
+  motivoconsulta: { type: String },
+  cuanvisito:{ type: String },
+  motivo:{ type: String },
+  cdcuantiempo:{ type: String },
+  radiografia:{ type: String },
+  cuantasRadio:{ type: String },
+  cuandoRadio:{ type: String },
+  organos:{ type: String },
+  siReemplazoOrganos:{ type: String },
+  porqueOrganos:{ type: String },
+  cuantosOrganos:{ type: String },
+  comoReemplazoOrganos:{ type: String },
+  cuanReemplazoOrganos:{ type: String },
+  cirugias: { type: [String] }, // array
+  proanestesia:{ type: String },
+  cualesProblemas:{ type: String },
+  malestar: { type: [String] }, // array
+  explique:{ type: String },
+  cuidadoMedico:{ type: String },
+  cuidadoHospital:{ type: String },
+  medico:{ type: String },
+  cuidadoHistorial:{ type: String },
+  vistmedult:{ type: String },
+  paraque:{ type: String },
+  drogas:{ type: String },
+  cualesDrogas:{ type: String },
+  hemorragiass: { type: [String] }, // array
+  recalergicas: { type: [String] }, // array
+  consmedica:{ type: String },
+  consultaPorque:{ type: String },
+  cavidad: { type: [String] }, // array
+  higieneo: { type: [String] }, // array
+  calculos: { type: [String] }, // array
+  exploracionradiografica:{ type: String },
   paciente: { type: mongoose.Schema.Types.ObjectId, ref: "Ident", required: true }
 });
 

@@ -112,7 +112,7 @@
            </mat-form-field>
            <br>
            <mat-form-field>
-            <textarea matInput placeholder="Medico tratante" formControlName="cuidadoMedico" ></textarea>
+            <textarea matInput placeholder="Medico tratante" formControlName="medico" ></textarea>
             <mat-error *ngIf="form.get('cuidadoMedico').invalid">Por favor, ingresa el médico .</mat-error>
      </mat-form-field>
      <br>
@@ -174,19 +174,19 @@
 
       <mat-form-field>
         <mat-select placeholder="Exploración de la cavidad oral:" formControlName="cavidad"multiple>
-          <mat-option *ngFor="let cavidad of cavidadList" [value]="Tiene">{{cavidad}}</mat-option>
+          <mat-option *ngFor="let cavidad of cavidadList" [value]="cavidad">{{cavidad}}</mat-option>
         </mat-select>
       </mat-form-field>
       <br>
       <mat-form-field>
         <mat-select placeholder="Higiene oral:" formControlName="higieneo" multiple>
-          <mat-option *ngFor="let higieneo of higieneoList" [value]="Tiene">{{higieneo}}</mat-option>
+          <mat-option *ngFor="let higieneo of higieneoList" [value]="higieneo">{{higieneo}}</mat-option>
         </mat-select>
       </mat-form-field>
       <br>
       <mat-form-field>
         <mat-select placeholder="Calculos:" formControlName="calculos" multiple>
-          <mat-option *ngFor="let cal of calList" [value]="Tiene">{{cal}}</mat-option>
+          <mat-option *ngFor="let cal of calList" [value]="cal">{{cal}}</mat-option>
         </mat-select>
       </mat-form-field>
       <br>

@@ -13,68 +13,43 @@ export class AnteceService {
   id;
   antece: Antece;
   constructor(private http: HttpClient,
-    private dialog: MatDialog) {}
+  private dialog: MatDialog) {}
 
   addAntece(
-     motivoconsulta: string,
+    motivoconsulta: string,
     cuanvisito: string,
     motivo: string,
     cdcuantiempo: string,
-    radiografias: string,
-    cuantascuando: string,
-    orgdentarios: string,
-    cuantosporque: string,
-    remplazo: string,
-    comocuando: string,
-    cirugias: string,
-    tipos: string,
+    radiografia: string,
+    cuantasRadio: string,
+    cuandoRadio: string,
+    organos: string,
+    siReemplazoOrganos: string,
+    porqueOrganos: string,
+    cuantosOrganos: string,
+    comoReemplazoOrganos: string,
+    cuanReemplazoOrganos: string,
+    cirugias: string[], // array
     proanestesia: string,
-    quetipo: string,
-    higieneoral: string,
-    algvezhateni: string,
+    cualesProblemas: string,
+    malestar: string[], // array
     explique: string,
-    hospital: string,
-    vismedult: string,
+    cuidadoMedico: string,
+    cuidadoHospital: string,
+    medico: string,
+    cuidadoHistorial: string,
+    vistmedult: string,
     paraque: string,
     drogas: string,
-    cualesdr: string,
-    hemorragiass: string,
-    hsig: string,
-    reacalergicas: string,
-    tipreac: string,
-    cualesali: string,
-    cualesd: string,
-    cualesanes: string,
-    cualesotr: string,
+    cualesDrogas: string,
+    hemorragiass: string[], // array
+    recalergicas: string[], // array
     consmedica: string,
-    porque: string,
-    obs: string,
-    exploracion: string,
-    deschigieneoral: string,
-    calculos: string,
+    consultaPorque: string,
+    cavidad: string[], // array
+    higieneo: string[], // array
+    calculos: string[], // array
     exploracionradiografica: string,
-    porqueOrganos :string,
-    siReemplazoOrganos  :string,
-    comoReemplazoOrganos  :string,
-    cuandoReemplazoOrganos  :string,
-    cualesCirugias  :string,
-    problemasAnestesia  :string,
-    cualesProblemas :string,
-    cuidadoHospital :string,
-    cuidadoMedico :string,
-    cuidadoHistorial  :string,
-    cuidadoParaque  :string,
-    cualesDrogas  :string,
-    cualesHemorragias :string,
-    cualesAlergias  :string,
-    consultaPorque  :string,
-    organos:string,
-    cuantosOrganos:string,
-    vistmedult:string,
-    malestar:string,
-    cavidad:string,
-    higieneo:string,
-    recalergicas:string,
     paciente: string,
     ) {
     const registrarAntece: any = {
@@ -82,61 +57,37 @@ export class AnteceService {
       cuanvisito: cuanvisito,
       motivo: motivo,
       cdcuantiempo: cdcuantiempo,
-      radiografias: radiografias,
-      cuantascuando: cuantascuando,
-      orgdentarios: orgdentarios,
-      cuantosporque: cuantosporque,
-      remplazo: remplazo,
-      comocuando: comocuando,
-      cirugias: cirugias,
-      tipos: tipos,
+      radiografia: radiografia,
+      cuantasRadio: cuantasRadio,
+      cuandoRadio: cuandoRadio,
+      organos: organos,
+      siReemplazoOrganos: siReemplazoOrganos,
+      porqueOrganos: porqueOrganos,
+      cuantosOrganos: cuantosOrganos,
+      comoReemplazoOrganos: comoReemplazoOrganos,
+      cuanReemplazoOrganos: cuanReemplazoOrganos,
+      cirugias: cirugias, // array
       proanestesia: proanestesia,
-      quetipo: quetipo,
-      higieneoral: higieneoral,
-      algvezhateni: algvezhateni,
+      cualesProblemas: cualesProblemas,
+      malestar: malestar, // array
       explique: explique,
-      hospital: hospital,
-      vismedult: vismedult,
+      cuidadoMedico: cuidadoMedico,
+      cuidadoHospital: cuidadoHospital,
+      medico: medico,
+      cuidadoHistorial: cuidadoHistorial,
+      vistmedult: vistmedult,
       paraque: paraque,
       drogas: drogas,
-      cualesdr: cualesdr,
-      hemorragiass: hemorragiass,
-      hsig: hsig,
-      reacalergicas: reacalergicas,
-      tipreac: tipreac,
-      cualesali: cualesali,
-      cualesd: cualesd,
-      cualesotr: cualesotr,
+      cualesDrogas: cualesDrogas,
+      hemorragiass: hemorragiass, // array
+      recalergicas: recalergicas, // array
       consmedica: consmedica,
-      porque: porque,
-      obs: obs,
-      exploracion: exploracion,
-      deschigieneoral: deschigieneoral,
-      calculos: calculos,
+      consultaPorque: consultaPorque,
+      cavidad: cavidad, // array
+      higieneo: higieneo, // array
+      calculos: calculos, // array
       exploracionradiografica: exploracionradiografica,
-      porqueOrganos : porqueOrganos ,
-      siReemplazoOrganos  : siReemplazoOrganos  ,
-      comoReemplazoOrganos  : comoReemplazoOrganos  ,
-      cuandoReemplazoOrganos  : cuandoReemplazoOrganos  ,
-      cualesCirugias  : cualesCirugias  ,
-      problemasAnestesia  : problemasAnestesia  ,
-      cualesProblemas : cualesProblemas ,
-      cuidadoHospital : cuidadoHospital ,
-      cuidadoMedico : cuidadoMedico ,
-      cuidadoHistorial  : cuidadoHistorial  ,
-      cuidadoParaque  : cuidadoParaque  ,
-      cualesDrogas  : cualesDrogas  ,
-      cualesHemorragias : cualesHemorragias ,
-      cualesAlergias  : cualesAlergias  ,
-      consultaPorque  : consultaPorque  ,
-      organos:organos,
-      cuantosOrganos:cuantosOrganos,
-      vistmedult:vistmedult,
-      malestar:malestar,
-      cavidad:cavidad,
-      higieneo:higieneo,
-      recalergicas:recalergicas,
-      paciente:paciente
+      paciente: paciente,
     };
     console.log(registrarAntece);
     this.http
@@ -149,202 +100,120 @@ export class AnteceService {
     console.log(id);
     return this.http.get<{
       _id: string;
-      motivoconsulta:string;
-      cuanvisito	:string;
-vistmedult	:string;
-motivo	:string;
-cdcuantiempo	:string;
-radiografias	:string;
-radiografia	:string;
-cuantascuando	:string;
-orgdentarios	:string;
-cuantosporque	:string;
-remplazo	:string;
-organos	:string;
-comocuando	:string;
-cirugias	:string;
-malestar	:string;
-tipos	:string;
-proanestesia	:string;
-quetipo	:string;
-higieneoral	:string;
-algvezhateni	:string;
-explique	:string;
-hospital	:string;
-vismedult	:string;
-paraque	:string;
-drogas	:string;
-cualesdr	:string;
-hemorragiass	:string;
-hsig	:string;
-reacalergicas	:string;
-tipreac	:string;
-cualesali	:string;
-cualesd	:string;
-cualesanes	:string;
-cualesotr	:string;
-consmedica	:string;
-porque	:string;
-obs	:string;
-exploracion	:string;
-deschigieneoral	:string;
-calculos	:string;
-exploracionradiografica	:string;
-cuantasRadio	:string;
-cuandoRadio	:string;
-cuantosOrganos	:string;
-porqueOrganos	:string;
-siReemplazoOrganos	:string;
-comoReemplazoOrganos	:string;
-cuandoReemplazoOrganos	:string;
-cualesCirugias	:string;
-problemasAnestesia	:string;
-cualesProblemas	:string;
-cuidadoHospital	:string;
-cuidadoMedico	:string;
-cuidadoHistorial	:string;
-cuidadoParaque	:string;
-cualesDrogas	:string;
-cualesHemorragias	:string;
-cualesAlergias	:string;
-consultaPorque	:string;
-recalergicas	:string;
-paciente: string;
-higieneo:string;
-cavidad:string;
+      motivoconsulta:  string;
+      cuanvisito: string;
+      motivo: string;
+      cdcuantiempo: string;
+      radiografia: string;
+      cuantasRadio: string;
+      cuandoRadio: string;
+      organos: string;
+      siReemplazoOrganos: string;
+      porqueOrganos: string;
+      cuantosOrganos: string;
+      comoReemplazoOrganos: string;
+      cuanReemplazoOrganos: string;
+      cirugias:  string[];  // array
+      proanestesia: string;
+      cualesProblemas: string;
+      malestar:  string[];  // array
+      explique: string;
+      cuidadoMedico: string;
+      cuidadoHospital: string;
+      medico: string;
+      cuidadoHistorial: string;
+      vistmedult: string;
+      paraque: string;
+      drogas: string;
+      cualesDrogas: string;
+      hemorragiass:  string[];  // array
+      recalergicas:  string[];  // array
+      consmedica: string;
+      consultaPorque: string;
+      cavidad:  string[];  // array
+      higieneo:  string[];  // array
+      calculos:  string[];  // array
+      exploracionradiografica: string;
+      paciente:  string;
     }>('http://localhost:3000/api/antEstoma/' + id);
   }
+
   updateAntece(
     id: string,
-    motivoconsulta:string,
-    cuanvisito	:string,
-    vistmedult	:string,
-    motivo	:string,
-    cdcuantiempo	:string,
-    radiografias	:string,
-    cuantascuando	:string,
-    orgdentarios	:string,
-    cuantosporque	:string,
-    remplazo	:string,
-    organos	:string,
-    comocuando	:string,
-    cirugias	:string,
-    malestar	:string,
-    tipos	:string,
-    proanestesia	:string,
-    quetipo	:string,
-    higieneoral	:string,
-    algvezhateni	:string,
-    explique	:string,
-    hospital	:string,
-    vismedult	:string,
-    paraque	:string,
-    drogas	:string,
-    cualesdr	:string,
-    hemorragiass	:string,
-    hsig	:string,
-    reacalergicas	:string,
-    tipreac	:string,
-    cualesali	:string,
-    cualesd	:string,
-    cualesanes	:string,
-    cualesotr	:string,
-    consmedica	:string,
-    porque	:string,
-    obs	:string,
-    exploracion	:string,
-    deschigieneoral	:string,
-    calculos	:string,
-    exploracionradiografica	:string,
-    cuantasRadio	:string,
-    cuandoRadio	:string,
-    cuantosOrganos	:string,
-    porqueOrganos	:string,
-    siReemplazoOrganos	:string,
-    comoReemplazoOrganos	:string,
-    cuandoReemplazoOrganos	:string,
-    cualesCirugias	:string,
-    problemasAnestesia	:string,
-    cualesProblemas	:string,
-    cuidadoHospital	:string,
-    cuidadoMedico	:string,
-    cuidadoHistorial	:string,
-    cuidadoParaque	:string,
-    cualesDrogas	:string,
-    cualesHemorragias	:string,
-    cualesAlergias	:string,
-    consultaPorque	:string,
-    recalergicas	:string,
-    paciente:string,
-    higieneo:string,
-    cavidad:string,
+    motivoconsulta: string,
+    cuanvisito: string,
+    motivo: string,
+    cdcuantiempo: string,
+    radiografia: string,
+    cuantasRadio: string,
+    cuandoRadio: string,
+    organos: string,
+    siReemplazoOrganos: string,
+    porqueOrganos: string,
+    cuantosOrganos: string,
+    comoReemplazoOrganos: string,
+    cuanReemplazoOrganos: string,
+    cirugias: string[], // array
+    proanestesia: string,
+    cualesProblemas: string,
+    malestar: string[], // array
+    explique: string,
+    cuidadoMedico: string,
+    cuidadoHospital: string,
+    medico: string,
+    cuidadoHistorial: string,
+    vistmedult: string,
+    paraque: string,
+    drogas: string,
+    cualesDrogas: string,
+    hemorragiass: string[], // array
+    recalergicas: string[], // array
+    consmedica: string,
+    consultaPorque: string,
+    cavidad: string[], // array
+    higieneo: string[], // array
+    calculos: string[], // array
+    exploracionradiografica: string,
+    paciente: string,
   ) {
     let antece: Antece;
     antece = {
-      motivoconsulta:motivoconsulta,
       id: id,
-      cuanvisito	:	cuanvisito	,
-      vistmedult	:	vistmedult	,
-      motivo	:	motivo	,
-      cdcuantiempo	:	cdcuantiempo	,
-      radiografias	:	radiografias	,
-      radiografia	:	radiografias	,
-      cuantascuando	:	cuantascuando	,
-      orgdentarios	:	orgdentarios	,
-      cuantosporque	:	cuantosporque	,
-      remplazo	:	remplazo	,
-      organos	:	organos	,
-      comocuando	:	comocuando	,
-      cirugias	:	cirugias	,
-      malestar	:	malestar	,
-      tipos	:	tipos	,
-      proanestesia	:	proanestesia	,
-      quetipo	:	quetipo	,
-      higieneoral	:	higieneoral	,
-      algvezhateni	:	algvezhateni	,
-      explique	:	explique	,
-      hospital	:	hospital	,
-      vismedult	:	vismedult	,
-      paraque	:	paraque	,
-      drogas	:	drogas	,
-      cualesdr	:	cualesdr	,
-      hemorragiass	:	hemorragiass	,
-      hsig	:	hsig	,
-      reacalergicas	:	reacalergicas	,
-      tipreac	:	tipreac	,
-      cualesali	:	cualesali	,
-      cualesd	:	cualesd	,
-      cualesanes	:	cualesanes	,
-      cualesotr	:	cualesotr	,
-      consmedica	:	consmedica	,
-      porque	:	porque	,
-      obs	:	obs	,
-      exploracion	:	exploracion	,
-      deschigieneoral	:	deschigieneoral	,
-      calculos	:	calculos	,
-      exploracionradiografica	:	exploracionradiografica	,
-      cuantasRadio	:	cuantasRadio	,
-      cuandoRadio	:	cuandoRadio	,
-      cuantosOrganos	:	cuantosOrganos	,
-      porqueOrganos	:	porqueOrganos	,
-      siReemplazoOrganos	:	siReemplazoOrganos	,
-      comoReemplazoOrganos	:	comoReemplazoOrganos	,
-      cuandoReemplazoOrganos	:	cuandoReemplazoOrganos	,
-      cualesCirugias	:	cualesCirugias	,
-      problemasAnestesia	:	problemasAnestesia	,
-      cualesProblemas	:	cualesProblemas	,
-      cuidadoHospital	:	cuidadoHospital	,
-      cuidadoMedico	:	cuidadoMedico	,
-      cuidadoHistorial	:	cuidadoHistorial	,
-      cuidadoParaque	:	cuidadoParaque	,
-      cualesDrogas	:	cualesDrogas	,
-      cualesHemorragias	:	cualesHemorragias	,
-      cualesAlergias	:	cualesAlergias	,
-      consultaPorque	:	consultaPorque	,
-      recalergicas	:	recalergicas	,
-      paciente:paciente,
-      higieneo:higieneo,
-      cavidad:cavidad,
+      motivoconsulta: motivoconsulta,
+      cuanvisito: cuanvisito,
+      motivo: motivo,
+      cdcuantiempo: cdcuantiempo,
+      radiografia: radiografia,
+      cuantasRadio: cuantasRadio,
+      cuandoRadio: cuandoRadio,
+      organos: organos,
+      siReemplazoOrganos: siReemplazoOrganos,
+      porqueOrganos: porqueOrganos,
+      cuantosOrganos: cuantosOrganos,
+      comoReemplazoOrganos: comoReemplazoOrganos,
+      cuanReemplazoOrganos: cuanReemplazoOrganos,
+      cirugias: cirugias, // array
+      proanestesia: proanestesia,
+      cualesProblemas: cualesProblemas,
+      malestar: malestar, // array
+      explique: explique,
+      cuidadoMedico: cuidadoMedico,
+      cuidadoHospital: cuidadoHospital,
+      medico: medico,
+      cuidadoHistorial: cuidadoHistorial,
+      vistmedult: vistmedult,
+      paraque: paraque,
+      drogas: drogas,
+      cualesDrogas: cualesDrogas,
+      hemorragiass: hemorragiass, // array
+      recalergicas: recalergicas, // array
+      consmedica: consmedica,
+      consultaPorque: consultaPorque,
+      cavidad: cavidad, // array
+      higieneo: higieneo, // array
+      calculos: calculos, // array
+      exploracionradiografica: exploracionradiografica,
+      paciente: paciente,
       };
     this.http
       .put<{ message: string }>('http://localhost:3000/api/exploFisica/' + id,
