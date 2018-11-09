@@ -42,8 +42,8 @@ export class EstudiosocioComponent implements OnInit,  OnDestroy {
       telefono: new FormControl(null),
       ocupacion: new FormControl(null),
       direcc: new FormControl(null),
-      ingresos: new FormControl(null),
-      gradoinst: new FormControl(null),
+      ingresos: new FormControl(null), // ARRAY
+      gradoinst: new FormControl(null), // ARRAY
       numfam: new FormControl(null),
       digsoci: new FormControl(null),
       asignacion: new FormControl(null),

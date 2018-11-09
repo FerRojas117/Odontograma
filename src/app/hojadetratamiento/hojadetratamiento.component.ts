@@ -40,15 +40,15 @@ export class HojadetratamientoComponent implements OnInit, OnDestroy {
      // COPIAR
 
     this.form = new FormGroup({
+      pacienteh: new FormControl(null, {validators: [Validators.required, Validators.minLength(3)]}),
+      alumno: new FormControl(null, {validators: [Validators.required, Validators.minLength(3)]}),
+      profresponsable: new FormControl(null, {validators: [Validators.required, Validators.minLength(3)]}),
       noempleado: new FormControl(null, {validators: [Validators.required] }),
-      organodental: new FormControl(null, {validators: [Validators.required] }),
+      orgdental: new FormControl(null, {validators: [Validators.required] }),
       diagnostico: new FormControl(null, {validators: [Validators.required] }),
       tratamiento: new FormControl(null, {validators: [Validators.required] }),
       costo: new FormControl(null, {validators: [Validators.required] }),
       nopoliza: new FormControl(null, {validators: [Validators.required] }),
-      pacienteh: new FormControl(null, {validators: [Validators.required, Validators.minLength(3)]}),
-      alumno: new FormControl(null, {validators: [Validators.required, Validators.minLength(3)]}),
-      profesorresponsable: new FormControl(null, {validators: [Validators.required, Validators.minLength(3)]}),
     });
      // COPUIAR
      this.route.paramMap.subscribe((paramMap: ParamMap) => {
@@ -61,27 +61,27 @@ export class HojadetratamientoComponent implements OnInit, OnDestroy {
           this.idComponent = postData._id;
           this.hojadetrat = {
             id: postData._id,
-            noempleado	:postData.	noempleado	,
-organodental	:postData.	organodental	,
-diagnostico	:postData.	diagnostico	,
-tratamiento	:postData.	tratamiento	,
-costo	:postData.	costo	,
-nopoliza	:postData.	nopoliza	,
-pacienteh	:postData.	pacienteh	,
-alumno	:postData.	alumno	,
-profesorresponsable	:postData.	profesorresponsable	,
+            pacienteh: postData.pacienteh	,
+            alumno: postData.alumno,
+            profresponsable: postData.profresponsable	,
+            noempleado: postData.noempleado	,
+            orgdental: postData.orgdental	,
+            diagnostico: postData.diagnostico	,
+            tratamiento: postData.tratamiento	,
+            costo: postData.costo,
+            nopoliza: postData.nopoliza,
             paciente: postData.paciente,
           };
           this.form.setValue({
-            noempleado	:this.hojadetrat.	noempleado	,
-            organodental	:this.hojadetrat.	organodental	,
-            diagnostico	:this.hojadetrat.	diagnostico	,
-            tratamiento	:this.hojadetrat.	tratamiento	,
-            costo	:this.hojadetrat.	costo	,
-            nopoliza	:this.hojadetrat.	nopoliza	,
-            pacienteh	:this.hojadetrat.	pacienteh	,
-            alumno	:this.hojadetrat.	alumno	,
-            profesorresponsable	:this.hojadetrat.	profesorresponsable	,
+            pacienteh: this.hojadetrat.pacienteh	,
+            alumno: this.hojadetrat.alumno	,
+            profesorresponsable: this.hojadetrat.profresponsable	,
+            noempleado: this.hojadetrat.noempleado	,
+            orgdental: this.hojadetrat.orgdental	,
+            diagnostico: this.hojadetrat.diagnostico	,
+            tratamiento: this.hojadetrat.tratamiento	,
+            costo: this.hojadetrat.costo	,
+            nopoliza: this.hojadetrat.nopoliza	,
           });
         });
       } else {
@@ -100,30 +100,30 @@ profesorresponsable	:postData.	profesorresponsable	,
     this.isLoading = true;
     if (this.mode === 'create') {
       this.hojadeTratService.addHojadeTrat(
-        this.form.value.	noempleado	,
-this.form.value.	organodental	,
-this.form.value.	diagnostico	,
-this.form.value.	tratamiento	,
-this.form.value.	costo	,
-this.form.value.	nopoliza	,
-this.form.value.	pacienteh	,
-this.form.value.	alumno	,
-this.form.value.	profesorresponsable	,
+        this.form.value.pacienteh	,
+        this.form.value.alumno	,
+        this.form.value.profresponsable	,
+        this.form.value.noempleado	,
+        this.form.value.orgdental	,
+        this.form.value.diagnostico	,
+        this.form.value.tratamiento	,
+        this.form.value.costo	,
+        this.form.value.nopoliza	,
         this.idsId
       );
     } else {
         console.log(this.idComponent);
         this.hojadeTratService.updateHojadeTrat(
         this.idComponent,
-        this.form.value.	noempleado	,
-this.form.value.	organodental	,
-this.form.value.	diagnostico	,
-this.form.value.	tratamiento	,
-this.form.value.	costo	,
-this.form.value.	nopoliza	,
-this.form.value.	pacienteh	,
-this.form.value.	alumno	,
-this.form.value.	profesorresponsable	,
+        this.form.value.pacienteh	,
+        this.form.value.alumno	,
+        this.form.value.profresponsable	,
+        this.form.value.noempleado	,
+        this.form.value.orgdental	,
+        this.form.value.diagnostico	,
+        this.form.value.tratamiento	,
+        this.form.value.costo	,
+        this.form.value.nopoliza	,
         this.idsId
       );
     }

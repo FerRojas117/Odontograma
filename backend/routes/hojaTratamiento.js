@@ -7,15 +7,15 @@ const router = express.Router();
 router.post("", (req, res, next) => {
   console.log(req.body);
   const hTratamiento = new HTratamiento({
-    noEmpleado: req.body.noEmpleado,
-    orgDental: req.body.orgDental,
+    pacienteh: req.body.pacienteh,
+    alumno: req.body.alumno,
+    profresponsable: req.body.profresponsable,
+    noempleado: req.body.noempleado,
+    orgdental: req.body.orgdental,
     diagnostico: req.body.diagnostico,
     tratamiento: req.body.tratamiento,
     costo: req.body.costo,
-    noPoliza: req.body.noPoliza,
-    pacienteh: req.body.pacienteh,
-    alumno: req.body.alumno,
-    profResponsable: req.body.profResponsable,
+    nopoliza: req.body.nopoliza,
     paciente: req.body.paciente,
     });
     hTratamiento.save()
@@ -60,15 +60,15 @@ router.put("/:id",
     console.log(req.body);
     const hojadetrat = new HojadeTrat({
       _id: req.body.id,
+      pacienteh	:req.body.	paciente	,
+      alumno	:req.body.	alumno	,
+      profresponsable	:req.body.	profresponsable	,
       noempleado	:req.body.	noempleado	,
-      organodental	:req.body.	organodental	,
+      orgdental	:req.body.	orgdental	,
       diagnostico	:req.body.	diagnostico	,
       tratamiento	:req.body.	tratamiento	,
       costo	:req.body.	costo	,
       nopoliza	:req.body.	nopoliza	,
-      pacienteh	:req.body.	paciente	,
-      alumno	:req.body.	alumno	,
-      profesorresponsable	:req.body.	profesorresponsable	,
       paciente: req.body.paciente
     });
     HojadeTrat.updateOne({ _id: req.params.id}, hojadetrat)

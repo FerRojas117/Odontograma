@@ -6,7 +6,7 @@ const router = express.Router();
 
 router.post("", (req, res, next) => {
   console.log(req.body);
-  const socioec = new Socioec({
+  const socioec = new EstudioSE({
     telefono: req.body.telefono,
     ocupacion: req.body.ocupacion,
     direcc: req.body.direcc,

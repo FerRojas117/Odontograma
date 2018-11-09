@@ -17,28 +17,27 @@ export class HojadeTratService {
     private dialog: MatDialog) {}
 
   addHojadeTrat(
-    noempleado	:	string	,
-      organodental	:	string	,
+    pacienteh	:	string	,
+      alumno	:	string	,
+      profresponsable :	string	,
+      noempleado	:	string	,
+      orgdental	:	string	,
       diagnostico	:	string	,
       tratamiento	:	string	,
       costo	:	string	,
       nopoliza	:	string	,
-      pacienteh	:	string	,
-      alumno	:	string	,
-      profesorresponsable  	:	string	,
       paciente: string,
-
     ) {
     const registrarHojadeTrat: any = {
+      pacienteh	:	      pacienteh	,
+      alumno	:	      alumno	,
+      profresponsable  	:	      profresponsable  	,
       noempleado	:	noempleado	,
-      organodental	:	      organodental	,
+      orgdental	:	      orgdental	,
       diagnostico	:	      diagnostico	,
       tratamiento	:	      tratamiento	,
       costo	:	      costo	,
       nopoliza	:	      nopoliza	,
-      pacienteh	:	      pacienteh	,
-      alumno	:	      alumno	,
-      profesorresponsable  	:	      profesorresponsable  	,
       paciente	:	      paciente	,
     };
     console.log(registrarHojadeTrat);
@@ -54,15 +53,15 @@ export class HojadeTratService {
     console.log(id);
     return this.http.get<{
       _id: string;
+      pacienteh	:string;
+      alumno	:string;
+      profresponsable	:string;
       noempleado	:string;
-      organodental	:string;
+      orgdental	:string;
       diagnostico	:string;
       tratamiento	:string;
       costo	:string;
       nopoliza	:string;
-      pacienteh	:string;
-      alumno	:string;
-      profesorresponsable	:string;
       paciente: string;
     }>('http://localhost:3000/api/exploFisica/' + id);
   }
@@ -70,29 +69,30 @@ export class HojadeTratService {
 /// añadir tambien ca componente
   updateHojadeTrat(
     id: string,
+    pacienteh	:string,
+    alumno	:string,
+    profresponsable	:string,
     noempleado	:string,
-    organodental	:string,
+    orgdental	:string,
     diagnostico	:string,
     tratamiento	:string,
     costo	:string,
     nopoliza	:string,
-    pacienteh	:string,
-    alumno	:string,
-    profesorresponsable	:string,
+
     paciente: string,
   ) {
     let hojadetrat: HojadeTrat;
     hojadetrat = {
       id: id,
+      pacienteh	:	paciente	,
+      alumno	:	alumno	,
+      profresponsable	:	profresponsable	,
       noempleado	:	noempleado	,
-      organodental	:	organodental	,
+      orgdental	:	orgdental	,
       diagnostico	:	diagnostico	,
       tratamiento	:	tratamiento	,
       costo	:	costo	,
       nopoliza	:	nopoliza	,
-      pacienteh	:	paciente	,
-      alumno	:	alumno	,
-      profesorresponsable	:	profesorresponsable	,
       paciente: paciente
       };
     this.http

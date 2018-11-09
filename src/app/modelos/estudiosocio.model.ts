@@ -3,8 +3,8 @@ export interface Estu {
   telefono: string;
   ocupacion: string;
   direcc: string;
-  ingresos: string;
-  gradoinst: string;
+  ingresos: string[];
+  gradoinst: string[];
   numfam: string;
   digsoci: string;
   asignacion: string;
