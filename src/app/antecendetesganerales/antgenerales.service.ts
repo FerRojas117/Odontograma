@@ -17,34 +17,32 @@ export class AntGService {
     private dialog: MatDialog) {}
 
 
-  addAntG( anthereditarios: string,
-      religion: string,
-      tiprelsex: string,
-      parejas: string,
-      calalim: string,
-      higpers: string,
-      sedentarismo: string,
-      calhabit: string,
-      perspat: string,
-      ginecoobst: string,
-      edades: string,
-      planifami: string,
-      partos  :string,
-      fechaParto  :string,
-      planifamitiem :string,
-      cuantosParto  :string,
-      menarca :string,
-      embarazos :string,
-      bajoPeso  :string,
-      edadHijos :string,
-      hijosMacro  :string,
-      ritmo :string,
-      regla :string,
-      cesareas  :string,
-      vidaSex :string,
-      abortos :string,
-      paciente: string,
-
+  addAntG(
+    anthereditarios: string,
+    religion: string,
+    tiprelsex: string,
+    parejas: string,
+    calalim: string,
+    higpers: string,
+    sedentarismo: string,
+    calhabit: string,
+    perspat: string,
+    menarca: string,
+    embarazos: string,
+    bajoPeso: string,
+    edadHijos: string,
+    hijosMacro: string,
+    ritmo: string,
+    regla: string,
+    cesareas: string,
+    vidaSex: string,
+    partos: string,
+    fechaParto: string,
+    cuantosParto: string,
+    abortos: string,
+    planifami: string,
+    planifamitiem: string,
+    paciente: string
     ) {
     const registrarAntG: any = {
       anthereditarios: anthereditarios,
@@ -56,24 +54,22 @@ export class AntGService {
       sedentarismo: sedentarismo,
       calhabit: calhabit,
       perspat: perspat,
-      ginecoobst: ginecoobst,
-      edades: edades,
+      menarca: menarca,
+      embarazos: embarazos,
+      bajoPeso: bajoPeso,
+      edadHijos: edadHijos,
+      hijosMacro: hijosMacro,
+      ritmo: ritmo,
+      regla: regla,
+      cesareas: cesareas,
+      vidaSex: vidaSex,
+      partos: partos,
+      fechaParto: fechaParto,
+      cuantosParto: cuantosParto,
+      abortos: abortos,
       planifami: planifami,
-      partos  : partos  ,
-fechaParto  : fechaParto  ,
-planifamitiem : planifamitiem ,
-cuantosParto  : cuantosParto  ,
-menarca : menarca ,
-embarazos : embarazos ,
-bajoPeso  : bajoPeso  ,
-edadHijos : edadHijos ,
-hijosMacro  : hijosMacro  ,
-ritmo : ritmo ,
-regla : regla ,
-cesareas  : cesareas  ,
-vidaSex : vidaSex ,
-abortos : abortos ,
-paciente: paciente
+      planifamitiem: planifamitiem,
+      paciente: paciente
     };
     console.log(registrarAntG);
     this.http
@@ -87,96 +83,90 @@ paciente: paciente
     console.log(id);
     return this.http.get<{
       _id: string;
-      religion	:string;
-tiprelsex	:string;
-parejas	:string;
-calalim	:string;
-higpers	:string;
-sedentarismo	:string;
-calhabit	:string;
-perspat	:string;
-ginecoobst	:string;
-edades	:string;
-planifami	:string;
-partos	:string;
-fechaParto	:string;
-planifamitiem	:string;
-cuantosParto	:string;
-menarca	:string;
-embarazos	:string;
-bajoPeso	:string;
-edadHijos	:string;
-hijosMacro	:string;
-ritmo	:string;
-regla	:string;
-cesareas	:string;
-vidaSex	:string;
-anthereditarios:string;
-abortos	:string;
-paciente: string;
+      anthereditarios: string,
+      religion: string,
+      tiprelsex: string,
+      parejas: string,
+      calalim: string,
+      higpers: string,
+      sedentarismo: string,
+      calhabit: string,
+      perspat: string,
+      menarca: string,
+      embarazos: string,
+      bajoPeso: string,
+      edadHijos: string,
+      hijosMacro: string,
+      ritmo: string,
+      regla: string,
+      cesareas: string,
+      vidaSex: string,
+      partos: string,
+      fechaParto: string,
+      cuantosParto: string,
+      abortos: string,
+      planifami: string,
+      planifamitiem: string,
+      paciente: string
     }>('http://localhost:3000/api/antGenerales/' + id);
   }
 
   updateAntG(
     id: string,
-    religion	:string,
-    tiprelsex	:string,
-    parejas	:string,
-    calalim	:string,
-    higpers	:string,
-    sedentarismo	:string,
-    calhabit	:string,
-    perspat	:string,
-    ginecoobst	:string,
-    edades	:string,
-    planifami	:string,
-    partos	:string,
-    fechaParto	:string,
-    planifamitiem	:string,
-    cuantosParto	:string,
-    menarca	:string,
-    embarazos	:string,
-    bajoPeso	:string,
-    edadHijos	:string,
-    hijosMacro	:string,
-    ritmo	:string,
-    regla	:string,
-    cesareas	:string,
-    vidaSex	:string,
-    abortos	:string,
-    anthereditarios:string,
-    paciente: string,
+    anthereditarios: string,
+    religion: string,
+    tiprelsex: string,
+    parejas: string,
+    calalim: string,
+    higpers: string,
+    sedentarismo: string,
+    calhabit: string,
+    perspat: string,
+    menarca: string,
+    embarazos: string,
+    bajoPeso: string,
+    edadHijos: string,
+    hijosMacro: string,
+    ritmo: string,
+    regla: string,
+    cesareas: string,
+    vidaSex: string,
+    partos: string,
+    fechaParto: string,
+    cuantosParto: string,
+    abortos: string,
+    planifami: string,
+    planifamitiem: string,
+    paciente: string
   ) {
     let antg: AntG;
     antg = {
       id: id,
-      religion	:	religion	,
-tiprelsex	:	tiprelsex	,
-parejas	:	parejas	,
-calalim	:	calalim	,
-higpers	:	higpers	,
-sedentarismo	:	sedentarismo	,
-calhabit	:	calhabit	,
-perspat	:	perspat	,
-ginecoobst	:	ginecoobst	,
-edades	:	edades	,
-planifami	:	planifami	,
-partos	:	partos	,
-fechaParto	:	fechaParto	,
-planifamitiem	:	planifamitiem	,
-cuantosParto	:	cuantosParto	,
-menarca	:	menarca	,
-embarazos	:	embarazos	,
-bajoPeso	:	bajoPeso	,
-edadHijos	:	edadHijos	,
-hijosMacro	:	hijosMacro	,
-ritmo	:	ritmo	,
-regla	:	regla	,
-cesareas	:	cesareas	,
-vidaSex	:	vidaSex	,
-abortos	:	abortos	,
-anthereditarios:anthereditarios
-,paciente: paciente
+      anthereditarios: anthereditarios,
+      religion: religion,
+      tiprelsex: tiprelsex,
+      parejas: parejas,
+      calalim: calalim,
+      higpers: higpers,
+      sedentarismo: sedentarismo,
+      calhabit: calhabit,
+      perspat: perspat,
+      menarca: menarca,
+      embarazos: embarazos,
+      bajoPeso: bajoPeso,
+      edadHijos: edadHijos,
+      hijosMacro: hijosMacro,
+      ritmo: ritmo,
+      regla: regla,
+      cesareas: cesareas,
+      vidaSex: vidaSex,
+      partos: partos,
+      fechaParto: fechaParto,
+      cuantosParto: cuantosParto,
+      abortos: abortos,
+      planifami: planifami,
+      planifamitiem: planifamitiem,
+      paciente: paciente
       };
     this.http
       .put<{ message: string }>('http://localhost:3000/api/antGenerales/' + id, antg)

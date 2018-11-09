@@ -1,25 +1,16 @@
 const mongoose = require("mongoose");
 
 const socioEconomico = mongoose.Schema({
-  direccion: { type: String, required: true },//r_ident
-  tiempoRadicar: { type: String, required: true },
-  fechaNacimiento: { type: String, required: true },
-  telefono: { type: String, required: true },//r_ident
-  lugarDeNacimiento: { type: String, required: true },//r_ident
-  nacionalidad: { type: String, required: true },
-  sexo: { type: String, required: true },//r_ident
-  estadoCivil: { type: String, required: true },//r_ident
-  ocupacion: { type: String, required: true },//r_ident
-  lugar: { type: String, required: true },//r_ident
-  direccion: { type: String, required: true },//r_ident
-  rangoIngresos: { type: String, required: true },
-  gradoInstruccion: { type: String, required: true },
-  noPersonasFamilia: { type: String, required: true },
-  diagnosticoSocial: { type: String, required: true },
-  asignado: { type: String, required: true },
-  alumno: { type: Boolean, required: true },
-  tutor: { type: String },
-  observaciones: { type: String, required: true },
+  telefono: { type: String},
+  ocupacion: { type: String},
+  direcc: { type: String},
+  ingresos: { type: String},
+  gradoinst: { type: String},
+  numfam: { type: String},
+  digsoci: { type: String},
+  asignacion: { type: String},
+  tutor: { type: String},
+  obs: { type: String},
   paciente: { type: mongoose.Schema.Types.ObjectId, ref: "Ident", required: true }
 });
 

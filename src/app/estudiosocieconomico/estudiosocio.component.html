@@ -1,55 +1,55 @@
 <mat-card class="cardForm">
         <form [formGroup]="form" (submit)="addEstu()">
-    
+
         <mat-form-field>
             <textarea matInput formControlName="telefono" placeholder="Telefono"></textarea>
             <mat-error *ngIf="form.get('telefono').invalid">Por favor, escribe el teléfono.</mat-error>
         </mat-form-field>
-    
+
         <mat-form-field>
             <textarea matInput  formControlName="ocupacion" placeholder="Ocupacion"></textarea>
             <mat-error *ngIf="form.get('ocupacion').invalid">Por favor, escribe la ocupacion.</mat-error>
         </mat-form-field>
-    
+
           <mat-form-field>
               <textarea matInput formControlName="direcc" placeholder="Direccion"></textarea>
-              <mat-error *ngIf="form.get('direcc').invalid">Por favor, escribe la direcciòn.</mat-error>
+
           </mat-form-field>
-    
+
           <mat-form-field>
             <mat-select placeholder="Rango de ingresos" [formControl]="ingresos" multiple>
               <mat-option *ngFor="let ingresos of ingresosList" [value]="ingresos">{{ingresos}}</mat-option>
             </mat-select>
           </mat-form-field>
-    
+
           <mat-form-field>
             <mat-select placeholder="Grado de instrucción" [formControl]="gradoinst" multiple>
               <mat-option *ngFor="let gradoinst of gradoinstList" [value]="gradoinst">{{gradoinst}}</mat-option>
             </mat-select>
           </mat-form-field>
-    
+
           <mat-form-field>
               <textarea matInput formControlName="numfam" placeholder="Número de personas en familia"></textarea>
               <mat-error *ngIf="form.get('numfam').invalid">Por favor, escribe la cantidad de personas en familia.</mat-error>
           </mat-form-field>
-    
+
           <mat-form-field>
               <textarea matInput  formControlName="digsoci" placeholder="Diagnostico Social"></textarea>
               <mat-error *ngIf="form.get('digsoci').invalid">Por favor escribe el diagnostico social.</mat-error>
           </mat-form-field>
-    
-          <mat-radio-group class="radioGroup" formControlName="asigancion">
+
+          <mat-radio-group class="radioGroup" formControlName="asignacion">
             <span>Tiene asignado</span>
             <span>Alumno</span>
             <mat-radio-button class="radioButton" value="S">Si</mat-radio-button>
             <mat-radio-button class="radioButton" value="N">No</mat-radio-button>
         </mat-radio-group>
-    
+
         <mat-form-field>
             <textarea matInput formControlName="tutor" placeholder="Tutor"></textarea>
             <mat-error *ngIf="form.get('tutor').invalid">Por favor, escribe el tutor.</mat-error>
         </mat-form-field>
-    
+
         <mat-form-field>
             <textarea matInput formControlName="obs" placeholder="Observaciones"></textarea>
             <mat-error *ngIf="form.get('obs').invalid">Por favor, escribe las Observaciones.</mat-error>
@@ -57,6 +57,5 @@
     <br><br>
           <button mat-raised-button color="accent" type="submit">Guardar<mat-icon>save</mat-icon></button>
         </form>
-    
+
       </mat-card>
-    

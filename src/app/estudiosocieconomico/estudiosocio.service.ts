@@ -18,48 +18,30 @@ export class EstuService {
     private dialog: MatDialog) {}
 
   addEstu(
-    direccion	:string,
-    tiemporadi	:string,
-    fechnac	:string,
-    telefono	:string,
-    lugarDeNacimiento	:string,
-    nacionalidad	:string,
-    sexo	:string,
-    estadocivil	:string,
-    ocupacion	:string,
-    lugar	:string,
-    direcc	:string,
-    ingresos	:string,
-    gradoinst	:string,
-    numfam	:string,
-    digsoci	:string,
-    asignacion	:string,
-    tutor	:string,
-    obs	:string,
+    telefono: string,
+    ocupacion: string,
+    direcc: string,
+    ingresos: string,
+    gradoinst: string,
+    numfam: string,
+    digsoci: string,
+    asignacion: string,
+    tutor: string,
+    obs: string,
     paciente: string,
     ) {
-
-
     const registrarEstu: any = {
-      direccion: direccion,
-      tiemporadi: tiemporadi,
-      fechnac: fechnac,
       telefono: telefono,
-      lugarDeNacimiento: lugarDeNacimiento,
-      nacionalidad: nacionalidad,
-      sexo: sexo,
-      estadocivil: estadocivil,
-      ocupacion: ocupacion,
-      lugar: lugar,
-      direcc: direcc,
-      ingresos: ingresos,
-      gradoinst: gradoinst,
-      numfam: numfam,
-      digsoci: digsoci,
-      asignacion: asignacion,
-      tutor: tutor,
-      obs: obs,
-      paciente: paciente
+    ocupacion: ocupacion,
+    direcc: direcc,
+    ingresos: ingresos,
+    gradoinst: gradoinst,
+    numfam: numfam,
+    digsoci: digsoci,
+    asignacion: asignacion,
+    tutor: tutor,
+    obs: obs,
+    paciente: paciente,
     };
     console.log(registrarEstu);
     this.http
@@ -74,73 +56,49 @@ export class EstuService {
     console.log(id);
     return this.http.get<{
       _id: string;
-direccion	:string;
-tiemporadi	:string;
-fechnac	:string;
-telefono	:string;
-lugarDeNacimiento	:string;
-nacionalidad	:string;
-sexo	:string;
-estadocivil	:string;
-ocupacion	:string;
-lugar	:string;
-direcc	:string;
-ingresos	:string;
-gradoinst	:string;
-numfam	:string;
-digsoci	:string;
-asignacion	:string;
-tutor	:string;
-obs	:string;
-      paciente: string;
+      telefono: string,
+      ocupacion: string,
+      direcc: string,
+      ingresos: string,
+      gradoinst: string,
+      numfam: string,
+      digsoci: string,
+      asignacion: string,
+      tutor: string,
+      obs: string,
+     paciente: string;
     }>('http://localhost:3000/api/estu/' + id);
   }
 
 /// añadir tambien ca componente
   updateEstu(
     id: string,
-direccion	:string,
-tiemporadi	:string,
-fechnac	:string,
-telefono	:string,
-lugarDeNacimiento	:string,
-nacionalidad	:string,
-sexo	:string,
-estadocivil	:string,
-ocupacion	:string,
-lugar	:string,
-direcc	:string,
-ingresos	:string,
-gradoinst	:string,
-numfam	:string,
-digsoci	:string,
-asignacion	:string,
-tutor	:string,
-obs	:string,
-    paciente: string,
+    telefono: string,
+    ocupacion: string,
+    direcc: string,
+    ingresos: string,
+    gradoinst: string,
+    numfam: string,
+    digsoci: string,
+    asignacion: string,
+    tutor: string,
+    obs: string,
+    paciente: string
   ) {
-    let estu : Estu;
+    let estu: Estu;
     estu = {
       id: id,
-      direccion	:	direccion	,
-      tiemporadi	:	tiemporadi	,
-      fechnac	:	fechnac	,
-      telefono	:	telefono	,
-      lugarDeNacimiento	:	lugarDeNacimiento	,
-      nacionalidad	:	nacionalidad	,
-      sexo	:	sexo	,
-      estadocivil	:	estadocivil	,
-      ocupacion	:	ocupacion	,
-      lugar	:	lugar	,
-      direcc	:	direcc	,
-      ingresos	:	ingresos	,
-      gradoinst	:	gradoinst	,
-      numfam	:	numfam	,
-      digsoci	:	digsoci	,
-      asignacion	:	asignacion	,
-      tutor	:	tutor	,
-      obs	:	obs	,
-      paciente: paciente
+      telefono: telefono,
+      ocupacion: ocupacion,
+      direcc: direcc,
+      ingresos: ingresos,
+      gradoinst: gradoinst,
+      numfam: numfam,
+      digsoci: digsoci,
+      asignacion: asignacion,
+      tutor: tutor,
+      obs: obs,
+      paciente: paciente,
       };
     this.http
       .put<{ message: string }>('http://localhost:3000/api/estu/' + id, estu)

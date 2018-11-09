@@ -7,24 +7,16 @@ const router = express.Router();
 router.post("", (req, res, next) => {
   console.log(req.body);
   const socioec = new Socioec({
-    direccion: req.body.direccion,//r_ident
-    tiempoRadicar: req.body.tiempoRadicar,
-    fechaNacimiento: req.body.fechaNacimiento,
-    telefono: req.body.telefono,//r_ident
-    lugarDeNacimiento: req.body.lugarDeNacimiento,//r_ident
-    sexo: req.body.sexo,//r_ident
-    estadoCivil: req.body.estadoCivil,//r_ident
-    ocupacion: req.body.ocupacion,//r_ident
-    lugar: req.body.lugar,
-    direccion: req.body.direccion,//r_ident
-    rangoIngresos: req.body.rangoIngresos,
-    gradoInstruccion: req.body.gradoInstruccion,
-    noPersonasFamilia: req.body.noPersonasFamilia,
-    diagnosticoSocial: req.body.diagnosticoSocial,
-    asignado: req.body.asignado,
-    alumno: req.body.alumno,
+    telefono: req.body.telefono,
+    ocupacion: req.body.ocupacion,
+    direcc: req.body.direcc,
+    ingresos: req.body.ingresos,
+    gradoinst: req.body.gradoinst,
+    numfam: req.body.numfam,
+    digsoci: req.body.digsoci,
+    asignacion: req.body.asignacion,
     tutor: req.body.tutor,
-    observaciones: req.body.observaciones,
+    obs: req.body.obs,
     paciente: req.body.paciente
     });
     socioec.save()
@@ -69,26 +61,17 @@ router.put("/:id",
     console.log(req.body);
     const socioec = new EstudioSE({
       _id: req.body.id,
-      edad	:req.body.	edad	,
-      direccion	:req.body.	direccion	,
-      tiemporadi	:req.body.	tiemporadi	,
-      fechnac	:req.body.	fechnac	,
-      telefono	:req.body.	telefono	,
-      lugarDeNacimiento	:req.body.	lugarDeNacimiento	,
-      nacionalidad	:req.body.	nacionalidad	,
-      sexo	:req.body.	sexo	,
-      estadocivil	:req.body.	estadocivil	,
-      ocupacion	:req.body.	ocupacion	,
-      lugar	:req.body.	lugar	,
-      direcc	:req.body.	direcc	,
-      ingresos	:req.body.	ingresos	,
-      gradoinst	:req.body.	gradoinst	,
-      numfam	:req.body.	numfam	,
-      digsoci	:req.body.	digsoci	,
-      asignacion	:req.body.	asignacion	,
-      tutor	:req.body.	tutor	,
-      obs	:req.body.	obs	,
-      paciente: req.body.paciente
+      telefono: req.body.telefono,
+    ocupacion: req.body.ocupacion,
+    direcc: req.body.direcc,
+    ingresos: req.body.ingresos,
+    gradoinst: req.body.gradoinst,
+    numfam: req.body.numfam,
+    digsoci: req.body.digsoci,
+    asignacion: req.body.asignacion,
+    tutor: req.body.tutor,
+    obs: req.body.obs,
+    paciente: req.body.paciente
     });
     EstudioSE.updateOne({ _id: req.params.id}, socioec)
       .then(result => {
